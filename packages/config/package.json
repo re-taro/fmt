@@ -1,0 +1,32 @@
+{
+  "name": "@re-taro/eslint-config",
+  "version": "1.0.0",
+  "description": "My personal eslint config.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/re-taro/eslint.git",
+    "directory": "packages/config"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Rintaro Itokawa",
+    "email": "me@re-taro.dev",
+    "url": "https://re-taro.dev"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "stub": "unbuild --stub",
+    "build": "unbuild"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

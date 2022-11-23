@@ -1,0 +1,57 @@
+{
+  "name": "@re-taro/eslint-plugin",
+  "version": "1.0.0",
+  "description": "My personal eslint plugin.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/re-taro/eslint.git",
+    "directory": "packages/plugin"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Rintaro Itokawa",
+    "email": "me@re-taro.dev",
+    "url": "https://re-taro.dev"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "stub": "unbuild --stub",
+    "build": "unbuild"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@next/eslint-plugin-next": "12.1.5",
+    "@typescript-eslint/eslint-plugin": "5.21.0",
+    "@typescript-eslint/parser": "5.21.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-import-resolver-typescript": "2.7.1",
+    "eslint-plugin-eslint-comments": "3.2.0",
+    "eslint-plugin-html": "6.2.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsonc": "2.2.1",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-markdown": "2.2.1",
+    "eslint-plugin-n": "15.2.0",
+    "eslint-plugin-promise": "6.0.0",
+    "eslint-plugin-react": "7.29.4",
+    "eslint-plugin-react-hooks": "4.5.0",
+    "eslint-plugin-unicorn": "42.0.0",
+    "eslint-plugin-vue": "8.7.1",
+    "eslint-plugin-yml": "0.14.0",
+    "jsonc-eslint-parser": "2.1.0",
+    "yaml-eslint-parser": "0.5.0"
+  },
+  "devDependencies": {
+    "@babel/types": "7.17.10",
+    "@typescript-eslint/utils": "5.21.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "noUnusedParameters": true,
+    "jsx": "preserve"
+  },
+  "exclude": ["**/dist/**", "**/node_modules/**", "**/test/dts/**"]
+}
