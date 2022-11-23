@@ -1,0 +1,27 @@
+name: Release
+description: Release a new npm package
+runs:
+  using: composite
+  steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: latest
+    - name: Set node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: pnpm
+    - name: Install
+      shell: bash
+      run: pnpm install
+    - name: Build
+      shell: bash
+      run: pnpm run build
+    - name: Publish to NPM
+      run: |
+        pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+        pnpm -r publish --access public
+      shell: bash
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
