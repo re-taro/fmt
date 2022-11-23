@@ -1,0 +1,21 @@
+name: release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - id: release
+        uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: simple
+          include-v-in-tag: false
+      - if: ${{ steps.release.outputs.release_created }}
+        uses: ./.github/actions/release
