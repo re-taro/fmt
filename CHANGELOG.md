@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/re-taro/eslint/compare/1.0.0...1.0.1) (2022-11-23)
+
+
+### Bug Fixes
+
+* **ci:** Fix publish actions ([1571456](https://github.com/re-taro/eslint/commit/15714561e33799e7813d1532cb0fe871f76e7efc))
+
 ## 1.0.0 (2022-11-23)
 
 
