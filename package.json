@@ -17,11 +17,15 @@
     "build": "pnpm -r build",
     "dev": "nr stub",
     "stub": "pnpm -r --parallel run stub",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "fmt": "prettier --write ./packages/**/*.ts"
   },
   "devDependencies": {
+    "@re-taro/eslint-config": "workspace:*",
+    "@re-taro/eslint-plugin": "workspace:*",
     "@types/react": "18.0.25",
     "eslint": "8.27.0",
+    "prettier": "2.8.0",
     "react": "18.1.0",
     "typescript": "4.8.4",
     "unbuild": "0.9.4"
