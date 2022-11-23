@@ -28,5 +28,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@re-taro/eslint-plugin": "workspace:*"
   }
 }
