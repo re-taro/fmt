@@ -30,7 +30,7 @@ importers:
 
   packages/plugin:
     specifiers:
-      '@babel/types': 7.17.10
+      '@babel/types': 7.17.12
       '@next/eslint-plugin-next': 12.1.5
       '@typescript-eslint/eslint-plugin': 5.21.0
       '@typescript-eslint/parser': 5.21.0
@@ -74,7 +74,7 @@ importers:
       jsonc-eslint-parser: 2.1.0
       yaml-eslint-parser: 0.5.0
     devDependencies:
-      '@babel/types': 7.17.10
+      '@babel/types': 7.17.12
       '@typescript-eslint/utils': 5.21.0
 
 packages:
@@ -288,8 +288,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/types/7.17.10:
-    resolution: {integrity: sha512-9O26jG0mBYfGkUYCYZRnBwbVLd1UZOICEr2Em6InB6jVfsAv1GKgwXHmrSg+WFWDmeKTA6vyTZiN8tCSM5Oo3A==}
+  /@babel/types/7.17.12:
+    resolution: {integrity: sha512-rH8i29wcZ6x9xjzI5ILHL/yZkbQnCERdHlogKuIb4PUr7do4iT8DPekrTbBLWTnRQm6U0GYABbTMSzijmEqlAg==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/helper-validator-identifier': 7.19.1
