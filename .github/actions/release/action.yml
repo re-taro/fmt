@@ -1,5 +1,9 @@
 name: Release
 description: Release a new npm package
+inputs:
+  npm:
+    description: npm token
+    required: true
 runs:
   using: composite
   steps:
@@ -20,8 +24,8 @@ runs:
       run: pnpm run build
     - name: Publish to NPM
       run: |
-        pnpm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+        pnpm config set //registry.npmjs.org/:_authToken ${{ inputs.npm }}
         pnpm -r publish --access public
       shell: bash
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ inputs.npm }}
