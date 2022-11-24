@@ -15,7 +15,9 @@ jobs:
       - id: release
         uses: google-github-actions/release-please-action@v3
         with:
-          release-type: simple
+          release-type: node
           include-v-in-tag: false
       - if: ${{ steps.release.outputs.release_created }}
         uses: ./.github/actions/release
+        with:
+          npm: ${{ secrets.NPM_TOKEN }}
