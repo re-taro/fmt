@@ -4,8 +4,8 @@ importers:
 
   .:
     specifiers:
-      '@re-taro/eslint-config': workspace:*
-      '@re-taro/eslint-plugin': workspace:*
+      '@re-taro/eslint-config': 1.0.0
+      '@re-taro/eslint-plugin': 1.0.0
       '@types/react': 18.0.25
       eslint: 8.28.0
       prettier: 2.8.0
@@ -24,7 +24,7 @@ importers:
 
   packages/config:
     specifiers:
-      '@re-taro/eslint-plugin': workspace:*
+      '@re-taro/eslint-plugin': 1.0.0
     dependencies:
       '@re-taro/eslint-plugin': link:../plugin
 

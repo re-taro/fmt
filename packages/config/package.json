@@ -30,6 +30,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@re-taro/eslint-plugin": "workspace:*"
+    "@re-taro/eslint-plugin": "1.0.0"
   }
 }
