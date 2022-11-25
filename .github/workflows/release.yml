@@ -8,13 +8,6 @@ on:
 jobs:
   release-please:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        include:
-          - package: @re-taro/eslint-config
-            path: packages/config
-          - package: @re-taro/eslint-plugin
-            path: packages/plugin
     steps:
       - uses: actions/checkout@v3
         with:
@@ -22,14 +15,9 @@ jobs:
       - id: release
         uses: google-github-actions/release-please-action@v3
         with:
-          release-type: node
+          command: manifest
           include-v-in-tag: false
           token: ${{ secrets.GITHUB_TOKEN }}
-          monorepo-tags: true
-          path: ${{ matrix.path }}
-          package-name: ${{ matrix.package }}
-          plugins:
-            - node-workspace
       - if: ${{ steps.release.outputs.release_created }}
         uses: ./.github/actions/release
         with:
