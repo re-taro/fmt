@@ -1,6 +1,6 @@
 {
   "name": "@re-taro/eslint-plugin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "My personal eslint plugin.",
   "repository": {
     "type": "git",

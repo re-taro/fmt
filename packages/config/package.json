@@ -1,6 +1,6 @@
 {
   "name": "@re-taro/eslint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "My personal eslint config.",
   "repository": {
     "type": "git",
@@ -30,6 +30,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@re-taro/eslint-plugin": "1.0.0"
+    "@re-taro/eslint-plugin": "1.1.0"
   }
 }
