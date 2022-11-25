@@ -1,4 +1,22 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "plugins": ["node-workspace"]
+  "packages": {
+    "packages/config": {
+      "component": "eslint-config"
+    },
+    "packages/plugin": {
+      "component": "eslint-plugin"
+    }
+  },
+  "plugins": [
+    {
+      "type": "node-workspace",
+      "merge": false
+    },
+    {
+      "type": "linked-versions",
+      "group-name": "eslint",
+      "groupName": "eslint",
+      "components": ["eslint-config", "eslint-plugin"]
+    }
+  ]
 }
