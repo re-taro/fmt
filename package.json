@@ -21,7 +21,7 @@
     "fmt": "prettier --write ./packages/**/*.ts"
   },
   "devDependencies": {
-    "@re-taro/eslint-config": "1.0.0",
+    "@re-taro/eslint-config": "1.1.0",
     "@re-taro/eslint-plugin": "1.0.0",
     "@types/react": "18.0.25",
     "eslint": "8.28.0",
