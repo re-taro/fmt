@@ -10,7 +10,7 @@
   "plugins": [
     {
       "type": "node-workspace",
-      "merge": false
+      "merge": true
     },
     {
       "type": "linked-versions",

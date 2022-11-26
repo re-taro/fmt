@@ -1,6 +1,6 @@
 {
   "name": "@re-taro/eslint",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "description": "My personal eslint config monorepo.",
   "repository": {
@@ -21,8 +21,8 @@
     "fmt": "prettier --write ./packages/**/*.ts"
   },
   "devDependencies": {
-    "@re-taro/eslint-config": "1.1.0",
-    "@re-taro/eslint-plugin": "1.1.0",
+    "@re-taro/eslint-config": "workspace:*",
+    "@re-taro/eslint-plugin": "workspace:*",
     "@types/react": "18.0.25",
     "eslint": "8.28.0",
     "prettier": "2.8.0",
