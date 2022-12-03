@@ -1,5 +1,6 @@
 import core from "./configs/core";
 import esnext from "./configs/esnext";
+import react from "./configs/react"
 import { definePlugin } from "./utils";
 
 const plugin = definePlugin({
@@ -7,6 +8,7 @@ const plugin = definePlugin({
   configs: {
     core,
     esnext,
+    react,
   },
 });
 
