@@ -31,5 +31,10 @@
   },
   "dependencies": {
     "@re-taro/eslint-plugin": "workspace:*"
+  },
+  "pnpm": {
+    "overrides": {
+      "@re-taro/eslint-plugin": "1.1.0"
+    }
   }
 }
