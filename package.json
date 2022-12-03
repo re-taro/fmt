@@ -15,8 +15,7 @@
   },
   "scripts": {
     "build": "pnpm -r build",
-    "dev": "nr stub",
-    "stub": "pnpm -r --parallel run stub",
+    "dev": "pnpm -r --parallel run stub",
     "lint": "eslint .",
     "fmt": "prettier --write ./packages/**/*.ts"
   },
