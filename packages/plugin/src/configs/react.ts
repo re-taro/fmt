@@ -1,26 +1,26 @@
-import { defineConfig } from "../utils";
-import reactRules from "./rules/react";
+import { defineConfig } from '../utils'
+import reactRules from './rules/react'
 
 export default defineConfig({
   overrides: [
     {
-      files: ["*.jsx", "*.tsx"],
+      files: ['*.jsx', '*.tsx'],
       extends: [
-        "plugin:react/recommended",
-        "plugin:react/jsx-runtime",
-        "plugin:react-hooks/recommended",
+        'plugin:react/recommended',
+        'plugin:react/jsx-runtime',
+        'plugin:react-hooks/recommended',
       ],
       settings: {
         react: {
-          version: "18",
+          version: '18',
         },
       },
       rules: {
-        "jsx-quotes": ["error", "prefer-double"],
-        "react/prop-types": "off",
-        "react/no-unknown-property": "off",
+        'jsx-quotes': ['error', 'prefer-double'],
+        'react/prop-types': 'off',
+        'react/no-unknown-property': 'off',
         ...reactRules,
       },
     },
   ],
-});
+})
