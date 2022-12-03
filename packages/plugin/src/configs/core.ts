@@ -21,7 +21,7 @@ const ignorePatterns = [
 ];
 
 export default defineConfig({
-  plugins: ["@chris-zhu", "html", "eslint-comments"],
+  plugins: ["@re-taro", "html", "eslint-comments"],
   extends: ["standard"],
   ignorePatterns,
   rules: {
