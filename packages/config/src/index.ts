@@ -1,5 +1,3 @@
 export default {
-  extends: [
-    'plugin:@re-taro/react',
-  ],
-};
+  extends: ['plugin:@re-taro/typescript', 'plugin:@re-taro/react'],
+}
