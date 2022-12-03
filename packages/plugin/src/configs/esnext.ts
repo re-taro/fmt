@@ -1,6 +1,6 @@
-import { defineConfig } from "../utils";
-import { resolverExtensions } from "../constants";
-import unicornRules from "./rules/unicorn";
+import { defineConfig } from '../utils'
+import { resolverExtensions } from '../constants'
+import unicornRules from './rules/unicorn'
 
 export default defineConfig({
   env: {
@@ -11,16 +11,16 @@ export default defineConfig({
   },
   parserOptions: {
     ecmaVersion: 2021,
-    sourceType: "module",
+    sourceType: 'module',
   },
   extends: [
-    "plugin:@re-taro/core",
-    "plugin:import/recommended",
-    "plugin:promise/recommended",
+    'plugin:@re-taro/core',
+    'plugin:import/recommended',
+    'plugin:promise/recommended',
   ],
-  plugins: ["unicorn"],
+  plugins: ['unicorn'],
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
         extensions: resolverExtensions,
       },
@@ -28,81 +28,81 @@ export default defineConfig({
   },
   overrides: [
     {
-      files: ["scripts/**/*"],
+      files: ['scripts/**/*'],
       rules: {
-        "no-console": "off",
+        'no-console': 'off',
       },
     },
     {
-      files: ["*.test.ts", "*.test.js", "*.spec.ts", "*.spec.js"],
+      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
       rules: {
-        "no-unused-expressions": "off",
+        'no-unused-expressions': 'off',
       },
     },
   ],
   rules: {
-    "no-var": "error",
-    "prefer-const": [
-      "error",
+    'no-var': 'error',
+    'prefer-const': [
+      'error',
       {
-        destructuring: "any",
+        destructuring: 'any',
         ignoreReadBeforeAssign: true,
       },
     ],
-    "prefer-arrow-callback": [
-      "error",
+    'prefer-arrow-callback': [
+      'error',
       {
         allowNamedFunctions: false,
         allowUnboundThis: true,
       },
     ],
-    "object-shorthand": [
-      "error",
-      "always",
+    'object-shorthand': [
+      'error',
+      'always',
       {
         ignoreConstructors: false,
         avoidQuotes: true,
       },
     ],
-    "prefer-rest-params": "error",
-    "prefer-spread": "error",
-    "prefer-template": "error",
-    "arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],
-    "generator-star-spacing": ["error", { before: true, after: false }],
-    "import/order": [
-      "error",
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
+    'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+    'generator-star-spacing': ['error', { before: true, after: false }],
+    'import/order': [
+      'error',
       {
         groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
-          "type",
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'type',
         ],
         pathGroups: [
           {
-            pattern: "@/**",
-            group: "external",
-            position: "after",
+            pattern: '@/**',
+            group: 'external',
+            position: 'after',
           },
           {
-            pattern: "~/**",
-            group: "external",
-            position: "after",
+            pattern: '~/**',
+            group: 'external',
+            position: 'after',
           },
         ],
-        pathGroupsExcludedImportTypes: ["type"],
+        pathGroupsExcludedImportTypes: ['type'],
       },
     ],
-    "import/first": "error",
-    "import/no-mutable-exports": "error",
-    "import/no-unresolved": "off",
-    "import/no-absolute-path": "off",
-    "import/no-named-as-default-member": "off",
-    "promise/always-return": "off",
-    "promise/catch-or-return": "off",
+    'import/first': 'error',
+    'import/no-mutable-exports': 'error',
+    'import/no-unresolved': 'off',
+    'import/no-absolute-path': 'off',
+    'import/no-named-as-default-member': 'off',
+    'promise/always-return': 'off',
+    'promise/catch-or-return': 'off',
     ...unicornRules,
   },
-});
+})
