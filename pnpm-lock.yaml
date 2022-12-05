@@ -41,7 +41,7 @@ importers:
       eslint-plugin-jsonc: 2.5.0
       eslint-plugin-jsx-a11y: 6.6.1
       eslint-plugin-markdown: 3.0.0
-      eslint-plugin-n: 15.5.1
+      eslint-plugin-n: 15.5.2
       eslint-plugin-promise: 6.1.1
       eslint-plugin-react: 7.31.11
       eslint-plugin-react-hooks: 4.6.0
@@ -54,7 +54,7 @@ importers:
       '@next/eslint-plugin-next': 13.0.6
       '@typescript-eslint/eslint-plugin': 5.45.0_m5boffno4z7ccrly56jywh6jie
       '@typescript-eslint/parser': 5.45.0
-      eslint-config-standard: 17.0.0_lhkiiwwn4vdoqlx6evzkhp5fle
+      eslint-config-standard: 17.0.0_7ef3bnzyfbotzitvm53alt4gkq
       eslint-import-resolver-typescript: 3.5.2_fkfqfehjtk7sk2efaqbgxsuasa
       eslint-plugin-eslint-comments: 3.2.0
       eslint-plugin-html: 7.1.0
@@ -62,7 +62,7 @@ importers:
       eslint-plugin-jsonc: 2.5.0
       eslint-plugin-jsx-a11y: 6.6.1
       eslint-plugin-markdown: 3.0.0
-      eslint-plugin-n: 15.5.1
+      eslint-plugin-n: 15.5.2
       eslint-plugin-promise: 6.1.1
       eslint-plugin-react: 7.31.11
       eslint-plugin-react-hooks: 4.6.0
@@ -1367,7 +1367,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-standard/17.0.0_lhkiiwwn4vdoqlx6evzkhp5fle:
+  /eslint-config-standard/17.0.0_7ef3bnzyfbotzitvm53alt4gkq:
     resolution: {integrity: sha512-/2ks1GKyqSOkH7JFvXJicu0iMpoojkwB+f5Du/1SC0PtBL+s8v30k9njRZ21pm2drKYm2342jFnGWzttxPmZVg==}
     peerDependencies:
       eslint: ^8.0.1
@@ -1376,7 +1376,7 @@ packages:
       eslint-plugin-promise: ^6.0.0
     dependencies:
       eslint-plugin-import: 2.26.0_qu7zm4ibzd2j5qqmxvxkcekf54
-      eslint-plugin-n: 15.5.1
+      eslint-plugin-n: 15.5.2
       eslint-plugin-promise: 6.1.1
     dev: false
 
@@ -1536,8 +1536,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-n/15.5.1:
-    resolution: {integrity: sha512-kAd+xhZm7brHoFLzKLB7/FGRFJNg/srmv67mqb7tto22rpr4wv/LV6RuXzAfv3jbab7+k1wi42PsIhGviywaaw==}
+  /eslint-plugin-n/15.5.2:
+    resolution: {integrity: sha512-9HeGYiC/LwKYMSS+s+3Xtlh+L77g+n1UW5RIuNoj3NIY9pTKkSLy5vEGZf9QL602N2Xa+2hM6qsdVSPse8eMnQ==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       eslint: '>=7.0.0'
