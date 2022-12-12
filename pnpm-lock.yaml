@@ -45,7 +45,7 @@ importers:
       eslint-plugin-promise: 6.1.1
       eslint-plugin-react: 7.31.11
       eslint-plugin-react-hooks: 4.6.0
-      eslint-plugin-unicorn: 45.0.1
+      eslint-plugin-unicorn: 45.0.2
       eslint-plugin-vue: 9.8.0
       eslint-plugin-yml: 1.3.0
       jsonc-eslint-parser: 2.1.0
@@ -66,7 +66,7 @@ importers:
       eslint-plugin-promise: 6.1.1
       eslint-plugin-react: 7.31.11
       eslint-plugin-react-hooks: 4.6.0
-      eslint-plugin-unicorn: 45.0.1
+      eslint-plugin-unicorn: 45.0.2
       eslint-plugin-vue: 9.8.0
       eslint-plugin-yml: 1.3.0
       jsonc-eslint-parser: 2.1.0
@@ -1589,8 +1589,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: false
 
-  /eslint-plugin-unicorn/45.0.1:
-    resolution: {integrity: sha512-tLnIw5oDJJc3ILYtlKtqOxPP64FZLTkZkgeuoN6e7x6zw+rhBjOxyvq2c7577LGxXuIhBYrwisZuKNqOOHp3BA==}
+  /eslint-plugin-unicorn/45.0.2:
+    resolution: {integrity: sha512-Y0WUDXRyGDMcKLiwgL3zSMpHrXI00xmdyixEGIg90gHnj0PcHY4moNv3Ppje/kDivdAy5vUeUr7z211ImPv2gw==}
     engines: {node: '>=14.18'}
     peerDependencies:
       eslint: '>=8.28.0'
