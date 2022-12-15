@@ -26,7 +26,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "13.0.6",
+    "@next/eslint-plugin-next": "13.0.7",
     "@typescript-eslint/eslint-plugin": "5.46.1",
     "@typescript-eslint/parser": "5.46.1",
     "eslint-config-standard": "17.0.0",
