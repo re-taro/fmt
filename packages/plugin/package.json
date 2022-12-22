@@ -48,7 +48,7 @@
     "yaml-eslint-parser": "1.1.0"
   },
   "devDependencies": {
-    "@babel/types": "7.20.5",
+    "@babel/types": "7.20.7",
     "@typescript-eslint/utils": "5.47.0"
   },
   "peerDependencies": {
