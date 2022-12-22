@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.2.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.1.0...eslint-plugin-v1.2.0) (2022-12-22)
+
+
+### Features
+
+* **plugin:** Add React.js rules ([85f0196](https://github.com/re-taro/eslint/commit/85f0196cef307300496a598dcaa941654d62b15a))
+* **plugin:** Add TypeScript rules ([db08a8f](https://github.com/re-taro/eslint/commit/db08a8f729a13b51a5c9ab55db58f78f7b900675))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.0.6 ([67acb49](https://github.com/re-taro/eslint/commit/67acb496da4e83ff393419ae8d67c33f8ebe5428))
+* **deps:** update dependency @next/eslint-plugin-next to v13.0.7 ([c870743](https://github.com/re-taro/eslint/commit/c870743206d6840a60c3188cb1beac984f26145b))
+* **deps:** update dependency @next/eslint-plugin-next to v13.1.0 ([cda599c](https://github.com/re-taro/eslint/commit/cda599c73c5cf73c0c508624f1824daf82547cfb))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.45.0 ([41fcfab](https://github.com/re-taro/eslint/commit/41fcfabcc7dcbb5f8c299a255a2c9b77c0daa1ed))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.45.1 ([c54f478](https://github.com/re-taro/eslint/commit/c54f4786f5081e2fbcc9398945800273b2070e15))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.46.0 ([ff5817b](https://github.com/re-taro/eslint/commit/ff5817b7d689e42d03240be24c00b6b1ad42c1ff))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.46.1 ([450bc8a](https://github.com/re-taro/eslint/commit/450bc8a0c3674f5f7ea45ff6d0c5df72542e840c))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.47.0 ([34ff239](https://github.com/re-taro/eslint/commit/34ff239f79bb537522741756dc215087ff50596b))
+* **deps:** update dependency @typescript-eslint/parser to v5.45.0 ([c74f362](https://github.com/re-taro/eslint/commit/c74f3627ea0fe5029a4b6b70f221e7e2b74d47f8))
+* **deps:** update dependency @typescript-eslint/parser to v5.45.1 ([622d4a6](https://github.com/re-taro/eslint/commit/622d4a69e355ac2fb31d97f69798cacedcff0de5))
+* **deps:** update dependency @typescript-eslint/parser to v5.46.0 ([d1ce326](https://github.com/re-taro/eslint/commit/d1ce3265b583ee09f4b4a2d62e9654c5b9994c80))
+* **deps:** update dependency @typescript-eslint/parser to v5.46.1 ([f95dbc9](https://github.com/re-taro/eslint/commit/f95dbc9572f7271d708e5818aed55f042016b6f1))
+* **deps:** update dependency @typescript-eslint/parser to v5.47.0 ([71b245d](https://github.com/re-taro/eslint/commit/71b245d029ed275f4023459913fa9494ef49d12e))
+* **deps:** update dependency eslint-plugin-n to v15.5.2 ([9ad1b28](https://github.com/re-taro/eslint/commit/9ad1b2884dc6419eaf5d568b155a87637b52a1b0))
+* **deps:** update dependency eslint-plugin-n to v15.6.0 ([4114a8d](https://github.com/re-taro/eslint/commit/4114a8dc9b42064a1d38db9497bf4e765d6dcc50))
+* **deps:** update dependency eslint-plugin-unicorn to v45.0.1 ([88b7992](https://github.com/re-taro/eslint/commit/88b799284c1e65b6bc093a72322dcb4004213549))
+* **deps:** update dependency eslint-plugin-unicorn to v45.0.2 ([4d48c58](https://github.com/re-taro/eslint/commit/4d48c58e9e320b881dfaa9ed5c2b9e1c5e858635))
+* **deps:** update dependency eslint-plugin-yml to v1.3.0 ([d8b1d71](https://github.com/re-taro/eslint/commit/d8b1d71fb742ff7cf87f2d3b84588bfd012b18bd))
+
 ## [1.1.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.0.0...eslint-plugin-v1.1.0) (2022-11-25)
 
 
