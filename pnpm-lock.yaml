@@ -33,7 +33,7 @@ importers:
   packages/plugin:
     specifiers:
       '@babel/types': 7.20.7
-      '@next/eslint-plugin-next': 13.0.7
+      '@next/eslint-plugin-next': 13.1.0
       '@typescript-eslint/eslint-plugin': 5.47.0
       '@typescript-eslint/parser': 5.47.0
       '@typescript-eslint/utils': 5.47.0
@@ -55,7 +55,7 @@ importers:
       jsonc-eslint-parser: 2.1.0
       yaml-eslint-parser: 1.1.0
     dependencies:
-      '@next/eslint-plugin-next': 13.0.7
+      '@next/eslint-plugin-next': 13.1.0
       '@typescript-eslint/eslint-plugin': 5.47.0_u3d3rrkige6drsqrtepmpdrvki
       '@typescript-eslint/parser': 5.47.0
       eslint-config-standard: 17.0.0_mzlnsyyxf7c4r7amgc7dfek2ve
@@ -401,8 +401,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@next/eslint-plugin-next/13.0.7:
-    resolution: {integrity: sha512-Q/Z0V3D3UpKhhzFU6/s17wD4rqJ+ZDGded8UpqNyzX1nUdD+/PnsZexPhSIZ2Yf/c8QESeirmJVRb3eAfCQkRQ==}
+  /@next/eslint-plugin-next/13.1.0:
+    resolution: {integrity: sha512-LGh0iqcEwxs0HmEK96cXXuhofcOGSUGl8Zms279JW8Zq/6GJkXo87gtRpfJrwD+a77nEIdRaORPM91Us3xW0Qw==}
     dependencies:
       glob: 7.1.7
     dev: false
