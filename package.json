@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@re-taro/eslint-config": "1.1.0",
-    "@re-taro/eslint-plugin": "1.1.0",
+    "@re-taro/eslint-plugin": "1.2.0",
     "@types/react": "18.0.26",
     "eslint": "8.30.0",
     "react": "18.2.0",
