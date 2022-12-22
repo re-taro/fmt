@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.2.0](https://github.com/re-taro/eslint/compare/eslint-config-v1.1.0...eslint-config-v1.2.0) (2022-12-22)
+
+
+### Features
+
+* **plugin:** Add React.js rules ([85f0196](https://github.com/re-taro/eslint/commit/85f0196cef307300496a598dcaa941654d62b15a))
+* **plugin:** Add TypeScript rules ([db08a8f](https://github.com/re-taro/eslint/commit/db08a8f729a13b51a5c9ab55db58f78f7b900675))
+
+
+### Bug Fixes
+
+* **ci:** fix faild ci ([230fd2f](https://github.com/re-taro/eslint/commit/230fd2fe3c4737a53ddb565757d7da89d1bf9f0f))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped from 1.1.0 to 1.2.0
+
 ## [1.1.0](https://github.com/re-taro/eslint/compare/eslint-config-v1.0.0...eslint-config-v1.1.0) (2022-11-25)
 
 
