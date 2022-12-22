@@ -1,11 +1,15 @@
 lockfileVersion: 5.4
 
+overrides:
+  '@re-taro/eslint-config': 'workspace:'
+  '@re-taro/eslint-plugin': 'workspace:'
+
 importers:
 
   .:
     specifiers:
-      '@re-taro/eslint-config': workspace:*
-      '@re-taro/eslint-plugin': workspace:*
+      '@re-taro/eslint-config': 'workspace:'
+      '@re-taro/eslint-plugin': 'workspace:'
       '@types/react': 18.0.26
       eslint: 8.30.0
       react: 18.2.0
@@ -22,7 +26,7 @@ importers:
 
   packages/config:
     specifiers:
-      '@re-taro/eslint-plugin': workspace:*
+      '@re-taro/eslint-plugin': 'workspace:'
     dependencies:
       '@re-taro/eslint-plugin': link:../plugin
 
