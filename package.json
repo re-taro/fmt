@@ -1,17 +1,17 @@
 {
   "name": "@re-taro/eslint",
-  "version": "0.0.0",
-  "private": true,
   "description": "My personal eslint config monorepo.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/re-taro/eslint.git"
-  },
+  "private": true,
+  "version": "0.0.0",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
     "email": "me@re-taro.dev",
     "url": "https://re-taro.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/re-taro/eslint.git"
   },
   "scripts": {
     "build": "pnpm -r build",
