@@ -1,17 +1,17 @@
 {
   "name": "@re-taro/eslint-plugin",
-  "version": "1.2.0",
   "description": "My personal eslint plugin.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/re-taro/eslint.git",
-    "directory": "packages/plugin"
-  },
+  "version": "1.2.0",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
     "email": "me@re-taro.dev",
     "url": "https://re-taro.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/re-taro/eslint.git",
+    "directory": "packages/plugin"
   },
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -24,6 +24,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "13.1.0",
@@ -50,8 +53,5 @@
   "devDependencies": {
     "@babel/types": "7.20.7",
     "@typescript-eslint/utils": "5.47.0"
-  },
-  "peerDependencies": {
-    "eslint": "^8.0.0"
   }
 }
