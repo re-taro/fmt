@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.2.0...eslint-plugin-v1.3.0) (2022-12-23)
+
+
+### Features
+
+* add to root ([adc7b73](https://github.com/re-taro/eslint/commit/adc7b73e4ffe344205fdee49f926e198031c6551))
+* Create json and yaml rule ([274a857](https://github.com/re-taro/eslint/commit/274a857942d53d8cf7f7c88e516868e4073245ff))
+* Create markdown rule ([1f11ec5](https://github.com/re-taro/eslint/commit/1f11ec5041a80659c6764e41b00c4b2bba2029fe))
+* Create next.js rule ([1e60e65](https://github.com/re-taro/eslint/commit/1e60e65484fade2c066fff92558c90cbe810d54f))
+* Create vue rule ([9ec6ff7](https://github.com/re-taro/eslint/commit/9ec6ff7c5d155f778ee8d9f88e85d6eee70f4239))
+
 ## [1.2.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.1.0...eslint-plugin-v1.2.0) (2022-12-22)
 
 
