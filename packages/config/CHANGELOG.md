@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.0](https://github.com/re-taro/eslint/compare/eslint-config-v1.2.0...eslint-config-v1.3.0) (2022-12-23)
+
+
+### Features
+
+* Add to config ([e7f999f](https://github.com/re-taro/eslint/commit/e7f999ffba97358b21daf6b72344758a5e743c5e))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped from 1.2.0 to 1.3.0
+
 ## [1.2.0](https://github.com/re-taro/eslint/compare/eslint-config-v1.1.0...eslint-config-v1.2.0) (2022-12-22)
 
 
