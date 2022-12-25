@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.0...eslint-plugin-v1.3.1) (2022-12-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.1.1 ([bc2a8fb](https://github.com/re-taro/eslint/commit/bc2a8fb93067e37428c24736213ebba740a49e49))
+* **deps:** update dependency eslint-plugin-yml to v1.4.0 ([5ff7c8d](https://github.com/re-taro/eslint/commit/5ff7c8dc153a1e752ea922ab0738beecbbafe601))
+
 ## [1.3.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.2.0...eslint-plugin-v1.3.0) (2022-12-23)
 
 
