@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.3.3](https://github.com/re-taro/eslint/compare/eslint-config-v1.3.2...eslint-config-v1.3.3) (2022-12-31)
+
+
+### Bug Fixes
+
+* **deps:** roll back dependency @re-taro/eslint-plugin to 1.3.1 ([32a171e](https://github.com/re-taro/eslint/commit/32a171e442c105971a02806baa32d06612a1ce49))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped from 1.3.1 to 1.3.3
+
 ## [1.3.2](https://github.com/re-taro/eslint/compare/eslint-config-v1.3.1...eslint-config-v1.3.2) (2022-12-27)
 
 
