@@ -25,7 +25,7 @@ runs:
     - name: Publish to NPM
       run: |
         pnpm config set //registry.npmjs.org/:_authToken ${{ inputs.npm }}
-        pnpm -r publish --access public
+        pnpm -r publish --access public --no-git-checks
       shell: bash
       env:
         NODE_AUTH_TOKEN: ${{ inputs.npm }}
