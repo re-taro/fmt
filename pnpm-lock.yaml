@@ -42,7 +42,7 @@ importers:
       eslint-plugin-eslint-comments: 3.2.0
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: 2.26.0
-      eslint-plugin-jsonc: 2.5.0
+      eslint-plugin-jsonc: 2.6.0
       eslint-plugin-jsx-a11y: 6.6.1
       eslint-plugin-markdown: 3.0.0
       eslint-plugin-n: 15.6.0
@@ -63,7 +63,7 @@ importers:
       eslint-plugin-eslint-comments: 3.2.0
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: 2.26.0_txsy7fny5tquyva43ik5fvxg7i
-      eslint-plugin-jsonc: 2.5.0
+      eslint-plugin-jsonc: 2.6.0
       eslint-plugin-jsx-a11y: 6.6.1
       eslint-plugin-markdown: 3.0.0
       eslint-plugin-n: 15.6.0
@@ -1497,8 +1497,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jsonc/2.5.0:
-    resolution: {integrity: sha512-G257khwkrOQ5MJpSzz4yQh5K12W4xFZRcHmVlhVFWh2GCLDX+JwHnmkQoUoFDbOieSPBMsPFZDTJScwrXiWlIg==}
+  /eslint-plugin-jsonc/2.6.0:
+    resolution: {integrity: sha512-4bA9YTx58QaWalua1Q1b82zt7eZMB7i+ed8q8cKkbKP75ofOA2SXbtFyCSok7RY6jIXeCqQnKjN9If8zCgv6PA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
