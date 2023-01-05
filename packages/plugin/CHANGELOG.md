@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.5](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.4...eslint-plugin-v1.3.5) (2023-01-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-jsonc to v2.6.0 ([d6367db](https://github.com/re-taro/eslint/commit/d6367dbdf051d20c5be93cb41a81cde6e4d0463c))
+
 ## [1.3.4](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.3...eslint-plugin-v1.3.4) (2023-01-03)
 
 
