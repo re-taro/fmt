@@ -43,7 +43,7 @@ importers:
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: 2.26.0
       eslint-plugin-jsonc: 2.6.0
-      eslint-plugin-jsx-a11y: 6.7.0
+      eslint-plugin-jsx-a11y: 6.7.1
       eslint-plugin-markdown: 3.0.0
       eslint-plugin-n: 15.6.1
       eslint-plugin-promise: 6.1.1
@@ -64,7 +64,7 @@ importers:
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: 2.26.0_ufw624d4nmtepyujwh2wzs33fe
       eslint-plugin-jsonc: 2.6.0
-      eslint-plugin-jsx-a11y: 6.7.0
+      eslint-plugin-jsx-a11y: 6.7.1
       eslint-plugin-markdown: 3.0.0
       eslint-plugin-n: 15.6.1
       eslint-plugin-promise: 6.1.1
@@ -1535,8 +1535,8 @@ packages:
       natural-compare: 1.4.0
     dev: false
 
-  /eslint-plugin-jsx-a11y/6.7.0:
-    resolution: {integrity: sha512-EGGRKhzejSzXKtjmEjWNtr4SK/DkMkSzkBH7g7e7moBDXZXrqaUIxkmD7uF93upMysc4dKYEJwupu7Dff+ShwA==}
+  /eslint-plugin-jsx-a11y/6.7.1:
+    resolution: {integrity: sha512-63Bog4iIethyo8smBklORknVjB0T2dwB8Mr/hIC+fBS0uyHdYYpzM/Ed+YC8VxTjlXHEWFOdmgwcDn1U2L9VCA==}
     engines: {node: '>=4.0'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
