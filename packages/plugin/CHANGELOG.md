@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.7](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.6...eslint-plugin-v1.3.7) (2023-01-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.1.2 ([aafecd2](https://github.com/re-taro/eslint/commit/aafecd211513d012e47577c733a90619c4cfdabb))
+* **deps:** update dependency eslint-import-resolver-typescript to v3.5.3 ([1a2a263](https://github.com/re-taro/eslint/commit/1a2a263686406c36a9cfd84161a4435b13f4ea0b))
+* **deps:** update dependency eslint-plugin-import to v2.27.4 ([9018c3b](https://github.com/re-taro/eslint/commit/9018c3b8af14cc2f57e32327b6bdac9e24beb978))
+* **deps:** update dependency eslint-plugin-jsx-a11y to v6.7.1 ([ab8cb3e](https://github.com/re-taro/eslint/commit/ab8cb3e3c20a65f23c75a674df51b79c8c0f9cd0))
+* **deps:** update dependency eslint-plugin-n to v15.6.1 ([315d5fa](https://github.com/re-taro/eslint/commit/315d5fa6ec552065e630fad1ec713453753f7161))
+* **deps:** update dependency eslint-plugin-react to v7.32.0 ([ace3d6f](https://github.com/re-taro/eslint/commit/ace3d6ff8afe755efe5120595d667ceae9028714))
+* **deps:** update dependency eslint-plugin-vue to v9.9.0 ([f61328f](https://github.com/re-taro/eslint/commit/f61328f08c92156ed8cd1c8cb54fa82c8612f6f8))
+
 ## [1.3.6](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.5...eslint-plugin-v1.3.6) (2023-01-10)
 
 

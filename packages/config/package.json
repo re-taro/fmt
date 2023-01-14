@@ -1,7 +1,7 @@
 {
   "name": "@re-taro/eslint-config",
   "description": "My personal eslint config.",
-  "version": "1.3.6",
+  "version": "1.3.7",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
@@ -30,6 +30,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@re-taro/eslint-plugin": "1.3.6"
+    "@re-taro/eslint-plugin": "1.3.7"
   }
 }
