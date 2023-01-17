@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.3.8](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.7...eslint-plugin-v1.3.8) (2023-01-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.48.2 ([b58b0e9](https://github.com/re-taro/eslint/commit/b58b0e9eaf80e623303812aa1476cc86cfde79b4))
+* **deps:** update dependency @typescript-eslint/parser to v5.48.2 ([2529b13](https://github.com/re-taro/eslint/commit/2529b13ee8bb7bb8078816b50ef1b04425f64a36))
+* **deps:** update eslint and prettier ([2791ae2](https://github.com/re-taro/eslint/commit/2791ae2207a026efca0a2c50911f5a4d0dc1baf1))
+
 ## [1.3.7](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.6...eslint-plugin-v1.3.7) (2023-01-14)
 
 
