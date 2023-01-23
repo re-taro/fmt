@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@next/eslint-plugin-next": "13.1.5",
-    "@typescript-eslint/eslint-plugin": "5.48.2",
+    "@typescript-eslint/eslint-plugin": "5.49.0",
     "@typescript-eslint/parser": "5.48.2",
     "eslint-config-standard": "17.0.0",
     "eslint-import-resolver-typescript": "3.5.3",
