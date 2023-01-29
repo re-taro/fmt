@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.12](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.11...eslint-plugin-v1.3.12) (2023-01-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-react to v7.32.2 ([7343d39](https://github.com/re-taro/eslint/commit/7343d39120d7b410d0f201018ddba188a08f1cc7))
+
 ## [1.3.11](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.10...eslint-plugin-v1.3.11) (2023-01-28)
 
 
