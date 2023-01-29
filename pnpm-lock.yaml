@@ -11,7 +11,7 @@ importers:
       '@re-taro/eslint-config': 'workspace:'
       '@re-taro/eslint-plugin': 'workspace:'
       '@types/react': 18.0.27
-      eslint: 8.32.0
+      eslint: 8.33.0
       react: 18.2.0
       typescript: 4.9.4
       unbuild: 1.1.1
@@ -19,7 +19,7 @@ importers:
       '@re-taro/eslint-config': link:packages/config
       '@re-taro/eslint-plugin': link:packages/plugin
       '@types/react': 18.0.27
-      eslint: 8.32.0
+      eslint: 8.33.0
       react: 18.2.0
       typescript: 4.9.4
       unbuild: 1.1.1
@@ -1700,13 +1700,13 @@ packages:
     dependencies:
       eslint-visitor-keys: 2.1.0
 
-  /eslint-utils/3.0.0_eslint@8.32.0:
+  /eslint-utils/3.0.0_eslint@8.33.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.32.0
+      eslint: 8.33.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -1723,8 +1723,8 @@ packages:
     resolution: {integrity: sha512-mQ+suqKJVyeuwGYHAdjMFqjCyfl8+Ldnxuyp3ldiMBFKkvytrXUZWaiPCEav8qDHKty44bD+qV1IP4T+w+xXRA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /eslint/8.32.0:
-    resolution: {integrity: sha512-nETVXpnthqKPFyuY2FNjz/bEd6nbosRgKbkgS/y1C7LJop96gYHWpiguLecMHQ2XCPxn77DS0P+68WzG6vkZSQ==}
+  /eslint/8.33.0:
+    resolution: {integrity: sha512-WjOpFQgKK8VrCnAtl8We0SUOy/oVZ5NHykyMiagV1M9r8IFpIJX7DduK6n1mpfhlG7T1NLWm2SuD8QB7KFySaA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -1739,7 +1739,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.32.0
+      eslint-utils: 3.0.0_eslint@8.33.0
       eslint-visitor-keys: 3.3.0
       espree: 9.4.1
       esquery: 1.4.0
