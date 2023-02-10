@@ -51,7 +51,7 @@ importers:
       eslint-plugin-react-hooks: 4.6.0
       eslint-plugin-unicorn: 45.0.2
       eslint-plugin-vue: 9.9.0
-      eslint-plugin-yml: 1.4.0
+      eslint-plugin-yml: 1.5.0
       jsonc-eslint-parser: 2.1.0
       yaml-eslint-parser: 1.1.0
     dependencies:
@@ -72,7 +72,7 @@ importers:
       eslint-plugin-react-hooks: 4.6.0
       eslint-plugin-unicorn: 45.0.2
       eslint-plugin-vue: 9.9.0
-      eslint-plugin-yml: 1.4.0
+      eslint-plugin-yml: 1.5.0
       jsonc-eslint-parser: 2.1.0
       yaml-eslint-parser: 1.1.0
     devDependencies:
@@ -1658,8 +1658,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-yml/1.4.0:
-    resolution: {integrity: sha512-vzggXNfPKa+arIaNUGoC3DPRZCxNty+xD/v9xOcE5D3Bj9SbgIrEobqVB35I8QxHd2YjL/dOS0xIIFmjAalwbw==}
+  /eslint-plugin-yml/1.5.0:
+    resolution: {integrity: sha512-iygN054g+ZrnYmtOXMnT+sx9iDNXt89/m0+506cQHeG0+5jJN8hY5iOPQLd3yfd50AfK/mSasajBWruf1SoHpQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
