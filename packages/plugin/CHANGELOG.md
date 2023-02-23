@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.17...eslint-plugin-v1.4.0) (2023-02-23)
+
+
+### Features
+
+* update react.js rule and best practice ([3f35f55](https://github.com/re-taro/eslint/commit/3f35f552b1731ba1f4367ee991ca5787c2f69063))
+
 ## [1.3.17](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.3.16...eslint-plugin-v1.3.17) (2023-02-20)
 
 
