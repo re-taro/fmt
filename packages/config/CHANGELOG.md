@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.4.1](https://github.com/re-taro/eslint/compare/eslint-config-v1.4.0...eslint-config-v1.4.1) (2023-02-23)
+
+
+### Bug Fixes
+
+* **deps:** fix wrong protocol ([82974c8](https://github.com/re-taro/eslint/commit/82974c82d103a3dbd5726ca2a4f85d87e46f60ac))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped to 1.4.1
+
 ## [1.4.0](https://github.com/re-taro/eslint/compare/eslint-config-v1.3.17...eslint-config-v1.4.0) (2023-02-23)
 
 
