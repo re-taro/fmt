@@ -19,18 +19,12 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "@re-taro/eslint-config": "1.3.17",
-    "@re-taro/eslint-plugin": "1.3.17",
+    "@re-taro/eslint-config": "workspace:",
+    "@re-taro/eslint-plugin": "workspace:",
     "@types/react": "18.0.28",
     "eslint": "8.34.0",
     "react": "18.2.0",
     "typescript": "4.9.5",
     "unbuild": "1.1.2"
-  },
-  "pnpm": {
-    "overrides": {
-      "@re-taro/eslint-config": "workspace:",
-      "@re-taro/eslint-plugin": "workspace:"
-    }
   }
 }
