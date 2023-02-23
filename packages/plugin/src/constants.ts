@@ -1,5 +1,5 @@
-import config from 'eslint-config-standard/.eslintrc.json'
-import type { TSESLint } from '@typescript-eslint/utils'
+import config from 'eslint-config-standard/.eslintrc.json';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 export const TSEquivalents = [
   'comma-spacing',
@@ -16,11 +16,10 @@ export const TSEquivalents = [
   'no-useless-constructor',
   'no-use-before-define',
   'quotes',
-  'semi',
   'space-before-function-paren',
   'space-infix-ops',
   'object-curly-spacing',
-] as const
+] as const;
 
 export const VueEquivalents = [
   'array-bracket-spacing',
@@ -53,9 +52,9 @@ export const VueEquivalents = [
   'space-infix-ops',
   'space-unary-ops',
   'template-curly-spacing',
-] as const
+] as const;
 
-export const configStandard = config as unknown as TSESLint.Linter.Config
+export const configStandard = config as unknown as TSESLint.Linter.Config;
 
-export const resolverExtensions = ['.js', '.jsx', '.mjs', '.cjs', '.json']
-export const resolverExtensionsWithTS = ['.ts', '.tsx', ...resolverExtensions]
+export const resolverExtensions = ['.js', '.jsx', '.mjs', '.cjs', '.json'];
+export const resolverExtensionsWithTS = ['.ts', '.tsx', ...resolverExtensions];

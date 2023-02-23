@@ -1,4 +1,4 @@
-import { defineRules } from '../../utils'
+import { defineRules } from '../../utils';
 
 export default defineRules({
   'react/button-has-type': 'off',
@@ -8,7 +8,7 @@ export default defineRules({
   'react/forbid-prop-types': ['error', { forbid: ['any', 'array'] }],
   'react/function-component-definition': [
     'error',
-    { namedComponents: 'arrow-function', unnamedComponents: 'arrow-function' },
+    { namedComponents: 'function-expression' },
   ],
   'react/jsx-fragments': ['error', 'syntax'],
   'react/no-access-state-in-setstate': 'error',
@@ -64,4 +64,4 @@ export default defineRules({
   'react/jsx-props-no-multi-spaces': 'error',
   'react/jsx-tag-spacing': 'error',
   'react/jsx-wrap-multilines': 'error',
-})
+});
