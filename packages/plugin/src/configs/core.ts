@@ -1,6 +1,6 @@
-import { defineConfig } from '../utils'
-import bestPracticeRules from './rules/best-practice'
-import eslintComments from './rules/eslint-comments'
+import { defineConfig } from '../utils';
+import bestPracticeRules from './rules/best-practice';
+import eslintComments from './rules/eslint-comments';
 
 const ignorePatterns = [
   '*.min.*',
@@ -18,7 +18,7 @@ const ignorePatterns = [
   '!.github',
   '!.vitepress',
   '!.vscode',
-]
+];
 
 export default defineConfig({
   plugins: ['@re-taro', 'html', 'eslint-comments'],
@@ -78,4 +78,4 @@ export default defineConfig({
     ...eslintComments,
     ...bestPracticeRules,
   },
-})
+});

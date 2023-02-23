@@ -7,4 +7,4 @@ export default {
     'plugin:@re-taro/vue',
     'plugin:@re-taro/yaml',
   ],
-}
+};

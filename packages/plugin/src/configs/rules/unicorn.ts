@@ -1,4 +1,4 @@
-import { defineRules } from '../../utils'
+import { defineRules } from '../../utils';
 
 export default defineRules({
   'unicorn/error-message': 'error',
@@ -13,4 +13,4 @@ export default defineRules({
   'unicorn/prefer-text-content': 'error',
   'unicorn/prefer-type-error': 'error',
   'unicorn/throw-new-error': 'error',
-})
+});

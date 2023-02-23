@@ -1,4 +1,4 @@
-import { defineConfig } from '../utils'
+import { defineConfig } from '../utils';
 
 export default defineConfig({
   extends: [
@@ -63,4 +63,4 @@ export default defineConfig({
       },
     },
   ],
-})
+});

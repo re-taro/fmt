@@ -1,4 +1,4 @@
-import { defineConfig } from '../utils'
+import { defineConfig } from '../utils';
 
 export default defineConfig({
   extends: [
@@ -24,4 +24,4 @@ export default defineConfig({
     'jsx-a11y/role-has-required-aria-props': 'warn',
     'jsx-a11y/role-supports-aria-props': 'warn',
   },
-})
+});

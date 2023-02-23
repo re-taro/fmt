@@ -1,5 +1,5 @@
-import { VueEquivalents } from '../constants'
-import { defineConfig, fromEntries, ruleFromStandard } from '../utils'
+import { VueEquivalents } from '../constants';
+import { defineConfig, fromEntries, ruleFromStandard } from '../utils';
 
 export default defineConfig({
   overrides: [
@@ -46,4 +46,4 @@ export default defineConfig({
       },
     },
   ],
-})
+});

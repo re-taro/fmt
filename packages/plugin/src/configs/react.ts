@@ -1,5 +1,5 @@
-import { defineConfig } from '../utils'
-import reactRules from './rules/react'
+import { defineConfig } from '../utils';
+import reactRules from './rules/react';
 
 export default defineConfig({
   overrides: [
@@ -23,4 +23,4 @@ export default defineConfig({
       },
     },
   ],
-})
+});

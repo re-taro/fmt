@@ -1,5 +1,5 @@
-import { defineConfig, fromEntries, ruleFromStandard } from '../utils'
-import { TSEquivalents, resolverExtensionsWithTS } from '../constants'
+import { defineConfig, fromEntries, ruleFromStandard } from '../utils';
+import { TSEquivalents, resolverExtensionsWithTS } from '../constants';
 
 export default defineConfig({
   extends: ['plugin:@re-taro/esnext', 'plugin:import/typescript'],
@@ -93,4 +93,4 @@ export default defineConfig({
       },
     },
   ],
-})
+});

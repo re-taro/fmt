@@ -1,4 +1,4 @@
-import { defineRules } from '../../utils'
+import { defineRules } from '../../utils';
 
 export default defineRules({
   'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
@@ -9,4 +9,4 @@ export default defineRules({
   'eslint-comments/no-unused-enable': 'error',
   'eslint-comments/no-restricted-disable': 'off',
   'eslint-comments/no-use': 'off',
-})
+});

@@ -1,6 +1,6 @@
-import { defineConfig } from '../utils'
-import { resolverExtensions } from '../constants'
-import unicornRules from './rules/unicorn'
+import { defineConfig } from '../utils';
+import { resolverExtensions } from '../constants';
+import unicornRules from './rules/unicorn';
 
 export default defineConfig({
   env: {
@@ -105,4 +105,4 @@ export default defineConfig({
     'promise/catch-or-return': 'off',
     ...unicornRules,
   },
-})
+});
