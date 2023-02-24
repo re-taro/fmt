@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-const Component: FC = function() {
+const Component: FC = () => {
   const click = () => {};
   return (
     <button onClick={click} onBlur={() => {}} disabled>

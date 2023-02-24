@@ -8,7 +8,7 @@ export default defineRules({
   'react/forbid-prop-types': ['error', { forbid: ['any', 'array'] }],
   'react/function-component-definition': [
     'error',
-    { namedComponents: 'function-expression' },
+    { namedComponents: 'arrow-function' },
   ],
   'react/jsx-fragments': ['error', 'syntax'],
   'react/no-access-state-in-setstate': 'error',
