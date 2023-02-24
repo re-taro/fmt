@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.4.1...eslint-plugin-v1.5.0) (2023-02-24)
+
+
+### Features
+
+* update react fc error ([f3c40de](https://github.com/re-taro/eslint/commit/f3c40decd136adebd1ee82de9da6a69430044a6c))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.2.0 ([db18026](https://github.com/re-taro/eslint/commit/db180267f3c7882b8a741a98e68fb1a637725f96))
+
 ## [1.4.1](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.4.0...eslint-plugin-v1.4.1) (2023-02-23)
 
 
