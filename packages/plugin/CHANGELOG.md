@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.5.3...eslint-plugin-v1.6.0) (2023-03-05)
+
+
+### Features
+
+* add redos linter to plugin rule ([e6d21da](https://github.com/re-taro/eslint/commit/e6d21da12902d38f4f9aa9e25a370daa0f8f1405))
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-unicorn to v46 ([a9799b5](https://github.com/re-taro/eslint/commit/a9799b5db5aa195c07a325e2f96f28e9662280be))
+
 ## [1.5.3](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.5.2...eslint-plugin-v1.5.3) (2023-03-01)
 
 
