@@ -17,6 +17,7 @@ export default defineConfig({
     'plugin:@re-taro/core',
     'plugin:import/recommended',
     'plugin:promise/recommended',
+    'plugin:redos/recommended',
   ],
   plugins: ['unicorn'],
   settings: {
