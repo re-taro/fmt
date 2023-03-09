@@ -49,7 +49,7 @@ importers:
       eslint-plugin-unicorn: 46.0.0
       eslint-plugin-vue: 9.9.0
       eslint-plugin-yml: 1.5.0
-      jsonc-eslint-parser: 2.1.0
+      jsonc-eslint-parser: 2.2.0
       yaml-eslint-parser: 1.1.0
     dependencies:
       '@next/eslint-plugin-next': 13.2.3
@@ -71,7 +71,7 @@ importers:
       eslint-plugin-unicorn: 46.0.0
       eslint-plugin-vue: 9.9.0
       eslint-plugin-yml: 1.5.0
-      jsonc-eslint-parser: 2.1.0
+      jsonc-eslint-parser: 2.2.0
       yaml-eslint-parser: 1.1.0
     devDependencies:
       '@babel/types': 7.21.2
@@ -876,12 +876,6 @@ packages:
     dependencies:
       acorn: 8.8.2
 
-  /acorn/8.8.1:
-    resolution: {integrity: sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-    dev: false
-
   /acorn/8.8.2:
     resolution: {integrity: sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==}
     engines: {node: '>=0.4.0'}
@@ -1534,7 +1528,7 @@ packages:
       eslint: '>=6.0.0'
     dependencies:
       eslint-utils: 3.0.0
-      jsonc-eslint-parser: 2.1.0
+      jsonc-eslint-parser: 2.2.0
       natural-compare: 1.4.0
     dev: false
 
@@ -2437,11 +2431,11 @@ packages:
     hasBin: true
     dev: true
 
-  /jsonc-eslint-parser/2.1.0:
-    resolution: {integrity: sha512-qCRJWlbP2v6HbmKW7R3lFbeiVWHo+oMJ0j+MizwvauqnCV/EvtAeEeuCgoc/ErtsuoKgYB8U4Ih8AxJbXoE6/g==}
+  /jsonc-eslint-parser/2.2.0:
+    resolution: {integrity: sha512-x5QjzBOORd+T2EjErIxJnkOEbLVEdD1ILEeBbIJt8Eq/zUn7P7M8qdnWiNVBK5f8oxnJpc6SBHOeeIEl/swPjg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
-      acorn: 8.8.1
+      acorn: 8.8.2
       eslint-visitor-keys: 3.3.0
       espree: 9.4.1
       semver: 7.3.8
