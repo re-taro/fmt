@@ -49,7 +49,7 @@
     "eslint-plugin-vue": "9.9.0",
     "eslint-plugin-yml": "1.5.0",
     "jsonc-eslint-parser": "2.2.0",
-    "yaml-eslint-parser": "1.1.0"
+    "yaml-eslint-parser": "1.2.0"
   },
   "devDependencies": {
     "@babel/types": "7.21.2",
