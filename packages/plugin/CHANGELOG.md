@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.6.2](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.6.1...eslint-plugin-v1.6.2) (2023-03-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.2.4 ([b9dc369](https://github.com/re-taro/eslint/commit/b9dc369fb57c2dae2737452fef31125369f68afa))
+* **deps:** update dependency jsonc-eslint-parser to v2.2.0 ([b09e454](https://github.com/re-taro/eslint/commit/b09e454c2e033718529f2d81f0be970abe3bf2db))
+* **deps:** update dependency yaml-eslint-parser to v1.2.0 ([ef3c3d6](https://github.com/re-taro/eslint/commit/ef3c3d623918b5b5f050e357986e75eb4ece3dd2))
+
 ## [1.6.1](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.6.0...eslint-plugin-v1.6.1) (2023-03-07)
 
 
