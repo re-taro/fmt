@@ -45,7 +45,7 @@ importers:
       eslint-plugin-promise: 6.1.1
       eslint-plugin-react: 7.32.2
       eslint-plugin-react-hooks: 4.6.0
-      eslint-plugin-redos: 4.5.0-beta.2
+      eslint-plugin-redos: 4.5.0-beta.3
       eslint-plugin-unicorn: 46.0.0
       eslint-plugin-vue: 9.9.0
       eslint-plugin-yml: 1.5.0
@@ -67,7 +67,7 @@ importers:
       eslint-plugin-promise: 6.1.1
       eslint-plugin-react: 7.32.2
       eslint-plugin-react-hooks: 4.6.0
-      eslint-plugin-redos: 4.5.0-beta.2
+      eslint-plugin-redos: 4.5.0-beta.3
       eslint-plugin-unicorn: 46.0.0
       eslint-plugin-vue: 9.9.0
       eslint-plugin-yml: 1.5.0
@@ -1635,13 +1635,13 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: false
 
-  /eslint-plugin-redos/4.5.0-beta.2:
-    resolution: {integrity: sha512-XlfaCrQ66O3vZ+1z3H+glkPzn3Qii4h5+M2Vw8C4lXliBQeplp1//mDD0bPoAh29y3NCFYtygCuy3zLdCEhutQ==}
+  /eslint-plugin-redos/4.5.0-beta.3:
+    resolution: {integrity: sha512-O0jn2pFka57pZhjYiQps9OCsFMRACOShwlVcdS87Nk9p7jd2XNXNQpAYBl07A7BMm9yva/P2badYnNJOi0a5+g==}
     engines: {node: '>=14'}
     peerDependencies:
       eslint: '>= 3'
     dependencies:
-      recheck: 4.5.0-beta.2
+      recheck: 4.5.0-beta.3
     dev: false
 
   /eslint-plugin-unicorn/46.0.0:
@@ -2938,44 +2938,46 @@ packages:
       type-fest: 0.6.0
     dev: false
 
-  /recheck-jar/4.5.0-beta.2:
-    resolution: {integrity: sha512-N9LpoGd8Andzfb5mtpFR94Vvdm5tIWA9B78Rw2VhZV0ixrIZORhbXOYtcp7OZOxj0pU7hIi8/z/PErVmqSeUzA==}
+  /recheck-jar/4.5.0-beta.3:
+    resolution: {integrity: sha512-kua+0eN6DhO+GY0Wg60KNId1gn8qUVcL5nSqBj/EKVHmR+/CwEF9AYU4HM7vwIWdwOw2BDuGgqotlG+L0OB26w==}
     requiresBuild: true
     dev: false
     optional: true
 
-  /recheck-linux-x64/4.5.0-beta.2:
-    resolution: {integrity: sha512-E8nQSJuyDP7ZCWAzM3H2o1wS3hWfODsyv4DkkKSiVQ5L7w5VH7K2FDarT8fCTn7vdl1pmtcFVZH9DeKJ+AnBfw==}
+  /recheck-linux-x64/4.5.0-beta.3:
+    resolution: {integrity: sha512-JFv2lH7NqLLjUBlTgZOS1Ssb1jImJtu2Mjr8U3BqInSrQHdaAjicPYpuvX+3I7YRYx1BQ+rjCWpdjD4P5+HZpg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: false
     optional: true
 
-  /recheck-macos-x64/4.5.0-beta.2:
-    resolution: {integrity: sha512-w3rjfNxmDEcXWoMwKZ7aLk9FJL5pyHmAhmfycl+o7vX7laOgLc+ys42mHj9Duc3y+1QhCuUHha7ERx0WYTy6bw==}
+  /recheck-macos-x64/4.5.0-beta.3:
+    resolution: {integrity: sha512-0rc7UY1hcWztN7NQKPM6IzV+rW8gZceHAzknH9ltznDjvOxt6jWof3k8s4/pOBrzujvDwK84Ym41ADvRvBLrqQ==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: false
     optional: true
 
-  /recheck-windows-x64/4.5.0-beta.2:
-    resolution: {integrity: sha512-uZkTQO8GhqGja8spqq6VJWLsrHybeNmxTN44ErhvoGKEB+8fXf7hjoCkx0SxC2oMVzNapOKKiYH48rThDh7IPQ==}
+  /recheck-windows-x64/4.5.0-beta.3:
+    resolution: {integrity: sha512-W3Nr5ndLdufjDAKIeShtDE45+Sby/TBn3jPvoeB4nSVOcnKUtcTKo6tuUoy531w7zcEtGZDmo+mEecq/+Y2y7g==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: false
     optional: true
 
-  /recheck/4.5.0-beta.2:
-    resolution: {integrity: sha512-rM1UX0Uzefd5emuzhA29T51PzE+c6A0BzcXZ501vs0mPyobNmJCtVcXQpZZuRutLVf6ibNn09zHa9bPYp2m+3w==}
+  /recheck/4.5.0-beta.3:
+    resolution: {integrity: sha512-CYAoxLIMygFzeNKQ+To+SOKiFVNVu2LQQ8R5Q3NtXJ83Mlz2c+b3s1k8FAry81lsBB9HpOszXHg4fNuE5vXStA==}
     engines: {node: '>=14'}
+    dependencies:
+      synckit: 0.8.5
     optionalDependencies:
-      recheck-jar: 4.5.0-beta.2
-      recheck-linux-x64: 4.5.0-beta.2
-      recheck-macos-x64: 4.5.0-beta.2
-      recheck-windows-x64: 4.5.0-beta.2
+      recheck-jar: 4.5.0-beta.3
+      recheck-linux-x64: 4.5.0-beta.3
+      recheck-macos-x64: 4.5.0-beta.3
+      recheck-windows-x64: 4.5.0-beta.3
     dev: false
 
   /regenerator-runtime/0.13.11:
@@ -3228,6 +3230,14 @@ packages:
       tslib: 2.4.1
     dev: false
 
+  /synckit/0.8.5:
+    resolution: {integrity: sha512-L1dapNV6vu2s/4Sputv8xGsCdAVlb5nRDMFU/E27D44l5U6cw1g0dGd45uLc+OXjNMmF4ntiMdCimzcjFKQI8Q==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    dependencies:
+      '@pkgr/utils': 2.3.1
+      tslib: 2.5.0
+    dev: false
+
   /tapable/2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
@@ -3269,6 +3279,10 @@ packages:
 
   /tslib/2.4.1:
     resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
+    dev: false
+
+  /tslib/2.5.0:
+    resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
     dev: false
 
   /tsutils/3.21.0:
