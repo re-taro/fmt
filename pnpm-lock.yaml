@@ -38,7 +38,7 @@ importers:
       eslint-plugin-eslint-comments: 3.2.0
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: 2.27.5
-      eslint-plugin-jsonc: 2.6.0
+      eslint-plugin-jsonc: 2.7.0
       eslint-plugin-jsx-a11y: 6.7.1
       eslint-plugin-markdown: 3.0.0
       eslint-plugin-n: 15.6.1
@@ -60,7 +60,7 @@ importers:
       eslint-plugin-eslint-comments: 3.2.0
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: 2.27.5_k4aarorcl7u5y6ippokdyiiweu
-      eslint-plugin-jsonc: 2.6.0
+      eslint-plugin-jsonc: 2.7.0
       eslint-plugin-jsx-a11y: 6.7.1
       eslint-plugin-markdown: 3.0.0
       eslint-plugin-n: 15.6.1
@@ -1543,13 +1543,13 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jsonc/2.6.0:
-    resolution: {integrity: sha512-4bA9YTx58QaWalua1Q1b82zt7eZMB7i+ed8q8cKkbKP75ofOA2SXbtFyCSok7RY6jIXeCqQnKjN9If8zCgv6PA==}
+  /eslint-plugin-jsonc/2.7.0:
+    resolution: {integrity: sha512-DZgC71h/hZ9t5k/OGAKOMdJCleg2neZLL7No+YYi2ZMroCN4X5huZdrLf1USbrc6UTHwYujd1EDwXHg1qJ6CYw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
-      eslint-utils: 3.0.0
+      '@eslint-community/eslint-utils': 4.2.0
       jsonc-eslint-parser: 2.2.0
       natural-compare: 1.4.0
     dev: false
