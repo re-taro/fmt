@@ -53,6 +53,6 @@
   },
   "devDependencies": {
     "@babel/types": "7.21.3",
-    "@typescript-eslint/utils": "5.56.0"
+    "@typescript-eslint/utils": "5.57.0"
   }
 }
