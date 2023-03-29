@@ -22,7 +22,7 @@
     "@re-taro/eslint-config": "workspace:*",
     "@re-taro/eslint-plugin": "workspace:*",
     "@types/react": "18.0.30",
-    "eslint": "8.36.0",
+    "eslint": "8.37.0",
     "react": "18.2.0",
     "typescript": "5.0.2",
     "unbuild": "1.1.2"
