@@ -11,8 +11,8 @@ importers:
         specifier: workspace:*
         version: link:packages/plugin
       '@types/react':
-        specifier: 18.0.32
-        version: 18.0.32
+        specifier: 18.0.33
+        version: 18.0.33
       eslint:
         specifier: 8.37.0
         version: 8.37.0
@@ -783,8 +783,8 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: true
 
-  /@types/react@18.0.32:
-    resolution: {integrity: sha512-gYGXdtPQ9Cj0w2Fwqg5/ak6BcK3Z15YgjSqtyDizWUfx7mQ8drs0NBUzRRsAdoFVTO8kJ8L2TL8Skm7OFPnLUw==}
+  /@types/react@18.0.33:
+    resolution: {integrity: sha512-sHxzVxeanvQyQ1lr8NSHaj0kDzcNiGpILEVt69g9S31/7PfMvNCKLKcsHw4lYKjs3cGNJjXSP4mYzX43QlnjNA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
