@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.11](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.6.10...eslint-plugin-v1.6.11) (2023-04-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.59.0 ([4704c33](https://github.com/re-taro/eslint/commit/4704c3313cb9c7b5d9f478150af6764e1fa94d1b))
+* **deps:** update dependency @typescript-eslint/parser to v5.59.0 ([64b3219](https://github.com/re-taro/eslint/commit/64b3219a4b3e7169c39474aca048d041e6440b8f))
+
 ## [1.6.10](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.6.9...eslint-plugin-v1.6.10) (2023-04-15)
 
 
