@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.8.0...eslint-plugin-v1.8.1) (2023-04-19)
+
+
+### Bug Fixes
+
+* use prettier config for remove conflict of rules ([cb08964](https://github.com/re-taro/eslint/commit/cb08964d1eee5a3b0a4a205ca37c5229a4460ecb))
+
 ## [1.8.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.7.0...eslint-plugin-v1.8.0) (2023-04-19)
 
 
