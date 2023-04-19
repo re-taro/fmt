@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.6.11...eslint-plugin-v1.7.0) (2023-04-19)
+
+
+### Features
+
+* implement svelte plugin ([edd2e71](https://github.com/re-taro/eslint/commit/edd2e713e73a4361505fe798212d5d773f74389d))
+
 ## [1.6.11](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.6.10...eslint-plugin-v1.6.11) (2023-04-18)
 
 
