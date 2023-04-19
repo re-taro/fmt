@@ -22,7 +22,7 @@ const ignorePatterns = [
 
 export default defineConfig({
   plugins: ['@re-taro', 'html', 'eslint-comments'],
-  extends: ['standard'],
+  extends: ['standard', 'prettier'],
   ignorePatterns,
   rules: {
     'curly': ['error', 'multi-or-nest', 'consistent'],
