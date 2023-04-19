@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.8.0](https://github.com/re-taro/eslint/compare/eslint-config-v1.7.0...eslint-config-v1.8.0) (2023-04-19)
+
+
+### Features
+
+* implement svelte plugin to config ([db70ffa](https://github.com/re-taro/eslint/commit/db70ffa593ad28af3b19c4bc2f365fd91404abc7))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped to 1.8.0
+
 ## [1.7.0](https://github.com/re-taro/eslint/compare/eslint-config-v1.6.11...eslint-config-v1.7.0) (2023-04-19)
 
 
