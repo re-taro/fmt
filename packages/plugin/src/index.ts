@@ -4,6 +4,7 @@ import json from './configs/json';
 import markdown from './configs/markdown';
 import next from './configs/next';
 import react from './configs/react';
+import svelte from './configs/svelte';
 import typescript from './configs/typescript';
 import typescriptTypeChecking from './configs/typescript-type-checking';
 import vue from './configs/vue';
@@ -19,6 +20,7 @@ const plugin = definePlugin({
     markdown,
     next,
     react,
+    svelte,
     typescript,
     typescriptTypeChecking,
     vue,
