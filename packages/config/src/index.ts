@@ -7,5 +7,6 @@ export default {
     'plugin:@re-taro/typescript',
     'plugin:@re-taro/vue',
     'plugin:@re-taro/yaml',
+    'prettier',
   ],
 };
