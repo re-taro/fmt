@@ -30,6 +30,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@re-taro/eslint-plugin": "workspace:*"
+    "@re-taro/eslint-plugin": "workspace:*",
+    "eslint-config-prettier": "8.8.0"
   }
 }
