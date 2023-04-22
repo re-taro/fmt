@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.8.2](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.8.1...eslint-plugin-v1.8.2) (2023-04-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.3.1 ([3117f2c](https://github.com/re-taro/eslint/commit/3117f2c51685e913872bd318215da7b4555e5c18))
+* ignore prettier rules at config package ([36e340c](https://github.com/re-taro/eslint/commit/36e340cdaa1a0b9017bd6a20e107928482e7275d))
+
 ## [1.8.1](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.8.0...eslint-plugin-v1.8.1) (2023-04-19)
 
 

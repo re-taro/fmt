@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.8.2](https://github.com/re-taro/eslint/compare/eslint-config-v1.8.1...eslint-config-v1.8.2) (2023-04-22)
+
+
+### Bug Fixes
+
+* ignore prettier rules at config package ([36e340c](https://github.com/re-taro/eslint/commit/36e340cdaa1a0b9017bd6a20e107928482e7275d))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped to 1.8.2
+
 ## [1.8.1](https://github.com/re-taro/eslint/compare/eslint-config-v1.8.0...eslint-config-v1.8.1) (2023-04-19)
 
 
