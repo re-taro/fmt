@@ -3,6 +3,7 @@
   "description": "My personal eslint config monorepo.",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "pnpm@8.3.1",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
@@ -13,7 +14,6 @@
     "type": "git",
     "url": "https://github.com/re-taro/eslint.git"
   },
-  "packageManager": "pnpm@8.3.1",
   "scripts": {
     "build": "pnpm -r build",
     "dev": "pnpm -r --parallel run stub",
