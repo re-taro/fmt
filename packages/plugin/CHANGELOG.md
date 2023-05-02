@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.8.3](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.8.2...eslint-plugin-v1.8.3) (2023-05-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.3.4 ([f42cddf](https://github.com/re-taro/eslint/commit/f42cddf5adc6c386a9689c8977e18125b3a1aa3a))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.59.1 ([745db73](https://github.com/re-taro/eslint/commit/745db7346f8b5182b074c443f33f60f8bf35c51f))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.59.2 ([37b5b82](https://github.com/re-taro/eslint/commit/37b5b8269b064ad8e0b1f3fc4f6cc0dbca09a2df))
+* **deps:** update dependency @typescript-eslint/parser to v5.59.1 ([608274b](https://github.com/re-taro/eslint/commit/608274b37e4de9d5ebbd29aa369c32f0cfd86e8b))
+* **deps:** update dependency @typescript-eslint/parser to v5.59.2 ([91088a0](https://github.com/re-taro/eslint/commit/91088a098825eccfed8ac91cb6f95a3fbb2fa6d8))
+* **deps:** update dependency eslint-plugin-redos to v4.5.0-beta.4 ([aad6429](https://github.com/re-taro/eslint/commit/aad6429562efb055792b12df587edded037d2cd4))
+
 ## [1.8.2](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.8.1...eslint-plugin-v1.8.2) (2023-04-22)
 
 
