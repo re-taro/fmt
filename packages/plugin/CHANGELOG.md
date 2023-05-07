@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.9.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.8.3...eslint-plugin-v1.9.0) (2023-05-07)
+
+
+### Features
+
+* update rules ([1661b3b](https://github.com/re-taro/eslint/commit/1661b3bf5b2446ea78acd8a68bacf4055f63f0bd))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.4.0 ([5bfb6d1](https://github.com/re-taro/eslint/commit/5bfb6d1ff98d4db869f77f476ff62c6a5b14dda2))
+* **deps:** update dependency @next/eslint-plugin-next to v13.4.1 ([979eea7](https://github.com/re-taro/eslint/commit/979eea739a6d2a6d18dc9ba7aecce5eaf69b81e4))
+* **deps:** update dependency eslint-plugin-unicorn to v46.0.1 ([588a3ec](https://github.com/re-taro/eslint/commit/588a3ec997bdbbfd13621fc316974b81c3dcfd01))
+* **deps:** update dependency eslint-plugin-unicorn to v47 ([44ce03f](https://github.com/re-taro/eslint/commit/44ce03ff69a2272d44966078e9bf1732f1bfb002))
+
 ## [1.8.3](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.8.2...eslint-plugin-v1.8.3) (2023-05-02)
 
 
