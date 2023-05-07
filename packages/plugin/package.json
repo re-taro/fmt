@@ -1,7 +1,7 @@
 {
   "name": "@re-taro/eslint-plugin",
   "description": "My personal eslint plugin.",
-  "version": "1.8.3",
+  "version": "1.9.0",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
