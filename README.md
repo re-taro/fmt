@@ -6,14 +6,14 @@ My ESLint config preset
 
 - config: default config preset
 - plugin:
-    - esnext: basic config
-    - vue: vue support
-    - react: react support
-    - next: default config + next eslint config
-    - json: parse json + package.json sort
-    - yaml: parse yaml
-    - typescript: typescript support
-    - typescript-type-checking: typescript type checking
+  - esnext: basic config
+  - vue: vue support
+  - react: react support
+  - next: default config + next eslint config
+  - json: parse json + package.json sort
+  - yaml: parse yaml
+  - typescript: typescript support
+  - typescript-type-checking: typescript type checking
 
 ## Development
 
