@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.9.1](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.0...eslint-plugin-v1.9.1) (2023-05-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-vue to v9.11.1 ([cec8753](https://github.com/re-taro/eslint/commit/cec8753c28cec6454658f2ed598da1775b4dca54))
+* **deps:** update dependency eslint-plugin-yml to v1.6.0 ([b0a9cd3](https://github.com/re-taro/eslint/commit/b0a9cd323afb5f3aa60c7904a5c390359b0b020f))
+* **deps:** update dependency yaml-eslint-parser to v1.2.1 ([371481f](https://github.com/re-taro/eslint/commit/371481f542842faa5a9fdd07556543e2b4fbc0b4))
+
 ## [1.9.0](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.8.3...eslint-plugin-v1.9.0) (2023-05-07)
 
 
