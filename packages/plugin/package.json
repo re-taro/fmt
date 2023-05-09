@@ -48,7 +48,7 @@
     "eslint-plugin-svelte3": "4.0.0",
     "eslint-plugin-unicorn": "47.0.0",
     "eslint-plugin-vue": "9.11.1",
-    "eslint-plugin-yml": "1.6.0",
+    "eslint-plugin-yml": "1.7.0",
     "jsonc-eslint-parser": "2.2.0",
     "yaml-eslint-parser": "1.2.2"
   },
