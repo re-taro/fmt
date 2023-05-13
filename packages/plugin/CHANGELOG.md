@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.2](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.1...eslint-plugin-v1.9.2) (2023-05-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.4.2 ([c0163f1](https://github.com/re-taro/eslint/commit/c0163f104e1af097498edaf78fd2b92653f1e8ac))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v5.59.5 ([7924ccd](https://github.com/re-taro/eslint/commit/7924ccd005d302fe6157a6c6315b7254aa6f0940))
+* **deps:** update dependency @typescript-eslint/parser to v5.59.5 ([5cb3fd2](https://github.com/re-taro/eslint/commit/5cb3fd217ccf1d78f0161a1eb4a5499a51ed2bfe))
+* **deps:** update dependency eslint-plugin-jsonc to v2.8.0 ([40fe450](https://github.com/re-taro/eslint/commit/40fe45044310581c8cba2b1f0d4e02e54b541fb4))
+* **deps:** update dependency eslint-plugin-vue to v9.12.0 ([830ea5b](https://github.com/re-taro/eslint/commit/830ea5bdd69940131d4287eddd92c450fb0a596c))
+* **deps:** update dependency eslint-plugin-yml to v1.7.0 ([3280c8c](https://github.com/re-taro/eslint/commit/3280c8c88b4ebc7e8eb9dad81e04d96a3328fafd))
+* **deps:** update dependency jsonc-eslint-parser to v2.3.0 ([ac94e2c](https://github.com/re-taro/eslint/commit/ac94e2c17d24e110efbb2e84005f7b5416164813))
+* **deps:** update dependency yaml-eslint-parser to v1.2.2 ([d5c8312](https://github.com/re-taro/eslint/commit/d5c83127f486756401e98b10cc78d194a55a14c6))
+
 ## [1.9.1](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.0...eslint-plugin-v1.9.1) (2023-05-07)
 
 
