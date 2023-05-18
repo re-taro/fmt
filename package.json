@@ -22,7 +22,7 @@
   "devDependencies": {
     "@re-taro/eslint-config": "workspace:*",
     "@re-taro/eslint-plugin": "workspace:*",
-    "@types/node": "18.16.12",
+    "@types/node": "18.16.13",
     "@types/react": "18.2.6",
     "eslint": "8.40.0",
     "react": "18.2.0",
