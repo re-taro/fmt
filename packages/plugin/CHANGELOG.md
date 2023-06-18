@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.11](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.10...eslint-plugin-v1.9.11) (2023-06-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-vue to v9.15.0 ([b70e0cb](https://github.com/re-taro/eslint/commit/b70e0cb24de4c3df524fcbfa986d2432513e6548))
+
 ## [1.9.10](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.9...eslint-plugin-v1.9.10) (2023-06-17)
 
 
