@@ -1,7 +1,7 @@
 {
   "name": "@re-taro/eslint-config",
   "description": "My personal eslint config.",
-  "version": "1.9.9",
+  "version": "1.9.10",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
