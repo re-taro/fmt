@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.18](https://github.com/re-taro/eslint/compare/eslint-config-v1.9.17...eslint-config-v1.9.18) (2023-07-18)
+
+
+### Miscellaneous Chores
+
+* **eslint-config:** Synchronize eslint versions
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped to 1.9.18
+
 ## [1.9.17](https://github.com/re-taro/eslint/compare/eslint-config-v1.9.16...eslint-config-v1.9.17) (2023-07-15)
 
 
