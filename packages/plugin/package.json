@@ -1,7 +1,7 @@
 {
   "name": "@re-taro/eslint-plugin",
   "description": "My personal eslint plugin.",
-  "version": "1.9.18",
+  "version": "1.9.19",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
@@ -29,7 +29,7 @@
     "eslint": "^8.0.0"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "13.4.12",
+    "@next/eslint-plugin-next": "13.4.11",
     "@typescript-eslint/eslint-plugin": "6.1.0",
     "@typescript-eslint/parser": "6.1.0",
     "eslint-config-standard": "17.1.0",
