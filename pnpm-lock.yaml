@@ -48,8 +48,8 @@ importers:
   packages/plugin:
     dependencies:
       '@next/eslint-plugin-next':
-        specifier: 13.4.11
-        version: 13.4.11
+        specifier: 13.4.12
+        version: 13.4.12
       '@typescript-eslint/eslint-plugin':
         specifier: 6.2.0
         version: 6.2.0(@typescript-eslint/parser@6.2.0)(eslint@8.0.0)(typescript@5.1.6)
@@ -669,8 +669,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@next/eslint-plugin-next@13.4.11:
-    resolution: {integrity: sha512-BsxI1DLtTZLX/MEoSg5Rilk2c6tlcjGseByxwasBPeoNH+fda/DZe8RkOmmmncNmTV/OzTBj/Pq6Pc3BqgLuBA==}
+  /@next/eslint-plugin-next@13.4.12:
+    resolution: {integrity: sha512-6rhK9CdxEgj/j1qvXIyLTWEaeFv7zOK8yJMulz3Owel0uek0U9MJCGzmKgYxM3aAUBo3gKeywCZKyQnJKto60A==}
     dependencies:
       glob: 7.1.7
     dev: false
