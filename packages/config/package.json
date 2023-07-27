@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "@re-taro/eslint-plugin": "workspace:*",
-    "eslint-config-prettier": "8.8.0"
+    "eslint-config-prettier": "8.9.0"
   }
 }
