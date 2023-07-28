@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.22](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.21...eslint-plugin-v1.9.22) (2023-07-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-import to v2.28.0 ([049edc0](https://github.com/re-taro/eslint/commit/049edc00c53ba3920187c90fe542f52b975c811e))
+* **deps:** update dependency eslint-plugin-markdown to v3.0.1 ([6051aae](https://github.com/re-taro/eslint/commit/6051aaec4687948bb7737962cd35ca653ee8f1b5))
+
 ## [1.9.21](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.20...eslint-plugin-v1.9.21) (2023-07-27)
 
 
