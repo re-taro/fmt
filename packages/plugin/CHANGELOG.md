@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.21](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.20...eslint-plugin-v1.9.21) (2023-07-27)
+
+
+### Miscellaneous Chores
+
+* **eslint-plugin:** Synchronize eslint versions
+
 ## [1.9.20](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.19...eslint-plugin-v1.9.20) (2023-07-26)
 
 
