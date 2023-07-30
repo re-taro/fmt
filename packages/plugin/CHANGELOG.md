@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.23](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.22...eslint-plugin-v1.9.23) (2023-07-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-plugin-react to v7.33.1 ([9c8911f](https://github.com/re-taro/eslint/commit/9c8911fa5e1e9b08b1d47e2a34004a13ddd4a3c8))
+* **deps:** update dependency eslint-plugin-vue to v9.16.0 ([91fbfce](https://github.com/re-taro/eslint/commit/91fbfce93ff0865697162ef8d6a418aef4fd3d0e))
+
 ## [1.9.22](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.21...eslint-plugin-v1.9.22) (2023-07-28)
 
 
