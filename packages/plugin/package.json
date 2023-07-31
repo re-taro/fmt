@@ -47,7 +47,7 @@
     "eslint-plugin-redos": "4.5.0-beta.4",
     "eslint-plugin-svelte3": "4.0.0",
     "eslint-plugin-unicorn": "48.0.1",
-    "eslint-plugin-vue": "9.16.0",
+    "eslint-plugin-vue": "9.16.1",
     "eslint-plugin-yml": "1.8.0",
     "jsonc-eslint-parser": "2.3.0",
     "yaml-eslint-parser": "1.2.2"
