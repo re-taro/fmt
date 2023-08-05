@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.25](https://github.com/re-taro/eslint/compare/eslint-config-v1.9.24...eslint-config-v1.9.25) (2023-08-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency eslint-config-prettier to v8.10.0 ([39165cd](https://github.com/re-taro/eslint/commit/39165cd59917d75f47c67e901119abc7f22b23fc))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped to 1.9.25
+
 ## [1.9.24](https://github.com/re-taro/eslint/compare/eslint-config-v1.9.23...eslint-config-v1.9.24) (2023-07-31)
 
 
