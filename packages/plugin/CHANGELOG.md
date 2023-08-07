@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.26](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.25...eslint-plugin-v1.9.26) (2023-08-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.4.13 ([29d52c5](https://github.com/re-taro/eslint/commit/29d52c5013c4adca6b403da3f2ca21fa6e32eeea))
+
 ## [1.9.25](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.24...eslint-plugin-v1.9.25) (2023-08-04)
 
 
