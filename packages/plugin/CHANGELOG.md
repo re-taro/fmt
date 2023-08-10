@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.9.27](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.26...eslint-plugin-v1.9.27) (2023-08-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.3.0 ([dad18ea](https://github.com/re-taro/eslint/commit/dad18ea6cb58258f8a459e7502dbf701b39f3076))
+* **deps:** update dependency @typescript-eslint/parser to v6.3.0 ([5a36495](https://github.com/re-taro/eslint/commit/5a364958dbef5ef5b6ea3f66ad4200638ac966c9))
+* **deps:** update dependency eslint-import-resolver-typescript to v3.6.0 ([a481d7b](https://github.com/re-taro/eslint/commit/a481d7b2955607769505498326fcee7dce7f0945))
+* **deps:** update dependency eslint-plugin-vue to v9.17.0 ([ebf80df](https://github.com/re-taro/eslint/commit/ebf80dfb94f48545498f5ce27827ced40d2e4705))
+
 ## [1.9.26](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.9.25...eslint-plugin-v1.9.26) (2023-08-07)
 
 
