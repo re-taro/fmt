@@ -7,6 +7,7 @@ export default defineConfig({
     "plugin:@re-taro/json",
     "plugin:@re-taro/yaml",
     "plugin:@next/next/recommended",
+    "prettier",
   ],
   plugins: ["jsx-a11y"],
   rules: {

@@ -2,5 +2,5 @@
 export const a: string = 1;
 
 export type Foo = {
-  a: string;
+  a: string
 };

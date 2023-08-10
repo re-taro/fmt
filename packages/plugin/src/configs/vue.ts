@@ -9,7 +9,7 @@ export default defineConfig({
       parserOptions: {
         parser: "@typescript-eslint/parser",
       },
-      extends: ["plugin:vue/vue3-recommended"],
+      extends: ["plugin:vue/vue3-recommended", "prettier"],
       env: {
         "vue/setup-compiler-macros": true,
       },
