@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.10.0](https://github.com/re-taro/eslint/compare/eslint-config-v1.9.27...eslint-config-v1.10.0) (2023-08-10)
+
+
+### Features
+
+* separate next, svelte, vue config and add prettier config ([8936661](https://github.com/re-taro/eslint/commit/8936661d19edf771ceb8378b47ad6ab31a61878b))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped to 1.10.0
+
 ## [1.9.27](https://github.com/re-taro/eslint/compare/eslint-config-v1.9.26...eslint-config-v1.9.27) (2023-08-10)
 
 
