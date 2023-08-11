@@ -15,8 +15,8 @@ importers:
         specifier: workspace:*
         version: link:packages/plugin
       '@types/node':
-        specifier: 18.17.4
-        version: 18.17.4
+        specifier: 18.17.5
+        version: 18.17.5
       '@types/react':
         specifier: 18.2.20
         version: 18.2.20
@@ -559,7 +559,7 @@ packages:
       eslint: ^6.0.0 || ^7.0.0 || >=8.0.0
     dependencies:
       eslint: 8.47.0
-      eslint-visitor-keys: 3.4.3
+      eslint-visitor-keys: 3.4.2
     dev: true
 
   /@eslint-community/regexpp@4.6.2:
@@ -835,8 +835,8 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
-  /@types/node@18.17.4:
-    resolution: {integrity: sha512-ATL4WLgr7/W40+Sp1WnNTSKbgVn6Pvhc/2RHAdt8fl6NsQyp4oPCi2eKcGOvA494bwf1K/W6nGgZ9TwDqvpjdw==}
+  /@types/node@18.17.5:
+    resolution: {integrity: sha512-xNbS75FxH6P4UXTPUJp/zNPq6/xsfdJKussCWNOnz4aULWIRwMgP1LgaB5RiBnMX1DPCYenuqGZfnIAx5mbFLA==}
     dev: true
 
   /@types/normalize-package-data@2.4.1:
