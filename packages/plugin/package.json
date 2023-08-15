@@ -29,7 +29,7 @@
     "eslint": "^8.0.0"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "13.4.15",
+    "@next/eslint-plugin-next": "13.4.16",
     "@typescript-eslint/eslint-plugin": "6.3.0",
     "@typescript-eslint/parser": "6.3.0",
     "eslint-config-prettier": "9.0.0",
