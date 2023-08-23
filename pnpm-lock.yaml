@@ -15,8 +15,8 @@ importers:
         specifier: workspace:*
         version: link:packages/plugin
       '@types/node':
-        specifier: 18.17.8
-        version: 18.17.8
+        specifier: 18.17.9
+        version: 18.17.9
       '@types/react':
         specifier: 18.2.21
         version: 18.2.21
@@ -1052,8 +1052,8 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
-  /@types/node@18.17.8:
-    resolution: {integrity: sha512-Av/7MqX/iNKwT9Tr60V85NqMnsmh8ilfJoBlIVibkXfitk9Q22D9Y5mSpm+FvG5DET7EbVfB40bOiLzKgYFgPw==}
+  /@types/node@18.17.9:
+    resolution: {integrity: sha512-fxaKquqYcPOGwE7tC1anJaPJ0GHyOVzfA2oUoXECjBjrtsIz4YJvtNYsq8LUcjEUehEF+jGpx8Z+lFrtT6z0tg==}
     dev: true
 
   /@types/normalize-package-data@2.4.1:
