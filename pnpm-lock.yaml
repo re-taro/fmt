@@ -111,8 +111,8 @@ importers:
         specifier: 9.17.0
         version: 9.17.0(eslint@8.46.0)
       eslint-plugin-yml:
-        specifier: 1.8.0
-        version: 1.8.0(eslint@8.46.0)
+        specifier: 1.9.0
+        version: 1.9.0(eslint@8.46.0)
       jsonc-eslint-parser:
         specifier: 2.3.0
         version: 2.3.0
@@ -2213,8 +2213,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-yml@1.8.0(eslint@8.46.0):
-    resolution: {integrity: sha512-fgBiJvXD0P2IN7SARDJ2J7mx8t0bLdG6Zcig4ufOqW5hOvSiFxeUyc2g5I1uIm8AExbo26NNYCcTGZT0MXTsyg==}
+  /eslint-plugin-yml@1.9.0(eslint@8.46.0):
+    resolution: {integrity: sha512-ayuC57WyVQ5+QZ02y62GiB//5+zsiyzUGxUX/mrhLni+jfsKA4KoITjkbR65iUdjjhWpyTJHPcAIFLKQIOwgsw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
