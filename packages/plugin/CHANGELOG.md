@@ -1,5 +1,34 @@
 # Changelog
 
+## [1.10.4](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.10.3...eslint-plugin-v1.10.4) (2023-10-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v13.5.1 ([0d8cead](https://github.com/re-taro/eslint/commit/0d8cead29d55a67ae2e11b3f1345145e68918c6c))
+* **deps:** update dependency @next/eslint-plugin-next to v13.5.2 ([fa82669](https://github.com/re-taro/eslint/commit/fa82669b5fc5f9544492fe42377d58fc2442ff2c))
+* **deps:** update dependency @next/eslint-plugin-next to v13.5.3 ([81fbf17](https://github.com/re-taro/eslint/commit/81fbf17afea1c48ceb37fa6af891e5d1fe2fcbdc))
+* **deps:** update dependency @next/eslint-plugin-next to v13.5.4 ([1d80aad](https://github.com/re-taro/eslint/commit/1d80aad598af2c384e43a6dd7dfad1cb38e91451))
+* **deps:** update dependency @next/eslint-plugin-next to v13.5.5 ([019abee](https://github.com/re-taro/eslint/commit/019abeec7b1ba796891109f22e2dd8432994444f))
+* **deps:** update dependency @next/eslint-plugin-next to v13.5.6 ([c78418a](https://github.com/re-taro/eslint/commit/c78418a195b545776d2433ecad885c932f39b7ac))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.7.0 ([2240573](https://github.com/re-taro/eslint/commit/224057382f6ca11bc2bdfbe75f1a42bc07185097))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.7.2 ([68f471d](https://github.com/re-taro/eslint/commit/68f471ddf6ba624dd1208ae771337ee7aa121ad0))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.7.3 ([af5541e](https://github.com/re-taro/eslint/commit/af5541e1da43ed0a7cba9ffec4f47eb18c648349))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.7.4 ([22ba5c0](https://github.com/re-taro/eslint/commit/22ba5c06e57731c8a9600dcf83d0723abda2c0be))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.7.5 ([c18f65d](https://github.com/re-taro/eslint/commit/c18f65d600f8b026f2bcbca681c126d185cd6a0e))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.8.0 ([edc159b](https://github.com/re-taro/eslint/commit/edc159be009e7cfca397ce88b617c4af860c7c49))
+* **deps:** update dependency @typescript-eslint/parser to v6.7.0 ([b2e5796](https://github.com/re-taro/eslint/commit/b2e579610c4bbc1a15ba4fdab25cc3345dc6b2af))
+* **deps:** update dependency @typescript-eslint/parser to v6.7.2 ([1117c91](https://github.com/re-taro/eslint/commit/1117c9116f2a450cdddbccd606e7825133c1c0fc))
+* **deps:** update dependency @typescript-eslint/parser to v6.7.3 ([1966fbb](https://github.com/re-taro/eslint/commit/1966fbb0f6f0e110f8821abb252deefec9b750ac))
+* **deps:** update dependency @typescript-eslint/parser to v6.7.4 ([0cbe954](https://github.com/re-taro/eslint/commit/0cbe954d33035d99daffea0f9dffdf0ee3c851df))
+* **deps:** update dependency @typescript-eslint/parser to v6.7.5 ([e727960](https://github.com/re-taro/eslint/commit/e72796065b7780975ca95b87ef502c6ea46c2618))
+* **deps:** update dependency @typescript-eslint/parser to v6.8.0 ([2f3e46e](https://github.com/re-taro/eslint/commit/2f3e46e1e4e3f18582fa35fbf41aa6066f197245))
+* **deps:** update dependency eslint-import-resolver-typescript to v3.6.1 ([65578e9](https://github.com/re-taro/eslint/commit/65578e940f61b625bc375a3868d727b530a31b97))
+* **deps:** update dependency eslint-plugin-n to v16.1.0 ([894be53](https://github.com/re-taro/eslint/commit/894be53dc0d3536d1dcd35de88a209f59cf406a4))
+* **deps:** update dependency eslint-plugin-n to v16.2.0 ([c188314](https://github.com/re-taro/eslint/commit/c188314a0582476ebd4478b25aec18586d3e2c57))
+* **deps:** update dependency eslint-plugin-yml to v1.9.0 ([deef055](https://github.com/re-taro/eslint/commit/deef055548cf30dbd15fa86e844701cec4ce7db6))
+* **deps:** update eslint and prettier ([3b4335e](https://github.com/re-taro/eslint/commit/3b4335e6f6e3905523cb8828673eed2712c941e7))
+
 ## [1.10.3](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.10.2...eslint-plugin-v1.10.3) (2023-09-06)
 
 
