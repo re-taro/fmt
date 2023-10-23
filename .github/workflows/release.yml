@@ -9,7 +9,13 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
+      - name: Setup GitHub App
+        id: bot
+        uses: re-taro/actions/gen-installation-token@v3.3.1
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - id: release
@@ -19,8 +25,17 @@ jobs:
           command: manifest
           config-file: .github/release-please-config.json
           manifest-file: .github/release-please-manifest.json
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.bot.outputs.token }}
       - if: ${{ steps.release.outputs.releases_created }}
         uses: ./.github/actions/release
         with:
           npm: ${{ secrets.NPM_TOKEN }}
+      - name: Revoke GitHub Apps token
+        env:
+          GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
+        run: |
+          curl --location --silent --request DELETE \q
+            --url "${GITHUB_API_URL}/installation/token" \
+            --header "Accept: application/vnd.github+json" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            --header "Authorization: Bearer ${GITHUB_TOKEN}"
