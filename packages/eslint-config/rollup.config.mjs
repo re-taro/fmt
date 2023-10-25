@@ -1,6 +1,7 @@
-import typescript from "@rollup/plugin-typescript";
-import pkg from "./package.json" assert { type: "json" };
 import terser from "@rollup/plugin-terser";
+import typescript from "@rollup/plugin-typescript";
+
+import pkg from "./package.json";
 
 const externals = [
   ...Object.keys(pkg.dependencies),
