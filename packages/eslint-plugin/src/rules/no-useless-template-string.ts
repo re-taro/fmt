@@ -24,12 +24,12 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
   defaultOptions: [],
   create: (context) => ({
     "TemplateLiteral:not(TaggedTemplateExpression > TemplateLiteral)"(
-      node: TSESTree.TemplateLiteral
+      node: TSESTree.TemplateLiteral,
     ) {
       const { quasis } = node;
       const isSafe = !quasis.some(
         ({ value: { raw } }) =>
-          raw.includes('"') || raw.includes("'") || raw.includes("\n")
+          raw.includes('"') || raw.includes("'") || raw.includes("\n"),
       );
       if (node.expressions.length === 0 && isSafe) {
         context.report({
@@ -38,7 +38,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
           fix(fixer) {
             return fixer.replaceTextRange(
               node.range,
-              `"${node.quasis[0].value.raw}"`
+              `"${node.quasis[0].value.raw}"`,
             );
           },
         });

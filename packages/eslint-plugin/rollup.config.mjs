@@ -2,7 +2,7 @@ import replace from "@rollup/plugin-replace";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 
-import pkg from "./package.json";
+import pkg from "./package.json" assert { type: "json" };
 
 const externals = [
   ...Object.keys(pkg.dependencies),
@@ -33,7 +33,7 @@ const options = {
     }),
     replace({
       "import.meta.vitest": "undefined",
-      "preventAssignment": true,
+      preventAssignment: true,
     }),
     terser(),
   ],

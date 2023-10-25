@@ -30,15 +30,16 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
         const { specifiers } = node;
         const typeSpecifiers = specifiers.filter(
           (s) =>
-            s.type === AST_NODE_TYPES.ImportSpecifier && s.importKind === "type"
+            s.type === AST_NODE_TYPES.ImportSpecifier &&
+            s.importKind === "type",
         );
         const valueSpecifiers = specifiers.filter(
           (s) =>
             s.type === AST_NODE_TYPES.ImportSpecifier &&
-            s.importKind === "value"
+            s.importKind === "value",
         );
         const defaultImportSpecifier = specifiers.find(
-          (s) => s.type === AST_NODE_TYPES.ImportDefaultSpecifier
+          (s) => s.type === AST_NODE_TYPES.ImportDefaultSpecifier,
         );
         if (typeSpecifiers.length > 0 && valueSpecifiers.length > 0) {
           context.report({
@@ -52,7 +53,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
                 .map((s) => sourceCode.getText(s))
                 .join(", ");
               const defaultImportSpecifierText = sourceCode.getText(
-                defaultImportSpecifier
+                defaultImportSpecifier,
               );
               const defaultAndValueSpecifiersText = defaultImportSpecifier
                 ? `import ${defaultImportSpecifierText}, { ${valueSpecifiersText} } from "${node.source.value}";`
@@ -76,7 +77,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 
               return fixer.replaceText(
                 node,
-                `import type { ${typeSpecifiersText} } from "${node.source.value}";`
+                `import type { ${typeSpecifiersText} } from "${node.source.value}";`,
               );
             },
           });

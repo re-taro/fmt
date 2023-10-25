@@ -39,7 +39,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
           (s) =>
             s.type === "ImportSpecifier" &&
             s.imported.name === "promises" &&
-            s.local.name !== "promises"
+            s.local.name !== "promises",
         );
         const as = promisesSpecifier?.local.name;
         if (!promisesSpecifier || !as) {
@@ -58,7 +58,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
             yield fixer.removeRange([s, e]);
             yield fixer.insertTextAfter(
               node,
-              `\nimport ${as} from "${node.source.value}/promises";`
+              `\nimport ${as} from "${node.source.value}/promises";`,
             );
           },
         });

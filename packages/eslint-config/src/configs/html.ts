@@ -6,7 +6,7 @@ import { parserHtml, pluginHtml, pluginHtmlJsSupport } from "../plugins";
 export const html = (): FlatESLintConfigItem[] => [
   {
     plugins: {
-      "html": pluginHtml,
+      html: pluginHtml,
       "html-js-support": pluginHtmlJsSupport,
     },
   },

@@ -1,9 +1,7 @@
 import type { TSESTree } from "@typescript-eslint/utils";
 import { ESLintUtils } from "@typescript-eslint/utils";
 import type { RuleWithMetaAndName } from "@typescript-eslint/utils/eslint-utils";
-import type {
-  RuleModule,
-} from "@typescript-eslint/utils/ts-eslint";
+import type { RuleModule } from "@typescript-eslint/utils/ts-eslint";
 
 export type Rule<
   TOptions extends readonly unknown[],
@@ -23,7 +21,7 @@ export const createEslintRule: <
 > = ESLintUtils.RuleCreator((ruleName) => ruleName);
 
 export function getPreviousNode(
-  node?: TSESTree.Node
+  node?: TSESTree.Node,
 ): TSESTree.Node | undefined {
   if (!node) {
     return;

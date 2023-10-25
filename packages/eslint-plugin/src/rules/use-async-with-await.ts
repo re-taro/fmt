@@ -37,11 +37,11 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
     }
 
     return {
-      "FunctionExpression": setupNode,
+      FunctionExpression: setupNode,
       "FunctionExpression:exit": clearNode,
-      "FunctionDeclaration": setupNode,
+      FunctionDeclaration: setupNode,
       "FunctionDeclaration:exit": clearNode,
-      "ArrowFunctionExpression": setupNode,
+      ArrowFunctionExpression: setupNode,
       "ArrowFunctionExpression:exit": clearNode,
       AwaitExpression() {
         const closestFunctionNode =

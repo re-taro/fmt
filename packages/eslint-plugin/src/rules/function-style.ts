@@ -32,7 +32,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
     const sourceCode = context.getSourceCode();
 
     function getLoneReturnStatement(
-      node: TSESTree.FunctionDeclaration | TSESTree.ArrowFunctionExpression
+      node: TSESTree.FunctionDeclaration | TSESTree.ArrowFunctionExpression,
     ) {
       const { body } = node;
       if (body.type !== AST_NODE_TYPES.BlockStatement) {
@@ -58,7 +58,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
       name: string | null,
       node: TSESTree.FunctionDeclaration | TSESTree.FunctionExpression,
       rawStatement: string,
-      asVariable?: boolean
+      asVariable?: boolean,
     ): string;
     function generateFunction(
       type: "declaration",
@@ -66,7 +66,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
       node:
         | TSESTree.FunctionDeclaration
         | TSESTree.FunctionExpression
-        | TSESTree.ArrowFunctionExpression
+        | TSESTree.ArrowFunctionExpression,
     ): string;
     function generateFunction(
       type: "arrow" | "declaration",
@@ -76,7 +76,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
         | TSESTree.FunctionExpression
         | TSESTree.ArrowFunctionExpression,
       rawStatement?: string,
-      asVariable = true
+      asVariable = true,
     ) {
       const async = node.async ? "async " : "";
       const generics = node.typeParameters
@@ -107,7 +107,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
     }
 
     return {
-      "FunctionExpression": setupScope,
+      FunctionExpression: setupScope,
       "FunctionExpression:exit"(node: TSESTree.FunctionExpression) {
         if (
           (node.parent as any)?.id?.typeAnnotation ||
@@ -125,7 +125,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
           fix: (fixer) =>
             fixer.replaceText(
               node.parent.parent!,
-              generateFunction("declaration", name, node)
+              generateFunction("declaration", name, node),
             ),
         });
         clearThisAccess();
@@ -133,7 +133,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
       "FunctionDeclaration:not(TSDeclareFunction + FunctionDeclaration)":
         setupScope,
       "FunctionDeclaration:not(TSDeclareFunction + FunctionDeclaration):exit"(
-        node: TSESTree.FunctionDeclaration
+        node: TSESTree.FunctionDeclaration,
       ) {
         if (haveThisAccess) {
           return;
@@ -169,13 +169,13 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
                 node.id?.name ?? null,
                 node,
                 returnVal,
-                !isExportDefault
-              )
+                !isExportDefault,
+              ),
             ),
         });
         clearThisAccess();
       },
-      "ArrowFunctionExpression": setupScope,
+      ArrowFunctionExpression: setupScope,
       "ArrowFunctionExpression:exit"(node: TSESTree.ArrowFunctionExpression) {
         if (haveThisAccess) {
           return;
@@ -208,8 +208,8 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
                   generateFunction(
                     "declaration",
                     (node.parent as any).id.name,
-                    node
-                  )
+                    node,
+                  ),
                 ),
             });
           }

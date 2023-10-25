@@ -9,7 +9,7 @@ export const combine = (
 export const renameRules = (
   rules: Record<string, any>,
   from: string,
-  to: string
+  to: string,
 ) =>
   Object.fromEntries(
     Object.entries(rules).map(([key, value]) => {
@@ -18,14 +18,14 @@ export const renameRules = (
       }
 
       return [key, value];
-    })
+    }),
   );
 
 const rulesOn = new Set<string>();
 const rulesOff = new Set<string>();
 
 export function recordRulesStateConfigs(
-  configs: FlatESLintConfigItem[]
+  configs: FlatESLintConfigItem[],
 ): FlatESLintConfigItem[] {
   for (const config of configs) {
     recordRulesState(config.rules ?? {});
@@ -35,7 +35,7 @@ export function recordRulesStateConfigs(
 }
 
 export function recordRulesState(
-  rules: FlatESLintConfigItem["rules"]
+  rules: FlatESLintConfigItem["rules"],
 ): FlatESLintConfigItem["rules"] {
   for (const [key, value] of Object.entries(rules ?? {})) {
     const firstValue = Array.isArray(value) ? value[0] : value;
@@ -57,7 +57,7 @@ export function warnUnnecessaryOffRules() {
 
   for (const off of unnecessaryOffRules) {
     console.warn(
-      `[eslint] rule \`${off}\` is never turned on, you can remove the rule from your config`
+      `[eslint] rule \`${off}\` is never turned on, you can remove the rule from your config`,
     );
   }
 }

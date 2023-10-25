@@ -41,7 +41,10 @@ const flatConfigProps: (keyof FlatESLintConfigItem)[] = [
 const VuePackages = ["vue", "nuxt", "vitepress", "@slidev/cli"];
 
 /** Construct an array of ESLint flat config items. */
-export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfigItem | FlatESLintConfigItem[])[]) {
+export function re_taro(
+  options: Options = {},
+  ...userConfigs: (FlatESLintConfigItem | FlatESLintConfigItem[])[]
+) {
   const {
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
     solid: enableSolid = isPackageExists("solid-js"),
@@ -75,7 +78,7 @@ export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfig
     promise(),
     sortImports(),
     imports(),
-    unicorn()
+    unicorn(),
   );
 
   if (enableVue) {
@@ -87,7 +90,7 @@ export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfig
       typescript({
         componentExts,
         overrides: overrides.typescript,
-      })
+      }),
     );
   }
 
@@ -95,7 +98,7 @@ export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfig
     configs.push(
       test({
         overrides: overrides.test,
-      })
+      }),
     );
   }
 
@@ -104,7 +107,7 @@ export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfig
       vue({
         overrides: overrides.vue,
         typescript: !!enableTypeScript,
-      })
+      }),
     );
   }
 
@@ -113,7 +116,7 @@ export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfig
       solid({
         overrides: overrides.solid,
         typescript: !!enableTypeScript,
-      })
+      }),
     );
   }
 
@@ -125,7 +128,7 @@ export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfig
     configs.push(
       toml({
         overrides: overrides.toml,
-      })
+      }),
     );
   }
 
@@ -133,7 +136,7 @@ export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfig
     configs.push(
       yaml({
         overrides: overrides.yaml,
-      })
+      }),
     );
   }
 
@@ -142,7 +145,7 @@ export function re_taro(options: Options = {}, ...userConfigs: (FlatESLintConfig
       mdx({
         componentExts,
         overrides: overrides.mdx,
-      })
+      }),
     );
   }
 
