@@ -1,0 +1,45 @@
+{
+  "name": "@re-taro/eslint-plugin",
+  "version": "1.10.4",
+  "packageManager": "pnpm@8.9.2",
+  "license": "MIT",
+  "author": {
+    "name": "Rintaro Itokawa",
+    "email": "me@re-taro.dev",
+    "url": "https://re-taro.dev"
+  },
+  "homepage": "https://github.com/re-taro/fmt#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re-taro/fmt.git",
+    "directory": "packages/eslint-plugin"
+  },
+  "bugs": {
+    "url": "https://github.com/re-taro/fmt/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslint-plugin"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@typescript-eslint/types": "6.2.0",
+    "@typescript-eslint/utils": "6.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "6.9.0"
+  }
+}
