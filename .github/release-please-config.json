@@ -5,6 +5,9 @@
     },
     "packages/eslint-plugin": {
       "component": "eslint-plugin"
+    },
+    "packages/prettier-plugin-toml": {
+      "component": "prettier-plugin-toml"
     }
   },
   "plugins": [
@@ -17,6 +20,12 @@
       "group-name": "eslint",
       "groupName": "eslint",
       "components": ["eslint-config", "eslint-plugin"]
+    },
+    {
+      "type": "linked-versions",
+      "group-name": "prettier",
+      "groupName": "prettier",
+      "components": ["prettier-plugin-toml"]
     }
   ]
 }

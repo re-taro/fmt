@@ -1,0 +1,41 @@
+{
+  "name": "@re-taro/prettier-plugin-toml",
+  "version": "1.0.0",
+  "packageManager": "pnpm@8.9.2",
+  "license": "MIT",
+  "author": {
+    "name": "Rintaro Itokawa",
+    "email": "me@re-taro.dev",
+    "url": "https://re-taro.dev"
+  },
+  "homepage": "https://github.com/re-taro/fmt#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re-taro/fmt.git",
+    "directory": "packages/prettier-plugin-toml"
+  },
+  "bugs": {
+    "url": "https://github.com/re-taro/fmt/issues"
+  },
+  "keywords": [
+    "prettier",
+    "prettier-plugin",
+    "prettierplugin",
+    "toml"
+  ],
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "prettier-plugin-toml": "1.0.0"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
