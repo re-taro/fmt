@@ -1,9 +1,9 @@
 {
   "packages": {
-    "packages/config": {
+    "packages/eslint-config": {
       "component": "eslint-config"
     },
-    "packages/plugin": {
+    "packages/eslint-plugin": {
       "component": "eslint-plugin"
     }
   },
