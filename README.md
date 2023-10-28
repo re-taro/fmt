@@ -16,7 +16,7 @@
 - **Style principle**: Consistent for reading, stable for diff. More automated style fixes is better.
 
 > [!IMPORTANT]
-> The main branch is for v2.0.0 prerelease, which rewrites to ESLint Flat config.
+> The main branch is for v2.0.0 release, which rewrites to ESLint Flat config.
 
 ## Usage
 
