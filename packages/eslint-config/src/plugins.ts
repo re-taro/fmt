@@ -4,6 +4,7 @@
 export { default as pluginComments } from "@eslint-community/eslint-plugin-eslint-comments";
 export { default as pluginHtml } from "@html-eslint/eslint-plugin";
 export { default as parserHtml } from "@html-eslint/parser";
+export { default as pluginNext } from "@next/eslint-plugin-next";
 export { default as pluginRetaro } from "@re-taro/eslint-plugin";
 export { default as pluginTs } from "@typescript-eslint/eslint-plugin";
 export { default as parserTs } from "@typescript-eslint/parser";

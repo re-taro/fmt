@@ -12,6 +12,7 @@ import {
   javascript,
   jsonc,
   mdx,
+  next,
   node,
   onlyError,
   promise,
@@ -51,6 +52,7 @@ export function re_taro(
     solid: enableSolid = isPackageExists("solid-js"),
     typescript: enableTypeScript = isPackageExists("typescript"),
     react: enableReact = isPackageExists("react"),
+    next: enableNext = isPackageExists("next"),
     gitignore: enableGitignore = true,
     overrides = {},
     componentExts = [],
@@ -87,6 +89,14 @@ export function re_taro(
     configs.push(
       react({
         overrides: overrides.react,
+      }),
+    );
+  }
+
+  if (enableNext) {
+    configs.push(
+      next({
+        overrides: overrides.next,
       }),
     );
   }
