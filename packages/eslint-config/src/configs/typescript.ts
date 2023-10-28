@@ -68,6 +68,7 @@ export function typescript({
         parser: parserTs as unknown as Parser,
         parserOptions: {
           sourceType: "module",
+          extraFileExtensions: componentExts.map((ext) => `.${ext}`),
           EXPERIMENTAL_useProjectService: true,
           ...(parserOptions as any),
         },
@@ -84,12 +85,12 @@ export function typescript({
         ...renameRules(
           pluginTs.configs["eslint-recommended"].overrides![0].rules!,
           "@typescript-eslint/",
-          "ts/",
+          "ts/"
         ),
         ...renameRules(
           pluginTs.configs.recommended.rules!,
           "@typescript-eslint/",
-          "ts/",
+          "ts/"
         ),
 
         "import/named": "off",
@@ -165,6 +166,7 @@ export function typescript({
         "ts/prefer-ts-expect-error": "error",
         "ts/no-require-imports": "error",
         "ts/method-signature-style": ["error", "property"],
+        "ts/explicit-member-accessibility": "error",
 
         // Override JS
         "no-useless-constructor": "off",
@@ -198,7 +200,6 @@ export function typescript({
         // off
         "ts/camelcase": "off",
         "ts/explicit-function-return-type": "off",
-        "ts/explicit-member-accessibility": "off",
         "ts/no-explicit-any": "off",
         "ts/no-parameter-properties": "off",
         "ts/no-empty-interface": "off",
@@ -228,7 +229,7 @@ export function typescript({
       },
       rules: {
         ...Object.fromEntries(
-          Object.keys(typeAwareRules).map((k) => [k, "off"]),
+          Object.keys(typeAwareRules).map((k) => [k, "off"])
         ),
       },
     },

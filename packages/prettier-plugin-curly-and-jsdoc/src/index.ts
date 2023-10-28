@@ -16,7 +16,7 @@ const parsers: Record<string, Parser> = {
     preprocess: (code: string, options: any) =>
       jsdocParsers.babel.preprocess(
         curlyParsers.babel.preprocess(code, options),
-        options
+        options,
       ),
   },
   typescript: {
@@ -24,7 +24,7 @@ const parsers: Record<string, Parser> = {
     preprocess: (code: string, options: any) =>
       jsdocParsers.typescript.preprocess!(
         curlyParsers.typescript.preprocess(code, options),
-        options
+        options,
       ),
   },
 };
