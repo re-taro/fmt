@@ -85,12 +85,12 @@ export function typescript({
         ...renameRules(
           pluginTs.configs["eslint-recommended"].overrides![0].rules!,
           "@typescript-eslint/",
-          "ts/"
+          "ts/",
         ),
         ...renameRules(
           pluginTs.configs.recommended.rules!,
           "@typescript-eslint/",
-          "ts/"
+          "ts/",
         ),
 
         "import/named": "off",
@@ -229,7 +229,7 @@ export function typescript({
       },
       rules: {
         ...Object.fromEntries(
-          Object.keys(typeAwareRules).map((k) => [k, "off"])
+          Object.keys(typeAwareRules).map((k) => [k, "off"]),
         ),
       },
     },

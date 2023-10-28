@@ -55,7 +55,7 @@ if (import.meta.vitest) {
 
   it("should be resolvable", () => {
     const actualPath = url.fileURLToPath(
-      new URL("../dist/index.cjs", import.meta.url)
+      new URL("../dist/index.cjs", import.meta.url),
     );
 
     const resolved = require.resolve("..");

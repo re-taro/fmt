@@ -105,7 +105,6 @@ export const vue = ({
         { ignoreConstructors: false, avoidQuotes: true },
       ],
       "vue/prefer-template": "error",
-      "vue/quote-props": ["error", "consistent-as-needed"],
       "vue/block-lang": [
         "error",
         {

@@ -12,7 +12,6 @@ export const formatting = (options: Options): FlatESLintConfigItem[] =>
         "re-taro/no-import-promises-as": "error",
         "re-taro/pad-after-last-import": "error",
         "re-taro/function-style": "error",
-        "quote-props": ["error", "consistent-as-needed"],
         "padding-line-between-statements": [
           "error",
           { blankLine: "always", prev: "*", next: "return" },

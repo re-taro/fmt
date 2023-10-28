@@ -11,6 +11,9 @@ importers:
       '@re-taro/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
+      '@re-taro/prettier-config':
+        specifier: workspace:*
+        version: link:packages/prettier-config
       '@rollup/plugin-replace':
         specifier: 5.0.4
         version: 5.0.4(rollup@4.1.4)

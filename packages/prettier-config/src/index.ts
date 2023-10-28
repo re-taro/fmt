@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url);
 
 const plugins = [
   ...["curly-and-jsdoc", "pkgsort", "toml"].map((p) =>
-    require.resolve(`@re-taro/prettier-plugin-${p}`)
+    require.resolve(`@re-taro/prettier-plugin-${p}`),
   ),
   require.resolve("prettier-plugin-astro"),
 ];
