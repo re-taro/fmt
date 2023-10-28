@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ESNext",
-    "lib": ["ESNext"],
-    "esModuleInterop": true,
+    "target": "es2018",
+    "lib": ["esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "types": ["vitest/importMeta"],
     "strict": true,
     "strictNullChecks": true,
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "noUnusedParameters": true,
-    "jsx": "preserve"
-  },
-  "exclude": ["**/dist/**", "**/node_modules/**", "**/test/dts/**"]
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  }
 }

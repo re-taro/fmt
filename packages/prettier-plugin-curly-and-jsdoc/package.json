@@ -1,0 +1,52 @@
+{
+  "name": "@re-taro/prettier-plugin-curly-and-jsdoc",
+  "description": "Prettier plugin for curly and jsdoc",
+  "version": "1.0.0",
+  "packageManager": "pnpm@8.9.2",
+  "license": "MIT",
+  "author": {
+    "name": "Rintaro Itokawa",
+    "email": "me@re-taro.dev",
+    "url": "https://re-taro.dev"
+  },
+  "homepage": "https://github.com/re-taro/fmt#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re-taro/fmt.git",
+    "directory": "packages/prettier-plugin-curly-and-jsdoc"
+  },
+  "bugs": {
+    "url": "https://github.com/re-taro/fmt/issues"
+  },
+  "keywords": [
+    "curly",
+    "jsdoc",
+    "prettier",
+    "prettier-plugin",
+    "prettierplugin"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "prettier-plugin-curly": "0.1.3",
+    "prettier-plugin-jsdoc": "1.0.1"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  }
+}

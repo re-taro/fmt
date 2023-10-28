@@ -9,7 +9,7 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     outputs:
-      release-created: ${{ steps.release.outputs.release_created }}
+      release-created: ${{ steps.release.outputs.releases_created }}
     steps:
       - name: Setup | GitHub App
         id: bot

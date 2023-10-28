@@ -1,0 +1,51 @@
+{
+  "name": "@re-taro/prettier-config",
+  "description": "Prettier config for re-taro",
+  "version": "1.0.0",
+  "packageManager": "pnpm@8.9.2",
+  "license": "MIT",
+  "author": {
+    "name": "Rintaro Itokawa",
+    "email": "me@re-taro.dev",
+    "url": "https://re-taro.dev"
+  },
+  "homepage": "https://github.com/re-taro/fmt#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re-taro/fmt.git",
+    "directory": "packages/prettier-config"
+  },
+  "bugs": {
+    "url": "https://github.com/re-taro/fmt/issues"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "prettier . --config=dist/index.mjs --check"
+  },
+  "dependencies": {
+    "@re-taro/prettier-plugin-curly-and-jsdoc": "workspace:*",
+    "@re-taro/prettier-plugin-pkgsort": "workspace:*",
+    "@re-taro/prettier-plugin-toml": "workspace:*",
+    "prettier-plugin-astro": "0.12.0"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
