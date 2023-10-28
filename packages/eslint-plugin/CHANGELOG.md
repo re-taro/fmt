@@ -2,11 +2,10 @@
 
 ## [2.1.0](https://github.com/re-taro/fmt/compare/eslint-plugin-v2.0.0...eslint-plugin-v2.1.0) (2023-10-28)
 
-
 ### Features
 
-* impl react and next config ([#613](https://github.com/re-taro/fmt/issues/613)) ([f4be82d](https://github.com/re-taro/fmt/commit/f4be82d1a0a816ee3d397a33073402ec3436f5a8))
-* impl svelte config ([#615](https://github.com/re-taro/fmt/issues/615)) ([4d5d72e](https://github.com/re-taro/fmt/commit/4d5d72ec440f132c5d6aad74ef9f7695b6413c8b))
+- impl react and next config ([#613](https://github.com/re-taro/fmt/issues/613)) ([f4be82d](https://github.com/re-taro/fmt/commit/f4be82d1a0a816ee3d397a33073402ec3436f5a8))
+- impl svelte config ([#615](https://github.com/re-taro/fmt/issues/615)) ([4d5d72e](https://github.com/re-taro/fmt/commit/4d5d72ec440f132c5d6aad74ef9f7695b6413c8b))
 
 ## [2.0.0](https://github.com/re-taro/fmt/compare/eslint-plugin-v1.10.5...eslint-plugin-v2.0.0) (2023-10-28)
 
