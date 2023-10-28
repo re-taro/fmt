@@ -1,8 +1,4 @@
 {
   "packages/eslint-config": "1.10.5",
-  "packages/eslint-plugin": "1.10.5",
-  "packages/prettier-config": "1.0.0",
-  "packages/prettier-plugin-curly-and-jsdoc": "1.0.0",
-  "packages/prettier-plugin-pkgsort": "1.0.0",
-  "packages/prettier-plugin-toml": "1.0.0"
+  "packages/eslint-plugin": "1.10.5"
 }
