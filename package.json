@@ -31,11 +31,9 @@
     "@rollup/plugin-typescript": "11.1.5",
     "@types/node": "20.8.8",
     "eslint": "8.52.0",
-    "execa": "8.0.0",
     "prettier": "3.0.0",
     "rollup": "4.1.4",
     "terser": "5.22.0",
-    "tsx": "3.12.7",
     "typescript": "5.1.6",
     "vitest": "0.34.0"
   },
