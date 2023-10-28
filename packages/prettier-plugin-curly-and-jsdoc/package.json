@@ -40,8 +40,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "test": "vitest"
+    "build": "rollup -c"
   },
   "devDependencies": {
     "prettier-plugin-curly": "0.1.3",

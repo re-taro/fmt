@@ -19,7 +19,6 @@
     "build": "pnpm run -r --filter=./packages/* build",
     "lint": "eslint . && prettier . --check",
     "lint:fix": "eslint . --fix && prettier . --write",
-    "stub": "pnpm run -p -r --filter=./packages/* stub",
     "test": "pnpm run -r --filter=./packages/* test",
     "typecheck": "tsc --noEmit",
     "watch": "pnpm run -r --filter=./packages/* watch"
