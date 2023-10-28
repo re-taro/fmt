@@ -46,6 +46,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "4.0.0",
     "@html-eslint/eslint-plugin": "0.19.1",
     "@html-eslint/parser": "0.19.1",
+    "@next/eslint-plugin-next": "14.0.0",
     "@re-taro/eslint-plugin": "workspace:*",
     "@typescript-eslint/eslint-plugin": "6.9.0",
     "@typescript-eslint/parser": "6.9.0",
@@ -62,15 +63,19 @@
     "eslint-plugin-jest-formatting": "3.1.0",
     "eslint-plugin-json-schema-validator": "4.6.0",
     "eslint-plugin-jsonc": "2.9.0",
+    "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-mdx": "2.2.0",
     "eslint-plugin-n": "16.0.1",
     "eslint-plugin-no-explicit-type-exports": "0.12.1",
     "eslint-plugin-no-only-tests": "3.1.0",
     "eslint-plugin-only-error": "1.0.2",
     "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-regexp": "1.15.0",
     "eslint-plugin-simple-import-sort": "10.0.0",
     "eslint-plugin-solid": "0.13.0",
+    "eslint-plugin-svelte": "2.34.0",
     "eslint-plugin-toml": "0.5.0",
     "eslint-plugin-unicorn": "48.0.1",
     "eslint-plugin-unused-imports": "3.0.0",
@@ -80,6 +85,7 @@
     "globals": "13.22.0",
     "jsonc-eslint-parser": "2.3.0",
     "local-pkg": "0.5.0",
+    "svelte-eslint-parser": "0.33.1",
     "toml-eslint-parser": "0.6.0",
     "vue-eslint-parser": "9.3.1",
     "yaml-eslint-parser": "1.2.2"
@@ -89,6 +95,7 @@
   },
   "peerDependencies": {
     "eslint": ">=8.40.0",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "svelte": "^3.37.0 || ^4.0.0"
   }
 }
