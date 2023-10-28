@@ -6,8 +6,14 @@
     "packages/eslint-plugin": {
       "component": "eslint-plugin"
     },
+    "packages/prettier-config": {
+      "component": "prettier-config"
+    },
     "packages/prettier-plugin-curly-and-jsdoc": {
       "component": "prettier-plugin-curly-and-jsdoc"
+    },
+    "packages/prettier-plugin-pkgsort": {
+      "component": "prettier-plugin-pkgsort"
     },
     "packages/prettier-plugin-toml": {
       "component": "prettier-plugin-toml"
@@ -28,7 +34,12 @@
       "type": "linked-versions",
       "group-name": "prettier",
       "groupName": "prettier",
-      "components": ["prettier-plugin-curly-and-jsdoc", "prettier-plugin-toml"]
+      "components": [
+        "prettier-config",
+        "prettier-plugin-curly-and-jsdoc",
+        "prettier-plugin-pkgsort",
+        "prettier-plugin-toml"
+      ]
     }
   ]
 }
