@@ -196,6 +196,9 @@ importers:
       '@re-taro/prettier-plugin-curly-and-jsdoc':
         specifier: workspace:*
         version: link:../prettier-plugin-curly-and-jsdoc
+      '@re-taro/prettier-plugin-pkgsort':
+        specifier: workspace:*
+        version: link:../prettier-plugin-pkgsort
       '@re-taro/prettier-plugin-toml':
         specifier: workspace:*
         version: link:../prettier-plugin-toml
@@ -205,9 +208,6 @@ importers:
       prettier-plugin-astro:
         specifier: 0.12.0
         version: 0.12.0
-      prettier-plugin-pkgsort:
-        specifier: 0.2.0
-        version: 0.2.0(prettier@3.0.0)
 
   packages/prettier-plugin-curly-and-jsdoc:
     dependencies:
@@ -4553,19 +4553,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /prettier-plugin-pkgsort@0.2.0(prettier@3.0.0):
-    resolution: {integrity: sha512-A5XohUJuG/pybouEB7p5kEMgZk77stRN8AZTCvI9CtZTj9HAinByZw9+gwPKDHD1lmPCTYLo9+F5ZpHXDOZXig==}
-    peerDependencies:
-      prettier: ^3.0.0
-    peerDependenciesMeta:
-      prettier:
-        optional: true
-    dependencies:
-      prettier: 3.0.0
-      prettier-package-json: 2.8.0
-      synckit: 0.8.5
-    dev: false
 
   /prettier-plugin-toml@1.0.0(prettier@3.0.0):
     resolution: {integrity: sha512-YMn4Fqy/ANHommZh61s5qqtpfcgPB00Ty890bFPr73B0HAy77zgyH89SvAK+NyPPx3AdM56a4Yo66LH9GPnuZw==}
