@@ -1,4 +1,3 @@
-import replace from "@rollup/plugin-replace";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 
@@ -27,10 +26,6 @@ const options = {
       tsconfig: "./tsconfig.json",
       outDir: ".",
       declaration: true,
-    }),
-    replace({
-      "import.meta.vitest": "undefined",
-      preventAssignment: true,
     }),
     terser(),
   ],
