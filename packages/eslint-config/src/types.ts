@@ -48,6 +48,20 @@ export interface Options extends OptionsComponentExts {
   test?: boolean;
 
   /**
+   * Enable React.js support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  react?: boolean;
+
+  /**
+   * Enable Next.js support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  next?: boolean;
+
+  /**
    * Enable Vue support.
    *
    * @default auto-detect based on the dependencies
@@ -101,6 +115,8 @@ export interface Options extends OptionsComponentExts {
     javascript?: FlatESLintConfigItem["rules"];
     typescript?: FlatESLintConfigItem["rules"];
     test?: FlatESLintConfigItem["rules"];
+    react?: FlatESLintConfigItem["rules"];
+    next?: FlatESLintConfigItem["rules"];
     vue?: FlatESLintConfigItem["rules"];
     solid?: FlatESLintConfigItem["rules"];
     jsonc?: FlatESLintConfigItem["rules"];

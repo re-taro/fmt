@@ -15,6 +15,7 @@ import {
   node,
   onlyError,
   promise,
+  react,
   solid,
   sortImports,
   test,
@@ -49,6 +50,7 @@ export function re_taro(
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
     solid: enableSolid = isPackageExists("solid-js"),
     typescript: enableTypeScript = isPackageExists("typescript"),
+    react: enableReact = isPackageExists("react"),
     gitignore: enableGitignore = true,
     overrides = {},
     componentExts = [],
@@ -80,6 +82,14 @@ export function re_taro(
     imports(),
     unicorn(),
   );
+
+  if (enableReact) {
+    configs.push(
+      react({
+        overrides: overrides.react,
+      }),
+    );
+  }
 
   if (enableVue) {
     componentExts.push("vue");

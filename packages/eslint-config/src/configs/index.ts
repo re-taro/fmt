@@ -9,6 +9,7 @@ export * from "./mdx";
 export * from "./node";
 export * from "./only-error";
 export * from "./promise";
+export * from "./react";
 export * from "./solid";
 export * from "./sort-imports";
 export * from "./test";
