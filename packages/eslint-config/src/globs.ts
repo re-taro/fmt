@@ -19,6 +19,7 @@ export const GLOB_JSONC = "**/*.jsonc";
 export const GLOB_ESLINTRC = "**/.eslintrc";
 
 export const GLOB_MARKDOWN = "**/*.md?(x)";
+export const GLOB_SVELTE = ["**/*.svelte", "**/*.svx"];
 export const GLOB_VUE = "**/*.vue";
 export const GLOB_YAML = "**/*.y?(a)ml";
 export const GLOB_TOML = "**/*.toml";

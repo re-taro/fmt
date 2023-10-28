@@ -19,6 +19,7 @@ import {
   react,
   solid,
   sortImports,
+  svelte,
   test,
   toml,
   typescript,
@@ -41,6 +42,7 @@ const flatConfigProps: (keyof FlatESLintConfigItem)[] = [
 ];
 
 const VuePackages = ["vue", "nuxt", "vitepress", "@slidev/cli"];
+const SveltePackages = ["svelte", "svelte-check", "@sveltejs/kit"];
 
 /** Construct an array of ESLint flat config items. */
 export function re_taro(
@@ -49,6 +51,7 @@ export function re_taro(
 ) {
   const {
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
+    svelte: enableSvelte = SveltePackages.some((i) => isPackageExists(i)),
     solid: enableSolid = isPackageExists("solid-js"),
     typescript: enableTypeScript = isPackageExists("typescript"),
     react: enableReact = isPackageExists("react"),
@@ -85,24 +88,12 @@ export function re_taro(
     unicorn(),
   );
 
-  if (enableReact) {
-    configs.push(
-      react({
-        overrides: overrides.react,
-      }),
-    );
-  }
-
-  if (enableNext) {
-    configs.push(
-      next({
-        overrides: overrides.next,
-      }),
-    );
-  }
-
   if (enableVue) {
     componentExts.push("vue");
+  }
+
+  if (enableSvelte) {
+    componentExts.push("svelte");
   }
 
   if (enableTypeScript) {
@@ -122,10 +113,35 @@ export function re_taro(
     );
   }
 
+  if (enableReact) {
+    configs.push(
+      react({
+        overrides: overrides.react,
+      }),
+    );
+  }
+
+  if (enableNext) {
+    configs.push(
+      next({
+        overrides: overrides.next,
+      }),
+    );
+  }
+
   if (enableVue) {
     configs.push(
       vue({
         overrides: overrides.vue,
+        typescript: !!enableTypeScript,
+      }),
+    );
+  }
+
+  if (enableSvelte) {
+    configs.push(
+      svelte({
+        overrides: overrides.svelte,
         typescript: !!enableTypeScript,
       }),
     );

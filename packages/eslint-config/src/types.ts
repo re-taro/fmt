@@ -69,6 +69,13 @@ export interface Options extends OptionsComponentExts {
   vue?: boolean;
 
   /**
+   * Enable Svelte support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  svelte?: boolean;
+
+  /**
    * Enable Solid.js support.
    *
    * @default auto-detect based on the dependencies
@@ -118,6 +125,7 @@ export interface Options extends OptionsComponentExts {
     react?: FlatESLintConfigItem["rules"];
     next?: FlatESLintConfigItem["rules"];
     vue?: FlatESLintConfigItem["rules"];
+    svelte?: FlatESLintConfigItem["rules"];
     solid?: FlatESLintConfigItem["rules"];
     jsonc?: FlatESLintConfigItem["rules"];
     mdx?: FlatESLintConfigItem["rules"];
