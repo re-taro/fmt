@@ -1,6 +1,6 @@
 {
-  "name": "@re-taro/eslint-plugin",
-  "version": "1.10.5",
+  "name": "@re-taro/prettier-config",
+  "version": "1.0.0",
   "packageManager": "pnpm@8.9.2",
   "license": "MIT",
   "author": {
@@ -12,16 +12,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/re-taro/fmt.git",
-    "directory": "packages/eslint-plugin"
+    "directory": "packages/prettier-config"
   },
   "bugs": {
     "url": "https://github.com/re-taro/fmt/issues"
   },
-  "keywords": [
-    "eslint",
-    "eslint-config",
-    "eslint-plugin"
-  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -41,13 +36,15 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "vitest"
+    "lint": "prettier . --config=dist/index.mjs --check"
   },
   "dependencies": {
-    "@typescript-eslint/types": "6.2.0",
-    "@typescript-eslint/utils": "6.2.0"
+    "@re-taro/prettier-plugin-curly-and-jsdoc": "workspace:*",
+    "@re-taro/prettier-plugin-toml": "workspace:*",
+    "prettier-plugin-astro": "0.12.0",
+    "prettier-plugin-pkgsort": "0.2.0"
   },
-  "devDependencies": {
-    "@typescript-eslint/parser": "6.9.0"
+  "peerDependencies": {
+    "prettier": "^3.0.0"
   }
 }

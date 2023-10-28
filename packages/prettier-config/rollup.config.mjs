@@ -3,11 +3,7 @@ import typescript from "@rollup/plugin-typescript";
 
 import pkg from "./package.json" assert { type: "json" };
 
-const externals = [
-  ...Object.keys(pkg.dependencies),
-  ...Object.keys(pkg.devDependencies),
-  "node:fs",
-];
+const externals = [...Object.keys(pkg.dependencies), "node:module"];
 
 /** @type {import('rollup').RollupOptions} */
 const options = {
