@@ -1,5 +1,6 @@
 {
   "name": "@re-taro/prettier-plugin-toml",
+  "description": "Prettier plugin for TOML",
   "version": "1.0.0",
   "packageManager": "pnpm@8.9.2",
   "license": "MIT",
@@ -33,6 +34,9 @@
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,6 @@
 {
   "name": "@re-taro/prettier-config",
+  "description": "Prettier config for re-taro",
   "version": "1.0.0",
   "packageManager": "pnpm@8.9.2",
   "license": "MIT",
