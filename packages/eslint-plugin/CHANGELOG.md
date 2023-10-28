@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/re-taro/fmt/compare/eslint-plugin-v1.10.5...eslint-plugin-v2.0.0) (2023-10-28)
+
+
+### ⚠ BREAKING CHANGES
+
+* support flat config ([#608](https://github.com/re-taro/fmt/issues/608))
+
+### Features
+
+* support flat config ([#608](https://github.com/re-taro/fmt/issues/608)) ([8ed62ac](https://github.com/re-taro/fmt/commit/8ed62acbaa5018633fc57a361654c2803ca89ef7))
+
 ## [1.10.5](https://github.com/re-taro/eslint/compare/eslint-plugin-v1.10.4...eslint-plugin-v1.10.5) (2023-10-23)
 
 ### Bug Fixes
