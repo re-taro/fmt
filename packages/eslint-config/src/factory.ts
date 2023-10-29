@@ -59,6 +59,7 @@ export function re_taro(
     gitignore: enableGitignore = true,
     overrides = {},
     componentExts = [],
+    parserOptions = {},
   } = options;
 
   const configs: FlatESLintConfigItem[][] = [];
@@ -100,6 +101,7 @@ export function re_taro(
     configs.push(
       typescript({
         componentExts,
+        parserOptions,
         overrides: overrides.typescript,
       }),
     );

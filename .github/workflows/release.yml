@@ -60,6 +60,7 @@ jobs:
       - name: Setup | Registry
         uses: actions/setup-node@v3.8.2
         with:
+          scope: "@re-taro"
           registry-url: ${{ matrix.url }}
       - name: Publish | Build
         run: pnpm build
