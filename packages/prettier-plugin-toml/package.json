@@ -2,7 +2,7 @@
   "name": "@re-taro/prettier-plugin-toml",
   "description": "Prettier plugin for TOML",
   "version": "1.0.0",
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.0",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
