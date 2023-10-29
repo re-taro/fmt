@@ -58,7 +58,7 @@ jobs:
         with:
           node-version-file: .tool-versions
       - name: Setup | Registry
-        uses: actions/setup-node@v3.8.2
+        uses: actions/setup-node@v4.0.0
         with:
           scope: "@re-taro"
           registry-url: ${{ matrix.url }}
