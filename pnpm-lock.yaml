@@ -30,8 +30,8 @@ importers:
         specifier: 8.52.0
         version: 8.52.0
       prettier:
-        specifier: 3.0.0
-        version: 3.0.0
+        specifier: 3.0.3
+        version: 3.0.3
       rollup:
         specifier: 4.1.5
         version: 4.1.5
@@ -72,8 +72,8 @@ importers:
         specifier: 0.55.7
         version: 0.55.7(eslint@8.46.0)(typescript@5.2.2)
       eslint-config-flat-gitignore:
-        specifier: 0.1.0
-        version: 0.1.0
+        specifier: 0.1.1
+        version: 0.1.1
       eslint-define-config:
         specifier: 1.21.0
         version: 1.21.0
@@ -102,8 +102,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(eslint@8.46.0)
       eslint-plugin-json-schema-validator:
-        specifier: 4.6.0
-        version: 4.6.0(eslint@8.46.0)
+        specifier: 4.6.1
+        version: 4.6.1(eslint@8.46.0)
       eslint-plugin-jsonc:
         specifier: 2.9.0
         version: 2.9.0(eslint@8.46.0)
@@ -114,8 +114,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(eslint@8.46.0)
       eslint-plugin-n:
-        specifier: 16.0.1
-        version: 16.0.1(eslint@8.46.0)
+        specifier: 16.0.2
+        version: 16.0.2(eslint@8.46.0)
       eslint-plugin-no-explicit-type-exports:
         specifier: 0.12.1
         version: 0.12.1(@typescript-eslint/parser@6.9.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.46.0)(typescript@5.2.2)
@@ -156,8 +156,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(@typescript-eslint/eslint-plugin@6.9.0)(eslint@8.46.0)
       eslint-plugin-vitest:
-        specifier: 0.3.0
-        version: 0.3.0(@typescript-eslint/eslint-plugin@6.9.0)(eslint@8.46.0)(vitest@0.34.6)
+        specifier: 0.3.8
+        version: 0.3.8(@typescript-eslint/eslint-plugin@6.9.0)(eslint@8.46.0)(typescript@5.2.2)(vitest@0.34.6)
       eslint-plugin-vue:
         specifier: 9.17.0
         version: 9.17.0(eslint@8.46.0)
@@ -243,8 +243,8 @@ importers:
   packages/prettier-plugin-pkgsort:
     dependencies:
       prettier:
-        specifier: 3.0.0
-        version: 3.0.0
+        specifier: 3.0.3
+        version: 3.0.3
       prettier-package-json:
         specifier: 2.8.0
         version: 2.8.0
@@ -847,7 +847,7 @@ packages:
       open: 8.4.0
       picocolors: 1.0.0
       tiny-glob: 0.2.9
-      tslib: 2.5.0
+      tslib: 2.6.2
     dev: false
 
   /@rollup/plugin-replace@5.0.4(rollup@4.1.5):
@@ -2329,8 +2329,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  /eslint-config-flat-gitignore@0.1.0:
-    resolution: {integrity: sha512-5nQMQFRkkhCb+ejFhKSATn/41I7ot9oRcnEDzfqwMlBE9036qM9ioYBDtKLpwmlICXr/J7naMFfb39pa4v4sGA==}
+  /eslint-config-flat-gitignore@0.1.1:
+    resolution: {integrity: sha512-ysq0QpN63+uaxE67U0g0HeCweIpv8Ztp7yvm0nYiM2TBalRIG6KQLO5J6lAz2gkA8KVis/QsJppe+BR5VigtWQ==}
     dependencies:
       parse-gitignore: 2.0.0
     dev: false
@@ -2561,8 +2561,8 @@ packages:
       eslint: 8.46.0
     dev: false
 
-  /eslint-plugin-json-schema-validator@4.6.0(eslint@8.46.0):
-    resolution: {integrity: sha512-5DSW0X+ON4DFUBTlVWDz1+1Q8Nm7JBRN2JjSOALSY1SHn42GDsUbzEHrpuQCBtWLA/fCtZeMexC/ZBr3cy8d3g==}
+  /eslint-plugin-json-schema-validator@4.6.1(eslint@8.46.0):
+    resolution: {integrity: sha512-xzPnXOyWFc9Vs33Pt0WraQfDKJwa6wH11Z9s2XhtLQRMrj50hUgekG6CFWJigitbGLCHjRtY4Hy+dZMrzk40mg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -2665,8 +2665,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-n@16.0.1(eslint@8.46.0):
-    resolution: {integrity: sha512-CDmHegJN0OF3L5cz5tATH84RPQm9kG+Yx39wIqIwPR2C0uhBGMWfbbOtetR83PQjjidA5aXMu+LEFw1jaSwvTA==}
+  /eslint-plugin-n@16.0.2(eslint@8.46.0):
+    resolution: {integrity: sha512-Y66uDfUNbBzypsr0kELWrIz+5skicECrLUqlWuXawNSLUq3ltGlCwu6phboYYOTSnoTdHgTLrc+5Ydo6KjzZog==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: '>=7.0.0'
@@ -2912,8 +2912,8 @@ packages:
       eslint-rule-composer: 0.3.0
     dev: false
 
-  /eslint-plugin-vitest@0.3.0(@typescript-eslint/eslint-plugin@6.9.0)(eslint@8.46.0)(vitest@0.34.6):
-    resolution: {integrity: sha512-NmEOOXQvU9f/30xlRk5Upv3VgDacFv8CaSiHjn3K/JthV2qUFF/l5gICP2vVTNETzYMx2ucmUOyOabeSKxkesA==}
+  /eslint-plugin-vitest@0.3.8(@typescript-eslint/eslint-plugin@6.9.0)(eslint@8.46.0)(typescript@5.2.2)(vitest@0.34.6):
+    resolution: {integrity: sha512-MYQJzg3i+nLkaIQgjnOhtqHYIt0W6nErqAOKI3LTSQ2aOgcNHGYTwOhpnwGC1IXTvGWjKgAwb7rHwLpcHWHSAQ==}
     engines: {node: 14.x || >= 16}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': '*'
@@ -2926,12 +2926,12 @@ packages:
         optional: true
     dependencies:
       '@typescript-eslint/eslint-plugin': 6.9.0(@typescript-eslint/parser@6.9.0)(eslint@8.46.0)(typescript@5.2.2)
-      '@typescript-eslint/utils': 6.8.0(eslint@8.46.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': 6.9.0(eslint@8.46.0)(typescript@5.2.2)
       eslint: 8.46.0
-      typescript: 5.2.2
       vitest: 0.34.6(terser@5.22.0)
     transitivePeerDependencies:
       - supports-color
+      - typescript
     dev: false
 
   /eslint-plugin-vue@9.17.0(eslint@8.46.0):
@@ -4887,6 +4887,11 @@ packages:
 
   /prettier@3.0.0:
     resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  /prettier@3.0.3:
+    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
     engines: {node: '>=14'}
     hasBin: true
 
