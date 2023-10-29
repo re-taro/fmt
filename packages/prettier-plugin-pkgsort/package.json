@@ -46,7 +46,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "prettier": "3.0.0",
+    "prettier": "3.0.3",
     "prettier-package-json": "2.8.0"
   },
   "peerDependencies": {
