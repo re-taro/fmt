@@ -26,7 +26,7 @@
   "devDependencies": {
     "@re-taro/eslint-config": "workspace:*",
     "@re-taro/prettier-config": "workspace:*",
-    "@rollup/plugin-replace": "5.0.4",
+    "@rollup/plugin-replace": "5.0.5",
     "@rollup/plugin-terser": "0.4.4",
     "@rollup/plugin-typescript": "11.1.5",
     "@types/node": "20.8.9",
