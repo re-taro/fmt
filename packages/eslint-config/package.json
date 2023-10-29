@@ -43,7 +43,7 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@eslint-community/eslint-plugin-eslint-comments": "4.0.0",
+    "@eslint-community/eslint-plugin-eslint-comments": "4.1.0",
     "@html-eslint/eslint-plugin": "0.19.1",
     "@html-eslint/parser": "0.19.1",
     "@next/eslint-plugin-next": "14.0.0",
