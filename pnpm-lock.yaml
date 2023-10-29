@@ -48,8 +48,8 @@ importers:
   packages/eslint-config:
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments':
-        specifier: 4.0.0
-        version: 4.0.0(eslint@8.52.0)
+        specifier: 4.1.0
+        version: 4.1.0(eslint@8.52.0)
       '@html-eslint/eslint-plugin':
         specifier: 0.19.1
         version: 0.19.1
@@ -616,16 +616,16 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@eslint-community/eslint-plugin-eslint-comments@4.0.0(eslint@8.52.0):
-    resolution: {integrity: sha512-1iWsU5o4rMgOzaKBiFNDF4g5StFcMCvfDxqYj3piWifBJF5oVENJ2vWdEXuw2P6/c8FxlEQIwk6E6ExuvYAYlQ==}
+  /@eslint-community/eslint-plugin-eslint-comments@4.1.0(eslint@8.52.0):
+    resolution: {integrity: sha512-B2mwipifrBS5E00vN8vME68laPMZ0h3sNGOEDj5g9iUN9k5EU99Omq0Nc325eKNoFFDnDtiHp3DqIjO+1bstag==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      eslint: ^6.0.0 || ^7.0.0
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       eslint:
         optional: true
     dependencies:
-      escape-string-regexp: 1.0.5
+      escape-string-regexp: 4.0.0
       eslint: 8.52.0
       ignore: 5.2.4
     dev: false
