@@ -1,8 +1,8 @@
 {
-  "packages/eslint-config": "2.1.0",
-  "packages/eslint-plugin": "2.1.0",
-  "packages/prettier-config": "1.0.0",
-  "packages/prettier-plugin-curly-and-jsdoc": "1.0.0",
-  "packages/prettier-plugin-pkgsort": "1.0.0",
-  "packages/prettier-plugin-toml": "1.0.0"
+  "packages/eslint-config": "2.1.1",
+  "packages/eslint-plugin": "2.1.1",
+  "packages/prettier-config": "1.0.1",
+  "packages/prettier-plugin-curly-and-jsdoc": "1.0.1",
+  "packages/prettier-plugin-pkgsort": "1.0.1",
+  "packages/prettier-plugin-toml": "1.0.1"
 }
