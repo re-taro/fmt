@@ -2,10 +2,9 @@
 
 ## [1.0.1](https://github.com/re-taro/fmt/compare/prettier-plugin-toml-v1.0.0...prettier-plugin-toml-v1.0.1) (2023-10-29)
 
-
 ### Miscellaneous Chores
 
-* **prettier-plugin-toml:** Synchronize prettier versions
+- **prettier-plugin-toml:** Synchronize prettier versions
 
 ## 1.0.0 (2023-10-28)
 

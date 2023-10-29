@@ -2,10 +2,9 @@
 
 ## [1.0.1](https://github.com/re-taro/fmt/compare/prettier-plugin-curly-and-jsdoc-v1.0.0...prettier-plugin-curly-and-jsdoc-v1.0.1) (2023-10-29)
 
-
 ### Miscellaneous Chores
 
-* **prettier-plugin-curly-and-jsdoc:** Synchronize prettier versions
+- **prettier-plugin-curly-and-jsdoc:** Synchronize prettier versions
 
 ## 1.0.0 (2023-10-28)
 

@@ -2,29 +2,27 @@
 
 ## [2.1.1](https://github.com/re-taro/fmt/compare/eslint-config-v2.1.0...eslint-config-v2.1.1) (2023-10-29)
 
-
 ### Bug Fixes
 
-* add parserOptions props ([#617](https://github.com/re-taro/fmt/issues/617)) ([4907e57](https://github.com/re-taro/fmt/commit/4907e57c28a78978e262f072aad406b95a1ec898))
-* **deps:** update dependency @eslint-community/eslint-plugin-eslint-comments to v4.1.0 ([#635](https://github.com/re-taro/fmt/issues/635)) ([cf503e7](https://github.com/re-taro/fmt/commit/cf503e74c0eaddfc326407005676c77d96ab4f9d))
-* **deps:** update dependency @html-eslint/eslint-plugin to v0.20.0 ([#636](https://github.com/re-taro/fmt/issues/636)) ([748e215](https://github.com/re-taro/fmt/commit/748e215c028c962316e4849172fcae225fa7f3ad))
-* **deps:** update dependency @html-eslint/parser to v0.20.0 ([#637](https://github.com/re-taro/fmt/issues/637)) ([79a8efa](https://github.com/re-taro/fmt/commit/79a8efa5cc2426fd20af864150d046db72afb840))
-* **deps:** update dependency @unocss/eslint-config to v0.55.7 ([#625](https://github.com/re-taro/fmt/issues/625)) ([029a5ed](https://github.com/re-taro/fmt/commit/029a5ed45d7a337831d09af64b2c5818549d9a80))
-* **deps:** update dependency @unocss/eslint-config to v0.57.1 ([#640](https://github.com/re-taro/fmt/issues/640)) ([1584b8d](https://github.com/re-taro/fmt/commit/1584b8d5be3e8f0c6ba5f058ebf148ab75c02e9c))
-* **deps:** update dependency eslint-define-config to v1.24.1 ([#641](https://github.com/re-taro/fmt/issues/641)) ([95bffdb](https://github.com/re-taro/fmt/commit/95bffdb7969ac93072386656c6b422e30221fe25))
-* **deps:** update dependency eslint-import-resolver-typescript to v3.6.1 ([#642](https://github.com/re-taro/fmt/issues/642)) ([1082e29](https://github.com/re-taro/fmt/commit/1082e29592d56eaebf995f0b2c70444f206f39ee))
-* **deps:** update dependency globals to v13.23.0 ([#643](https://github.com/re-taro/fmt/issues/643)) ([07b2d1f](https://github.com/re-taro/fmt/commit/07b2d1f73737d359bf94c37d84e33643eb6a67e9))
-* **deps:** update dependency jsonc-eslint-parser to v2.4.0 ([#644](https://github.com/re-taro/fmt/issues/644)) ([7b48b9a](https://github.com/re-taro/fmt/commit/7b48b9a1cceba61d2551a3d98b7983ad49dd0077))
-* **deps:** update dependency vue-eslint-parser to v9.3.2 ([#627](https://github.com/re-taro/fmt/issues/627)) ([ce7d80b](https://github.com/re-taro/fmt/commit/ce7d80b0e0e4ea29ea738efbf9c861b5b19930a9))
-* **deps:** update eslint and prettier ([#628](https://github.com/re-taro/fmt/issues/628)) ([f8c70cb](https://github.com/re-taro/fmt/commit/f8c70cb26fac1ca224405edf35b3bb30ed47c2dc))
-* **deps:** update eslint and prettier ([#646](https://github.com/re-taro/fmt/issues/646)) ([e1fff79](https://github.com/re-taro/fmt/commit/e1fff79250b95b1b45d3acc5bac5adc31e479041))
-
+- add parserOptions props ([#617](https://github.com/re-taro/fmt/issues/617)) ([4907e57](https://github.com/re-taro/fmt/commit/4907e57c28a78978e262f072aad406b95a1ec898))
+- **deps:** update dependency @eslint-community/eslint-plugin-eslint-comments to v4.1.0 ([#635](https://github.com/re-taro/fmt/issues/635)) ([cf503e7](https://github.com/re-taro/fmt/commit/cf503e74c0eaddfc326407005676c77d96ab4f9d))
+- **deps:** update dependency @html-eslint/eslint-plugin to v0.20.0 ([#636](https://github.com/re-taro/fmt/issues/636)) ([748e215](https://github.com/re-taro/fmt/commit/748e215c028c962316e4849172fcae225fa7f3ad))
+- **deps:** update dependency @html-eslint/parser to v0.20.0 ([#637](https://github.com/re-taro/fmt/issues/637)) ([79a8efa](https://github.com/re-taro/fmt/commit/79a8efa5cc2426fd20af864150d046db72afb840))
+- **deps:** update dependency @unocss/eslint-config to v0.55.7 ([#625](https://github.com/re-taro/fmt/issues/625)) ([029a5ed](https://github.com/re-taro/fmt/commit/029a5ed45d7a337831d09af64b2c5818549d9a80))
+- **deps:** update dependency @unocss/eslint-config to v0.57.1 ([#640](https://github.com/re-taro/fmt/issues/640)) ([1584b8d](https://github.com/re-taro/fmt/commit/1584b8d5be3e8f0c6ba5f058ebf148ab75c02e9c))
+- **deps:** update dependency eslint-define-config to v1.24.1 ([#641](https://github.com/re-taro/fmt/issues/641)) ([95bffdb](https://github.com/re-taro/fmt/commit/95bffdb7969ac93072386656c6b422e30221fe25))
+- **deps:** update dependency eslint-import-resolver-typescript to v3.6.1 ([#642](https://github.com/re-taro/fmt/issues/642)) ([1082e29](https://github.com/re-taro/fmt/commit/1082e29592d56eaebf995f0b2c70444f206f39ee))
+- **deps:** update dependency globals to v13.23.0 ([#643](https://github.com/re-taro/fmt/issues/643)) ([07b2d1f](https://github.com/re-taro/fmt/commit/07b2d1f73737d359bf94c37d84e33643eb6a67e9))
+- **deps:** update dependency jsonc-eslint-parser to v2.4.0 ([#644](https://github.com/re-taro/fmt/issues/644)) ([7b48b9a](https://github.com/re-taro/fmt/commit/7b48b9a1cceba61d2551a3d98b7983ad49dd0077))
+- **deps:** update dependency vue-eslint-parser to v9.3.2 ([#627](https://github.com/re-taro/fmt/issues/627)) ([ce7d80b](https://github.com/re-taro/fmt/commit/ce7d80b0e0e4ea29ea738efbf9c861b5b19930a9))
+- **deps:** update eslint and prettier ([#628](https://github.com/re-taro/fmt/issues/628)) ([f8c70cb](https://github.com/re-taro/fmt/commit/f8c70cb26fac1ca224405edf35b3bb30ed47c2dc))
+- **deps:** update eslint and prettier ([#646](https://github.com/re-taro/fmt/issues/646)) ([e1fff79](https://github.com/re-taro/fmt/commit/e1fff79250b95b1b45d3acc5bac5adc31e479041))
 
 ### Dependencies
 
-* The following workspace dependencies were updated
-  * dependencies
-    * @re-taro/eslint-plugin bumped to 2.1.1
+- The following workspace dependencies were updated
+  - dependencies
+    - @re-taro/eslint-plugin bumped to 2.1.1
 
 ## [2.1.0](https://github.com/re-taro/fmt/compare/eslint-config-v2.0.0...eslint-config-v2.1.0) (2023-10-28)
 

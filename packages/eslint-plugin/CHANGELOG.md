@@ -2,11 +2,10 @@
 
 ## [2.1.1](https://github.com/re-taro/fmt/compare/eslint-plugin-v2.1.0...eslint-plugin-v2.1.1) (2023-10-29)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency @typescript-eslint/types to v6.2.1 ([#623](https://github.com/re-taro/fmt/issues/623)) ([c758b53](https://github.com/re-taro/fmt/commit/c758b53089070c9f12c3f86be7ab56032ea42a98))
-* **deps:** update dependency @typescript-eslint/utils to v6.2.1 ([#624](https://github.com/re-taro/fmt/issues/624)) ([4863418](https://github.com/re-taro/fmt/commit/48634185037a3b9826a0f9a6909cd4cd0536f314))
+- **deps:** update dependency @typescript-eslint/types to v6.2.1 ([#623](https://github.com/re-taro/fmt/issues/623)) ([c758b53](https://github.com/re-taro/fmt/commit/c758b53089070c9f12c3f86be7ab56032ea42a98))
+- **deps:** update dependency @typescript-eslint/utils to v6.2.1 ([#624](https://github.com/re-taro/fmt/issues/624)) ([4863418](https://github.com/re-taro/fmt/commit/48634185037a3b9826a0f9a6909cd4cd0536f314))
 
 ## [2.1.0](https://github.com/re-taro/fmt/compare/eslint-plugin-v2.0.0...eslint-plugin-v2.1.0) (2023-10-28)
 
