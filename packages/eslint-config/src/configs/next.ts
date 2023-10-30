@@ -1,11 +1,7 @@
-import type { FlatESLintConfigItem } from "eslint-define-config";
-
 import { pluginNext } from "../plugins";
-import type { OptionsOverrides } from "../types";
+import type { ConfigItem, OptionsOverrides } from "../types";
 
-export const next = ({
-  overrides,
-}: OptionsOverrides = {}): FlatESLintConfigItem[] => [
+export const next = ({ overrides }: OptionsOverrides = {}): ConfigItem[] => [
   {
     plugins: {
       next: pluginNext,

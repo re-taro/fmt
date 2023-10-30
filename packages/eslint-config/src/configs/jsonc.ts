@@ -1,9 +1,8 @@
-import type { FlatESLintConfigItem, Parser } from "eslint-define-config";
-
 import { GLOB_ESLINTRC, GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from "../globs";
 import { parserJsonc, pluginJsonc } from "../plugins";
+import type { ConfigItem } from "../types";
 
-export const jsonc = (): FlatESLintConfigItem[] => [
+export const jsonc = (): ConfigItem[] => [
   {
     plugins: {
       jsonc: pluginJsonc,
@@ -12,7 +11,7 @@ export const jsonc = (): FlatESLintConfigItem[] => [
   {
     files: [GLOB_JSON, GLOB_JSON5, GLOB_JSONC, GLOB_ESLINTRC],
     languageOptions: {
-      parser: parserJsonc as unknown as Parser,
+      parser: parserJsonc,
     },
     rules: {
       ...(pluginJsonc.configs.base.overrides[0].rules as any),

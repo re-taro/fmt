@@ -1,12 +1,8 @@
-import type { FlatESLintConfigItem } from "eslint-define-config";
-
 import { GLOB_JSX, GLOB_TSX } from "../globs";
 import { pluginJsxA11y, pluginReact, pluginReactHooks } from "../plugins";
-import type { OptionsOverrides } from "../types";
+import type { ConfigItem, OptionsOverrides } from "../types";
 
-export const react = ({
-  overrides,
-}: OptionsOverrides = {}): FlatESLintConfigItem[] => [
+export const react = ({ overrides }: OptionsOverrides = {}): ConfigItem[] => [
   {
     plugins: {
       react: pluginReact,

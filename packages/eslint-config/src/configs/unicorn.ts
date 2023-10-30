@@ -1,12 +1,13 @@
-import type { FlatESLintConfigItem } from "eslint-define-config";
-
 import { pluginUnicorn } from "../plugins";
+import type { ConfigItem } from "../types";
 
-export const unicorn = (): FlatESLintConfigItem[] => [
+export const unicorn = (): ConfigItem[] => [
   {
     plugins: {
       unicorn: pluginUnicorn,
     },
+  },
+  {
     rules: {
       "unicorn/throw-new-error": "error",
       "unicorn/relative-url-style": ["error", "always"],

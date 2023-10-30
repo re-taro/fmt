@@ -1,7 +1,6 @@
 import fs from "node:fs";
 
 import gitignore from "eslint-config-flat-gitignore";
-import type { FlatESLintConfigItem } from "eslint-define-config";
 import { isPackageExists } from "local-pkg";
 
 import {
@@ -28,10 +27,10 @@ import {
   vue,
   yaml,
 } from "./configs";
-import type { Options } from "./types";
+import type { ConfigItem, Options } from "./types";
 import { combine } from "./utils";
 
-const flatConfigProps: (keyof FlatESLintConfigItem)[] = [
+const flatConfigProps: (keyof ConfigItem)[] = [
   "files",
   "ignores",
   "languageOptions",
@@ -48,7 +47,7 @@ const SveltePackages = ["svelte", "svelte-check", "@sveltejs/kit"];
 /** Construct an array of ESLint flat config items. */
 export function re_taro(
   options: Options = {},
-  ...userConfigs: (FlatESLintConfigItem | FlatESLintConfigItem[])[]
+  ...userConfigs: (ConfigItem | ConfigItem[])[]
 ) {
   const {
     vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
@@ -64,7 +63,7 @@ export function re_taro(
     parserOptions = {},
   } = options;
 
-  const configs: FlatESLintConfigItem[][] = [];
+  const configs: ConfigItem[][] = [];
 
   if (enableGitignore) {
     if (typeof enableGitignore === "boolean") {
@@ -209,7 +208,7 @@ export function re_taro(
     }
 
     return acc;
-  }, {} as FlatESLintConfigItem);
+  }, {} as ConfigItem);
 
   if (Object.keys(fusedConfig).length > 0) {
     configs.push([fusedConfig]);

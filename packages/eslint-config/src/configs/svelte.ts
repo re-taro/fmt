@@ -1,13 +1,15 @@
-import type { FlatESLintConfigItem, Parser } from "eslint-define-config";
-
 import { GLOB_SVELTE } from "../globs";
 import { parserSvelte, pluginSvelte } from "../plugins";
-import type { OptionsHasTypeScript, OptionsOverrides } from "../types";
+import type {
+  ConfigItem,
+  OptionsHasTypeScript,
+  OptionsOverrides,
+} from "../types";
 
 export const svelte = ({
   overrides,
   typescript,
-}: OptionsHasTypeScript & OptionsOverrides = {}): FlatESLintConfigItem[] => [
+}: OptionsHasTypeScript & OptionsOverrides = {}): ConfigItem[] => [
   {
     plugins: {
       svelte: pluginSvelte,
@@ -16,7 +18,7 @@ export const svelte = ({
   {
     files: GLOB_SVELTE,
     languageOptions: {
-      parser: parserSvelte as unknown as Parser,
+      parser: parserSvelte,
       parserOptions: {
         extraFileExtensions: [".svelte", ".svx"],
         parser: typescript ? "@typescript-eslint/parser" : undefined,
