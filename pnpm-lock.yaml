@@ -62,8 +62,8 @@ importers:
         specifier: 0.20.0
         version: 0.20.0
       '@next/eslint-plugin-next':
-        specifier: 14.0.0
-        version: 14.0.0
+        specifier: 14.0.1
+        version: 14.0.1
       '@re-taro/eslint-plugin':
         specifier: workspace:*
         version: link:../eslint-plugin
@@ -737,8 +737,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@next/eslint-plugin-next@14.0.0:
-    resolution: {integrity: sha512-Ye37nNI09V3yt7pzuzSQtwlvuJ2CGzFszHXkcTHHZgNr7EhTMFLipn3VSJChy+e5+ahTdNApPphc3qCPUsn10A==}
+  /@next/eslint-plugin-next@14.0.1:
+    resolution: {integrity: sha512-bLjJMwXdzvhnQOnxvHoTTUh/+PYk6FF/DCgHi4BXwXCINer+o1ZYfL9aVeezj/oI7wqGJOqwGIXrlBvPbAId3w==}
     dependencies:
       glob: 7.1.7
     dev: false
