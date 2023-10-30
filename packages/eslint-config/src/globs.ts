@@ -38,6 +38,15 @@ export const GLOB_TESTS = [
   `**/*.benchmark.${GLOB_SRC_EXT}`,
 ];
 
+export const GLOB_STORIES = [
+  `**/*.stories.${GLOB_SRC_EXT}`,
+  `**/*.story.${GLOB_SRC_EXT}`,
+  "**/*.stories.mdx",
+  "**/*.story.mdx",
+];
+
+export const GLOB_STORYBOOKCONFIG = `**/.storybook/config.${GLOB_SRC_EXT}`;
+
 export const GLOB_ALL_SRC = [
   GLOB_SRC,
   GLOB_STYLE,

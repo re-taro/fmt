@@ -19,6 +19,7 @@ import {
   react,
   solid,
   sortImports,
+  storybook,
   svelte,
   test,
   toml,
@@ -56,6 +57,7 @@ export function re_taro(
     typescript: enableTypeScript = isPackageExists("typescript"),
     react: enableReact = isPackageExists("react"),
     next: enableNext = isPackageExists("next"),
+    storybook: enableStorybook = isPackageExists("storybook"),
     gitignore: enableGitignore = true,
     overrides = {},
     componentExts = [],
@@ -154,6 +156,14 @@ export function re_taro(
       solid({
         overrides: overrides.solid,
         typescript: !!enableTypeScript,
+      }),
+    );
+  }
+
+  if (enableStorybook) {
+    configs.push(
+      storybook({
+        overrides: overrides.storybook,
       }),
     );
   }

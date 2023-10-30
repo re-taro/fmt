@@ -85,6 +85,13 @@ export interface Options
   solid?: boolean;
 
   /**
+   * Enable Storybook support.
+   *
+   * @default auto-detect based on the dependencies
+   */
+  storybook?: boolean;
+
+  /**
    * Enable JSONC support.
    *
    * @default true
@@ -129,6 +136,7 @@ export interface Options
     vue?: FlatESLintConfigItem["rules"];
     svelte?: FlatESLintConfigItem["rules"];
     solid?: FlatESLintConfigItem["rules"];
+    storybook?: FlatESLintConfigItem["rules"];
     jsonc?: FlatESLintConfigItem["rules"];
     mdx?: FlatESLintConfigItem["rules"];
     yaml?: FlatESLintConfigItem["rules"];
