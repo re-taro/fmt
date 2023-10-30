@@ -2,23 +2,20 @@
 
 ## [2.2.0](https://github.com/re-taro/fmt/compare/eslint-config-v2.1.1...eslint-config-v2.2.0) (2023-10-30)
 
-
 ### Features
 
-* **refactor:** use more better typing ([#654](https://github.com/re-taro/fmt/issues/654)) ([87746e0](https://github.com/re-taro/fmt/commit/87746e003bcd13ea26388aff778b545e5dd8506e))
-* support storybook ([#652](https://github.com/re-taro/fmt/issues/652)) ([bb40502](https://github.com/re-taro/fmt/commit/bb40502751212bf94fca644e631350d95008d8f3))
-
+- **refactor:** use more better typing ([#654](https://github.com/re-taro/fmt/issues/654)) ([87746e0](https://github.com/re-taro/fmt/commit/87746e003bcd13ea26388aff778b545e5dd8506e))
+- support storybook ([#652](https://github.com/re-taro/fmt/issues/652)) ([bb40502](https://github.com/re-taro/fmt/commit/bb40502751212bf94fca644e631350d95008d8f3))
 
 ### Bug Fixes
 
-* **deps:** update dependency eslint-plugin-unicorn to v49 ([#650](https://github.com/re-taro/fmt/issues/650)) ([aec133f](https://github.com/re-taro/fmt/commit/aec133f52dc2644c2c225c825c902a7c54dcd461))
-
+- **deps:** update dependency eslint-plugin-unicorn to v49 ([#650](https://github.com/re-taro/fmt/issues/650)) ([aec133f](https://github.com/re-taro/fmt/commit/aec133f52dc2644c2c225c825c902a7c54dcd461))
 
 ### Dependencies
 
-* The following workspace dependencies were updated
-  * dependencies
-    * @re-taro/eslint-plugin bumped to 2.2.0
+- The following workspace dependencies were updated
+  - dependencies
+    - @re-taro/eslint-plugin bumped to 2.2.0
 
 ## [2.1.1](https://github.com/re-taro/fmt/compare/eslint-config-v2.1.0...eslint-config-v2.1.1) (2023-10-29)
 
