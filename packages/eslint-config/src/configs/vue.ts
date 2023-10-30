@@ -1,13 +1,15 @@
-import type { FlatESLintConfigItem, Parser } from "eslint-define-config";
-
 import { GLOB_VUE } from "../globs";
 import { parserVue, pluginVue } from "../plugins";
-import type { OptionsHasTypeScript, OptionsOverrides } from "../types";
+import type {
+  ConfigItem,
+  OptionsHasTypeScript,
+  OptionsOverrides,
+} from "../types";
 
 export const vue = ({
   overrides,
   typescript,
-}: OptionsHasTypeScript & OptionsOverrides = {}): FlatESLintConfigItem[] => [
+}: OptionsHasTypeScript & OptionsOverrides = {}): ConfigItem[] => [
   {
     plugins: {
       vue: pluginVue,
@@ -16,7 +18,7 @@ export const vue = ({
   {
     files: [GLOB_VUE],
     languageOptions: {
-      parser: parserVue as unknown as Parser,
+      parser: parserVue,
       parserOptions: {
         ecmaFeatures: {
           jsx: true,

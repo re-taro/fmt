@@ -1,12 +1,10 @@
-import type { FlatESLintConfigItem } from "eslint-define-config";
-
 import { GLOB_STORIES, GLOB_STORYBOOKCONFIG } from "../globs";
 import { pluginStorybook } from "../plugins";
-import type { OptionsOverrides } from "../types";
+import type { ConfigItem, OptionsOverrides } from "../types";
 
 export const storybook = ({
   overrides,
-}: OptionsOverrides = {}): FlatESLintConfigItem[] => [
+}: OptionsOverrides = {}): ConfigItem[] => [
   {
     plugins: {
       storybook: pluginStorybook,
@@ -15,6 +13,7 @@ export const storybook = ({
   {
     files: GLOB_STORIES,
     rules: {
+      "import/no-anonymous-default-export": "off",
       "storybook/await-interactions": "error",
       "storybook/context-in-play-function": "error",
       "storybook/default-exports": "error",

@@ -1,6 +1,7 @@
+import type retaroPlugin from "@re-taro/eslint-plugin";
 import type { ParserOptions } from "@typescript-eslint/parser";
 import type { FlatGitignoreOptions } from "eslint-config-flat-gitignore";
-import type { FlatESLintConfigItem } from "eslint-define-config";
+import type { FlatESLintConfigItem, Rules } from "eslint-define-config";
 
 export interface OptionsComponentExts {
   /** Additional extensions for components. */
@@ -17,7 +18,7 @@ export interface OptionsHasTypeScript {
 }
 
 export interface OptionsOverrides {
-  overrides?: FlatESLintConfigItem["rules"];
+  overrides?: ConfigItem["rules"];
 }
 
 export interface Options
@@ -128,18 +129,50 @@ export interface Options
 
   /** Provide overrides for rules for each integration. */
   overrides?: {
-    javascript?: FlatESLintConfigItem["rules"];
-    typescript?: FlatESLintConfigItem["rules"];
-    test?: FlatESLintConfigItem["rules"];
-    react?: FlatESLintConfigItem["rules"];
-    next?: FlatESLintConfigItem["rules"];
-    vue?: FlatESLintConfigItem["rules"];
-    svelte?: FlatESLintConfigItem["rules"];
-    solid?: FlatESLintConfigItem["rules"];
-    storybook?: FlatESLintConfigItem["rules"];
-    jsonc?: FlatESLintConfigItem["rules"];
-    mdx?: FlatESLintConfigItem["rules"];
-    yaml?: FlatESLintConfigItem["rules"];
-    toml?: FlatESLintConfigItem["rules"];
+    javascript?: ConfigItem["rules"];
+    typescript?: ConfigItem["rules"];
+    test?: ConfigItem["rules"];
+    react?: ConfigItem["rules"];
+    next?: ConfigItem["rules"];
+    vue?: ConfigItem["rules"];
+    svelte?: ConfigItem["rules"];
+    solid?: ConfigItem["rules"];
+    storybook?: ConfigItem["rules"];
+    jsonc?: ConfigItem["rules"];
+    mdx?: ConfigItem["rules"];
+    yaml?: ConfigItem["rules"];
+    toml?: ConfigItem["rules"];
   };
 }
+
+type Unprefix<T extends Record<string, any>, Pre extends string> = {
+  [K in keyof T as K extends `${Pre}${infer U}` ? U : never]: T[K];
+};
+
+type Prefix<T extends Record<string, any>, Pre extends string> = {
+  [K in keyof T as `${Pre}${K & string}`]: T[K];
+};
+
+type RenamePrefix<
+  T extends Record<string, any>,
+  Old extends string,
+  New extends string,
+> = Prefix<Unprefix<T, Old>, New>;
+
+type MergeIntersection<T extends Record<any, any>> = {
+  [K in keyof T]: T[K];
+};
+
+export type RenamedRules = MergeIntersection<
+  Rules &
+    RenamePrefix<Rules, "@typescript-eslint/", "ts/"> &
+    RenamePrefix<Rules, "yml/", "yaml/"> &
+    RenamePrefix<Rules, "n/", "node/"> &
+    Prefix<Partial<(typeof retaroPlugin)["rules"]>, "re-taro/">
+>;
+
+export type ConfigItem = Omit<FlatESLintConfigItem, "plugins" | "rules"> & {
+  // Relax plugins type limitation, as most of the plugins did not have correct type info yet.
+  plugins?: Record<string, any>;
+  rules?: RenamedRules | Record<string, any>;
+};
