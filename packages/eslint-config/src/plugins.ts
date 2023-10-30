@@ -26,6 +26,7 @@ export { default as pluginReactHooks } from "eslint-plugin-react-hooks";
 export { default as pluginRegexp } from "eslint-plugin-regexp";
 export { default as pluginSortImports } from "eslint-plugin-simple-import-sort";
 export { default as pluginSolid } from "eslint-plugin-solid";
+export { default as pluginStorybook } from "eslint-plugin-storybook";
 export { default as pluginSvelte } from "eslint-plugin-svelte";
 export { default as pluginToml } from "eslint-plugin-toml";
 export { default as pluginUnicorn } from "eslint-plugin-unicorn";
