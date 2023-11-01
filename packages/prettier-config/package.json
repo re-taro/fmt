@@ -2,7 +2,7 @@
   "name": "@re-taro/prettier-config",
   "description": "Prettier config for re-taro",
   "version": "1.0.1",
-  "packageManager": "pnpm@8.10.0",
+  "packageManager": "pnpm@8.10.2",
   "license": "MIT",
   "author": {
     "name": "Rintaro Itokawa",
