@@ -152,8 +152,8 @@ importers:
         specifier: 0.6.15
         version: 0.6.15(eslint@8.53.0)(typescript@5.2.2)
       eslint-plugin-svelte:
-        specifier: 2.34.1
-        version: 2.34.1(eslint@8.53.0)(svelte@4.2.2)
+        specifier: 2.35.0
+        version: 2.35.0(eslint@8.53.0)(svelte@4.2.2)
       eslint-plugin-toml:
         specifier: 0.6.0
         version: 0.6.0(eslint@8.53.0)
@@ -2817,8 +2817,8 @@ packages:
       - typescript
     dev: false
 
-  /eslint-plugin-svelte@2.34.1(eslint@8.53.0)(svelte@4.2.2):
-    resolution: {integrity: sha512-HnLzYevh9bLL0Rj2d4dmZY9EutN0BL5JsJRHqtJFIyaEmdxxd3ZuY5zNoSjIFhctFMSntsClbd6TwYjgaOY0Xw==}
+  /eslint-plugin-svelte@2.35.0(eslint@8.53.0)(svelte@4.2.2):
+    resolution: {integrity: sha512-3WDFxNrkXaMlpqoNo3M1ZOQuoFLMO9+bdnN6oVVXaydXC7nzCJuGy9a0zqoNDHMSRPYt0Rqo6hIdHMEaI5sQnw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0
@@ -2833,6 +2833,7 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
       debug: 4.3.4
       eslint: 8.53.0
+      eslint-compat-utils: 0.1.2(eslint@8.53.0)
       esutils: 2.0.3
       known-css-properties: 0.29.0
       postcss: 8.4.31
