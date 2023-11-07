@@ -119,8 +119,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(eslint@8.53.0)
       eslint-plugin-n:
-        specifier: 16.2.0
-        version: 16.2.0(eslint@8.53.0)
+        specifier: 16.3.0
+        version: 16.3.0(eslint@8.53.0)
       eslint-plugin-no-explicit-type-exports:
         specifier: 0.12.1
         version: 0.12.1(@typescript-eslint/parser@6.10.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.53.0)(typescript@5.2.2)
@@ -2706,8 +2706,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-n@16.2.0(eslint@8.53.0):
-    resolution: {integrity: sha512-AQER2jEyQOt1LG6JkGJCCIFotzmlcCZFur2wdKrp1JX2cNotC7Ae0BcD/4lLv3lUAArM9uNS8z/fsvXTd0L71g==}
+  /eslint-plugin-n@16.3.0(eslint@8.53.0):
+    resolution: {integrity: sha512-/XZLH5CUXGK3laz3xYFNza8ZxLCq8ZNW6MsVw5z3d5hc2AwZzi0fPiySFZHQTdVDOHGs2cGv91aqzWmgBdq2gQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: '>=7.0.0'
