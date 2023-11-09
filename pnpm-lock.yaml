@@ -107,8 +107,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(eslint@8.53.0)
       eslint-plugin-json-schema-validator:
-        specifier: 4.7.2
-        version: 4.7.2(eslint@8.53.0)
+        specifier: 4.7.3
+        version: 4.7.3(eslint@8.53.0)
       eslint-plugin-jsonc:
         specifier: 2.10.0
         version: 2.10.0(eslint@8.53.0)
@@ -155,8 +155,8 @@ importers:
         specifier: 2.35.0
         version: 2.35.0(eslint@8.53.0)(svelte@4.2.2)
       eslint-plugin-toml:
-        specifier: 0.7.0
-        version: 0.7.0(eslint@8.53.0)
+        specifier: 0.7.1
+        version: 0.7.1(eslint@8.53.0)
       eslint-plugin-unicorn:
         specifier: 49.0.0
         version: 49.0.0(eslint@8.53.0)
@@ -2600,8 +2600,8 @@ packages:
       eslint: 8.53.0
     dev: false
 
-  /eslint-plugin-json-schema-validator@4.7.2(eslint@8.53.0):
-    resolution: {integrity: sha512-+mvJ6BF5RzCbNHdiHd6GsMSw4MKWdXpdjIwInnuiBkyME3Kxk6y1ZB+ddVcEcO1K27FXtAy9QwNeX4pphekPyg==}
+  /eslint-plugin-json-schema-validator@4.7.3(eslint@8.53.0):
+    resolution: {integrity: sha512-odFpNM997t484eprsTEk7YTt7JXgZ5ewCIekcOPGJLe5OFGKoRkJWtQ5lUJdRqqaOOD5vE8kGmV8fDvs0h9iNg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -2618,7 +2618,7 @@ packages:
       jsonc-eslint-parser: 2.4.0
       minimatch: 8.0.4
       synckit: 0.8.5
-      toml-eslint-parser: 0.8.1
+      toml-eslint-parser: 0.9.0
       tunnel-agent: 0.6.0
       yaml-eslint-parser: 1.2.2
     transitivePeerDependencies:
@@ -2912,8 +2912,8 @@ packages:
       - ts-node
     dev: false
 
-  /eslint-plugin-toml@0.7.0(eslint@8.53.0):
-    resolution: {integrity: sha512-AzvBp12UNue/8IuM67cHF15ZmoZPndtHl7qs0R8AHj6qOua8RJEFOTi4PS34xFuR5Rz/pv0+4eSruWT235cm7g==}
+  /eslint-plugin-toml@0.7.1(eslint@8.53.0):
+    resolution: {integrity: sha512-0AOZSBZInz0qFeWSlTZgRURD0BzEkJXE627aF0kS5t3PnUjjifPipkjnSYiHOtJYjHmGaoT7WwcTFSEZ/I3Zfg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -2925,7 +2925,7 @@ packages:
       eslint: 8.53.0
       eslint-compat-utils: 0.1.2(eslint@8.53.0)
       lodash: 4.17.21
-      toml-eslint-parser: 0.8.1
+      toml-eslint-parser: 0.9.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -5758,13 +5758,6 @@ packages:
     dependencies:
       is-buffer: 2.0.5
       vfile: 5.3.7
-    dev: false
-
-  /toml-eslint-parser@0.8.1:
-    resolution: {integrity: sha512-ppkH0LpGPdF37jaWbNlKe/AwUuNGIqoi7xbdtQOQVeASOsbBR4GUyLcHgPJrL/DYvlryPezPg2bcZtfryZRwmw==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dependencies:
-      eslint-visitor-keys: 3.4.3
     dev: false
 
   /toml-eslint-parser@0.9.0:
