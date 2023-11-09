@@ -107,8 +107,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(eslint@8.53.0)
       eslint-plugin-json-schema-validator:
-        specifier: 4.7.1
-        version: 4.7.1(eslint@8.53.0)
+        specifier: 4.7.2
+        version: 4.7.2(eslint@8.53.0)
       eslint-plugin-jsonc:
         specifier: 2.10.0
         version: 2.10.0(eslint@8.53.0)
@@ -2600,8 +2600,8 @@ packages:
       eslint: 8.53.0
     dev: false
 
-  /eslint-plugin-json-schema-validator@4.7.1(eslint@8.53.0):
-    resolution: {integrity: sha512-LeTkeA+PCE98yWlnols+cmVHfqPlo+sQr6BN2qpLP7dGJvMedYtJsrI9/orryK+E/yvqMlZo+AvNlMGdX1Nclg==}
+  /eslint-plugin-json-schema-validator@4.7.2(eslint@8.53.0):
+    resolution: {integrity: sha512-+mvJ6BF5RzCbNHdiHd6GsMSw4MKWdXpdjIwInnuiBkyME3Kxk6y1ZB+ddVcEcO1K27FXtAy9QwNeX4pphekPyg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -2618,7 +2618,7 @@ packages:
       jsonc-eslint-parser: 2.4.0
       minimatch: 8.0.4
       synckit: 0.8.5
-      toml-eslint-parser: 0.7.0
+      toml-eslint-parser: 0.8.1
       tunnel-agent: 0.6.0
       yaml-eslint-parser: 1.2.2
     transitivePeerDependencies:
@@ -5762,6 +5762,13 @@ packages:
 
   /toml-eslint-parser@0.7.0:
     resolution: {integrity: sha512-HYjp7nkJOk8IOjNHHMH+bbwiwO1CF5KffrRYo5+Qt6CdWoWfEuVk9RRrLnGQlMiG2fUT/26g8DR0kqteGkHVDA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    dependencies:
+      eslint-visitor-keys: 3.4.3
+    dev: false
+
+  /toml-eslint-parser@0.8.1:
+    resolution: {integrity: sha512-ppkH0LpGPdF37jaWbNlKe/AwUuNGIqoi7xbdtQOQVeASOsbBR4GUyLcHgPJrL/DYvlryPezPg2bcZtfryZRwmw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       eslint-visitor-keys: 3.4.3
