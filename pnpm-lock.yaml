@@ -191,8 +191,8 @@ importers:
         specifier: 0.33.1
         version: 0.33.1(svelte@4.2.2)
       toml-eslint-parser:
-        specifier: 0.7.0
-        version: 0.7.0
+        specifier: 0.9.0
+        version: 0.9.0
       vue-eslint-parser:
         specifier: 9.3.2
         version: 9.3.2(eslint@8.53.0)
@@ -5760,15 +5760,15 @@ packages:
       vfile: 5.3.7
     dev: false
 
-  /toml-eslint-parser@0.7.0:
-    resolution: {integrity: sha512-HYjp7nkJOk8IOjNHHMH+bbwiwO1CF5KffrRYo5+Qt6CdWoWfEuVk9RRrLnGQlMiG2fUT/26g8DR0kqteGkHVDA==}
+  /toml-eslint-parser@0.8.1:
+    resolution: {integrity: sha512-ppkH0LpGPdF37jaWbNlKe/AwUuNGIqoi7xbdtQOQVeASOsbBR4GUyLcHgPJrL/DYvlryPezPg2bcZtfryZRwmw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       eslint-visitor-keys: 3.4.3
     dev: false
 
-  /toml-eslint-parser@0.8.1:
-    resolution: {integrity: sha512-ppkH0LpGPdF37jaWbNlKe/AwUuNGIqoi7xbdtQOQVeASOsbBR4GUyLcHgPJrL/DYvlryPezPg2bcZtfryZRwmw==}
+  /toml-eslint-parser@0.9.0:
+    resolution: {integrity: sha512-m3JGHLMS0oRcoISPWzX9GDSNplhKCbHQM2mdwAoqm/j9nPAE4RGWHIz8vztHaZjbaeypMQI4+QBdtDHjBVsxVw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       eslint-visitor-keys: 3.4.3
