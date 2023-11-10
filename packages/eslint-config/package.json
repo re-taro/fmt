@@ -87,7 +87,7 @@
     "jsonc-eslint-parser": "2.4.0",
     "local-pkg": "0.5.0",
     "svelte-eslint-parser": "0.33.1",
-    "toml-eslint-parser": "0.9.1",
+    "toml-eslint-parser": "0.9.2",
     "vue-eslint-parser": "9.3.2",
     "yaml-eslint-parser": "1.2.2"
   },
