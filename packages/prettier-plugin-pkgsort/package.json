@@ -1,7 +1,7 @@
 {
   "name": "@re-taro/prettier-plugin-pkgsort",
   "description": "Prettier plugin for sorting package.json",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "packageManager": "pnpm@8.10.5",
   "license": "MIT",
   "author": {

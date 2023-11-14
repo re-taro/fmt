@@ -1,7 +1,7 @@
 {
   "name": "@re-taro/eslint-plugin",
   "description": "ESLint plugin for re-taro",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "packageManager": "pnpm@8.10.5",
   "license": "MIT",
   "author": {
