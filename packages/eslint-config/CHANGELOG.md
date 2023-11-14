@@ -1,5 +1,46 @@
 # Changelog
 
+## [2.3.0](https://github.com/re-taro/fmt/compare/eslint-config-v2.2.0...eslint-config-v2.3.0) (2023-11-14)
+
+
+### Features
+
+* re-enable arry-func rules ([#701](https://github.com/re-taro/fmt/issues/701)) ([0b4ecb8](https://github.com/re-taro/fmt/commit/0b4ecb884d376896282e4470908931a3d61d3026))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @next/eslint-plugin-next to v14.0.1 ([#657](https://github.com/re-taro/fmt/issues/657)) ([cea69fe](https://github.com/re-taro/fmt/commit/cea69fea709a9751ad1c2b4ef5ebbc9561ddac76))
+* **deps:** update dependency @next/eslint-plugin-next to v14.0.2 ([#683](https://github.com/re-taro/fmt/issues/683)) ([297ba87](https://github.com/re-taro/fmt/commit/297ba87716d115102aaa813b2363c5c939428197))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.10.0 ([#671](https://github.com/re-taro/fmt/issues/671)) ([1f06740](https://github.com/re-taro/fmt/commit/1f06740f6a658f32e3280b4558a0b1d3e12cc5c8))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.11.0 ([#696](https://github.com/re-taro/fmt/issues/696)) ([13983bc](https://github.com/re-taro/fmt/commit/13983bcb68bbef631f8a5cbb409ec44e10b1206a))
+* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.9.1 ([#656](https://github.com/re-taro/fmt/issues/656)) ([54c09bf](https://github.com/re-taro/fmt/commit/54c09bf406d32b42efd9dd325054cfb67da27b22))
+* **deps:** update dependency @unocss/eslint-config to v0.57.2 ([#666](https://github.com/re-taro/fmt/issues/666)) ([97e0af8](https://github.com/re-taro/fmt/commit/97e0af81f49936fc9c766fb40b348002569b3df4))
+* **deps:** update dependency @unocss/eslint-config to v0.57.3 ([#682](https://github.com/re-taro/fmt/issues/682)) ([a97cb5a](https://github.com/re-taro/fmt/commit/a97cb5aceee06a19ea898d8fb4e14418664b1db4))
+* **deps:** update dependency @unocss/eslint-config to v0.57.4 ([#698](https://github.com/re-taro/fmt/issues/698)) ([51cc9e2](https://github.com/re-taro/fmt/commit/51cc9e25b4cedfbed5e5655381255dff7f453717))
+* **deps:** update dependency eslint-plugin-json-schema-validator to v4.7.2 ([#678](https://github.com/re-taro/fmt/issues/678)) ([67b5d17](https://github.com/re-taro/fmt/commit/67b5d172c2143c78bc0ee831c3d2c988c199db74))
+* **deps:** update dependency eslint-plugin-jsx-a11y to v6.8.0 ([#664](https://github.com/re-taro/fmt/issues/664)) ([642210a](https://github.com/re-taro/fmt/commit/642210abc1271d2f98e51b300c8d374408499b26))
+* **deps:** update dependency eslint-plugin-n to v16.3.0 ([#674](https://github.com/re-taro/fmt/issues/674)) ([c040db8](https://github.com/re-taro/fmt/commit/c040db805651fcc05c15dd0f211bf17dd0bbc965))
+* **deps:** update dependency eslint-plugin-n to v16.3.1 ([#684](https://github.com/re-taro/fmt/issues/684)) ([84fe4b1](https://github.com/re-taro/fmt/commit/84fe4b1bba0ab490056891063280a23a8aa6ae6f))
+* **deps:** update dependency eslint-plugin-svelte to v2.35.0 ([#669](https://github.com/re-taro/fmt/issues/669)) ([77d1a0d](https://github.com/re-taro/fmt/commit/77d1a0d1d434d4dd5bc5be6108ebc3d209014e3e))
+* **deps:** update dependency eslint-plugin-toml to v0.7.0 ([#679](https://github.com/re-taro/fmt/issues/679)) ([eeb5acd](https://github.com/re-taro/fmt/commit/eeb5acd8ec9c8b9a41d4be0154eaccdb193cd73f))
+* **deps:** update dependency toml-eslint-parser to v0.6.1 ([#673](https://github.com/re-taro/fmt/issues/673)) ([45f2f8e](https://github.com/re-taro/fmt/commit/45f2f8e52c75f8582922da5c9734b5f1f2933bef))
+* **deps:** update dependency toml-eslint-parser to v0.7.0 ([#675](https://github.com/re-taro/fmt/issues/675)) ([d6c7c8f](https://github.com/re-taro/fmt/commit/d6c7c8f85e07e773185965431d47c29e00ff16cb))
+* **deps:** update dependency toml-eslint-parser to v0.9.0 ([#680](https://github.com/re-taro/fmt/issues/680)) ([add5e5a](https://github.com/re-taro/fmt/commit/add5e5a4e30ce40d60b04043b01dfc5c901f186b))
+* **deps:** update dependency toml-eslint-parser to v0.9.1 ([#685](https://github.com/re-taro/fmt/issues/685)) ([f241ed0](https://github.com/re-taro/fmt/commit/f241ed0a8ef02cca2a0491a7bb6fd17687a95c98))
+* **deps:** update dependency toml-eslint-parser to v0.9.2 ([#686](https://github.com/re-taro/fmt/issues/686)) ([f4f0228](https://github.com/re-taro/fmt/commit/f4f022840fe3c6cf7a3e22e19135fecc3b77a8fa))
+* **deps:** update dependency toml-eslint-parser to v0.9.3 ([#688](https://github.com/re-taro/fmt/issues/688)) ([05fd2ee](https://github.com/re-taro/fmt/commit/05fd2ee7d315d8ef334a9f328436c57057ee26a8))
+* **deps:** update eslint and prettier ([#665](https://github.com/re-taro/fmt/issues/665)) ([cd78bdd](https://github.com/re-taro/fmt/commit/cd78bddab54f2f44a6cf7c73c35ca3987c7cff5c))
+* **deps:** update eslint and prettier ([#676](https://github.com/re-taro/fmt/issues/676)) ([f22d6dd](https://github.com/re-taro/fmt/commit/f22d6dd7bec186f8287be3054b6b7e504b2776f9))
+* **deps:** update eslint and prettier ([#681](https://github.com/re-taro/fmt/issues/681)) ([9432edf](https://github.com/re-taro/fmt/commit/9432edf2c865b6487011dd80c07f5fdd8c12c8cd))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped to 2.3.0
+
 ## [2.2.0](https://github.com/re-taro/fmt/compare/eslint-config-v2.1.1...eslint-config-v2.2.0) (2023-10-30)
 
 ### Features
