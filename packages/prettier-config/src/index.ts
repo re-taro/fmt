@@ -12,7 +12,7 @@ const plugins = [
 ];
 
 const config: Config = {
-  useTabs: false,
+  useTabs: true,
   endOfLine: "lf",
   quoteProps: "preserve",
   trailingComma: "all",
