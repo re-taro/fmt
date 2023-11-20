@@ -81,7 +81,7 @@
     "eslint-plugin-toml": "0.7.1",
     "eslint-plugin-unicorn": "49.0.0",
     "eslint-plugin-unused-imports": "3.0.0",
-    "eslint-plugin-vitest": "0.3.9",
+    "eslint-plugin-vitest": "0.3.10",
     "eslint-plugin-vue": "9.18.1",
     "eslint-plugin-yml": "1.10.0",
     "globals": "13.23.0",
