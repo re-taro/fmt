@@ -45,7 +45,7 @@
     "build": "rollup -c"
   },
   "devDependencies": {
-    "prettier-plugin-toml": "1.0.0"
+    "prettier-plugin-toml": "2.0.1"
   },
   "peerDependencies": {
     "prettier": "^3.0.0"
