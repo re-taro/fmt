@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.1
@@ -14,11 +14,31 @@ jobs:
         uses: re-taro/actions/setup-node@v3.4.1
         with:
           node-version-file: .tool-versions
+      - name: Setup | turborepo cache
+        uses: re-taro/actions/turbo-cache@v3.4.1
       - name: Test | Build
         run: pnpm build
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Setup | Node.js
+        uses: re-taro/actions/setup-node@v3.4.1
+        with:
+          node-version-file: .tool-versions
+      - name: Setup | turborepo cache
+        uses: re-taro/actions/turbo-cache@v3.4.1
       - name: Test | Lint
         run: pnpm lint
-      - name: Test | Type Check
-        run: pnpm typecheck
-      - name: Test | Test
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.1
+      - name: Setup | Node.js
+        uses: re-taro/actions/setup-node@v3.4.1
+        with:
+          node-version-file: .tool-versions
+      - name: Setup | turborepo cache
+        uses: re-taro/actions/turbo-cache@v3.4.1
+      - name: Test | Unit
         run: pnpm test
