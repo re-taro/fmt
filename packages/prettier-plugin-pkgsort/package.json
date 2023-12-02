@@ -43,6 +43,13 @@
   ],
   "scripts": {
     "build": "rollup -c",
+    "lint": "run-s -c lint:*",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier . -c",
+    "lint:ts": "tsc -p . --noEmit",
+    "fmt": "run-s -c fmt:*",
+    "fmt:eslint": "pnpm lint:eslint --fix",
+    "fmt:prettier": "prettier . -w",
     "test": "vitest"
   },
   "dependencies": {
