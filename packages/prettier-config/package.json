@@ -37,7 +37,14 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "lint": "prettier . --config=dist/index.mjs --check"
+    "lint": "run-s -c lint:*",
+    "lint:eslint": "eslint .",
+    "lint:prettier": "prettier . -c",
+    "lint:ts": "tsc -p . --noEmit",
+    "fmt": "run-s -c fmt:*",
+    "fmt:eslint": "pnpm lint:eslint --fix",
+    "fmt:prettier": "prettier . -w",
+    "test": "prettier . --config=dist/index.mjs --check"
   },
   "dependencies": {
     "@re-taro/prettier-plugin-curly-and-jsdoc": "workspace:*",

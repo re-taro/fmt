@@ -78,3 +78,6 @@ dist
 .idea
 
 *.lerna_backup
+
+# turborepo
+.turbo

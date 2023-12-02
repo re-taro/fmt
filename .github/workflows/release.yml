@@ -54,14 +54,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Setup | Node.js
-        uses: re-taro/actions/setup-node@v3.4.1
+        uses: re-taro/actions/setup-node@v3.5.0
         with:
-          node-version-file: .tool-versions
-      - name: Setup | Registry
-        uses: actions/setup-node@v4.0.0
-        with:
-          scope: "@re-taro"
           registry-url: ${{ matrix.url }}
+          node-version-file: .tool-versions
       - name: Publish | Build
         run: pnpm build
       - name: Publish | ${{ matrix.name }}
