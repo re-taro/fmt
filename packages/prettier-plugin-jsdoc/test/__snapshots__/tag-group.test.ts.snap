@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Inconsistant formatting 1`] = `
+"/**
+ * Aliquip ex proident tempor eiusmod aliquip amet. Labore commodo nulla
+ * tempor consequat exercitation incididunt non. Duis laboris reprehenderit
+ * proident proident.
+ *
+ * @example
+ *   const foo = 0;
+ *
+ * @param id A test id.
+ *
+ * @throws Minim sit ad commodo ut dolore magna magna minim consequat. Ex
+ *   consequat esse incididunt qui voluptate id voluptate quis ex et.
+ *   Ullamco cillum nisi amet fugiat.
+ *
+ * @see {@link http://acme.com}
+ */
+"
+`;
+
+exports[`Tag group 1`] = `
+"/**
+ * Aliquip ex proident tempor eiusmod aliquip amet. Labore commodo nulla
+ * tempor consequat exercitation incididunt non. Duis laboris reprehenderit
+ * proident proident.
+ *
+ * @example
+ *   const foo = 0;
+ *   const a = \\"\\";
+ *   const b = \\"\\";
+ *
+ * @param id A test id.
+ *
+ * @returns Minim sit a.
+ *
+ * @throws Minim sit ad commodo ut dolore magna magna minim consequat. Ex
+ *   consequat esse incididunt qui voluptate id voluptate quis ex et. Ullamco
+ *   cillum nisi amet fugiat.
+ *
+ * @see {@link http://acme.com}
+ */
+"
+`;
+
+exports[`space after unknownTag 1`] = `
+"/**
+ * A description.
+ *
+ * @unknownTag A note.
+ *
+ * @see http://acme.com
+ */
+"
+`;

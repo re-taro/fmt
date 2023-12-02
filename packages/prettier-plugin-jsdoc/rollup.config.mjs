@@ -1,9 +1,13 @@
+import replace from "@rollup/plugin-replace";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 
 import pkg from "./package.json" assert { type: "json" };
 
-const externals = [...Object.keys(pkg.dependencies)];
+const externals = [
+  ...Object.keys(pkg.dependencies),
+  ...Object.keys(pkg.devDependencies),
+];
 
 /** @type {import('rollup').RollupOptions} */
 const options = {

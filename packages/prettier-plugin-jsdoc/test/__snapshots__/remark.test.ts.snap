@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Description start with markdown 1`] = `
+"/**
+ * Just a simple test
+ *
+ * @remarks
+ * - Remark 1
+ * - Remark 2
+ * - Remark 3
+ */
+"
+`;
+
+exports[`Description start with markdown 2`] = `
+"/**
+ * Just a simple test
+ *
+ * @remarks
+ *   - Remark 1
+ *   - Remark 2
+ *   - Remark 3
+ */
+"
+`;

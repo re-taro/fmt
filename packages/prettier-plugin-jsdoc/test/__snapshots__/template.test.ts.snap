@@ -1,0 +1,52 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`extends 1`] = `
+"/**
+ * The bread crumbs indicate the navigate path and trigger the active page.
+ *
+ * @class
+ * @extends {PureComponent<props>}
+ * @typedef {object} props
+ * @property {any} navigation
+ */
+export class BreadCrumbs extends PureComponent {}
+"
+`;
+
+exports[`template for callback 1`] = `
+"/**
+ * @template T
+ * @callback CallbackName
+ * @param {GetStyles<T>} getStyles
+ *
+ * @returns {UseStyle<T>}
+ */
+"
+`;
+
+exports[`template for callback 2`] = `
+"/**
+ * @template T
+ * @template H
+ * @param {GetStyles<T>} getStyles
+ *
+ * @returns {UseStyle<T>}
+ *
+ * @callback CallbackName
+ * @param {GetStyles<H>} getStyles
+ *
+ * @returns {UseStyle<H>}
+ */
+"
+`;
+
+exports[`typeParam for callback 1`] = `
+"/**
+ * @typeParam T
+ * @callback CallbackName
+ * @param {GetStyles<T>} getStyles
+ *
+ * @returns {UseStyle<T>}
+ */
+"
+`;

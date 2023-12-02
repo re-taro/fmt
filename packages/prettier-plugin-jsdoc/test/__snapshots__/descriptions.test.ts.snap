@@ -1,0 +1,984 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`# in block code 1`] = `
+"/**
+ * \`\`\`py
+ * # This program adds two numbers
+ *
+ * num1 = 1.5
+ * num2 = 6.3
+ *
+ * # Add two numbers
+ * sum = num1 + num2
+ *
+ * # Display the sum
+ * print('The sum of {0} and {1} is {2}'.format(num1, num2, sum))
+ * \`\`\`
+ */
+"
+`;
+
+exports[`\`#\` in text 1`] = `
+"/**
+ * JS: \`console.log(\\"foo # bar\\");\`
+ *
+ * Some # text
+ *
+ * More text
+ */
+"
+`;
+
+exports[`Code in description 1`] = `
+"/**
+ * Inspired from react-native View
+ *
+ * \`\`\`js
+ * import { View } from \\"react-native\\";
+ *
+ * function MyComponent() {
+ *   return (
+ *     <View style={{ alignItems: \\"center\\" }}>
+ *       <View
+ *         variant=\\"a\\"
+ *         href=\\"/\\"
+ *         onPress={() => {
+ *           history.push(\\"/\\");
+ *         }}
+ *         style={{ width: 300, height: 50 }}
+ *       >
+ *         <Text>Hello World</Text>
+ *       </View>
+ *     </View>
+ *   );
+ * }
+ * \`\`\`
+ */
+"
+`;
+
+exports[`Code in description 2`] = `
+"/**
+ * Description
+ *
+ *     an indented code block
+ *     of a few lines.
+ */
+"
+`;
+
+exports[`Code in description 3`] = `
+"/**
+ * Description
+ *
+ * \`\`\`
+ * an indented code block
+ * of a few lines.
+ * \`\`\`
+ */
+"
+`;
+
+exports[`Code in description 4`] = `
+"/**
+ * Description
+ *
+ *     A fenced code block
+ *     spanning a few lines.
+ */
+"
+`;
+
+exports[`Code in description 5`] = `
+"/**
+ * Description
+ *
+ * \`\`\`
+ * A fenced code block
+ * spanning a few lines.
+ * \`\`\`
+ */
+"
+`;
+
+exports[`Jsdoc link in description 1`] = `
+"/**
+ * Calculate the
+ * {@link https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between two sets.
+ *
+ * @param second
+ * @param first
+ */
+export function difference<T>(first: Set<T>, second: Set<T>): Set<T>;
+
+/**
+ * Calculate the
+ * {@link https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * {@link https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between two sets.
+ */
+
+/**
+ * Calculate the
+ * {@link https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between {@link https://en.wikipedia.org/wiki/Complement} between two sets.
+ */
+"
+`;
+
+exports[`Jsdoc link synonyms in description 1`] = `
+"/**
+ * Calculate the
+ * {@linkcode https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between two sets.
+ *
+ * @param second
+ * @param first
+ */
+export function difference<T>(first: Set<T>, second: Set<T>): Set<T>;
+
+/**
+ * Calculate the
+ * {@linkcode https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * {@linkcode https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between two sets.
+ */
+
+/**
+ * Calculate the
+ * {@linkcode https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between {@linkcode https://en.wikipedia.org/wiki/Complement} between two
+ * sets.
+ */
+
+/**
+ * Calculate the
+ * {@linkplain https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between two sets.
+ *
+ * @param second
+ * @param first
+ */
+export function difference<T>(first: Set<T>, second: Set<T>): Set<T>;
+
+/**
+ * Calculate the
+ * {@linkplain https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * {@linkplain https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between two sets.
+ */
+
+/**
+ * Calculate the
+ * {@linkplain https://en.wikipedia.org/wiki/Complement_(set_theory)#Relative_complement difference}
+ * between {@linkplain https://en.wikipedia.org/wiki/Complement} between two
+ * sets.
+ */
+"
+`;
+
+exports[`Jsx tsx css  1`] = `
+"/**
+ * \`\`\`js
+ * let a;
+ * \`\`\`
+ *
+ * \`\`\`jsx
+ * let a;
+ * \`\`\`
+ *
+ * \`\`\`css
+ * .body {
+ *   color: red;
+ * }
+ * \`\`\`
+ *
+ * \`\`\`html
+ * <div class=\\"body\\"></div>
+ * \`\`\`
+ */
+"
+`;
+
+exports[`Link  1`] = `
+"/**
+ * Name of something.
+ *
+ * See [documentation](1) for more details.
+ *
+ * # 1
+ *
+ * https://www.documentation.com
+ */
+"
+`;
+
+exports[`List in tags 1`] = `
+"/**
+ * @param {any} var An example list:
+ *
+ *   - Item 1
+ *   - Item 2
+ *
+ * @returns {Promise} A return value.
+ */
+
+/**
+ * @param {any} var An example list:
+ *
+ *   - Item 1
+ *   - Item 2
+ */
+"
+`;
+
+exports[`Long words 1`] = `
+"/**
+ * 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567
+ */
+"
+`;
+
+exports[`Markdown Table 1`] = `
+"/**
+ * Description
+ *
+ * | A   | B   | C   |
+ * | --- | --- | --- |
+ * | C   | V   | B   |
+ * | 1   | 2   | 3   |
+ *
+ * Description
+ *
+ * | A| B |C |
+ * |C | V | B |
+ * |1|2|3|
+ *
+ * End
+ */
+"
+`;
+
+exports[`Markdown Table 2`] = `
+"/**
+ * | A   | B   | C   |
+ * | --- | --- | --- |
+ * | C   | V   | B   |
+ * | 1   | 2   | 3   |
+ */
+"
+`;
+
+exports[`Markdown Table 3`] = `
+"/**
+ * @param {string} a Description
+ *
+ *   | A   | B   | C   |
+ *   | --- | --- | --- |
+ *   | C   | V   | B   |
+ *   | 1   | 2   | 3   |
+ */
+"
+`;
+
+exports[`Markdown Table 4`] = `
+"/**
+ * Description
+ *
+ *     fenced code
+ *     | A| B |C |
+ *     | - | - | - |
+ *     |C | V | B |
+ *     |1|2|3|
+ *
+ *     Second fenced table-like
+ *     10
+ *     |--3
+ *     \`--4
+ */
+"
+`;
+
+exports[`Markdown Table 5`] = `
+"/**
+ * Description
+ *
+ * Indented code
+ *
+ *     | A| B |C |
+ *     | - | - | - |
+ *     |C | V | B |
+ *     |1|2|3|
+ */
+"
+`;
+
+exports[`Markdown link 1`] = `
+"/** @param {string} [dir] [Next.js](https://nextjs.org) project directory path. */
+"
+`;
+
+exports[`Markdown table replaced  1`] = `
+"/**
+ * @param options Options object for setting file system flags (default:
+ *   \`\\"r\\"\`):
+ *
+ *   | flags   | description                                                                                                    |
+ *   | ------- | -------------------------------------------------------------------------------------------------------------- |
+ *   | \`\\"a\\"\`   | Open file for appending. The file is created if it does not exist.                                             |
+ *   | \`\\"ax\\"\`  | Like \`\\"a\\"\` but fails if the path exists.                                                                       |
+ *   | \`\\"a+\\"\`  | Open file for reading and appending. The file is created if it does not exist.                                 |
+ *   | \`\\"ax+\\"\` | Like \`\\"a+\\"\` but fails if the path exists.                                                                      |
+ *   | \`\\"as\\"\`  | Open file for appending in synchronous mode. The file is created if it does not exist.                         |
+ *   | \`\\"as+\\"\` | Open file for reading and appending in synchronous mode. The file is created if it does not exist.             |
+ *   | \`\\"r\\"\`   | Open file for reading. An exception occurs if the file does not exist.                                         |
+ *   | \`\\"r+\\"\`  | Open file for reading and writing. An exception occurs if the file does not exist.                             |
+ *   | \`\\"rs+\\"\` | Open file for reading and writing in synchronous mode. Instructs the OS to bypass the local file system cache. |
+ *   | \`\\"w\\"\`   | Open file for writing. The file is created (if it does not exist) or truncated (if it exists).                 |
+ *   | \`\\"wx\\"\`  | Like \`\\"w\\"\` but fails if the path exists.                                                                       |
+ *   | \`\\"w+\\"\`  | Open file for reading and writing. The file is created (if it does not exist) or truncated (if it exists).     |
+ *   | \`\\"wx+\\"\` | Like \`\\"w+\\"\` but fails if the path exists.                                                                      |
+ */
+"
+`;
+
+exports[`Nested list 1`] = `
+"/**
+ * 1. Foo
+ *
+ *    1. Entry 1
+ *    2. Entry 2
+ *
+ *          - Foo
+ *          - Bar
+ *    3. Entry 3
+ * 2. Bar
+ *
+ *    1. Entry 1
+ *    2. Entry 2
+ *    3. Entry 3
+ */
+"
+`;
+
+exports[`New Lines with star 1`] = `
+"/**
+ * Simplifies the token stream to ease the matching with the expected token
+ * stream.
+ *
+ * - Strings are kept as-is
+ * - In arrays each value is transformed individually
+ * - Values that are empty (empty arrays or strings only containing whitespace)
+ *
+ * @param {TokenStream} tokenStream
+ * @returns {SimplifiedTokenStream}
+ */
+"
+`;
+
+exports[`New Lines with star 2`] = `
+"/**
+ * Some comment text.
+ *
+ * **Warning:** I am a warning.
+ */
+"
+`;
+
+exports[`New line with \\ 1`] = `
+"/** A short description, * A long description. */
+"
+`;
+
+exports[`Non-english description with dot 1`] = `
+"/**
+ * Wir brauchen hier eine effizientere Lösung. Die generierten Dateien sind zu
+ * groß.
+ *
+ * Wir brauchen hier eine effizientere Lösung. Die generierten Dateien sind zu
+ * 3434.
+ *
+ * Wir brauchen hier eine effizientere Lösung. Die generierten Dateien sind zu
+ * groß.
+ *
+ * @param a Ssss.
+ */
+
+/**
+ * Unicode est un standard informatique qui permet des échanges de textes dans
+ * différentes langues, à un niveau mondial. Il est développé par le Consortium
+ * Unicode, qui vise au codage de texte écrit en donnant à tout caractère de
+ * n'importe quel système d'écriture un nom et un identifiant numérique, et ce
+ * de manière unifiée, quels que soient la plate-forme informatique ou le
+ * logiciel utilisé.
+ *
+ * @see https://fr.wikipedia.org/wiki/Unicode
+ */
+
+/**
+ * Юнико́д[1] (чаще всего) или Унико́д[2] (англ. Unicode) — стандарт кодирования
+ * символов, включающий в себя знаки почти всех письменных языков мира[3]. В
+ * настоящее время стандарт является преобладающим в Интернете.
+ *
+ * @see https://ru.wikipedia.org/wiki/%D0%AE%D0%BD%D0%B8%D0%BA%D0%BE%D0%B4
+ */
+
+/**
+ * Unicode（ユニコード）は、符号化文字集合や文字符号化方式などを定めた、文字コードの業界規格。文字集合（文字セット）が単一の大規模文字セットであること（「Uni」という名はそれに由来する）などが特徴である.
+ *
+ * @see https://ja.wikipedia.org/wiki/Unicode
+ */
+"
+`;
+
+exports[`Not Capitalizing 1`] = `
+"/**
+ * simplifies the token stream to ease the matching with the expected token
+ * stream.
+ *
+ * Simplifies the token stream to ease the matching with the expected token
+ * stream.
+ *
+ * - Strings are kept as-is
+ * - in arrays each value is transformed individually
+ * - Values that are empty (empty arrays or strings only containing whitespace)
+ *
+ * @param {TokenStream} tokenStream Description
+ * @returns {SimplifiedTokenStream} description
+ */
+"
+`;
+
+exports[`Not Capitalizing 2`] = `
+"/**
+ * Simplifies the token stream to ease the matching with the expected token
+ * stream.
+ *
+ * Simplifies the token stream to ease the matching with the expected token
+ * stream.
+ *
+ * - Strings are kept as-is
+ * - In arrays each value is transformed individually
+ * - Values that are empty (empty arrays or strings only containing whitespace)
+ *
+ * @param {TokenStream} tokenStream Description
+ * @returns {SimplifiedTokenStream} Description
+ */
+"
+`;
+
+exports[`Reference-style Links  1`] = `
+"/**
+ * Name of something.
+ *
+ * See [documentation][1] for more details.
+ *
+ * [1]: https://www.documentation.com
+ */
+"
+`;
+
+exports[`Reference-style Links  2`] = `
+"/**
+ * This is a [link][1] test.
+ *
+ * [1]: https://www.google.com/
+ *
+ * @param value - Any value you want to test is a number.
+ */
+function test(value) {
+  return true;
+}
+"
+`;
+
+exports[`Reference-style Links  3`] = `
+"/**
+ * Testing docBlocks.
+ *
+ * @param ...args Arguments.
+ *
+ * @returns Something.
+ *
+ *   - Note: here is a list item in markdown.
+ *
+ * @see https://link.example
+ */
+"
+`;
+
+exports[`code in description 1`] = `
+"/**
+ * \`Touchable\`: Taps done right.
+ *
+ * You hook your \`ResponderEventPlugin\` events into \`Touchable\`. \`Touchable\`
+ * will measure time/geometry and tells you when to give feedback to the user.
+ *
+ * ====================== Touchable Tutorial =============================== The
+ * \`Touchable\` mixin helps you handle the \\"press\\" interaction. It analyzes the
+ * geometry of elements, and observes when another responder (scroll view etc)
+ * has stolen the touch lock. It notifies your component when it should give
+ * feedback to the user. (bouncing/highlighting/unhighlighting).
+ *
+ * - When a touch was activated (typically you highlight)
+ * - When a touch was deactivated (typically you unhighlight)
+ * - When a touch was \\"pressed\\" - a touch ended while still within the geometry of
+ *   the element, and no other element (like scroller) has \\"stolen\\" touch lock
+ *   (\\"responder\\") (Typically you bounce the element).
+ *
+ * A good tap interaction isn't as simple as you might think. There should be a
+ * slight delay before showing a highlight when starting a touch. If a
+ * subsequent touch move exceeds the boundary of the element, it should
+ * unhighlight, but if that same touch is brought back within the boundary, it
+ * should rehighlight again. A touch can move in and out of that boundary
+ * several times, each time toggling highlighting, but a \\"press\\" is only
+ * triggered if that touch ends while within the element's boundary and no
+ * scroller (or anything else) has stolen the lock on touches.
+ *
+ * To create a new type of component that handles interaction using the
+ * \`Touchable\` mixin, do the following:
+ *
+ * - Initialize the \`Touchable\` state.
+ *
+ * \`\`\`js
+ *   getInitialState: function(   ) {
+ *     return merge(this.touchableGetInitialState(), yourComponentState);
+ *   }
+ * \`\`\`
+ *
+ * - Choose the rendered component who's touches should start the interactive
+ *   sequence. On that rendered node, forward all \`Touchable\` responder
+ *   handlers. You can choose any rendered node you like. Choose a node whose
+ *   hit target you'd like to instigate the interaction sequence:
+ *
+ * \`\`\`js
+ * // In render function:
+ * return (
+ *   <View
+ *     onStartShouldSetResponder={
+ *       this.touchableHandleStartShouldSetResponder
+ *     }
+ *     onResponderTerminationRequest={
+ *       this.touchableHandleResponderTerminationRequest
+ *     }
+ *     onResponderGrant={this.touchableHandleResponderGrant}
+ *     onResponderMove={this.touchableHandleResponderMove}
+ *     onResponderRelease={this.touchableHandleResponderRelease}
+ *     onResponderTerminate={this.touchableHandleResponderTerminate}
+ *   >
+ *     <View>
+ *       Even though the hit detection/interactions are triggered by the
+ *       wrapping (typically larger) node, we usually end up implementing
+ *       custom logic that highlights this inner one.
+ *     </View>
+ *   </View>
+ * );
+ * \`\`\`
+ *
+ * - You may set up your own handlers for each of these events, so long as you
+ *   also invoke the \`touchable*\` handlers inside of your custom handler.
+ * - Implement the handlers on your component class in order to provide feedback
+ *   to the user. See documentation for each of these class methods that you
+ *   should implement.
+ *
+ * \`\`\`js
+ *   touchableHandlePress: function() {
+ *      this.performBounceAnimation();  // or whatever you want to do.
+ *   },
+ *   touchableHandleActivePressIn: function() {
+ *     this.beginHighlighting(...);  // Whatever you like to convey activation
+ *   },
+ *   touchableHandleActivePressOut: function() {
+ *     this.endHighlighting(...);  // Whatever you like to convey deactivation
+ *   },
+ * \`\`\`
+ *
+ * - There are more advanced methods you can implement (see documentation below):
+ *
+ * \`\`\`js
+ *   touchableGetHighlightDelayMS: function() {
+ *     return 20;
+ *   }
+ *   // In practice, *always* use a predeclared constant (conserve memory).
+ *   touchableGetPressRectOffset: function() {
+ *     return {top: 20, left: 20, right: 20, bottom: 100};
+ *   }
+ * \`\`\`
+ */
+"
+`;
+
+exports[`code in description 2`] = `
+"/**
+ * Utility type for getting the values for specific style keys.
+ *
+ * # test:
+ *
+ * The following is bad because position is more restrictive than 'string':
+ *
+ *     type Props = { position: string };
+ *
+ * You should use the following instead:
+ *
+ *     type Props = { position: TypeForStyleKey<\\"position\\"> };
+ *
+ * This will correctly give you the type 'absolute' | 'relative'
+ */
+"
+`;
+
+exports[`description contain paragraph 1`] = `
+"/**
+ * Does the following things:
+ *
+ * 1. Thing 1
+ * 2. Thing 2
+ * 3. Thing 3
+ */
+"
+`;
+
+exports[`description contain paragraph 2`] = `
+"/**
+ * Does the following things:
+ *
+ * 1. Thing 1
+ * 2. Thing 2
+ * 3. Thing 3
+ */
+"
+`;
+
+exports[`description contain paragraph 3`] = `
+"class test {
+  /**
+   * Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+   * tempor incididunt ut labore et dolore magna aliqua.
+   *
+   * Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+   * ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+   * reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   * pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+   * qui officia deserunt mollit anim id est laborum.
+   *
+   * Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+   * tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+   * veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+   * commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+   * velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+   * occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+   * mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur
+   * adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+   * magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+   * laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+   * reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+   * pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+   * qui officia deserunt mollit anim id est laborum.
+   */
+  a() {}
+}
+"
+`;
+
+exports[`description contain paragraph 4`] = `
+"/**
+ * Transforms data
+ *
+ * @override
+ */
+
+/**
+ * Bounce give a renderContent and show that around children when isVisible is
+ * true
+ *
+ * @example
+ *   <Bounce
+ *     isVisible={isVisible}
+ *     dismiss={() => setVisible(false)}
+ *     renderContent={() => {
+ *       return <InsideOfPopeUp />;
+ *     }}
+ *   >
+ *     <Button />
+ *   </Bounce>;
+ *
+ * @type {React.FC<BounceProps>}
+ */
+
+/**
+ * @param {string} a
+ *
+ *   \`\`\`js
+ *   var a = 0;
+ *   \`\`\`
+ */
+"
+`;
+
+exports[`description new line with dash 1`] = `
+"/**
+ * We will allow the scroll view to give up its lock iff it acquired the lock
+ * during an - animation. This is a very useful default that happens to
+ * satisfy many common user experiences.
+ *
+ * - Stop a scroll on the left edge, then turn that into an outer view's
+ *   backswipe.
+ * - Stop a scroll mid-bounce at the top, continue pulling to have the outer
+ *   view dismiss.
+ * - However, without catching the scroll view mid-bounce (while it is
+ *   motionless), if you drag far enough for the scroll view to become
+ *   responder (and therefore drag the scroll view a bit), any backswipe
+ *   navigation of a swipe gesture higher in the view hierarchy, should be
+ *   rejected.
+ */
+function scrollResponderHandleTerminationRequest() {
+  return !this.state.observedScrollSinceBecomingResponder;
+}
+
+/**
+ * - Stop a scroll on the left edge, then turn that into an outer view's
+ *   backswipe.
+ * - Stop a scroll mid-bounce at the top, continue pulling to have the outer
+ *   view dismiss.
+ */
+function scrollResponderHandleTerminationRequest() {
+  return !this.state.observedScrollSinceBecomingResponder;
+}
+
+/**
+ * - Stop a scroll on the left edge, then turn that into an outer view's
+ *   backswipe.
+ * - Stop a scroll mid-bounce at the top, continue pulling to have the outer
+ *   view dismiss.
+ */
+function scrollResponderHandleTerminationRequest() {
+  return !this.state.observedScrollSinceBecomingResponder;
+}
+"
+`;
+
+exports[`description new line with dash 2`] = `
+"/**
+ * Measures the \`HitRect\` node on activation. The Bounding rectangle is with
+ * respect to viewport - not page, so adding the \`pageXOffset/pageYOffset\`
+ * should result in points that are in the same coordinate system as an
+ * event's \`globalX/globalY\` data values.
+ *
+ * - Consider caching this for the lifetime of the component, or possibly being
+ *   able to share this cache between any \`ScrollMap\` view.
+ *
+ * @private
+ * @sideeffects
+ */
+"
+`;
+
+exports[`description new line with dash 3`] = `
+"/**
+ * Handles parsing of a test case file.
+ *
+ * A test case file consists of at least two parts, separated by a line of
+ * dashes. This separation line must start at the beginning of the line and
+ * consist of at least three dashes.
+ *
+ * The test case file can either consist of two parts:
+ *
+ *     const a = \\"\\";
+ *     const b = { c: [] };
+ *
+ * Or of three parts:
+ *
+ *     {source code}
+ *     ----
+ *     {expected token stream}
+ *     ----
+ *     {text comment explaining the test case}
+ *
+ * If the file contains more than three parts, the remaining parts are just
+ * ignored. If the file however does not contain at least two parts (so no
+ * expected token stream), the test case will later be marked as failed.
+ */
+"
+`;
+
+exports[`description start underscores 1`] = `
+"/**
+ * @param {string} a **very** important!
+ * @param {string} b _less_ important...
+ */
+"
+`;
+
+exports[`empty lines 1`] = `
+"/**
+ * Foo
+ *
+ * Bar
+ *
+ * @param a Baz
+ */
+"
+`;
+
+exports[`matches prettier markdown format 1`] = `
+"/**
+ * # Header
+ *
+ * _Look,_ code blocks are formatted _too!_
+ *
+ * \`\`\`js
+ * function identity(x) {
+ *   return x;
+ * }
+ * \`\`\`
+ *
+ * Pilot|Airport|Hours --|:--:|--: John Doe|SKG|1338 Jane Roe|JFK|314
+ *
+ * - List
+ * - With a [link] (/to/somewhere)
+ * - And [another one][another one]
+ *
+ * [another one]: http://example.com
+ *
+ * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+ * consectetur maximus risus, sed maximus tellus tincidunt et.
+ *
+ * @param {string} a **very** important!
+ * @param {string} b _less_ important...
+ * @param {string} a **very** important!
+ * @param {string} b _less_ important...
+ */
+"
+`;
+
+exports[`numbers and code in description 1`] = `
+"/**
+ * ========================== PressResponder Tutorial ==========================
+ *
+ * The \`PressResponder\` class helps you create press interactions by analyzing
+ * the geometry of elements and observing when another responder (e.g.
+ * ScrollView) has stolen the touch lock. It offers hooks for your component to
+ * provide interaction feedback to the user:
+ *
+ * - When a press has activated (e.g. highlight an element)
+ * - When a press has deactivated (e.g. un-highlight an element)
+ * - When a press sould trigger an action, meaning it activated and deactivated
+ *   while within the geometry of the element without the lock being stolen.
+ *
+ * A high quality interaction isn't as simple as you might think. There should
+ * be a slight delay before activation. Moving your finger beyond an element's
+ * bounds should trigger deactivation, but moving the same finger back within an
+ * element's bounds should trigger reactivation.
+ *
+ * 1. In order to use \`PressResponder\`, do the following:
+ *
+ * \`\`\`js
+ * const pressResponder = new PressResponder(config);
+ * \`\`\`
+ *
+ * 2. Choose the rendered component who should collect the press events. On that
+ *    element, spread \`pressability.getEventHandlers()\` into its props.
+ *
+ * \`\`\`js
+ * return <View {...this.state.pressResponder.getEventHandlers()} />;
+ * \`\`\`
+ *
+ * 3. Reset \`PressResponder\` when your component unmounts.
+ *
+ * \`\`\`js
+ *    componentWillUnmount() {
+ *      this.state.pressResponder.reset();
+ *    }
+ * \`\`\`
+ *
+ * ==================== Implementation Details ====================
+ *
+ * \`PressResponder\` only assumes that there exists a \`HitRect\` node. The
+ * \`PressRect\` is an abstract box that is extended beyond the \`HitRect\`.
+ *
+ * # Geometry
+ *
+ * When the press is released outside the \`HitRect\`, the responder is NOT
+ * eligible for a \\"press\\".
+ */
+"
+`;
+
+exports[`numbers and code in description 2`] = `
+"/**
+ * 1. A keydown event occurred immediately before a focus event
+ * 2. A focus event happened on an element which requires keyboard interaction
+ *    (e.g., a text field);
+ * 3. A focus event happened on an element which requires keyboard interaction
+ *    (e.g., a text field);
+ */
+"
+`;
+
+exports[`numbers and code in description 3`] = `
+"/**
+ * The script uses two heuristics to determine whether the keyboard is being
+ * used:
+ *
+ * 1. A keydown event occurred lorem ipsum dolor sit amet, consectetur adipiscing
+ *    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+ *    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+ *    aliqimmediately before a focus event;
+ * 2. A focus evenlorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+ *    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+ *    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqt
+ *    happened on an element which requires keyboard interaction (e.g., a text
+ *    field);
+ *
+ * Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+ * tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+ * quis nostrud exercitation ullamco laboris nisi ut aliq W3C Software Notice
+ * and License:
+ * https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document.
+ */
+"
+`;
+
+exports[`numbers and code in description 4`] = `
+"/**
+ * Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla
+ * mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget
+ * bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero.
+ * Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut,
+ * mollis sed, nonummy id, metus.
+ *
+ * 1. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+ *    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+ *    dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+ *    nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+ * 2. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
+ *    justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+ *    felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+ *    elementum semper nisi. Aenean vulputate eleifend tellus.
+ *
+ *    Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam
+ *    lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+ *    nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+ *    ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget
+ *    dui.
+ *
+ * @public
+ */
+"
+`;
+
+exports[`printWidth 1`] = `
+"/**
+ * A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+ * A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+ * A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+ * A
+ *
+ * A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+ * A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+ * A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+ * A
+ */
+"
+`;

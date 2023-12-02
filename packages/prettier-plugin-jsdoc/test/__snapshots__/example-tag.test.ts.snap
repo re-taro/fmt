@@ -1,0 +1,140 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Example javascript code 1`] = `
+"/**
+ * @example
+ *   var one = 5;
+ *   var two = 10;
+ *
+ *   const resolveDescription = formatDescription(
+ *     tag,
+ *     description,
+ *     tagString,
+ *     a,
+ *   );
+ *
+ *   if (one > 2) {
+ *     two += one;
+ *   }
+ *
+ * @undefiendTag
+ * @undefiendTag {number} name des
+ */
+const testFunction = (text, defaultValue, optionalNumber) => true;
+"
+`;
+
+exports[`Example javascript code 2`] = `
+"/**
+ * @example
+ *   var one = 5;
+ *   var two = 10;
+ *
+ *   const resolveDescription = formatDescription(
+ *     tag,
+ *     description,
+ *     tagString,
+ *     a,
+ *   );
+ *
+ *   if (one > 2) {
+ *     two += one;
+ *   }
+ *
+ * @undefiendTag
+ * @undefiendTag {number} name des
+ */
+const testFunction = (text, defaultValue, optionalNumber) => true;
+"
+`;
+
+exports[`Example start by xml tag 1`] = `
+"/**
+ * @example <caption>TradingViewChart</caption>
+ *   export default Something;
+ */
+"
+`;
+
+exports[`Example start by xml tag 2`] = `
+"/**
+ * @example <caption>TradingViewChart</caption>
+ *   function Something() {
+ *     return <caption>TradingViewChart</caption>;
+ *   }
+ *   export default Something;
+ */
+"
+`;
+
+exports[`empty example 1`] = `
+"/** Single line description */
+"
+`;
+
+exports[`empty example 2`] = `
+"/**
+ * Single line description
+ *
+ * @returns {Boolean} Always true
+ */
+"
+`;
+
+exports[`example json  1`] = `
+"/**
+ * Then this man came to realize the truth: Besides six pence, there is the
+ * moon. Besides bread and butter, there is the bug. And... Besides women,
+ * there is the code.
+ *
+ * @example
+ *   {
+ *     \\"0%\\": \\"#afc163\\",
+ *     \\"25%\\": \\"#66FF00\\",
+ *     \\"50%\\": \\"#00CC00\\", // ====>  linear-gradient(to right, #afc163 0%, #66FF00 25%,
+ *     \\"75%\\": \\"#009900\\", //         #00CC00 50%, #009900 75%, #ffffff 100%)
+ *     \\"100%\\": \\"#ffffff\\"
+ *   }
+ */
+"
+`;
+
+exports[`example unParseAble 1`] = `
+"/**
+ * @example
+ *   Prism.languages['css-with-colors'] = Prism.languages.extend('css', {
+ *       // Prism.languages.css already has a 'comment' token, so this token will overwrite CSS' 'comment' token
+ *       // at its original position
+ *       'comment': { ... },
+ *       // CSS doesn't have a 'color' token, so this token will be appended
+ *       'color': /(?:red|green|blue)/
+ *   });
+ */
+"
+`;
+
+exports[`examples Json 1`] = `
+"/**
+ * @example
+ *   { \\"testArr\\": [1, 2] }
+ */
+"
+`;
+
+exports[`examples Json 2`] = `
+"/**
+ * @example
+ *   [
+ *     {
+ *       foo: 1,
+ *       foo: 2,
+ *       foo: 9,
+ *     },
+ *     {
+ *       bar: 1,
+ *       bar: 5,
+ *     },
+ *   ];
+ */
+"
+`;
