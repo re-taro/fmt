@@ -6,9 +6,11 @@
       "outputs": ["dist/**"]
     },
     "fmt": {},
-    "lint": {},
+    "lint": {
+      "dependsOn": ["build"]
+    },
     "test": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["build"]
     }
   }
 }
