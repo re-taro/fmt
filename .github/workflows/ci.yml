@@ -28,6 +28,8 @@ jobs:
           node-version-file: .tool-versions
       - name: Setup | turborepo cache
         uses: re-taro/actions/turbo-cache@v3.4.1
+      - name: Setup | Build
+        run: pnpm build
       - name: Test | Lint
         run: pnpm lint
   test:
@@ -40,5 +42,7 @@ jobs:
           node-version-file: .tool-versions
       - name: Setup | turborepo cache
         uses: re-taro/actions/turbo-cache@v3.4.1
+      - name: Setup | Build
+        run: pnpm build
       - name: Test | Unit
         run: pnpm test
