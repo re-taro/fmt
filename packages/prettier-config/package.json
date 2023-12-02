@@ -49,8 +49,8 @@
   "dependencies": {
     "@re-taro/prettier-plugin-curly-and-jsdoc": "workspace:*",
     "@re-taro/prettier-plugin-pkgsort": "workspace:*",
-    "@re-taro/prettier-plugin-toml": "workspace:*",
-    "prettier-plugin-astro": "0.12.2"
+    "prettier-plugin-astro": "0.12.2",
+    "prettier-plugin-toml": "2.0.1"
   },
   "peerDependencies": {
     "prettier": "^3.0.0"

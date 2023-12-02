@@ -5,10 +5,10 @@ import type { Config } from "prettier";
 const require = createRequire(import.meta.url);
 
 const plugins = [
-  ...["curly-and-jsdoc", "pkgsort", "toml"].map((p) =>
+  ...["curly-and-jsdoc", "pkgsort"].map((p) =>
     require.resolve(`@re-taro/prettier-plugin-${p}`),
   ),
-  require.resolve("prettier-plugin-astro"),
+  ...["astro", "toml"].map((p) => require.resolve(`prettier-plugin-${p}`)),
 ];
 
 const config: Config = {

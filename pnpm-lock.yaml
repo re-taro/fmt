@@ -234,15 +234,15 @@ importers:
       '@re-taro/prettier-plugin-pkgsort':
         specifier: workspace:*
         version: link:../prettier-plugin-pkgsort
-      '@re-taro/prettier-plugin-toml':
-        specifier: workspace:*
-        version: link:../prettier-plugin-toml
       prettier:
         specifier: ^3.0.0
         version: 3.0.0
       prettier-plugin-astro:
         specifier: 0.12.2
         version: 0.12.2
+      prettier-plugin-toml:
+        specifier: 2.0.1
+        version: 2.0.1
 
   packages/prettier-plugin-curly-and-jsdoc:
     dependencies:
@@ -969,13 +969,11 @@ packages:
 
   /@taplo/core@0.1.1:
     resolution: {integrity: sha512-BG/zLGf5wiNXGEVPvUAAX/4ilB3PwDUY2o0MV0y47mZbDZ9ad9UK/cIQsILat3bqbPJsALVbU6k3cskNZ3vAQg==}
-    dev: true
 
   /@taplo/lib@0.4.0-alpha.2:
     resolution: {integrity: sha512-DV/Re3DPVY+BhBtLZ3dmP4mP6YMLSsgq9qGLXwOV38lvNF/fBlgvQswzlXmzCEefL/3q2eMoefZpOI/+GLuCNA==}
     dependencies:
       '@taplo/core': 0.1.1
-    dev: true
 
   /@types/acorn@4.0.6:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
@@ -5167,6 +5165,18 @@ packages:
       - supports-color
     dev: true
     patched: true
+
+  /prettier-plugin-toml@2.0.1:
+    resolution: {integrity: sha512-99z1YOkViECHtXQjGIigd3talI/ybUI1zB3yniAwUrlWBXupNXThB1hM6bwSMUEj2/+tomTlMtT98F5t4s8IWA==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      prettier: ^3.0.3
+    peerDependenciesMeta:
+      prettier:
+        optional: true
+    dependencies:
+      '@taplo/lib': 0.4.0-alpha.2
+    dev: false
 
   /prettier-plugin-toml@2.0.1(prettier@3.0.0):
     resolution: {integrity: sha512-99z1YOkViECHtXQjGIigd3talI/ybUI1zB3yniAwUrlWBXupNXThB1hM6bwSMUEj2/+tomTlMtT98F5t4s8IWA==}
