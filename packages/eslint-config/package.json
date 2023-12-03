@@ -1,6 +1,6 @@
 {
 	"name": "@re-taro/eslint-config",
-	"version": "2.3.0",
+	"version": "2.4.0",
 	"packageManager": "pnpm@8.11.0",
 	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
 	"type": "module",
@@ -51,7 +51,7 @@
 		"@html-eslint/eslint-plugin": "0.21.0",
 		"@html-eslint/parser": "0.21.0",
 		"@next/eslint-plugin-next": "14.0.3",
-		"@re-taro/eslint-plugin": "workspace:*",
+		"@re-taro/eslint-plugin": "2.4.0",
 		"@typescript-eslint/eslint-plugin": "6.13.1",
 		"@typescript-eslint/parser": "6.13.1",
 		"@unocss/eslint-config": "0.58.0",
