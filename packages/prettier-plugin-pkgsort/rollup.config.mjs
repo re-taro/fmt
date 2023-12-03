@@ -30,10 +30,6 @@ const options = {
 			outDir: ".",
 			declaration: true,
 		}),
-		replace({
-			"import.meta.vitest": "undefined",
-			preventAssignment: true,
-		}),
 		terser(),
 	],
 };

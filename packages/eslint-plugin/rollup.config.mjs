@@ -34,7 +34,7 @@ const options = {
 			declaration: true,
 		}),
 		replace({
-			"import.meta.vitest": "undefined",
+			"import.meta.vitest": false,
 			preventAssignment: true,
 		}),
 		terser(),
