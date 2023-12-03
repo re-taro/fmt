@@ -46,6 +46,9 @@
         "eslint",
         "prettier"
       ]
+    },
+    "patchedDependencies": {
+      "prettier-plugin-jsdoc@1.1.1": "patches/prettier-plugin-jsdoc@1.1.1.patch"
     }
   }
 }

@@ -1,9 +1,0 @@
-{
-  "name": "prettier-plugin-fake",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "files": [
-    "index.js"
-  ]
-}

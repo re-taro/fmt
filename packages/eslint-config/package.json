@@ -1,111 +1,107 @@
 {
-  "name": "@re-taro/eslint-config",
-  "description": "ESLint config for re-taro projects",
-  "version": "2.3.0",
-  "packageManager": "pnpm@8.11.0",
-  "license": "MIT",
-  "author": {
-    "name": "Rintaro Itokawa",
-    "email": "me@re-taro.dev",
-    "url": "https://re-taro.dev"
-  },
-  "homepage": "https://github.com/re-taro/fmt#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/re-taro/fmt.git",
-    "directory": "packages/eslint-config"
-  },
-  "bugs": {
-    "url": "https://github.com/re-taro/fmt/issues"
-  },
-  "keywords": [
-    "eslint",
-    "eslint-config"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "lint": "run-s -c lint:*",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier . -c",
-    "lint:ts": "tsc -p . --noEmit",
-    "fmt": "run-s -c fmt:*",
-    "fmt:eslint": "pnpm lint:eslint --fix",
-    "fmt:prettier": "prettier . -w"
-  },
-  "dependencies": {
-    "@eslint-community/eslint-plugin-eslint-comments": "4.1.0",
-    "@html-eslint/eslint-plugin": "0.21.0",
-    "@html-eslint/parser": "0.21.0",
-    "@next/eslint-plugin-next": "14.0.3",
-    "@re-taro/eslint-plugin": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "6.13.1",
-    "@typescript-eslint/parser": "6.13.1",
-    "@unocss/eslint-config": "0.57.7",
-    "eslint-config-flat-gitignore": "0.1.2",
-    "eslint-define-config": "1.24.1",
-    "eslint-import-resolver-typescript": "3.6.1",
-    "eslint-mdx": "2.2.0",
-    "eslint-plugin-array-func": "4.0.0",
-    "eslint-plugin-case-police": "0.6.1",
-    "eslint-plugin-etc": "2.0.3",
-    "eslint-plugin-html": "7.1.0",
-    "eslint-plugin-i": "2.29.0",
-    "eslint-plugin-jest-formatting": "3.1.0",
-    "eslint-plugin-json-schema-validator": "4.7.3",
-    "eslint-plugin-jsonc": "2.10.0",
-    "eslint-plugin-jsx-a11y": "6.8.0",
-    "eslint-plugin-mdx": "2.2.0",
-    "eslint-plugin-n": "16.3.1",
-    "eslint-plugin-no-await-in-promise": "1.1.5",
-    "eslint-plugin-no-explicit-type-exports": "0.12.1",
-    "eslint-plugin-no-only-tests": "3.1.0",
-    "eslint-plugin-only-error": "1.0.2",
-    "eslint-plugin-promise": "6.1.1",
-    "eslint-plugin-react": "7.33.2",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-regexp": "2.1.1",
-    "eslint-plugin-simple-import-sort": "10.0.0",
-    "eslint-plugin-solid": "0.13.0",
-    "eslint-plugin-storybook": "0.6.15",
-    "eslint-plugin-svelte": "2.35.1",
-    "eslint-plugin-toml": "0.7.1",
-    "eslint-plugin-unicorn": "49.0.0",
-    "eslint-plugin-unused-imports": "3.0.0",
-    "eslint-plugin-vitest": "0.3.10",
-    "eslint-plugin-vue": "9.19.2",
-    "eslint-plugin-yml": "1.10.0",
-    "globals": "13.23.0",
-    "jsonc-eslint-parser": "2.4.0",
-    "local-pkg": "0.5.0",
-    "svelte-eslint-parser": "0.33.1",
-    "toml-eslint-parser": "0.9.3",
-    "vue-eslint-parser": "9.3.2",
-    "yaml-eslint-parser": "1.2.2"
-  },
-  "devDependencies": {
-    "eslint": "8.55.0"
-  },
-  "peerDependencies": {
-    "eslint": ">=8.40.0",
-    "prettier": "^3.0.0",
-    "svelte": "^3.37.0 || ^4.0.0"
-  }
+	"name": "@re-taro/eslint-config",
+	"version": "2.3.0",
+	"packageManager": "pnpm@8.11.0",
+	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
+	"type": "module",
+	"description": "ESLint config for re-taro projects",
+	"keywords": [
+		"eslint",
+		"eslint-config"
+	],
+	"homepage": "https://github.com/re-taro/fmt#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/re-taro/fmt.git",
+		"directory": "packages/eslint-config"
+	},
+	"bugs": {
+		"url": "https://github.com/re-taro/fmt/issues"
+	},
+	"license": "MIT",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "rollup -c",
+		"fmt": "run-s -c fmt:*",
+		"fmt:eslint": "pnpm lint:eslint --fix",
+		"fmt:prettier": "prettier . -w",
+		"lint": "run-s -c lint:*",
+		"lint:eslint": "eslint .",
+		"lint:prettier": "prettier . -c",
+		"lint:ts": "tsc -p . --noEmit"
+	},
+	"dependencies": {
+		"@eslint-community/eslint-plugin-eslint-comments": "4.1.0",
+		"@html-eslint/eslint-plugin": "0.21.0",
+		"@html-eslint/parser": "0.21.0",
+		"@next/eslint-plugin-next": "14.0.3",
+		"@re-taro/eslint-plugin": "workspace:*",
+		"@typescript-eslint/eslint-plugin": "6.13.1",
+		"@typescript-eslint/parser": "6.13.1",
+		"@unocss/eslint-config": "0.57.7",
+		"eslint-config-flat-gitignore": "0.1.2",
+		"eslint-define-config": "1.24.1",
+		"eslint-import-resolver-typescript": "3.6.1",
+		"eslint-mdx": "2.2.0",
+		"eslint-plugin-array-func": "4.0.0",
+		"eslint-plugin-case-police": "0.6.1",
+		"eslint-plugin-etc": "2.0.3",
+		"eslint-plugin-html": "7.1.0",
+		"eslint-plugin-i": "2.29.0",
+		"eslint-plugin-jest-formatting": "3.1.0",
+		"eslint-plugin-json-schema-validator": "4.7.3",
+		"eslint-plugin-jsonc": "2.10.0",
+		"eslint-plugin-jsx-a11y": "6.8.0",
+		"eslint-plugin-mdx": "2.2.0",
+		"eslint-plugin-n": "16.3.1",
+		"eslint-plugin-no-await-in-promise": "1.1.5",
+		"eslint-plugin-no-explicit-type-exports": "0.12.1",
+		"eslint-plugin-no-only-tests": "3.1.0",
+		"eslint-plugin-only-error": "1.0.2",
+		"eslint-plugin-promise": "6.1.1",
+		"eslint-plugin-react": "7.33.2",
+		"eslint-plugin-react-hooks": "4.6.0",
+		"eslint-plugin-regexp": "2.1.1",
+		"eslint-plugin-simple-import-sort": "10.0.0",
+		"eslint-plugin-solid": "0.13.0",
+		"eslint-plugin-storybook": "0.6.15",
+		"eslint-plugin-svelte": "2.35.1",
+		"eslint-plugin-toml": "0.7.1",
+		"eslint-plugin-unicorn": "49.0.0",
+		"eslint-plugin-unused-imports": "3.0.0",
+		"eslint-plugin-vitest": "0.3.10",
+		"eslint-plugin-vue": "9.19.2",
+		"eslint-plugin-yml": "1.10.0",
+		"globals": "13.23.0",
+		"jsonc-eslint-parser": "2.4.0",
+		"local-pkg": "0.5.0",
+		"svelte-eslint-parser": "0.33.1",
+		"toml-eslint-parser": "0.9.3",
+		"vue-eslint-parser": "9.3.2",
+		"yaml-eslint-parser": "1.2.2"
+	},
+	"devDependencies": {
+		"eslint": "8.55.0"
+	},
+	"peerDependencies": {
+		"eslint": ">=8.40.0",
+		"prettier": "^3.0.0",
+		"svelte": "^3.37.0 || ^4.0.0"
+	}
 }

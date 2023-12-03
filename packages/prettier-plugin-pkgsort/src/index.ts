@@ -13,53 +13,53 @@ const parser = prettierParsers["json-stringify"];
 const isPackageJson = (path: string) => basename(path) === "package.json";
 
 export const parsers = {
-  "json-stringify": {
-    ...parser,
-    async parse(text, options: PrettierOptions) {
-      if (!isPackageJson(options.filepath)) {
-        return parser.parse(text, options);
-      }
+	"json-stringify": {
+		...parser,
+		async parse(text, options: PrettierOptions) {
+			if (!isPackageJson(options.filepath)) {
+				return parser.parse(text, options);
+			}
 
-      text = await prettierFormat(text, { filepath: "package.json" });
+			text = await prettierFormat(text, { filepath: "package.json" });
 
-      if (parser.preprocess) {
-        text = parser.preprocess(text, options);
-      }
+			if (parser.preprocess) {
+				text = parser.preprocess(text, options);
+			}
 
-      const formatOptions: Options = {
-        useTabs: options.useTabs,
-        tabWidth: options.tabWidth,
-        expandUsers: options.pkgsortExpandUsers ?? defaultOptions.expandUsers,
-        keyOrder: options.pkgsortKeyOrder ?? defaultOptions.keyOrder,
-      };
+			const formatOptions: Options = {
+				useTabs: options.useTabs,
+				tabWidth: options.tabWidth,
+				expandUsers: options.pkgsortExpandUsers ?? defaultOptions.expandUsers,
+				keyOrder: options.pkgsortKeyOrder ?? defaultOptions.keyOrder,
+			};
 
-      text = format(JSON.parse(text), formatOptions);
+			text = format(JSON.parse(text), formatOptions);
 
-      return parser.parse(text, options);
-    },
-  } as const satisfies Parser,
+			return parser.parse(text, options);
+		},
+	} as const satisfies Parser,
 };
 
 if (import.meta.vitest) {
-  const { default: module } = await import("node:module");
-  const { default: url } = await import("node:url");
-  const { it, expect } = import.meta.vitest;
+	const { default: module } = await import("node:module");
+	const { default: url } = await import("node:url");
+	const { it, expect } = import.meta.vitest;
 
-  it("should be requireable", () => {
-    const imported = module.createRequire(import.meta.url)("..");
+	it("should be requireable", () => {
+		const imported = module.createRequire(import.meta.url)("..");
 
-    expect(imported).toMatchObject({
-      parsers: {},
-    });
-  });
+		expect(imported).toMatchObject({
+			parsers: {},
+		});
+	});
 
-  it("should be resolvable", () => {
-    const actualPath = url.fileURLToPath(
-      new URL("../dist/index.cjs", import.meta.url),
-    );
+	it("should be resolvable", () => {
+		const actualPath = url.fileURLToPath(
+			new URL("../dist/index.cjs", import.meta.url),
+		);
 
-    const resolved = require.resolve("..");
+		const resolved = require.resolve("..");
 
-    expect(resolved).toEqual(actualPath);
-  });
+		expect(resolved).toEqual(actualPath);
+	});
 }
