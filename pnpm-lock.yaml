@@ -239,10 +239,10 @@ importers:
         version: 0.12.2
       prettier-plugin-pkgsort:
         specifier: 0.2.1
-        version: 0.2.1
+        version: 0.2.1(prettier@3.0.0)
       prettier-plugin-toml:
         specifier: 2.0.1
-        version: 2.0.1
+        version: 2.0.1(prettier@3.0.0)
 
   packages/prettier-plugin-curly-and-jsdoc:
     dependencies:
@@ -255,15 +255,6 @@ importers:
       prettier-plugin-jsdoc:
         specifier: 1.1.1
         version: 1.1.1(patch_hash=ipkmmdwjiodvtgq5kj77xl5yfu)(prettier@3.0.0)
-
-  packages/prettier-plugin-pkgsort:
-    dependencies:
-      prettier:
-        specifier: 3.1.0
-        version: 3.1.0
-      prettier-package-json:
-        specifier: 2.8.0
-        version: 2.8.0
 
 packages:
 
@@ -5164,7 +5155,7 @@ packages:
     dev: false
     patched: true
 
-  /prettier-plugin-pkgsort@0.2.1:
+  /prettier-plugin-pkgsort@0.2.1(prettier@3.0.0):
     resolution: {integrity: sha512-/k5MIw84EhgoH7dmq4+6ozHjJ0VYbxbw17g4C+WPGHODkLivGwJoA6U1YPR/KObyRDMQJHXAfXKu++9smg7Jyw==}
     peerDependencies:
       prettier: ^3.0.0
@@ -5172,10 +5163,11 @@ packages:
       prettier:
         optional: true
     dependencies:
+      prettier: 3.0.0
       prettier-package-json: 2.8.0
     dev: false
 
-  /prettier-plugin-toml@2.0.1:
+  /prettier-plugin-toml@2.0.1(prettier@3.0.0):
     resolution: {integrity: sha512-99z1YOkViECHtXQjGIigd3talI/ybUI1zB3yniAwUrlWBXupNXThB1hM6bwSMUEj2/+tomTlMtT98F5t4s8IWA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -5185,6 +5177,7 @@ packages:
         optional: true
     dependencies:
       '@taplo/lib': 0.4.0-alpha.2
+      prettier: 3.0.0
     dev: false
 
   /prettier@3.0.0:
