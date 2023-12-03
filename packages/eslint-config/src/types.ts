@@ -4,175 +4,181 @@ import type { FlatGitignoreOptions } from "eslint-config-flat-gitignore";
 import type { FlatESLintConfigItem, Rules } from "eslint-define-config";
 
 export interface OptionsComponentExts {
-  /** Additional extensions for components. */
-  componentExts?: string[];
+	/**
+	 * Additional extensions for components.
+	 */
+	componentExts?: string[];
 }
 
 export interface OptionsTypeScriptParserOptions {
-  /** Additional parser options for TypeScript. */
-  parserOptions?: Partial<ParserOptions>;
+	/**
+	 * Additional parser options for TypeScript.
+	 */
+	parserOptions?: Partial<ParserOptions>;
 }
 
 export interface OptionsHasTypeScript {
-  typescript?: boolean;
+	typescript?: boolean;
 }
 
 export interface OptionsOverrides {
-  overrides?: ConfigItem["rules"];
+	overrides?: ConfigItem["rules"];
 }
 
 export interface Options
-  extends OptionsComponentExts,
-    OptionsTypeScriptParserOptions {
-  /**
-   * Enable gitignore support.
-   *
-   * Passing an object to configure the options.
-   *
-   * @default true
-   * @see https://github.com/antfu/eslint-config-flat-gitignore
-   */
-  gitignore?: boolean | FlatGitignoreOptions;
+	extends OptionsComponentExts,
+		OptionsTypeScriptParserOptions {
+	/**
+	 * Enable gitignore support.
+	 *
+	 * Passing an object to configure the options.
+	 *
+	 * @default true
+	 * @see https://github.com/antfu/eslint-config-flat-gitignore
+	 */
+	gitignore?: boolean | FlatGitignoreOptions;
 
-  /**
-   * Enable TypeScript support.
-   *
-   * Passing an object to enable TypeScript Language Server support.
-   *
-   * @default auto-detect based on the dependencies
-   */
-  typescript?: boolean;
+	/**
+	 * Enable TypeScript support.
+	 *
+	 * Passing an object to enable TypeScript Language Server support.
+	 *
+	 * @default auto-detect based on the dependencies
+	 */
+	typescript?: boolean;
 
-  /**
-   * Enable test support.
-   *
-   * @default true
-   */
-  test?: boolean;
+	/**
+	 * Enable test support.
+	 *
+	 * @default true
+	 */
+	test?: boolean;
 
-  /**
-   * Enable React.js support.
-   *
-   * @default auto-detect based on the dependencies
-   */
-  react?: boolean;
+	/**
+	 * Enable React.js support.
+	 *
+	 * @default auto-detect based on the dependencies
+	 */
+	react?: boolean;
 
-  /**
-   * Enable Next.js support.
-   *
-   * @default auto-detect based on the dependencies
-   */
-  next?: boolean;
+	/**
+	 * Enable Next.js support.
+	 *
+	 * @default auto-detect based on the dependencies
+	 */
+	next?: boolean;
 
-  /**
-   * Enable Vue support.
-   *
-   * @default auto-detect based on the dependencies
-   */
-  vue?: boolean;
+	/**
+	 * Enable Vue support.
+	 *
+	 * @default auto-detect based on the dependencies
+	 */
+	vue?: boolean;
 
-  /**
-   * Enable Svelte support.
-   *
-   * @default auto-detect based on the dependencies
-   */
-  svelte?: boolean;
+	/**
+	 * Enable Svelte support.
+	 *
+	 * @default auto-detect based on the dependencies
+	 */
+	svelte?: boolean;
 
-  /**
-   * Enable Solid.js support.
-   *
-   * @default auto-detect based on the dependencies
-   */
-  solid?: boolean;
+	/**
+	 * Enable Solid.js support.
+	 *
+	 * @default auto-detect based on the dependencies
+	 */
+	solid?: boolean;
 
-  /**
-   * Enable Storybook support.
-   *
-   * @default auto-detect based on the dependencies
-   */
-  storybook?: boolean;
+	/**
+	 * Enable Storybook support.
+	 *
+	 * @default auto-detect based on the dependencies
+	 */
+	storybook?: boolean;
 
-  /**
-   * Enable JSONC support.
-   *
-   * @default true
-   */
-  jsonc?: boolean;
+	/**
+	 * Enable JSONC support.
+	 *
+	 * @default true
+	 */
+	jsonc?: boolean;
 
-  /**
-   * Enable YAML support.
-   *
-   * @default true
-   */
-  yaml?: boolean;
+	/**
+	 * Enable YAML support.
+	 *
+	 * @default true
+	 */
+	yaml?: boolean;
 
-  /**
-   * Enable TOML support.
-   *
-   * @default true
-   */
-  toml?: boolean;
+	/**
+	 * Enable TOML support.
+	 *
+	 * @default true
+	 */
+	toml?: boolean;
 
-  /**
-   * Enable markdown and mdx support.
-   *
-   * @default true
-   */
-  mdx?: boolean;
+	/**
+	 * Enable markdown and mdx support.
+	 *
+	 * @default true
+	 */
+	mdx?: boolean;
 
-  /**
-   * Enable formatting rules.
-   *
-   * @default true
-   */
-  formatting?: boolean;
+	/**
+	 * Enable formatting rules.
+	 *
+	 * @default true
+	 */
+	formatting?: boolean;
 
-  /** Provide overrides for rules for each integration. */
-  overrides?: {
-    javascript?: ConfigItem["rules"];
-    typescript?: ConfigItem["rules"];
-    test?: ConfigItem["rules"];
-    react?: ConfigItem["rules"];
-    next?: ConfigItem["rules"];
-    vue?: ConfigItem["rules"];
-    svelte?: ConfigItem["rules"];
-    solid?: ConfigItem["rules"];
-    storybook?: ConfigItem["rules"];
-    jsonc?: ConfigItem["rules"];
-    mdx?: ConfigItem["rules"];
-    yaml?: ConfigItem["rules"];
-    toml?: ConfigItem["rules"];
-  };
+	/**
+	 * Provide overrides for rules for each integration.
+	 */
+	overrides?: {
+		javascript?: ConfigItem["rules"];
+		typescript?: ConfigItem["rules"];
+		test?: ConfigItem["rules"];
+		react?: ConfigItem["rules"];
+		next?: ConfigItem["rules"];
+		vue?: ConfigItem["rules"];
+		svelte?: ConfigItem["rules"];
+		solid?: ConfigItem["rules"];
+		storybook?: ConfigItem["rules"];
+		jsonc?: ConfigItem["rules"];
+		mdx?: ConfigItem["rules"];
+		yaml?: ConfigItem["rules"];
+		toml?: ConfigItem["rules"];
+	};
 }
 
 type Unprefix<T extends Record<string, any>, Pre extends string> = {
-  [K in keyof T as K extends `${Pre}${infer U}` ? U : never]: T[K];
+	[K in keyof T as K extends `${Pre}${infer U}` ? U : never]: T[K];
 };
 
 type Prefix<T extends Record<string, any>, Pre extends string> = {
-  [K in keyof T as `${Pre}${K & string}`]: T[K];
+	[K in keyof T as `${Pre}${K & string}`]: T[K];
 };
 
 type RenamePrefix<
-  T extends Record<string, any>,
-  Old extends string,
-  New extends string,
+	T extends Record<string, any>,
+	Old extends string,
+	New extends string,
 > = Prefix<Unprefix<T, Old>, New>;
 
 type MergeIntersection<T extends Record<any, any>> = {
-  [K in keyof T]: T[K];
+	[K in keyof T]: T[K];
 };
 
 export type RenamedRules = MergeIntersection<
-  Rules &
-    RenamePrefix<Rules, "@typescript-eslint/", "ts/"> &
-    RenamePrefix<Rules, "yml/", "yaml/"> &
-    RenamePrefix<Rules, "n/", "node/"> &
-    Prefix<Partial<(typeof retaroPlugin)["rules"]>, "re-taro/">
+	Rules &
+		RenamePrefix<Rules, "@typescript-eslint/", "ts/"> &
+		RenamePrefix<Rules, "yml/", "yaml/"> &
+		RenamePrefix<Rules, "n/", "node/"> &
+		Prefix<Partial<(typeof retaroPlugin)["rules"]>, "re-taro/">
 >;
 
 export type ConfigItem = Omit<FlatESLintConfigItem, "plugins" | "rules"> & {
-  // Relax plugins type limitation, as most of the plugins did not have correct type info yet.
-  plugins?: Record<string, any>;
-  rules?: RenamedRules | Record<string, any>;
+	// Relax plugins type limitation, as most of the plugins did not have correct type info yet.
+	plugins?: Record<string, any>;
+	rules?: RenamedRules | Record<string, any>;
 };

@@ -1,61 +1,58 @@
 {
-  "name": "@re-taro/eslint-plugin",
-  "description": "ESLint plugin for re-taro",
-  "version": "2.3.0",
-  "packageManager": "pnpm@8.11.0",
-  "license": "MIT",
-  "author": {
-    "name": "Rintaro Itokawa",
-    "email": "me@re-taro.dev",
-    "url": "https://re-taro.dev"
-  },
-  "homepage": "https://github.com/re-taro/fmt#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/re-taro/fmt.git",
-    "directory": "packages/eslint-plugin"
-  },
-  "bugs": {
-    "url": "https://github.com/re-taro/fmt/issues"
-  },
-  "keywords": [
-    "eslint",
-    "eslint-config",
-    "eslint-plugin"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "lint": "run-s -c lint:*",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier . -c",
-    "lint:ts": "tsc -p . --noEmit",
-    "fmt": "run-s -c fmt:*",
-    "fmt:eslint": "pnpm lint:eslint --fix",
-    "fmt:prettier": "prettier . -w",
-    "test": "vitest"
-  },
-  "dependencies": {
-    "@typescript-eslint/types": "6.2.1",
-    "@typescript-eslint/utils": "6.2.1"
-  },
-  "devDependencies": {
-    "@typescript-eslint/parser": "6.13.1"
-  }
+	"name": "@re-taro/eslint-plugin",
+	"version": "2.3.0",
+	"packageManager": "pnpm@8.11.0",
+	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
+	"type": "module",
+	"description": "ESLint plugin for re-taro",
+	"keywords": [
+		"eslint",
+		"eslint-config",
+		"eslint-plugin"
+	],
+	"homepage": "https://github.com/re-taro/fmt#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/re-taro/fmt.git",
+		"directory": "packages/eslint-plugin"
+	},
+	"bugs": {
+		"url": "https://github.com/re-taro/fmt/issues"
+	},
+	"license": "MIT",
+	"sideEffects": false,
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.mjs"
+		}
+	},
+	"main": "dist/index.cjs",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "rollup -c",
+		"fmt": "run-s -c fmt:*",
+		"fmt:eslint": "pnpm lint:eslint --fix",
+		"fmt:prettier": "prettier . -w",
+		"lint": "run-s -c lint:*",
+		"lint:eslint": "eslint .",
+		"lint:prettier": "prettier . -c",
+		"lint:ts": "tsc -p . --noEmit",
+		"test": "vitest"
+	},
+	"dependencies": {
+		"@typescript-eslint/types": "6.2.1",
+		"@typescript-eslint/utils": "6.2.1"
+	},
+	"devDependencies": {
+		"@typescript-eslint/parser": "6.13.1"
+	}
 }
