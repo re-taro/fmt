@@ -1,37 +1,38 @@
 {
-  "packages": {
-    "packages/eslint-config": {
-      "component": "eslint-config"
-    },
-    "packages/eslint-plugin": {
-      "component": "eslint-plugin"
-    },
-    "packages/prettier-config": {
-      "component": "prettier-config"
-    },
-    "packages/prettier-plugin-curly-and-jsdoc": {
-      "component": "prettier-plugin-curly-and-jsdoc"
-    }
-  },
-  "plugins": [
-    {
-      "type": "node-workspace",
-      "merge": false
-    },
-    {
-      "type": "linked-versions",
-      "group-name": "eslint",
-      "groupName": "eslint",
-      "components": ["eslint-config", "eslint-plugin"]
-    },
-    {
-      "type": "linked-versions",
-      "group-name": "prettier",
-      "groupName": "prettier",
-      "components": [
-        "prettier-config",
-        "prettier-plugin-curly-and-jsdoc"
-      ]
-    }
-  ]
+	"packages": {
+		"packages/eslint-config": {
+			"release-type": "node",
+			"component": "eslint-config"
+		},
+		"packages/eslint-plugin": {
+			"release-type": "node",
+			"component": "eslint-plugin"
+		},
+		"packages/prettier-config": {
+			"release-type": "node",
+			"component": "prettier-config"
+		},
+		"packages/prettier-plugin-curly-and-jsdoc": {
+			"release-type": "node",
+			"component": "prettier-plugin-curly-and-jsdoc"
+		}
+	},
+	"plugins": [
+		{
+			"type": "node-workspace",
+			"merge": false
+		},
+		{
+			"type": "linked-versions",
+			"group-name": "eslint",
+			"groupName": "eslint",
+			"components": ["eslint-config", "eslint-plugin"]
+		},
+		{
+			"type": "linked-versions",
+			"group-name": "prettier",
+			"groupName": "prettier",
+			"components": ["prettier-config", "prettier-plugin-curly-and-jsdoc"]
+		}
+	]
 }
