@@ -11,12 +11,6 @@
     },
     "packages/prettier-plugin-curly-and-jsdoc": {
       "component": "prettier-plugin-curly-and-jsdoc"
-    },
-    "packages/prettier-plugin-jsdoc": {
-      "component": "prettier-plugin-jsdoc"
-    },
-    "packages/prettier-plugin-pkgsort": {
-      "component": "prettier-plugin-pkgsort"
     }
   },
   "plugins": [
@@ -36,9 +30,7 @@
       "groupName": "prettier",
       "components": [
         "prettier-config",
-        "prettier-plugin-curly-and-jsdoc",
-        "prettier-plugin-jsdoc",
-        "prettier-plugin-pkgsort"
+        "prettier-plugin-curly-and-jsdoc"
       ]
     }
   ]

@@ -231,18 +231,18 @@ importers:
       '@re-taro/prettier-plugin-curly-and-jsdoc':
         specifier: workspace:*
         version: link:../prettier-plugin-curly-and-jsdoc
-      '@re-taro/prettier-plugin-pkgsort':
-        specifier: workspace:*
-        version: link:../prettier-plugin-pkgsort
       prettier:
         specifier: ^3.0.0
         version: 3.0.0
       prettier-plugin-astro:
         specifier: 0.12.2
         version: 0.12.2
+      prettier-plugin-pkgsort:
+        specifier: 0.2.1
+        version: 0.2.1
       prettier-plugin-toml:
         specifier: 2.0.1
-        version: 2.0.1(prettier@3.0.0)
+        version: 2.0.1
 
   packages/prettier-plugin-curly-and-jsdoc:
     dependencies:
@@ -5108,6 +5108,7 @@ packages:
 
   /prettier-package-json@2.8.0:
     resolution: {integrity: sha512-WxtodH/wWavfw3MR7yK/GrS4pASEQ+iSTkdtSxPJWvqzG55ir5nvbLt9rw5AOiEcqqPCRM92WCtR1rk3TG3JSQ==}
+    hasBin: true
     dependencies:
       '@types/parse-author': 2.0.2
       commander: 4.1.1
@@ -5163,7 +5164,18 @@ packages:
     dev: false
     patched: true
 
-  /prettier-plugin-toml@2.0.1(prettier@3.0.0):
+  /prettier-plugin-pkgsort@0.2.1:
+    resolution: {integrity: sha512-/k5MIw84EhgoH7dmq4+6ozHjJ0VYbxbw17g4C+WPGHODkLivGwJoA6U1YPR/KObyRDMQJHXAfXKu++9smg7Jyw==}
+    peerDependencies:
+      prettier: ^3.0.0
+    peerDependenciesMeta:
+      prettier:
+        optional: true
+    dependencies:
+      prettier-package-json: 2.8.0
+    dev: false
+
+  /prettier-plugin-toml@2.0.1:
     resolution: {integrity: sha512-99z1YOkViECHtXQjGIigd3talI/ybUI1zB3yniAwUrlWBXupNXThB1hM6bwSMUEj2/+tomTlMtT98F5t4s8IWA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -5173,7 +5185,6 @@ packages:
         optional: true
     dependencies:
       '@taplo/lib': 0.4.0-alpha.2
-      prettier: 3.0.0
     dev: false
 
   /prettier@3.0.0:
