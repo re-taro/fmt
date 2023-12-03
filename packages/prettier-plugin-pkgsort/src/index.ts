@@ -41,12 +41,11 @@ export const parsers = {
 };
 
 if (import.meta.vitest) {
-	const { default: module } = await import("node:module");
 	const { default: url } = await import("node:url");
 	const { it, expect } = import.meta.vitest;
 
-	it("should be requireable", () => {
-		const imported = module.createRequire(import.meta.url)("..");
+	it("should be importable", async () => {
+		const imported = await import("../dist");
 
 		expect(imported).toMatchObject({
 			parsers: {},
@@ -55,10 +54,10 @@ if (import.meta.vitest) {
 
 	it("should be resolvable", () => {
 		const actualPath = url.fileURLToPath(
-			new URL("../dist/index.cjs", import.meta.url),
+			new URL("../dist/index.js", import.meta.url),
 		);
 
-		const resolved = require.resolve("..");
+		const resolved = require.resolve("../dist");
 
 		expect(resolved).toEqual(actualPath);
 	});
