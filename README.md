@@ -26,7 +26,7 @@
 pnpm add -D eslint prettier @re-taro/eslint-config @re-taro/prettier-config
 ```
 
-### Config `eslint.config.js` and `.prettierrc.cjs`
+### Config `eslint.config.js` and `prettier.config.js`
 
 ```js
 // eslint.config.js
@@ -45,8 +45,9 @@ module.exports = re_taro();
 ```
 
 ```js
-// .prettierrc.cjs
-module.exports = require("@re-taro/prettier-config");
+import re_taro from "@re-taro/prettier-config";
+
+export default re_taro;
 ```
 
 > Note that `.eslintignore` no longer works in Flat config, see [customization](#customization) for more details.
