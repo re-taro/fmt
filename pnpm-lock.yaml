@@ -128,8 +128,8 @@ importers:
         specifier: 16.3.1
         version: 16.3.1(eslint@8.55.0)
       eslint-plugin-no-await-in-promise:
-        specifier: 1.1.5
-        version: 1.1.5(eslint@8.55.0)
+        specifier: 1.1.6
+        version: 1.1.6(eslint@8.55.0)
       eslint-plugin-no-explicit-type-exports:
         specifier: 0.12.1
         version: 0.12.1(@typescript-eslint/parser@6.13.2)(eslint-import-resolver-typescript@3.6.1)(eslint@8.55.0)(typescript@5.3.2)
@@ -2770,8 +2770,8 @@ packages:
       semver: 7.5.4
     dev: false
 
-  /eslint-plugin-no-await-in-promise@1.1.5(eslint@8.55.0):
-    resolution: {integrity: sha512-DsLzTfvOBvCX26Urnp5u/OI7lXDOPfoSmB0sxZbPMk+2va6QI2902CysNbSODN1lCW5VJMtMVmVu/V7HeMph5w==}
+  /eslint-plugin-no-await-in-promise@1.1.6(eslint@8.55.0):
+    resolution: {integrity: sha512-4oyWw+P63MdQdHstoELk0Z05xxt/dRxS1QRpM+JPizrFgQFtdJ+DjdhV4db0CsRHoZ/y8pneS2rG3Slio60u2w==}
     engines: {node: ^14.17.0 || ^16.0.0 || >= 18.0.0}
     peerDependencies:
       eslint: '>=7'
@@ -3372,13 +3372,6 @@ packages:
 
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
-
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    optional: true
 
   /fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -5607,7 +5600,7 @@ packages:
       '@rollup/rollup-win32-arm64-msvc': 4.6.1
       '@rollup/rollup-win32-ia32-msvc': 4.6.1
       '@rollup/rollup-win32-x64-msvc': 4.6.1
-      fsevents: 2.3.2
+      fsevents: 2.3.3
 
   /run-applescript@5.0.0:
     resolution: {integrity: sha512-XcT5rBksx1QdIhlFOCtgZkB99ZEouFZ1E2Kc2LHqNW13U3/74YGdkQRmThTwxy4QIyookibDKYZOPqX//6BlAg==}
