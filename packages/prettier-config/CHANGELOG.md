@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/re-taro/fmt/compare/prettier-config-v1.1.0...prettier-config-v1.2.0) (2023-12-07)
+
+### Features
+
+- support only ESM ([#743](https://github.com/re-taro/fmt/issues/743)) ([7a41633](https://github.com/re-taro/fmt/commit/7a416336c625034e4281a478ab2cc0a8e85da46f))
+
+### Dependencies
+
+- The following workspace dependencies were updated
+  - dependencies
+    - @re-taro/prettier-plugin-curly-and-jsdoc bumped to 1.2.0
+
 ## [1.1.0](https://github.com/re-taro/fmt/compare/prettier-config-v1.0.1...prettier-config-v1.1.0) (2023-11-14)
 
 ### Features
