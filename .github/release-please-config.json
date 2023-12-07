@@ -1,19 +1,15 @@
 {
 	"packages": {
 		"packages/eslint-config": {
-			"release-type": "node",
 			"component": "eslint-config"
 		},
 		"packages/eslint-plugin": {
-			"release-type": "node",
 			"component": "eslint-plugin"
 		},
 		"packages/prettier-config": {
-			"release-type": "node",
 			"component": "prettier-config"
 		},
 		"packages/prettier-plugin-curly-and-jsdoc": {
-			"release-type": "node",
 			"component": "prettier-plugin-curly-and-jsdoc"
 		}
 	},
