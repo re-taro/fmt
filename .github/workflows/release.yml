@@ -21,8 +21,10 @@ jobs:
         with:
           fetch-depth: 0
       - id: release
-        uses: google-github-actions/release-please-action@v4.0.0
+        uses: google-github-actions/release-please-action@v3.7.13
         with:
+          release-type: node
+          command: manifest
           token: ${{ steps.bot.outputs.token }}
           config-file: .github/release-please-config.json
           manifest-file: .github/release-please-manifest.json
