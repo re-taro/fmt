@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/re-taro/fmt/compare/eslint-plugin-v2.3.0...eslint-plugin-v2.4.0) (2023-12-07)
+
+
+### Features
+
+* support only ESM ([#743](https://github.com/re-taro/fmt/issues/743)) ([7a41633](https://github.com/re-taro/fmt/commit/7a416336c625034e4281a478ab2cc0a8e85da46f))
+
 ## [2.3.0](https://github.com/re-taro/fmt/compare/eslint-plugin-v2.2.0...eslint-plugin-v2.3.0) (2023-11-14)
 
 ### Miscellaneous Chores
