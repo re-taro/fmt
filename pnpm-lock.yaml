@@ -68,8 +68,8 @@ importers:
         specifier: 0.21.0
         version: 0.21.0
       '@next/eslint-plugin-next':
-        specifier: 14.0.3
-        version: 14.0.3
+        specifier: 14.0.4
+        version: 14.0.4
       '@re-taro/eslint-plugin':
         specifier: workspace:*
         version: link:../eslint-plugin
@@ -693,8 +693,8 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  /@next/eslint-plugin-next@14.0.3:
-    resolution: {integrity: sha512-j4K0n+DcmQYCVnSAM+UByTVfIHnYQy2ODozfQP+4RdwtRDfobrIvKq1K4Exb2koJ79HSSa7s6B2SA8T/1YR3RA==}
+  /@next/eslint-plugin-next@14.0.4:
+    resolution: {integrity: sha512-U3qMNHmEZoVmHA0j/57nRfi3AscXNvkOnxDmle/69Jz/G0o/gWjXTDdlgILZdrxQ0Lw/jv2mPW8PGy0EGIHXhQ==}
     dependencies:
       glob: 7.1.7
     dev: false
@@ -3452,6 +3452,7 @@ packages:
   /glob@10.3.10:
     resolution: {integrity: sha512-fa46+tv1Ak0UPK1TOy/pZrIybNNt4HCv7SDzwyfiOZkvZLEbjsZkJBPtDHVshZjbecAoAGSC20MjLDG/qr679g==}
     engines: {node: '>=16 || 14 >=14.17'}
+    hasBin: true
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 2.3.6
