@@ -116,8 +116,8 @@ importers:
         specifier: 4.7.4
         version: 4.7.4(eslint@8.55.0)
       eslint-plugin-jsonc:
-        specifier: 2.10.0
-        version: 2.10.0(eslint@8.55.0)
+        specifier: 2.11.0
+        version: 2.11.0(eslint@8.55.0)
       eslint-plugin-jsx-a11y:
         specifier: 6.8.0
         version: 6.8.0(eslint@8.55.0)
@@ -2625,8 +2625,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jsonc@2.10.0(eslint@8.55.0):
-    resolution: {integrity: sha512-9d//o6Jyh4s1RxC9fNSt1+MMaFN2ruFdXPG9XZcb/mR2KkfjADYiNL/hbU6W0Cyxfg3tS/XSFuhl5LgtMD8hmw==}
+  /eslint-plugin-jsonc@2.11.0(eslint@8.55.0):
+    resolution: {integrity: sha512-ekLtnu1sHsh8Af66rre0Eu1hK0V0hiaIKfEOFcPLCZT+PL+aXnIZMGxqTJM+7fmHiXPIDv1tYgQq8qKxJ/29VA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -2637,6 +2637,7 @@ packages:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.55.0)
       eslint: 8.55.0
       eslint-compat-utils: 0.1.2(eslint@8.55.0)
+      graphemer: 1.4.0
       jsonc-eslint-parser: 2.4.0
       natural-compare: 1.4.0
     dev: false
