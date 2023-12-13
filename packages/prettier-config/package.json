@@ -1,7 +1,7 @@
 {
 	"name": "@re-taro/prettier-config",
 	"version": "1.2.0",
-	"packageManager": "pnpm@8.12.0",
+	"packageManager": "pnpm@8.12.1",
 	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
 	"type": "module",
 	"description": "Prettier config for re-taro",
