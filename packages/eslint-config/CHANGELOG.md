@@ -2,35 +2,33 @@
 
 ## [2.4.1](https://github.com/re-taro/fmt/compare/eslint-config-v2.4.0...eslint-config-v2.4.1) (2023-12-19)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency @html-eslint/eslint-plugin to v0.22.0 ([#769](https://github.com/re-taro/fmt/issues/769)) ([ce69333](https://github.com/re-taro/fmt/commit/ce69333b92a63bfe299dcbe6b205df2050e60261))
-* **deps:** update dependency @html-eslint/parser to v0.22.0 ([#770](https://github.com/re-taro/fmt/issues/770)) ([15ef4d3](https://github.com/re-taro/fmt/commit/15ef4d3eb756dd10e0dd0988b09bca04d8631f25))
-* **deps:** update dependency @next/eslint-plugin-next to v14.0.4 ([#766](https://github.com/re-taro/fmt/issues/766)) ([1e63058](https://github.com/re-taro/fmt/commit/1e63058cfbea347040c2b3acd757c60ac767dc9f))
-* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.14.0 ([#784](https://github.com/re-taro/fmt/issues/784)) ([41fdf7d](https://github.com/re-taro/fmt/commit/41fdf7d86435f1485b6b11b8e0d79b4dd994faa7))
-* **deps:** update dependency @typescript-eslint/eslint-plugin to v6.15.0 ([#799](https://github.com/re-taro/fmt/issues/799)) ([534b669](https://github.com/re-taro/fmt/commit/534b669fb1d3cbd658e4458f6b70af1a2af8d3c1))
-* **deps:** update dependency eslint-mdx to v3 ([#771](https://github.com/re-taro/fmt/issues/771)) ([7de7322](https://github.com/re-taro/fmt/commit/7de7322f3531019ffda45ed54438f805f775b751))
-* **deps:** update dependency eslint-plugin-i to v2.29.1 ([#797](https://github.com/re-taro/fmt/issues/797)) ([d522fb5](https://github.com/re-taro/fmt/commit/d522fb50f4798cec41874c4ab4b6594774e07e5b))
-* **deps:** update dependency eslint-plugin-jsonc to v2.11.0 ([#790](https://github.com/re-taro/fmt/issues/790)) ([9a96a91](https://github.com/re-taro/fmt/commit/9a96a91ab95bc42da64e1e8c1d9b80345a98526a))
-* **deps:** update dependency eslint-plugin-jsonc to v2.11.1 ([#792](https://github.com/re-taro/fmt/issues/792)) ([38e6fab](https://github.com/re-taro/fmt/commit/38e6fab3a365028d7ba3ba61f272368e11328828))
-* **deps:** update dependency eslint-plugin-mdx to v3 ([#772](https://github.com/re-taro/fmt/issues/772)) ([269dc76](https://github.com/re-taro/fmt/commit/269dc76bc8fe3a732907b38f8660cd16142e7dd1))
-* **deps:** update dependency eslint-plugin-n to v16.4.0 ([#782](https://github.com/re-taro/fmt/issues/782)) ([62ecd81](https://github.com/re-taro/fmt/commit/62ecd81803422f1ffd22ad7540afa43fc6a22ffb))
-* **deps:** update dependency eslint-plugin-vitest to v0.3.12 ([#774](https://github.com/re-taro/fmt/issues/774)) ([2ee15a5](https://github.com/re-taro/fmt/commit/2ee15a533221cfad708360c4578a7f2f390ba2e7))
-* **deps:** update dependency eslint-plugin-vitest to v0.3.13 ([#778](https://github.com/re-taro/fmt/issues/778)) ([75dd129](https://github.com/re-taro/fmt/commit/75dd12905a800bb28c1dcd2a46f15112487667df))
-* **deps:** update dependency eslint-plugin-vitest to v0.3.16 ([#785](https://github.com/re-taro/fmt/issues/785)) ([2ed91bf](https://github.com/re-taro/fmt/commit/2ed91bfc07fb75d02feaffd52d23ef476cf9303e))
-* **deps:** update dependency eslint-plugin-vitest to v0.3.17 ([#789](https://github.com/re-taro/fmt/issues/789)) ([e122310](https://github.com/re-taro/fmt/commit/e122310c83d6b34da3cd351c6c6d68c8e111f08a))
-* **deps:** update dependency eslint-plugin-vitest to v0.3.18 ([#795](https://github.com/re-taro/fmt/issues/795)) ([69ac394](https://github.com/re-taro/fmt/commit/69ac3948750245e80f338ebb7cf373bf28c49663))
-* **deps:** update dependency globals to v13.24.0 ([#779](https://github.com/re-taro/fmt/issues/779)) ([ef9af61](https://github.com/re-taro/fmt/commit/ef9af6189d902ee11fb56ee2f02a27533a4b7a4c))
-* **deps:** update eslint and prettier ([#780](https://github.com/re-taro/fmt/issues/780)) ([4cc0b2c](https://github.com/re-taro/fmt/commit/4cc0b2c51f869a057bbee65a97e04872fa474eea))
-* **deps:** update eslint and prettier ([#791](https://github.com/re-taro/fmt/issues/791)) ([85339a3](https://github.com/re-taro/fmt/commit/85339a318a947e4b6eaf3b432b623ad399e03150))
-
+- **deps:** update dependency @html-eslint/eslint-plugin to v0.22.0 ([#769](https://github.com/re-taro/fmt/issues/769)) ([ce69333](https://github.com/re-taro/fmt/commit/ce69333b92a63bfe299dcbe6b205df2050e60261))
+- **deps:** update dependency @html-eslint/parser to v0.22.0 ([#770](https://github.com/re-taro/fmt/issues/770)) ([15ef4d3](https://github.com/re-taro/fmt/commit/15ef4d3eb756dd10e0dd0988b09bca04d8631f25))
+- **deps:** update dependency @next/eslint-plugin-next to v14.0.4 ([#766](https://github.com/re-taro/fmt/issues/766)) ([1e63058](https://github.com/re-taro/fmt/commit/1e63058cfbea347040c2b3acd757c60ac767dc9f))
+- **deps:** update dependency @typescript-eslint/eslint-plugin to v6.14.0 ([#784](https://github.com/re-taro/fmt/issues/784)) ([41fdf7d](https://github.com/re-taro/fmt/commit/41fdf7d86435f1485b6b11b8e0d79b4dd994faa7))
+- **deps:** update dependency @typescript-eslint/eslint-plugin to v6.15.0 ([#799](https://github.com/re-taro/fmt/issues/799)) ([534b669](https://github.com/re-taro/fmt/commit/534b669fb1d3cbd658e4458f6b70af1a2af8d3c1))
+- **deps:** update dependency eslint-mdx to v3 ([#771](https://github.com/re-taro/fmt/issues/771)) ([7de7322](https://github.com/re-taro/fmt/commit/7de7322f3531019ffda45ed54438f805f775b751))
+- **deps:** update dependency eslint-plugin-i to v2.29.1 ([#797](https://github.com/re-taro/fmt/issues/797)) ([d522fb5](https://github.com/re-taro/fmt/commit/d522fb50f4798cec41874c4ab4b6594774e07e5b))
+- **deps:** update dependency eslint-plugin-jsonc to v2.11.0 ([#790](https://github.com/re-taro/fmt/issues/790)) ([9a96a91](https://github.com/re-taro/fmt/commit/9a96a91ab95bc42da64e1e8c1d9b80345a98526a))
+- **deps:** update dependency eslint-plugin-jsonc to v2.11.1 ([#792](https://github.com/re-taro/fmt/issues/792)) ([38e6fab](https://github.com/re-taro/fmt/commit/38e6fab3a365028d7ba3ba61f272368e11328828))
+- **deps:** update dependency eslint-plugin-mdx to v3 ([#772](https://github.com/re-taro/fmt/issues/772)) ([269dc76](https://github.com/re-taro/fmt/commit/269dc76bc8fe3a732907b38f8660cd16142e7dd1))
+- **deps:** update dependency eslint-plugin-n to v16.4.0 ([#782](https://github.com/re-taro/fmt/issues/782)) ([62ecd81](https://github.com/re-taro/fmt/commit/62ecd81803422f1ffd22ad7540afa43fc6a22ffb))
+- **deps:** update dependency eslint-plugin-vitest to v0.3.12 ([#774](https://github.com/re-taro/fmt/issues/774)) ([2ee15a5](https://github.com/re-taro/fmt/commit/2ee15a533221cfad708360c4578a7f2f390ba2e7))
+- **deps:** update dependency eslint-plugin-vitest to v0.3.13 ([#778](https://github.com/re-taro/fmt/issues/778)) ([75dd129](https://github.com/re-taro/fmt/commit/75dd12905a800bb28c1dcd2a46f15112487667df))
+- **deps:** update dependency eslint-plugin-vitest to v0.3.16 ([#785](https://github.com/re-taro/fmt/issues/785)) ([2ed91bf](https://github.com/re-taro/fmt/commit/2ed91bfc07fb75d02feaffd52d23ef476cf9303e))
+- **deps:** update dependency eslint-plugin-vitest to v0.3.17 ([#789](https://github.com/re-taro/fmt/issues/789)) ([e122310](https://github.com/re-taro/fmt/commit/e122310c83d6b34da3cd351c6c6d68c8e111f08a))
+- **deps:** update dependency eslint-plugin-vitest to v0.3.18 ([#795](https://github.com/re-taro/fmt/issues/795)) ([69ac394](https://github.com/re-taro/fmt/commit/69ac3948750245e80f338ebb7cf373bf28c49663))
+- **deps:** update dependency globals to v13.24.0 ([#779](https://github.com/re-taro/fmt/issues/779)) ([ef9af61](https://github.com/re-taro/fmt/commit/ef9af6189d902ee11fb56ee2f02a27533a4b7a4c))
+- **deps:** update eslint and prettier ([#780](https://github.com/re-taro/fmt/issues/780)) ([4cc0b2c](https://github.com/re-taro/fmt/commit/4cc0b2c51f869a057bbee65a97e04872fa474eea))
+- **deps:** update eslint and prettier ([#791](https://github.com/re-taro/fmt/issues/791)) ([85339a3](https://github.com/re-taro/fmt/commit/85339a318a947e4b6eaf3b432b623ad399e03150))
 
 ### Dependencies
 
-* The following workspace dependencies were updated
-  * dependencies
-    * @re-taro/eslint-plugin bumped to 2.4.1
+- The following workspace dependencies were updated
+  - dependencies
+    - @re-taro/eslint-plugin bumped to 2.4.1
 
 ## [2.4.0](https://github.com/re-taro/fmt/compare/eslint-config-v2.3.0...eslint-config-v2.4.0) (2023-12-07)
 
