@@ -125,8 +125,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(eslint@8.56.0)
       eslint-plugin-n:
-        specifier: 16.4.0
-        version: 16.4.0(eslint@8.56.0)
+        specifier: 16.5.0
+        version: 16.5.0(eslint@8.56.0)
       eslint-plugin-no-await-in-promise:
         specifier: 1.1.6
         version: 1.1.6(eslint@8.56.0)
@@ -2699,8 +2699,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-n@16.4.0(eslint@8.56.0):
-    resolution: {integrity: sha512-IkqJjGoWYGskVaJA7WQuN8PINIxc0N/Pk/jLeYT4ees6Fo5lAhpwGsYek6gS9tCUxgDC4zJ+OwY2bY/6/9OMKQ==}
+  /eslint-plugin-n@16.5.0(eslint@8.56.0):
+    resolution: {integrity: sha512-Hw02Bj1QrZIlKyj471Tb1jSReTl4ghIMHGuBGiMVmw+s0jOPbI4CBuYpGbZr+tdQ+VAvSK6FDSta3J4ib/SKHQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: '>=7.0.0'
@@ -2712,7 +2712,7 @@ packages:
       builtins: 5.0.1
       eslint: 8.56.0
       eslint-plugin-es-x: 7.5.0(eslint@8.56.0)
-      get-tsconfig: 4.7.0
+      get-tsconfig: 4.7.2
       ignore: 5.2.4
       is-builtin-module: 3.2.1
       is-core-module: 2.13.1
@@ -5286,6 +5286,7 @@ packages:
 
   /resolve@1.22.8:
     resolution: {integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==}
+    hasBin: true
     dependencies:
       is-core-module: 2.13.1
       path-parse: 1.0.7
