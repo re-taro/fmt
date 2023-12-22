@@ -58,10 +58,10 @@ For example:
 
 ```json
 {
-  "scripts": {
-    "lint": "eslint . && prettier . --check",
-    "lint:fix": "eslint . -- fix && prettier . --write"
-  }
+	"scripts": {
+		"lint": "eslint . && prettier . --check",
+		"lint:fix": "eslint . -- fix && prettier . --write"
+	}
 }
 ```
 
@@ -71,13 +71,13 @@ Create `.vscode/settings.json`
 
 ```json
 {
-  "editor.defaultFormatter": "esbenp.vscode-prettier",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  // Enable flat config support
-  "eslint.experimental.useFlatConfig": true
+	"editor.defaultFormatter": "esbenp.vscode-prettier",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	// Enable flat config support
+	"eslint.experimental.useFlatConfig": true
 }
 ```
 
@@ -100,19 +100,22 @@ And that's it! Or you can configure each integration individually, for example:
 // eslint.config.js
 import { re_taro } from "@re-taro/eslint-config";
 
-export default re_taro({
-  typescript: true,
-  vue: true,
-  solid: false,
-  jsonc: false,
-  yaml: false,
-
-  // `.eslintignore` is no longer supported in Flat config, use `ignores` instead
-  ignores: [
-    "./fixtures",
-    // ...globs
-  ],
-});
+export default re_taro(
+	{
+		typescript: true,
+		vue: true,
+		solid: false,
+		jsonc: false,
+		yaml: false,
+	},
+	{
+		// `.eslintignore` is no longer supported in Flat config, use `ignores` instead
+		ignores: [
+			"./fixtures",
+			// ...globs
+		],
+	},
+);
 ```
 
 The `re-taro` factory function also accepts any number of arbitrary custom config overrides:
@@ -122,19 +125,19 @@ The `re-taro` factory function also accepts any number of arbitrary custom confi
 import { re_taro } from "@re-taro/eslint-config";
 
 export default re_taro(
-  {
-    // Configures for re-taro's config
-  },
+	{
+		// Configures for re-taro's config
+	},
 
-  // From the second arguments they are ESLint Flat Configs
-  // you can have multiple configs
-  {
-    files: ["**/*.ts"],
-    rules: {},
-  },
-  {
-    rules: {},
-  },
+	// From the second arguments they are ESLint Flat Configs
+	// you can have multiple configs
+	{
+		files: ["**/*.ts"],
+		rules: {},
+	},
+	{
+		rules: {},
+	},
 );
 ```
 
@@ -143,45 +146,47 @@ Going more advanced, you can also import fine-grained configs and compose them a
 ```js
 // eslint.config.js
 import {
-  comments,
-  formatting,
-  ignores,
-  imports,
-  javascript,
-  jsonc,
-  mdx,
-  node,
-  onlyError,
-  promise,
-  solid,
-  sortImports,
-  test,
-  toml,
-  typescript,
-  unicorn,
-  vue,
-  yaml,
+	comments,
+	formatting,
+	html,
+	ignores,
+	imports,
+	javascript,
+	jsonc,
+	mdx,
+	node,
+	onlyError,
+	promise,
+	solid,
+	sortImports,
+	test,
+	toml,
+	typescript,
+	unicorn,
+	vue,
+	yaml,
 } from "@re-taro/eslint-config";
 
 export default [
-  ...comments(),
-  ...formatting(),
-  ...ignores(),
-  ...imports(),
-  ...javascript(),
-  ...jsonc(),
-  ...mdx(),
-  ...node(),
-  ...onlyError(),
-  ...promise(),
-  ...solid(),
-  ...sortImports(),
-  ...test(),
-  ...toml(),
-  ...typescript(),
-  ...unicorn(),
-  ...vue(),
-  ...yaml(),
+	...comments(),
+	...formatting(),
+	...html(),
+	...ignores(),
+	...imports(),
+	...javascript(),
+	...jsonc(),
+	...mdx(),
+	...node(),
+	...onlyError(),
+	...promise(),
+	...solid(),
+	...sortImports(),
+	...test(),
+	...toml(),
+	...typescript(),
+	...unicorn(),
+	...vue(),
+	...yaml(),
 ];
 ```
 
@@ -199,6 +204,7 @@ Since flat config requires us to explicitly provide the plugin names (instead of
 | `node/*`   | `n/*`                  | [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)                     |
 | `yaml/*`   | `yml/*`                | [eslint-plugin-yml](https://github.com/ota-meshi/eslint-plugin-yml)                        |
 | `ts/*`     | `@typescript-eslint/*` | [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint) |
+| `html/*`   | `@html-eslint/*`       | [@html-eslint](https://github.com/yeonjuan/html-eslint)                                    |
 
 When you want to override rules, or disable them inline, you need to update to the new prefix:
 
@@ -217,20 +223,20 @@ Certain rules would only be enabled in specific files, for example, `ts/*` rules
 import { re_taro } from "@re-taro/eslint-config";
 
 export default re_taro(
-  { vue: true, typescript: true },
-  {
-    // Remember to specify the file glob here, otherwise it might cause the vue plugin to handle non-vue files
-    files: ["**/*.vue"],
-    rules: {
-      "vue/operator-linebreak": ["error", "before"],
-    },
-  },
-  {
-    // Without `files`, they are general rules for all files
-    rules: {
-      "style/semi": ["error", "never"],
-    },
-  },
+	{ vue: true, typescript: true },
+	{
+		// Remember to specify the file glob here, otherwise it might cause the vue plugin to handle non-vue files
+		files: ["**/*.vue"],
+		rules: {
+			"vue/operator-linebreak": ["error", "before"],
+		},
+	},
+	{
+		// Without `files`, they are general rules for all files
+		rules: {
+			"style/semi": ["error", "never"],
+		},
+	},
 );
 ```
 
@@ -241,16 +247,16 @@ We also provided an `overrides` options to make it easier:
 import { re_taro } from "@re-taro/eslint-config";
 
 export default re_taro({
-  overrides: {
-    vue: {
-      "vue/operator-linebreak": ["error", "before"],
-    },
-    typescript: {
-      "ts/consistent-type-definitions": ["error", "interface"],
-    },
-    yaml: {},
-    // ...
-  },
+	overrides: {
+		vue: {
+			"vue/operator-linebreak": ["error", "before"],
+		},
+		typescript: {
+			"ts/consistent-type-definitions": ["error", "interface"],
+		},
+		yaml: {},
+		// ...
+	},
 });
 ```
 

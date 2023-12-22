@@ -6,6 +6,7 @@ import { isPackageExists } from "local-pkg";
 import {
 	comments,
 	formatting,
+	html,
 	ignores,
 	imports,
 	javascript,
@@ -89,6 +90,7 @@ export function re_taro(
 		sortImports(),
 		imports(),
 		unicorn(),
+		html(),
 	);
 
 	if (enableVue) {
