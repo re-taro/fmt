@@ -122,8 +122,8 @@ importers:
         specifier: 6.8.0
         version: 6.8.0(eslint@8.56.0)
       eslint-plugin-mdx:
-        specifier: 3.0.0
-        version: 3.0.0(eslint@8.56.0)
+        specifier: 3.0.1
+        version: 3.0.1(eslint@8.56.0)
       eslint-plugin-n:
         specifier: 16.5.0
         version: 16.5.0(eslint@8.56.0)
@@ -2697,8 +2697,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-mdx@3.0.0(eslint@8.56.0):
-    resolution: {integrity: sha512-vLSFgcD1UtCCciGiUhaIpUhHlWuYJyjUHdUiV+C1lDFbvuWbZhVr9ZhTbOhPGRUljfDeiCz3pyturTIlpH/fEA==}
+  /eslint-plugin-mdx@3.0.1(eslint@8.56.0):
+    resolution: {integrity: sha512-jFuXSbCQYswzkDH3WHUxhA926z2db6aEoyjvCeVMTsgFMX+Gmpns+ptSA0Ff3jwQvlQlbk806KcEcwvi3+hmjg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       eslint: '>=8.0.0'
