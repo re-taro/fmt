@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.4.2](https://github.com/re-taro/fmt/compare/eslint-config-v2.4.1...eslint-config-v2.4.2) (2023-12-22)
+
+
+### Bug Fixes
+
+* avoid type-checking virtual files ([#806](https://github.com/re-taro/fmt/issues/806)) ([7508604](https://github.com/re-taro/fmt/commit/750860416ed52e6378acbc8271eb790f384ac3bd))
+* **deps:** update dependency eslint-plugin-jsonc to v2.11.2 ([#800](https://github.com/re-taro/fmt/issues/800)) ([e48e75f](https://github.com/re-taro/fmt/commit/e48e75f807e52d7f01817a064698f71e06b609e9))
+* **deps:** update dependency eslint-plugin-n to v16.5.0 ([#804](https://github.com/re-taro/fmt/issues/804)) ([ecab17b](https://github.com/re-taro/fmt/commit/ecab17b3dae86535d2a799a03c5083aab73c37ea))
+* **deps:** update dependency eslint-plugin-unicorn to v50 ([#805](https://github.com/re-taro/fmt/issues/805)) ([4a75b11](https://github.com/re-taro/fmt/commit/4a75b119f4c84591fdaac4a67f11c1b30d70fd24))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/eslint-plugin bumped to 2.4.2
+
 ## [2.4.1](https://github.com/re-taro/fmt/compare/eslint-config-v2.4.0...eslint-config-v2.4.1) (2023-12-19)
 
 ### Bug Fixes
