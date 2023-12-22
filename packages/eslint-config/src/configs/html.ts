@@ -1,6 +1,7 @@
 import { GLOB_HTML } from "../globs";
 import { parserHtml, pluginHtml, pluginHtmlJsSupport } from "../plugins";
 import type { ConfigItem } from "../types";
+import { renameRules } from "../utils";
 
 export const html = (): ConfigItem[] => [
 	{
@@ -18,6 +19,11 @@ export const html = (): ConfigItem[] => [
 		},
 		files: [GLOB_HTML],
 		rules: {
+			...renameRules(
+				pluginHtml.configs.recommended.rules,
+				"@html-eslint",
+				"html",
+			),
 			...pluginHtml.configs.recommended.rules,
 			"html/indent": "off",
 			"html/no-trailing-spaces": "off",
