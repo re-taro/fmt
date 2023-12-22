@@ -2,10 +2,9 @@
 
 ## [2.4.2](https://github.com/re-taro/fmt/compare/eslint-plugin-v2.4.1...eslint-plugin-v2.4.2) (2023-12-22)
 
-
 ### Miscellaneous Chores
 
-* **eslint-plugin:** Synchronize eslint versions
+- **eslint-plugin:** Synchronize eslint versions
 
 ## [2.4.1](https://github.com/re-taro/fmt/compare/eslint-plugin-v2.4.0...eslint-plugin-v2.4.1) (2023-12-19)
 
