@@ -69,7 +69,9 @@ export function typescript({
 				parserOptions: {
 					sourceType: "module",
 					extraFileExtensions: componentExts.map((ext) => `.${ext}`),
-					EXPERIMENTAL_useProjectService: true,
+					// EXPERIMENTAL_useProjectService: true,
+					project: true,
+					tsconfigRootDir: process.cwd(),
 					...(parserOptions as any),
 				},
 			},
