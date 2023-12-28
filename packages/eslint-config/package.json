@@ -54,7 +54,7 @@
 		"@re-taro/eslint-plugin": "workspace:*",
 		"@typescript-eslint/eslint-plugin": "6.16.0",
 		"@typescript-eslint/parser": "6.16.0",
-		"@unocss/eslint-config": "0.58.1",
+		"@unocss/eslint-config": "0.58.2",
 		"eslint-config-flat-gitignore": "0.1.2",
 		"eslint-define-config": "1.24.1",
 		"eslint-import-resolver-typescript": "3.6.1",
