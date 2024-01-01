@@ -68,7 +68,7 @@
 		"eslint-plugin-json-schema-validator": "4.7.4",
 		"eslint-plugin-jsonc": "2.11.2",
 		"eslint-plugin-jsx-a11y": "6.8.0",
-		"eslint-plugin-mdx": "3.1.1",
+		"eslint-plugin-mdx": "3.1.2",
 		"eslint-plugin-n": "16.6.0",
 		"eslint-plugin-no-await-in-promise": "1.1.6",
 		"eslint-plugin-no-explicit-type-exports": "0.12.1",
