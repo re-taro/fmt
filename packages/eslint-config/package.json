@@ -52,7 +52,7 @@
 		"@html-eslint/parser": "0.22.0",
 		"@next/eslint-plugin-next": "14.0.4",
 		"@re-taro/eslint-plugin": "workspace:*",
-		"@typescript-eslint/eslint-plugin": "6.17.0",
+		"@typescript-eslint/eslint-plugin": "6.18.0",
 		"@typescript-eslint/parser": "6.18.0",
 		"@unocss/eslint-config": "0.58.3",
 		"eslint-config-flat-gitignore": "0.1.2",
