@@ -92,8 +92,8 @@ importers:
         specifier: 3.6.1
         version: 3.6.1(@typescript-eslint/parser@6.18.1)(eslint@8.56.0)
       eslint-mdx:
-        specifier: 3.1.4
-        version: 3.1.4(eslint@8.56.0)
+        specifier: 3.1.5
+        version: 3.1.5(eslint@8.56.0)
       eslint-plugin-array-func:
         specifier: 4.0.0
         version: 4.0.0(eslint@8.56.0)
@@ -2537,8 +2537,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-mdx@3.1.4(eslint@8.56.0):
-    resolution: {integrity: sha512-e8INdT4Up8bPT/QuaoUYOXJHOI8XZKq9qtHMPkTV5BVwolu6Cgfo4qqOtEDDSUFo9Nmw/8CQ8dJB5ncZvPG1Dw==}
+  /eslint-mdx@3.1.5(eslint@8.56.0):
+    resolution: {integrity: sha512-ynztX0k7CQ3iDL7fDEIeg3g0O/d6QPv7IBI9fdYLhXp5fAp0fi8X22xF/D3+Pk0f90R27uwqa1clHpay6t0l8Q==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       eslint: '>=8.0.0'
@@ -2796,7 +2796,7 @@ packages:
         optional: true
     dependencies:
       eslint: 8.56.0
-      eslint-mdx: 3.1.4(eslint@8.56.0)
+      eslint-mdx: 3.1.5(eslint@8.56.0)
       eslint-plugin-markdown: 3.0.1(eslint@8.56.0)
       remark-mdx: 3.0.0
       remark-parse: 11.0.0
