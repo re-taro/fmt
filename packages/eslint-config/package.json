@@ -53,7 +53,7 @@
 		"@next/eslint-plugin-next": "14.0.4",
 		"@re-taro/eslint-plugin": "workspace:*",
 		"@typescript-eslint/eslint-plugin": "6.18.1",
-		"@typescript-eslint/parser": "6.18.1",
+		"@typescript-eslint/parser": "6.19.0",
 		"@unocss/eslint-config": "0.58.3",
 		"eslint-config-flat-gitignore": "0.1.2",
 		"eslint-define-config": "1.24.1",
