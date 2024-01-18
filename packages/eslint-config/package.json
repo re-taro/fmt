@@ -50,7 +50,7 @@
 		"@eslint-community/eslint-plugin-eslint-comments": "4.1.0",
 		"@html-eslint/eslint-plugin": "0.22.0",
 		"@html-eslint/parser": "0.22.0",
-		"@next/eslint-plugin-next": "14.0.4",
+		"@next/eslint-plugin-next": "14.1.0",
 		"@re-taro/eslint-plugin": "workspace:*",
 		"@typescript-eslint/eslint-plugin": "6.18.1",
 		"@typescript-eslint/parser": "6.19.0",
