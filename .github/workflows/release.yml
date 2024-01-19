@@ -1,49 +1,18 @@
-name: release
-
+name: Release
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
+    secrets:
+      NPM_TOKEN:
+        required: true
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
-  release-please:
-    runs-on: ubuntu-latest
-    outputs:
-      release-created: ${{ steps.release.outputs.releases_created }}
-    steps:
-      - name: Setup | GitHub App
-        id: bot
-        uses: re-taro/actions/gen-installation-token@v3.5.0
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.PRIVATE_KEY }}
-      - uses: actions/checkout@v4.1.1
-        with:
-          fetch-depth: 0
-      - id: release
-        uses: google-github-actions/release-please-action@v3.7.13
-        with:
-          release-type: node
-          command: manifest
-          token: ${{ steps.bot.outputs.token }}
-          config-file: .github/release-please-config.json
-          manifest-file: .github/release-please-manifest.json
-      - name: Revoke GitHub Apps token
-        env:
-          GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
-        run: |
-          curl --location --silent --request DELETE \
-            --url "${GITHUB_API_URL}/installation/token" \
-            --header "Accept: application/vnd.github+json" \
-            --header "X-GitHub-Api-Version: 2022-11-28" \
-            --header "Authorization: Bearer ${GITHUB_TOKEN}"
   release:
     runs-on: ubuntu-latest
-    needs: release-please
-    if: ${{ needs.release-please.outputs.release-created }}
-    permissions:
-      contents: read
-      packages: write
     strategy:
       matrix:
         include:
@@ -52,13 +21,17 @@ jobs:
           - name: GitHub Packages
             url: https://npm.pkg.github.com/
     steps:
-      - uses: actions/checkout@v4.1.1
+      - name: Setup | Checkout
+        uses: actions/checkout@v4.1.1
       - name: Setup | Node.js
         uses: re-taro/actions/setup-node@v3.5.0
         with:
-          registry-url: ${{ matrix.url }}
           node-version-file: .tool-versions
-      - name: Publish | Build
+      - name: Setup | Registry
+        uses: actions/setup-node@v4.0.1
+        with:
+          registry-url: ${{ matrix.url }}
+      - name: Run | Build
         run: pnpm build
       - name: Publish | ${{ matrix.name }}
         run: pnpm publish -r --access public --no-git-checks
