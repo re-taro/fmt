@@ -39,62 +39,67 @@ export interface Options
 	gitignore?: boolean | FlatGitignoreOptions;
 
 	/**
+	 * Core rules. Can't be disabled.
+	 */
+	javascript?: OptionsOverrides;
+
+	/**
 	 * Enable TypeScript support.
 	 *
 	 * Passing an object to enable TypeScript Language Server support.
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	typescript?: boolean;
+	typescript?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable test support.
 	 *
 	 * @default true
 	 */
-	test?: boolean;
+	test?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable React.js support.
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	react?: boolean;
+	react?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable Next.js support.
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	next?: boolean;
+	next?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable Vue support.
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	vue?: boolean;
+	vue?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable Svelte support.
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	svelte?: boolean;
+	svelte?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable Solid.js support.
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	solid?: boolean;
+	solid?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable Storybook support.
 	 *
 	 * @default auto-detect based on the dependencies
 	 */
-	storybook?: boolean;
+	storybook?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable JSONC support.
@@ -108,21 +113,21 @@ export interface Options
 	 *
 	 * @default true
 	 */
-	yaml?: boolean;
+	yaml?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable TOML support.
 	 *
 	 * @default true
 	 */
-	toml?: boolean;
+	toml?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable markdown and mdx support.
 	 *
 	 * @default true
 	 */
-	mdx?: boolean;
+	mdx?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable formatting rules.
@@ -133,6 +138,8 @@ export interface Options
 
 	/**
 	 * Provide overrides for rules for each integration.
+	 *
+	 * @deprecated Use `overrides` option in each integration key instead
 	 */
 	overrides?: {
 		javascript?: ConfigItem["rules"];

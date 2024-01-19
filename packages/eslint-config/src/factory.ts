@@ -60,7 +60,6 @@ export function re_taro(
 		next: enableNext = isPackageExists("next"),
 		storybook: enableStorybook = isPackageExists("storybook"),
 		gitignore: enableGitignore = true,
-		overrides = {},
 		componentExts = [],
 		parserOptions = {},
 	} = options;
@@ -81,7 +80,7 @@ export function re_taro(
 	configs.push(
 		ignores(),
 		javascript({
-			overrides: overrides.javascript,
+			overrides: getOverrides(options, "javascript"),
 		}),
 		comments(),
 		node(),
@@ -106,7 +105,7 @@ export function re_taro(
 			typescript({
 				componentExts,
 				parserOptions,
-				overrides: overrides.typescript,
+				overrides: getOverrides(options, "typescript"),
 			}),
 		);
 	}
@@ -114,7 +113,7 @@ export function re_taro(
 	if (options.test ?? true) {
 		configs.push(
 			test({
-				overrides: overrides.test,
+				overrides: getOverrides(options, "test"),
 			}),
 		);
 	}
@@ -122,7 +121,7 @@ export function re_taro(
 	if (enableReact) {
 		configs.push(
 			react({
-				overrides: overrides.react,
+				overrides: getOverrides(options, "react"),
 			}),
 		);
 	}
@@ -130,7 +129,7 @@ export function re_taro(
 	if (enableNext) {
 		configs.push(
 			next({
-				overrides: overrides.next,
+				overrides: getOverrides(options, "next"),
 			}),
 		);
 	}
@@ -138,7 +137,7 @@ export function re_taro(
 	if (enableVue) {
 		configs.push(
 			vue({
-				overrides: overrides.vue,
+				overrides: getOverrides(options, "vue"),
 				typescript: !!enableTypeScript,
 			}),
 		);
@@ -147,7 +146,7 @@ export function re_taro(
 	if (enableSvelte) {
 		configs.push(
 			svelte({
-				overrides: overrides.svelte,
+				overrides: getOverrides(options, "svelte"),
 				typescript: !!enableTypeScript,
 			}),
 		);
@@ -156,7 +155,7 @@ export function re_taro(
 	if (enableSolid) {
 		configs.push(
 			solid({
-				overrides: overrides.solid,
+				overrides: getOverrides(options, "solid"),
 				typescript: !!enableTypeScript,
 			}),
 		);
@@ -165,7 +164,7 @@ export function re_taro(
 	if (enableStorybook) {
 		configs.push(
 			storybook({
-				overrides: overrides.storybook,
+				overrides: getOverrides(options, "storybook"),
 			}),
 		);
 	}
@@ -177,7 +176,7 @@ export function re_taro(
 	if (options.toml ?? true) {
 		configs.push(
 			toml({
-				overrides: overrides.toml,
+				overrides: getOverrides(options, "toml"),
 			}),
 		);
 	}
@@ -185,7 +184,7 @@ export function re_taro(
 	if (options.yaml ?? true) {
 		configs.push(
 			yaml({
-				overrides: overrides.yaml,
+				overrides: getOverrides(options, "yaml"),
 			}),
 		);
 	}
@@ -194,7 +193,7 @@ export function re_taro(
 		configs.push(
 			mdx({
 				componentExts,
-				overrides: overrides.mdx,
+				overrides: getOverrides(options, "mdx"),
 			}),
 		);
 	}
@@ -203,8 +202,6 @@ export function re_taro(
 		configs.push(formatting(options));
 	}
 
-	// User can optionally pass a flat config item to the first argument
-	// We pick the known keys as ESLint would do schema validation
 	const fusedConfig = flatConfigProps.reduce((acc, key) => {
 		if (key in options) {
 			acc[key] = options[key as keyof Options];
@@ -220,4 +217,26 @@ export function re_taro(
 	const merged = [...configs, ...userConfigs].flat();
 
 	return merged;
+}
+
+type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>;
+
+const resolveSubOptions = <K extends keyof Options>(
+	options: Options,
+	key: K,
+): ResolvedOptions<Options[K]> =>
+	typeof options[key] === "boolean" ? ({} as any) : options[key] || {};
+
+function getOverrides<K extends keyof Options>(options: Options, key: K) {
+	const sub = resolveSubOptions(options, key);
+
+	return {
+		// eslint-disable-next-line etc/no-deprecated
+		...(options.overrides as any)?.[key],
+		...("overrides" in sub
+			? typeof sub.overrides === "object"
+				? sub.overrides
+				: {}
+			: {}),
+	};
 }

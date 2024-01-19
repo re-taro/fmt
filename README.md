@@ -240,22 +240,22 @@ export default re_taro(
 );
 ```
 
-We also provided an `overrides` options to make it easier:
+We also provided a `overrides` options in each integration to make it easier:
 
 ```js
 // eslint.config.js
 import { re_taro } from "@re-taro/eslint-config";
 
 export default re_taro({
-	overrides: {
-		vue: {
-			"vue/operator-linebreak": ["error", "before"],
-		},
-		typescript: {
+	typescript: {
+		overrides: {
 			"ts/consistent-type-definitions": ["error", "interface"],
 		},
-		yaml: {},
-		// ...
+	},
+	yaml: {
+		overrides: {
+			// ...
+		},
 	},
 });
 ```
