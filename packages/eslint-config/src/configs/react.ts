@@ -18,10 +18,10 @@ export const react = ({ overrides }: OptionsOverrides = {}): ConfigItem[] => [
 			},
 		},
 		rules: {
-			...(pluginReact.configs.recommended.rules as any),
-			...(pluginReact.configs["jsx-runtime"].rules as any),
-			...(pluginReactHooks.configs.recommended.rules as any),
-			...(pluginJsxA11y.configs.recommended.rules as any),
+			...pluginReact.configs.recommended.rules,
+			...pluginReact.configs["jsx-runtime"].rules,
+			...pluginReactHooks.configs.recommended.rules,
+			...pluginJsxA11y.configs.recommended.rules,
 
 			"react/prop-types": "off",
 			"react/no-unknown-property": "off",

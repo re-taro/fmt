@@ -30,10 +30,10 @@ export const vue = ({
 		},
 		processor: pluginVue.processors[".vue"],
 		rules: {
-			...(pluginVue.configs.base.rules as any),
-			...(pluginVue.configs["vue3-essential"].rules as any),
-			...(pluginVue.configs["vue3-strongly-recommended"].rules as any),
-			...(pluginVue.configs["vue3-recommended"].rules as any),
+			...pluginVue.configs.base.rules,
+			...pluginVue.configs["vue3-essential"].rules,
+			...pluginVue.configs["vue3-strongly-recommended"].rules,
+			...pluginVue.configs["vue3-recommended"].rules,
 
 			"no-unused-vars": "off",
 			"no-undef": "off",
