@@ -7,5 +7,25 @@
 		"packages/prettier-plugin-curly-and-jsdoc": {}
 	},
 	"release-type": "node",
-	"plugins": ["node-workspace"]
+	"plugins": [
+		{
+			"type": "node-workspace",
+			"merge": false
+		},
+		{
+			"type": "linked-versions",
+			"group-name": "eslint",
+			"groupName": "eslint",
+			"components": ["packages/eslint-config", "packages/eslint-plugin"]
+		},
+		{
+			"type": "linked-versions",
+			"group-name": "prettier",
+			"groupName": "prettier",
+			"components": [
+				"packages/prettier-config",
+				"packages/prettier-plugin-curly-and-jsdoc"
+			]
+		}
+	]
 }
