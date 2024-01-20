@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.0.0](https://github.com/re-taro/fmt/compare/prettier-config-v1.2.0...prettier-config-v2.0.0) (2024-01-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate prettier config to factory style ([#881](https://github.com/re-taro/fmt/issues/881))
+
+### Features
+
+* migrate prettier config to factory style ([#881](https://github.com/re-taro/fmt/issues/881)) ([2d0be88](https://github.com/re-taro/fmt/commit/2d0be8895a93767d5fbad5064287a872fac988f7))
+
+
+### Bug Fixes
+
+* **deps:** update dependency prettier-plugin-astro to v0.12.3 ([#819](https://github.com/re-taro/fmt/issues/819)) ([8ee9373](https://github.com/re-taro/fmt/commit/8ee93733df93e89a5b7e3d213e0a46bf1b2ce8a2))
+* **deps:** update dependency prettier-plugin-astro to v0.13.0 ([#880](https://github.com/re-taro/fmt/issues/880)) ([7cdd73f](https://github.com/re-taro/fmt/commit/7cdd73fa15b6a5ad7fe39bf8b849db193585a471))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @re-taro/prettier-plugin-curly-and-jsdoc bumped to 2.0.0
+
 ## [1.2.0](https://github.com/re-taro/fmt/compare/prettier-config-v1.1.0...prettier-config-v1.2.0) (2023-12-07)
 
 ### Features
