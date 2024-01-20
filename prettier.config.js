@@ -1,5 +1,5 @@
 // @ts-check
 
-import re_taro from "@re-taro/prettier-config";
+import { re_taro } from "@re-taro/prettier-config";
 
-export default re_taro;
+export default re_taro();
