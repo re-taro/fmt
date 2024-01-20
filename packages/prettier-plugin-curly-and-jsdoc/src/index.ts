@@ -6,6 +6,8 @@ import {
 	parsers as jsdocParsers,
 } from "prettier-plugin-jsdoc";
 
+export type { Options as JsdocOptions } from "prettier-plugin-jsdoc";
+
 const options: Record<string, SupportOption> = jsdocOptions;
 const defaultOptions: typeof jsdocDefaultOptions = jsdocDefaultOptions;
 

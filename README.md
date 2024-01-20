@@ -45,9 +45,10 @@ module.exports = re_taro();
 ```
 
 ```js
-import re_taro from "@re-taro/prettier-config";
+// prettier.config.js
+import { re_taro } from "@re-taro/prettier-config";
 
-export default re_taro;
+export default re_taro();
 ```
 
 > Note that `.eslintignore` no longer works in Flat config, see [customization](#customization) for more details.
