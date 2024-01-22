@@ -53,6 +53,6 @@
 		"@typescript-eslint/utils": "6.2.1"
 	},
 	"devDependencies": {
-		"@typescript-eslint/parser": "6.19.0"
+		"@typescript-eslint/parser": "6.19.1"
 	}
 }
