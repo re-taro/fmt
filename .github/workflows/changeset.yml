@@ -42,7 +42,7 @@ jobs:
             --header "Authorization: Bearer ${GITHUB_TOKEN}"
   release:
     needs: changeset
-    if: ${{ needs.changeset.outputs.released }}
+    if: ${{ needs.changeset.outputs.released == 'true' }}
     permissions:
       contents: read
       packages: write
