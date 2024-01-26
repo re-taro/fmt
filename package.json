@@ -18,6 +18,8 @@
 		"test": "turbo test"
 	},
 	"devDependencies": {
+		"@changesets/changelog-github": "0.5.0",
+		"@changesets/cli": "2.27.1",
 		"@qnighy/dedent": "0.1.1",
 		"@re-taro/eslint-config": "workspace:*",
 		"@re-taro/prettier-config": "workspace:*",
