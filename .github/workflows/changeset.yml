@@ -8,15 +8,22 @@ on:
 jobs:
   changeset:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     outputs:
       released: ${{ steps.changesets.outputs.published }}
     steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v4.1.1
       - name: Setup | GitHub App
         id: bot
         uses: re-taro/actions/gen-installation-token@v3.5.0
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.PRIVATE_KEY }}
+      - name: Setup | Node.js
+        uses: re-taro/actions/setup-node@v3.5.0
+        with:
+          node-version-file: .tool-versions
       - name: Release | Build
         run: pnpm build
       - name: Release | Changesets
