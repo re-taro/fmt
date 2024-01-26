@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.0
+
+### Major Changes
+
+- [#896](https://github.com/re-taro/fmt/pull/896) [`2d1afa3`](https://github.com/re-taro/fmt/commit/2d1afa322e12cf08619bc158df09fd9128517496) Thanks [@re-taro](https://github.com/re-taro)! - migrate prettier config to factory style
+
 ## [1.2.0](https://github.com/re-taro/fmt/compare/prettier-plugin-curly-and-jsdoc-v1.1.0...prettier-plugin-curly-and-jsdoc-v1.2.0) (2023-12-07)
 
 ### Features
