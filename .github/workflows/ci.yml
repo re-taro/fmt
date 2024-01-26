@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - main
-      - "!changeset-release/main"
 
 jobs:
   build:
@@ -50,16 +49,3 @@ jobs:
         run: pnpm build
       - name: Test | Unit
         run: pnpm test
-  changeset-test:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v4.1.1
-        with:
-          fetch-depth: 0
-      - name: Setup | Node.js
-        uses: re-taro/actions/setup-node@v3.5.0
-        with:
-          node-version-file: .tool-versions
-      - name: Test | Run changeset status
-        run: pnpm changeset status --since origin/main

@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
-      released: ${{ steps.changesets.outputs.published }}
+      release_trigger: ${{ steps.changesets.outputs.hasChangesets }}
     steps:
       - name: Setup | Checkout
         uses: actions/checkout@v4.1.1
@@ -42,7 +42,7 @@ jobs:
             --header "Authorization: Bearer ${GITHUB_TOKEN}"
   release:
     needs: changeset
-    if: ${{ needs.changeset.outputs.released == 'true' }}
+    if: ${{ needs.changeset.outputs.release_trigger == 'false' }}
     permissions:
       contents: read
       packages: write
