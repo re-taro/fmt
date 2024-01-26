@@ -6,10 +6,10 @@ on:
       - main
 
 jobs:
-  release-please:
+  changeset:
     runs-on: ubuntu-latest
     outputs:
-      releases_created: ${{ steps.release.outputs.releases_created }}
+      released: ${{ steps.changesets.outputs.published }}
     steps:
       - name: Setup | GitHub App
         id: bot
@@ -17,13 +17,14 @@ jobs:
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.PRIVATE_KEY }}
-      - id: release
-        uses: google-github-actions/release-please-action@v4.0.2
-        with:
-          token: ${{ steps.bot.outputs.token }}
-          config-file: .github/release-please-config.json
-          manifest-file: .github/release-please-manifest.json
-      - name: Revoke GitHub Apps token
+      - name: Release | Build
+        run: pnpm build
+      - name: Release | Changesets
+        id: changesets
+        uses: changesets/action@v1.4.5
+        env:
+          GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
+      - name: Cleaning | Revoke GitHub Apps token
         env:
           GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
         run: |
@@ -33,8 +34,8 @@ jobs:
             --header "X-GitHub-Api-Version: 2022-11-28" \
             --header "Authorization: Bearer ${GITHUB_TOKEN}"
   release:
-    needs: release-please
-    if: ${{ needs.release-please.outputs.releases_created == 'true' }}
+    needs: changeset
+    if: ${{ needs.changeset.outputs.released }}
     permissions:
       contents: read
       packages: write
