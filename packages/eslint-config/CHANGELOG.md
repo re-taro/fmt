@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.5.0
+
+### Minor Changes
+
+- [#896](https://github.com/re-taro/fmt/pull/896) [`2d1afa3`](https://github.com/re-taro/fmt/commit/2d1afa322e12cf08619bc158df09fd9128517496) Thanks [@re-taro](https://github.com/re-taro)! - update some deps
+
+- [#896](https://github.com/re-taro/fmt/pull/896) [`2d1afa3`](https://github.com/re-taro/fmt/commit/2d1afa322e12cf08619bc158df09fd9128517496) Thanks [@re-taro](https://github.com/re-taro)! - refactor `overrides` options inside each integrations
+
 ## [2.4.2](https://github.com/re-taro/fmt/compare/eslint-config-v2.4.1...eslint-config-v2.4.2) (2023-12-22)
 
 ### Bug Fixes
