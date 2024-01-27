@@ -83,8 +83,8 @@ importers:
         specifier: 4.1.0
         version: 4.1.0(eslint@8.56.0)
       '@html-eslint/eslint-plugin':
-        specifier: 0.23.0
-        version: 0.23.0
+        specifier: 0.23.1
+        version: 0.23.1
       '@html-eslint/parser':
         specifier: 0.23.0
         version: 0.23.0
@@ -840,8 +840,8 @@ packages:
     resolution: {integrity: sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@html-eslint/eslint-plugin@0.23.0:
-    resolution: {integrity: sha512-GGu3q/4mIQ6sjPEGFZoTVRIgQqN/et2nZKA/6dpTyW6TIePfWOyFw3k6oxnkX2ibPOsaWgftTJgksLAJn3Ps+Q==}
+  /@html-eslint/eslint-plugin@0.23.1:
+    resolution: {integrity: sha512-2AU58FZSPPHjNJzuv08GfgU/nfrVgNI4Uj9y6KOaU5egzAf1DO5x6HeZwvS0MPBAduqoC0i1RqHNSQrzCcmB7A==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: false
 
