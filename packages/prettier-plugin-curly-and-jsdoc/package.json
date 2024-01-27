@@ -1,7 +1,7 @@
 {
 	"name": "@re-taro/prettier-plugin-curly-and-jsdoc",
 	"version": "2.0.0",
-	"packageManager": "pnpm@8.14.3",
+	"packageManager": "pnpm@8.15.0",
 	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
 	"type": "module",
 	"description": "Prettier plugin for curly and jsdoc",
