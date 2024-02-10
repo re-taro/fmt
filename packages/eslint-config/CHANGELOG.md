@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.6.0
+
+### Minor Changes
+
+- [`7d61190`](https://github.com/re-taro/fmt/commit/7d61190d28b8e72b967beb54da4e478d6422ccad) Thanks [@re-taro](https://github.com/re-taro)! - Update depedencies
+
+### Patch Changes
+
+- Updated dependencies [[`7d61190`](https://github.com/re-taro/fmt/commit/7d61190d28b8e72b967beb54da4e478d6422ccad)]:
+  - @re-taro/eslint-plugin@2.5.0
+
 ## 2.5.0
 
 ### Minor Changes

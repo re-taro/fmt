@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.5.0
+
+### Minor Changes
+
+- [`7d61190`](https://github.com/re-taro/fmt/commit/7d61190d28b8e72b967beb54da4e478d6422ccad) Thanks [@re-taro](https://github.com/re-taro)! - Update depedencies
+
 ## [2.4.2](https://github.com/re-taro/fmt/compare/eslint-plugin-v2.4.1...eslint-plugin-v2.4.2) (2023-12-22)
 
 ### Miscellaneous Chores
