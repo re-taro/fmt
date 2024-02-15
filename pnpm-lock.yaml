@@ -47,8 +47,8 @@ importers:
         specifier: 11.1.6
         version: 11.1.6(rollup@4.11.0)(typescript@5.3.3)
       '@types/node':
-        specifier: 20.11.18
-        version: 20.11.18
+        specifier: 20.11.19
+        version: 20.11.19
       eslint:
         specifier: 8.56.0
         version: 8.56.0
@@ -75,7 +75,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: 1.2.2
-        version: 1.2.2(@types/node@20.11.18)(terser@5.27.1)
+        version: 1.2.2(@types/node@20.11.19)(terser@5.27.1)
 
   packages/eslint-config:
     dependencies:
@@ -1279,7 +1279,7 @@ packages:
   /@types/concat-stream@2.0.1:
     resolution: {integrity: sha512-v5HP9ZsRbzFq5XRo2liUZPKzwbGK5SuGVMWZjE6iJOm/JNdESk3/rkfcPe0lcal0C32PTLVlYUYqGpMGNdDsDg==}
     dependencies:
-      '@types/node': 20.11.18
+      '@types/node': 20.11.19
     dev: false
 
   /@types/debug@4.1.10:
@@ -1335,8 +1335,8 @@ packages:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
     dev: true
 
-  /@types/node@20.11.18:
-    resolution: {integrity: sha512-ABT5VWnnYneSBcNWYSCuR05M826RoMyMSGiFivXGx6ZUIsXb9vn4643IEwkg2zbEOSgAiSogtapN2fgc4mAPlw==}
+  /@types/node@20.11.19:
+    resolution: {integrity: sha512-7xMnVEcZFu0DikYjWOlRq7NTPETrm7teqUT2WkQjrTIkEgUyyGdWsj/Zg8bEJt5TNklzbPD1X3fqfsHw3SpapQ==}
     dependencies:
       undici-types: 5.26.5
 
@@ -3526,7 +3526,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 7.0.1(@typescript-eslint/parser@7.0.1)(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/utils': 6.21.0(eslint@8.56.0)(typescript@5.3.3)
       eslint: 8.56.0
-      vitest: 1.2.2(@types/node@20.11.18)(terser@5.27.1)
+      vitest: 1.2.2(@types/node@20.11.19)(terser@5.27.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6784,7 +6784,7 @@ packages:
       '@types/concat-stream': 2.0.1
       '@types/debug': 4.1.10
       '@types/is-empty': 1.2.2
-      '@types/node': 20.11.18
+      '@types/node': 20.11.19
       '@types/unist': 3.0.2
       '@ungap/structured-clone': 1.2.0
       concat-stream: 2.0.0
@@ -6958,7 +6958,7 @@ packages:
       vfile-message: 4.0.2
     dev: false
 
-  /vite-node@1.2.2(@types/node@20.11.18)(terser@5.27.1):
+  /vite-node@1.2.2(@types/node@20.11.19)(terser@5.27.1):
     resolution: {integrity: sha512-1as4rDTgVWJO3n1uHmUYqq7nsFgINQ9u+mRcXpjeOMJUmviqNKjcZB7UfRZrlM7MjYXMKpuWp5oGkjaFLnjawg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -6967,7 +6967,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.5(@types/node@20.11.18)(terser@5.27.1)
+      vite: 5.0.5(@types/node@20.11.19)(terser@5.27.1)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6978,7 +6978,7 @@ packages:
       - supports-color
       - terser
 
-  /vite@5.0.5(@types/node@20.11.18)(terser@5.27.1):
+  /vite@5.0.5(@types/node@20.11.19)(terser@5.27.1):
     resolution: {integrity: sha512-OekeWqR9Ls56f3zd4CaxzbbS11gqYkEiBtnWFFgYR2WV8oPJRRKq0mpskYy/XaoCL3L7VINDhqqOMNDiYdGvGg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -7006,7 +7006,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.11.18
+      '@types/node': 20.11.19
       esbuild: 0.19.8
       postcss: 8.4.32
       rollup: 4.11.0
@@ -7014,7 +7014,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  /vitest@1.2.2(@types/node@20.11.18)(terser@5.27.1):
+  /vitest@1.2.2(@types/node@20.11.19)(terser@5.27.1):
     resolution: {integrity: sha512-d5Ouvrnms3GD9USIK36KG8OZ5bEvKEkITFtnGv56HFaSlbItJuYr7hv2Lkn903+AvRAgSixiamozUVfORUekjw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -7039,7 +7039,7 @@ packages:
       jsdom:
         optional: true
     dependencies:
-      '@types/node': 20.11.18
+      '@types/node': 20.11.19
       '@vitest/expect': 1.2.2
       '@vitest/runner': 1.2.2
       '@vitest/snapshot': 1.2.2
@@ -7058,8 +7058,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.8.2
-      vite: 5.0.5(@types/node@20.11.18)(terser@5.27.1)
-      vite-node: 1.2.2(@types/node@20.11.18)(terser@5.27.1)
+      vite: 5.0.5(@types/node@20.11.19)(terser@5.27.1)
+      vite-node: 1.2.2(@types/node@20.11.19)(terser@5.27.1)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
