@@ -28,7 +28,7 @@ jobs:
         run: pnpm build
       - name: Release | Changesets
         id: changesets
-        uses: changesets/action@v1.4.5
+        uses: changesets/action@v1.4.6
         env:
           GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
       - name: Cleaning | Revoke GitHub Apps token
