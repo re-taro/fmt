@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0
+
+### Major Changes
+
+- [#955](https://github.com/re-taro/fmt/pull/955) [`287a21f`](https://github.com/re-taro/fmt/commit/287a21ff2c6c08417882618b5e5d0bde380b2ba0) Thanks [@re-taro](https://github.com/re-taro)! - Support only ESM
+
 ## 2.5.0
 
 ### Minor Changes

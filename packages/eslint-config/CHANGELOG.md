@@ -1,5 +1,20 @@
 # Changelog
 
+## 3.0.0
+
+### Major Changes
+
+- [#955](https://github.com/re-taro/fmt/pull/955) [`287a21f`](https://github.com/re-taro/fmt/commit/287a21ff2c6c08417882618b5e5d0bde380b2ba0) Thanks [@re-taro](https://github.com/re-taro)! - Support only ESM
+
+### Minor Changes
+
+- [#957](https://github.com/re-taro/fmt/pull/957) [`1fc69ef`](https://github.com/re-taro/fmt/commit/1fc69ef19ab9971960047c9caae5e8eb2ffafb13) Thanks [@re-taro](https://github.com/re-taro)! - Migrate typescript-eslint to version 7
+
+### Patch Changes
+
+- Updated dependencies [[`287a21f`](https://github.com/re-taro/fmt/commit/287a21ff2c6c08417882618b5e5d0bde380b2ba0)]:
+  - @re-taro/eslint-plugin@3.0.0
+
 ## 2.6.0
 
 ### Minor Changes
