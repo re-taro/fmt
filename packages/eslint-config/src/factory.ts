@@ -222,7 +222,7 @@ export function re_taro(
 type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>;
 
 const resolveSubOptions = <K extends keyof Options>(
-	options: Options & ConfigItem,
+	options: Options,
 	key: K,
 ): ResolvedOptions<Options[K]> =>
 	typeof options[key] === "boolean" ? ({} as any) : options[key] || {};
