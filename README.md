@@ -35,15 +35,6 @@ import { re_taro } from "@re-taro/eslint-config";
 export default re_taro();
 ```
 
-Or using CJS:
-
-```js
-// eslint.config.js
-const { re_taro } = require("@re-taro/eslint-config");
-
-module.exports = re_taro();
-```
-
 ```js
 // prettier.config.js
 import { re_taro } from "@re-taro/prettier-config";

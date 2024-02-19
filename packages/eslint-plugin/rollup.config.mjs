@@ -3,11 +3,9 @@
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import replace from "@rollup/plugin-replace";
-import cjs from "@rollup/plugin-commonjs";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import outputSize, { summarize } from "rollup-plugin-output-size";
 import { dedent } from "@qnighy/dedent";
-import json from "@rollup/plugin-json";
 
 import pkg from "./package.json" assert { type: "json" };
 
@@ -31,22 +29,14 @@ const options = {
 	input: "src/index.ts",
 	output: [
 		{
-			file: pkg.exports["."].import,
+			file: pkg.exports,
 			format: "es",
-			banner,
-			sourcemap: false,
-		},
-		{
-			file: pkg.exports["."].require,
-			format: "cjs",
 			banner,
 			sourcemap: false,
 		},
 	],
 	external,
 	plugins: [
-		json(),
-		cjs(),
 		nodeResolve({ browser: false }),
 		typescript({
 			declaration: true,
