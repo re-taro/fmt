@@ -1,3 +1,5 @@
+import tseslint from "typescript-eslint";
+
 import { GLOB_VUE } from "../globs";
 import { parserVue, pluginVue } from "../plugins";
 import type {
@@ -24,7 +26,7 @@ export const vue = ({
 					jsx: true,
 				},
 				extraFileExtensions: [".vue"],
-				parser: typescript ? "@typescript-eslint/parser" : undefined,
+				parser: typescript ? (tseslint.parser as any) : undefined,
 				sourceType: "module",
 			},
 		},
