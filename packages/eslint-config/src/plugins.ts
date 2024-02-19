@@ -6,8 +6,6 @@ export { default as pluginHtml } from "@html-eslint/eslint-plugin";
 export { default as parserHtml } from "@html-eslint/parser";
 export { default as pluginNext } from "@next/eslint-plugin-next";
 export { default as pluginRetaro } from "@re-taro/eslint-plugin";
-export { default as pluginTs } from "@typescript-eslint/eslint-plugin";
-export { default as parserTs } from "@typescript-eslint/parser";
 export { default as pluginArrayFunc } from "eslint-plugin-array-func";
 export { default as pluginEtc } from "eslint-plugin-etc";
 export { default as pluginHtmlJsSupport } from "eslint-plugin-html";
