@@ -160,7 +160,7 @@ export function typescript({
 					"error",
 					{ prefer: "type-imports", disallowTypeAnnotations: false },
 				],
-				"ts/consistent-type-definitions": ["error", "interface"],
+				"ts/consistent-type-definitions": ["error", "type"],
 				"ts/consistent-indexed-object-style": ["error", "record"],
 				"ts/prefer-ts-expect-error": "error",
 				"ts/no-require-imports": "error",
