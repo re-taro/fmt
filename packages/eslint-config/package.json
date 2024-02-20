@@ -83,7 +83,7 @@
 		"local-pkg": "0.5.0",
 		"svelte-eslint-parser": "0.33.1",
 		"toml-eslint-parser": "0.9.3",
-		"typescript-eslint": "7.0.1",
+		"typescript-eslint": "7.0.2",
 		"vue-eslint-parser": "9.4.2",
 		"yaml-eslint-parser": "1.2.2"
 	},
