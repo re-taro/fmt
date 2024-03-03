@@ -1,10 +1,9 @@
 import { TSESTree } from "@typescript-eslint/types";
 
-import type { Rule } from "../utils";
 import { createEslintRule } from "../utils";
 
-const RULE_NAME = "use-async-with-await";
-type MessageIds = "useAsyncWithAwait";
+const RULE_NAME = "require-async-with-await";
+type MessageIds = "requireAsyncWithAwait";
 type Options = [];
 
 type FunctionNode =
@@ -12,18 +11,18 @@ type FunctionNode =
 	| TSESTree.FunctionDeclaration
 	| TSESTree.ArrowFunctionExpression;
 
-const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
+const rule = createEslintRule<Options, MessageIds>({
 	name: RULE_NAME,
 	meta: {
 		type: "problem",
 		docs: {
-			description: "Enforce using async keyword with await.",
+			description: "Require using async keyword with await.",
 			recommended: "recommended",
 		},
 		fixable: "code",
 		schema: [],
 		messages: {
-			useAsyncWithAwait: "Expect using async keyword with await.",
+			requireAsyncWithAwait: "Expect using async keyword with await.",
 		},
 	},
 	defaultOptions: [],
@@ -37,34 +36,48 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 		}
 
 		return {
-			FunctionExpression: setupNode,
+			"FunctionExpression": setupNode,
 			"FunctionExpression:exit": clearNode,
-			FunctionDeclaration: setupNode,
+			"FunctionDeclaration": setupNode,
 			"FunctionDeclaration:exit": clearNode,
-			ArrowFunctionExpression: setupNode,
+			"ArrowFunctionExpression": setupNode,
 			"ArrowFunctionExpression:exit": clearNode,
 			AwaitExpression() {
-				const closestFunctionNode =
-					functionNodeStack[functionNodeStack.length - 1];
-				if (!closestFunctionNode || closestFunctionNode.async) {
+				const node = functionNodeStack[functionNodeStack.length - 1];
+
+				if (!node || node.async) {
 					return;
 				}
-				const node =
-					closestFunctionNode.type ===
-						TSESTree.AST_NODE_TYPES.FunctionExpression &&
-					closestFunctionNode.parent?.type ===
-						TSESTree.AST_NODE_TYPES.MethodDefinition
-						? closestFunctionNode.parent
-						: closestFunctionNode;
-				const fixRange =
-					node.type === TSESTree.AST_NODE_TYPES.MethodDefinition
-						? node.key.range
-						: node.range;
-				context.report({
-					node,
-					messageId: "useAsyncWithAwait",
-					fix: (fixer) => fixer.insertTextBeforeRange(fixRange, "async "),
-				});
+
+				let fixRange: TSESTree.Range | undefined;
+
+				if (node.type === TSESTree.AST_NODE_TYPES.ArrowFunctionExpression) {
+					fixRange = node.range;
+				}
+
+				if (
+					node.type === TSESTree.AST_NODE_TYPES.FunctionDeclaration ||
+					node.type === TSESTree.AST_NODE_TYPES.FunctionExpression
+				) {
+					if (
+						node.parent.type === TSESTree.AST_NODE_TYPES.Property ||
+						node.parent.type === TSESTree.AST_NODE_TYPES.MethodDefinition
+					) {
+						if (node.parent.kind === "method" || node.parent.kind === "init") {
+							fixRange = node.parent.key.range;
+						}
+					} else {
+						fixRange = node.range;
+					}
+				}
+
+				if (fixRange) {
+					context.report({
+						node,
+						messageId: "requireAsyncWithAwait",
+						fix: (fixer) => fixer.insertTextBeforeRange(fixRange!, "async "),
+					});
+				}
 			},
 		};
 	},
@@ -81,6 +94,9 @@ if (import.meta.vitest) {
 		"async function a() { await 1; }",
 		"class a { async a() { await 1; } }",
 		"class a { static async a() { await 1; } }",
+		"class a { constructor() { await 1; } }", // We don't handle constructor
+		"class a { get a() { await 1; }; set a() { await 1; } }", // nor getters and setters
+		"const a = { get a() { await 1; }, set a() { await 1; } }", // and inside an object
 	];
 
 	const invalid = [
@@ -112,6 +128,7 @@ if (import.meta.vitest) {
 			"class a { a = function a() { await 1; } }",
 			"class a { a = async function a() { await 1; } }",
 		],
+		["const a = { a() { await 1; } }", "const a = { async a() { await 1; } }"],
 	];
 
 	it("runs", () => {
@@ -122,9 +139,9 @@ if (import.meta.vitest) {
 		ruleTester.run(RULE_NAME, rule, {
 			valid,
 			invalid: invalid.map((i) => ({
-				code: i[0] || "",
-				output: i[1] || null,
-				errors: [{ messageId: "useAsyncWithAwait" }],
+				code: i[0],
+				output: i[1],
+				errors: [{ messageId: "requireAsyncWithAwait" }],
 			})),
 		});
 	});

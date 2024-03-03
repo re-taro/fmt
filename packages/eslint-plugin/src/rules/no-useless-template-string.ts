@@ -1,13 +1,12 @@
 import type { TSESTree } from "@typescript-eslint/types";
 
-import type { Rule } from "../utils";
 import { createEslintRule } from "../utils";
 
 const RULE_NAME = "no-useless-template-string";
 type MessageIds = "noUselessTemplateString";
 type Options = [];
 
-const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
+const rule = createEslintRule<Options, MessageIds>({
 	name: RULE_NAME,
 	meta: {
 		type: "problem",

@@ -1,13 +1,12 @@
 import { AST_NODE_TYPES } from "@typescript-eslint/types";
 
-import type { Rule } from "../utils";
 import { createEslintRule } from "../utils";
 
 const RULE_NAME = "no-inline-type-import";
 type MessageIds = "noInlineTypeImport";
 type Options = [];
 
-const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
+const rule = createEslintRule<Options, MessageIds>({
 	name: RULE_NAME,
 	meta: {
 		type: "layout",
@@ -23,7 +22,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 	},
 	defaultOptions: [],
 	create: (context) => {
-		const sourceCode = context.getSourceCode();
+		const sourceCode = context.sourceCode;
 
 		return {
 			ImportDeclaration: (node) => {

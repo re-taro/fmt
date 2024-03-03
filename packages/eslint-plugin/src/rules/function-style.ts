@@ -1,18 +1,17 @@
 import type { TSESTree } from "@typescript-eslint/types";
 import { AST_NODE_TYPES } from "@typescript-eslint/types";
 import type {
-	InvalidTestCase,
 	Scope,
+	InvalidTestCase,
 } from "@typescript-eslint/utils/ts-eslint";
 
-import type { Rule } from "../utils";
 import { createEslintRule, getPreviousNode } from "../utils";
 
 const RULE_NAME = "function-style";
 type MessageIds = "arrow" | "declaration";
 type Options = [];
 
-const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
+const rule = createEslintRule<Options, MessageIds>({
 	name: RULE_NAME,
 	meta: {
 		type: "problem",
@@ -29,7 +28,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 	},
 	defaultOptions: [],
 	create: (context) => {
-		const sourceCode = context.getSourceCode();
+		const sourceCode = context.sourceCode;
 
 		function getLoneReturnStatement(
 			node: TSESTree.FunctionDeclaration | TSESTree.ArrowFunctionExpression,
@@ -98,8 +97,8 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 
 		const scopeStack: Scope.Scope[] = [];
 		let haveThisAccess = false;
-		function setupScope() {
-			scopeStack.push(context.getScope());
+		function setupScope(node: TSESTree.Node) {
+			scopeStack.push(sourceCode.getScope(node));
 		}
 		function clearThisAccess() {
 			scopeStack.pop();
@@ -107,7 +106,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 		}
 
 		return {
-			FunctionExpression: setupScope,
+			"FunctionExpression": setupScope,
 			"FunctionExpression:exit"(node: TSESTree.FunctionExpression) {
 				if (
 					(node.parent as any)?.id?.typeAnnotation ||
@@ -175,7 +174,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 				});
 				clearThisAccess();
 			},
-			ArrowFunctionExpression: setupScope,
+			"ArrowFunctionExpression": setupScope,
 			"ArrowFunctionExpression:exit"(node: TSESTree.ArrowFunctionExpression) {
 				if (haveThisAccess) {
 					return;
@@ -216,8 +215,8 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 				}
 				clearThisAccess();
 			},
-			ThisExpression() {
-				haveThisAccess = scopeStack.includes(context.getScope());
+			ThisExpression(node) {
+				haveThisAccess = scopeStack.includes(sourceCode.getScope(node));
 			},
 		};
 	},
@@ -232,18 +231,18 @@ if (import.meta.vitest) {
 	const valid = [
 		"const a = () => 1;",
 		`function a() {
-      stuff;
-      return 1;
-    }`,
+			stuff;
+			return 1;
+		}`,
 		`function a(some: Type)
-    function a(some: Another)
-    function a() {
-      return 1;
-    }`,
+		function a(some: Another)
+		function a() {
+			return 1;
+		}`,
 		`const a: Annotation = () => {
-      stuff;
-      return 1;
-    };`,
+			stuff;
+			return 1;
+		};`,
 		"function* a() {}",
 		"const a = () => {}",
 		"function a() {}",
@@ -254,21 +253,21 @@ if (import.meta.vitest) {
 		"function a() { return () => this }",
 		"const a = () => { foo; function a() { this; } }",
 		`export function last(array: readonly []): undefined;
-    export function last<T>(array: readonly T[]): T;
-    export function last<T>(array: readonly T[]): T | undefined {
-      return at(array, -1);
-    }`,
+		export function last<T>(array: readonly T[]): T;
+		export function last<T>(array: readonly T[]): T | undefined {
+			return at(array, -1);
+		}`,
 		`export default function () {
-    return
-  }`,
+		return
+	}`,
 		`function a() {
-    return
-  }`,
+		return
+	}`,
 		"const a = () => { const b = () => { return this; }; return this; };",
 		`function a() {
-    // foo
-    return 1
-  }`,
+		// foo
+		return 1
+	}`,
 	];
 
 	const invalid: InvalidTestCase<MessageIds, []>[] = [
@@ -319,38 +318,38 @@ if (import.meta.vitest) {
 		},
 		{
 			code: `const a = () => {
-        return {
-          a: 1,
-        };
-      };`,
+				return {
+					a: 1,
+				};
+			};`,
 			output: `const a = () => ({
-          a: 1,
-        });`,
+					a: 1,
+				});`,
 			errors: [{ messageId: "arrow" }],
 		},
 		{
 			code: `export default function a() {
-    return {};
-  }`,
+		return {};
+	}`,
 			output: "export default () => ({});",
 			errors: [{ messageId: "arrow" }],
 		},
 		{
 			code: `export default function() {
-    return {};
-  }`,
+		return {};
+	}`,
 			output: "export default () => ({});",
 			errors: [{ messageId: "arrow" }],
 		},
 		{
 			code: `function foo() {
-    return [
-      // foo
-    ];
-  }`,
+		return [
+			// foo
+		];
+	}`,
 			output: `const foo = () => ([
-      // foo
-    ]);`,
+			// foo
+		]);`,
 			errors: [{ messageId: "arrow" }],
 		},
 		{

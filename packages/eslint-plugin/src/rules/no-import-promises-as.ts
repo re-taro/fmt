@@ -1,4 +1,3 @@
-import type { Rule } from "../utils";
 import { createEslintRule } from "../utils";
 
 const RULE_NAME = "no-import-promises-as";
@@ -11,7 +10,7 @@ const POSSIBLE_IMPORT_SOURCES = [
 	..._POSSIBLE_IMPORT_SOURCES.map((s) => `node:${s}`),
 ];
 
-const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
+const rule = createEslintRule<Options, MessageIds>({
 	name: RULE_NAME,
 	meta: {
 		type: "problem",
@@ -27,7 +26,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 	},
 	defaultOptions: [],
 	create: (context) => {
-		const sourceCode = context.getSourceCode();
+		const sourceCode = context.sourceCode;
 		const { text } = sourceCode;
 
 		return {
