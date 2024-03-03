@@ -9,8 +9,6 @@ export const next = ({ overrides }: OptionsOverrides = {}): ConfigItem[] => [
 	},
 	{
 		rules: {
-			"@next/next/no-img-element": "off",
-
 			...overrides,
 		},
 	},

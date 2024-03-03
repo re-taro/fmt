@@ -1,5 +1,5 @@
 import type retaroPlugin from "@re-taro/eslint-plugin";
-import type { ParserOptions } from "@typescript-eslint/parser";
+import type { ParserOptions } from "@typescript-eslint/utils/ts-eslint";
 import type { FlatGitignoreOptions } from "eslint-config-flat-gitignore";
 import type { FlatESLintConfigItem, Rules } from "eslint-define-config";
 
@@ -25,9 +25,7 @@ export interface OptionsOverrides {
 	overrides?: ConfigItem["rules"];
 }
 
-export interface Options
-	extends OptionsComponentExts,
-		OptionsTypeScriptParserOptions {
+export interface Options extends OptionsComponentExts {
 	/**
 	 * Enable gitignore support.
 	 *
@@ -106,7 +104,7 @@ export interface Options
 	 *
 	 * @default true
 	 */
-	jsonc?: boolean;
+	jsonc?: boolean | OptionsOverrides;
 
 	/**
 	 * Enable YAML support.
@@ -134,7 +132,7 @@ export interface Options
 	 *
 	 * @default true
 	 */
-	formatting?: boolean;
+	formatting?: boolean | OptionsOverrides;
 
 	/**
 	 * Provide overrides for rules for each integration.

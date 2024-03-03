@@ -26,7 +26,7 @@ export const vue = ({
 					jsx: true,
 				},
 				extraFileExtensions: [".vue"],
-				parser: typescript ? (tseslint.parser as any) : undefined,
+				parser: typescript ? (tseslint.parser as any) : null,
 				sourceType: "module",
 			},
 		},
@@ -39,7 +39,7 @@ export const vue = ({
 
 			"no-unused-vars": "off",
 			"no-undef": "off",
-			"@typescript-eslint/no-unused-vars": "off",
+			"ts/no-unused-vars": "off",
 
 			"vue/no-v-html": "off",
 			"vue/require-prop-types": "off",
@@ -109,6 +109,7 @@ export const vue = ({
 				{ ignoreConstructors: false, avoidQuotes: true },
 			],
 			"vue/prefer-template": "error",
+			"vue/quote-props": ["error", "consistent-as-needed"],
 			"vue/block-lang": [
 				"error",
 				{
