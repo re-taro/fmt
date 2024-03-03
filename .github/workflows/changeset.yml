@@ -24,13 +24,21 @@ jobs:
         uses: re-taro/actions/setup-node@v3.5.2
         with:
           node-version-file: .tool-versions
+      - name: Setup | Registry
+        uses: actions/setup-node@v4.0.2
+        with:
+          registry-url: https://registry.npmjs.org/
       - name: Release | Build
         run: pnpm build
       - name: Release | Changesets
         id: changesets
         uses: changesets/action@v1.4.6
+        with:
+          publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Cleaning | Revoke GitHub Apps token
         env:
           GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
