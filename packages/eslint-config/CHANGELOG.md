@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.1.0
+
+### Minor Changes
+
+- [#975](https://github.com/re-taro/fmt/pull/975) [`4033f5f`](https://github.com/re-taro/fmt/commit/4033f5f84fc4d25d71c11db95d37505828b03398) Thanks [@re-taro](https://github.com/re-taro)! - Migrate to @stylistic/eslint-plugin
+
+### Patch Changes
+
+- Updated dependencies [[`4033f5f`](https://github.com/re-taro/fmt/commit/4033f5f84fc4d25d71c11db95d37505828b03398)]:
+  - @re-taro/eslint-plugin@3.1.0
+
 ## 3.0.0
 
 ### Major Changes

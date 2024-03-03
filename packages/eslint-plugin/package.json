@@ -1,6 +1,6 @@
 {
 	"name": "@re-taro/eslint-plugin",
-	"version": "3.0.0",
+	"version": "3.1.0",
 	"packageManager": "pnpm@8.15.4",
 	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
 	"type": "module",
