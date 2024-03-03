@@ -10,7 +10,7 @@ export const test = ({ overrides }: OptionsOverrides = {}): ConfigItem[] => [
 	{
 		plugins: {
 			"no-only-tests": pluginNoOnlyTests,
-			vitest: pluginVitest,
+			"vitest": pluginVitest,
 			"jest-formatting": pluginJestFormatting,
 		},
 	},

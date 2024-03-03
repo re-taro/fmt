@@ -1,11 +1,10 @@
-import type { Rule } from "../utils";
 import { createEslintRule } from "../utils";
 
 const RULE_NAME = "import-dedupe";
 type MessageIds = "importDedupe";
 type Options = [];
 
-const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
+const rule = createEslintRule<Options, MessageIds>({
 	name: RULE_NAME,
 	meta: {
 		type: "problem",
@@ -40,7 +39,7 @@ const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
 						fix(fixer) {
 							const start = n.range[0];
 							let end = n.range[1];
-							const nextToken = context.getSourceCode().getTokenAfter(n);
+							const nextToken = context.sourceCode.getTokenAfter(n);
 							if (nextToken && nextToken.value === ",") {
 								end = nextToken.range[1];
 							}

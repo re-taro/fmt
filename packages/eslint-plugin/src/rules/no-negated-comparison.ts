@@ -1,6 +1,5 @@
 import { AST_NODE_TYPES } from "@typescript-eslint/types";
 
-import type { Rule } from "../utils";
 import { createEslintRule } from "../utils";
 
 const RULE_NAME = "no-negated-comparison";
@@ -20,7 +19,7 @@ const negatedToPositive = {
 type Negatives = keyof typeof negatedToPositive;
 const negatives = Object.keys(negatedToPositive) as Negatives[];
 
-const rule: Rule<Options, MessageIds> = createEslintRule<Options, MessageIds>({
+const rule = createEslintRule<Options, MessageIds>({
 	name: RULE_NAME,
 	meta: {
 		type: "problem",

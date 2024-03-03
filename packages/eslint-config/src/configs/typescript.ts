@@ -90,9 +90,9 @@ export function typescript({
 				),
 				...renameRules(
 					tseslint.configs.recommended
-						.map((config: { rules: any }) => config.rules)
+						.map((config) => config.rules)
 						.filter(Boolean)
-						.reduce((a: any, b: any) => ({ ...a, ...b }), {})!,
+						.reduce((a, b) => ({ ...a, ...b }), {})!,
 					"@typescript-eslint/",
 					"ts/",
 				),
@@ -168,6 +168,9 @@ export function typescript({
 				"ts/consistent-type-definitions": ["error", "type"],
 				"ts/consistent-indexed-object-style": ["error", "record"],
 				"ts/prefer-ts-expect-error": "error",
+				"ts/prefer-for-of": "error",
+				"ts/no-duplicate-enum-values": "error",
+				"ts/no-non-null-asserted-nullish-coalescing": "error",
 				"ts/no-require-imports": "error",
 				"ts/method-signature-style": ["error", "property"],
 				"ts/explicit-member-accessibility": [
@@ -220,9 +223,6 @@ export function typescript({
 				"ts/no-non-null-assertion": "off",
 				"ts/explicit-module-boundary-types": "off",
 				"ts/triple-slash-reference": "off",
-				"ts/prefer-for-of": "error",
-				"ts/no-duplicate-enum-values": "error",
-				"ts/no-non-null-asserted-nullish-coalescing": "error",
 				// handled by unused-imports/no-unused-imports
 				"ts/no-unused-vars": "off",
 

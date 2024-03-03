@@ -6,8 +6,6 @@ export const unicorn = (): ConfigItem[] => [
 		plugins: {
 			unicorn: pluginUnicorn,
 		},
-	},
-	{
 		rules: {
 			"unicorn/throw-new-error": "error",
 			"unicorn/relative-url-style": ["error", "always"],

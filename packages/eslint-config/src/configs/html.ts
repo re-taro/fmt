@@ -6,7 +6,7 @@ import { renameRules } from "../utils";
 export const html = (): ConfigItem[] => [
 	{
 		plugins: {
-			html: pluginHtml,
+			"html": pluginHtml,
 			"html-js-support": pluginHtmlJsSupport,
 		},
 	},
@@ -21,10 +21,9 @@ export const html = (): ConfigItem[] => [
 		rules: {
 			...renameRules(
 				pluginHtml.configs.recommended.rules,
-				"@html-eslint",
-				"html",
+				"@html-eslint/",
+				"html/",
 			),
-			...pluginHtml.configs.recommended.rules,
 			"html/indent": "off",
 			"html/no-trailing-spaces": "off",
 			"html/require-closing-tags": "off",

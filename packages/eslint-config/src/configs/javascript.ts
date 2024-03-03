@@ -23,7 +23,7 @@ export const javascript = ({
 			"array-func": pluginArrayFunc,
 			"json-schema-validator": pluginJsonSchemaValidator,
 			"no-await-in-promise": pluginNoAwaitInPromise,
-			regexp: pluginRegexp,
+			"regexp": pluginRegexp,
 		},
 	},
 	{
@@ -60,7 +60,7 @@ export const javascript = ({
 			"function-paren-newline": "off",
 			"generator-star": "off",
 			"implicit-arrow-linebreak": "off",
-			indent: "off",
+			"indent": "off",
 			"indent-legacy": "off",
 			"jsx-quotes": "off",
 			"linebreak-style": "off",
@@ -268,7 +268,7 @@ export const javascript = ({
 			"prefer-template": "error",
 			"prefer-promise-reject-errors": "error",
 			"prefer-regex-literals": ["error", { disallowRedundantWrapping: true }],
-			yoda: ["error", "never"],
+			"yoda": ["error", "never"],
 			"spaced-comment": [
 				"error",
 				"always",
@@ -310,8 +310,8 @@ export const javascript = ({
 				{ functions: false, classes: false, variables: true },
 			],
 			"consistent-return": "off",
-			complexity: ["off", 11],
-			eqeqeq: ["error", "smart"],
+			"complexity": ["off", 11],
+			"eqeqeq": ["error", "smart"],
 			"no-alert": "error",
 			"no-case-declarations": "error",
 			"no-multi-str": "error",
@@ -330,7 +330,7 @@ export const javascript = ({
 
 			// re-taro
 			"re-taro/import-dedupe": "error",
-			"re-taro/use-async-with-await": "error",
+			"re-taro/require-async-with-await": "error",
 
 			// Sort Imports
 			"sort-imports/imports": ["error"],

@@ -48,7 +48,7 @@ const SveltePackages = ["svelte", "svelte-check", "@sveltejs/kit"];
  * Construct an array of ESLint flat config items.
  */
 export function re_taro(
-	options: Options = {},
+	options: Options & ConfigItem = {},
 	...userConfigs: (ConfigItem | ConfigItem[])[]
 ) {
 	const {
@@ -61,7 +61,6 @@ export function re_taro(
 		storybook: enableStorybook = isPackageExists("storybook"),
 		gitignore: enableGitignore = true,
 		componentExts = [],
-		parserOptions = {},
 	} = options;
 
 	const configs: ConfigItem[][] = [];
@@ -104,7 +103,6 @@ export function re_taro(
 		configs.push(
 			typescript({
 				componentExts,
-				parserOptions,
 				overrides: getOverrides(options, "typescript"),
 			}),
 		);
@@ -202,9 +200,11 @@ export function re_taro(
 		configs.push(formatting(options));
 	}
 
+	// User can optionally pass a flat config item to the first argument
+	// We pick the known keys as ESLint would do schema validation
 	const fusedConfig = flatConfigProps.reduce((acc, key) => {
 		if (key in options) {
-			acc[key] = options[key as keyof Options];
+			acc[key] = options[key as keyof Options] as any;
 		}
 
 		return acc;
@@ -233,10 +233,6 @@ function getOverrides<K extends keyof Options>(options: Options, key: K) {
 	return {
 		// eslint-disable-next-line etc/no-deprecated
 		...(options.overrides as any)?.[key],
-		...("overrides" in sub
-			? typeof sub.overrides === "object"
-				? sub.overrides
-				: {}
-			: {}),
+		...("overrides" in sub ? sub.overrides : {}),
 	};
 }

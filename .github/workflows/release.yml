@@ -17,19 +17,11 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: npm
-            url: https://registry.npmjs.org/
           - name: GitHub Packages
             url: https://npm.pkg.github.com/
     steps:
       - name: Setup | Checkout
         uses: actions/checkout@v4.1.1
-      - name: Setup | GitHub App
-        id: bot
-        uses: re-taro/actions/gen-installation-token@v3.5.2
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.PRIVATE_KEY }}
       - name: Setup | Node.js
         uses: re-taro/actions/setup-node@v3.5.2
         with:
@@ -44,16 +36,3 @@ jobs:
         run: pnpm publish -r --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ matrix.name == 'npm' && secrets.NPM_TOKEN || secrets.GITHUB_TOKEN }}
-      - name: Publish | Tag
-        run: pnpm changeset tag
-        env:
-          GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
-      - name: Cleaning | Revoke GitHub Apps token
-        env:
-          GITHUB_TOKEN: ${{ steps.bot.outputs.token }}
-        run: |
-          curl --location --silent --request DELETE \
-            --url "${GITHUB_API_URL}/installation/token" \
-            --header "Accept: application/vnd.github+json" \
-            --header "X-GitHub-Api-Version: 2022-11-28" \
-            --header "Authorization: Bearer ${GITHUB_TOKEN}"
