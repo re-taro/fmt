@@ -28,6 +28,9 @@
 	"files": [
 		"dist"
 	],
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"build": "rollup -c",
 		"fmt": "run-s -c fmt:*",

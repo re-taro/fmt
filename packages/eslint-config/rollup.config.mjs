@@ -1,5 +1,6 @@
 // @ts-check
 
+import path from "node:path";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import replace from "@rollup/plugin-replace";
@@ -9,18 +10,21 @@ import { dedent } from "@qnighy/dedent";
 
 import pkg from "./package.json" assert { type: "json" };
 
-const external = [
-	...Object.keys(pkg.dependencies),
-	...Object.keys(pkg.devDependencies),
-	...Object.keys(pkg.peerDependencies),
-];
+const { root } = path.parse(process.cwd());
+
+/**
+ * @param {string} id
+ */
+function external(id) {
+	return !id.startsWith(".") && !id.startsWith(root);
+}
 
 const banner = dedent`\
-  /**
-   * @license
-   * ${pkg.name} v${pkg.version}
-   * Released under the ${pkg.license} License.
-   */
+	/**
+	 * @license
+	 * ${pkg.name} v${pkg.version}
+	 * Released under the ${pkg.license} License.
+	 */
 `;
 
 /**
@@ -38,7 +42,9 @@ const options = {
 	],
 	external,
 	plugins: [
-		nodeResolve({ browser: false }),
+		nodeResolve({
+			extensions: [".ts"],
+		}),
 		typescript({
 			declaration: true,
 			rootDir: "src",
