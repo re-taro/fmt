@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.1
+
+### Patch Changes
+
+- [#978](https://github.com/re-taro/fmt/pull/978) [`4303ec1`](https://github.com/re-taro/fmt/commit/4303ec1526b0eb65bc46a3514fc0b9636cecbdc1) Thanks [@re-taro](https://github.com/re-taro)! - Update ts rule
+
 ## 3.1.0
 
 ### Minor Changes
