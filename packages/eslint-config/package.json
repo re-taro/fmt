@@ -89,7 +89,7 @@
 		"yaml-eslint-parser": "1.2.2"
 	},
 	"devDependencies": {
-		"@typescript-eslint/utils": "7.1.0",
+		"@typescript-eslint/utils": "7.1.1",
 		"eslint": "8.57.0"
 	},
 	"peerDependencies": {
