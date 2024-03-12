@@ -89,10 +89,11 @@ const rule = createEslintRule<Options, MessageIds>({
 export default rule;
 
 if (import.meta.vitest) {
-	const { it } = import.meta.vitest;
-	const { RuleTester } = await import("@typescript-eslint/utils/ts-eslint");
+	const { afterAll, it, describe } = import.meta.vitest;
+	const { RuleTester } = await import("../vendor/rule-tester/src/RuleTester");
 
 	const valid = ['import type { a } from "foo";'];
+
 	const invalid = [
 		['import { type a } from "foo";', 'import type { a } from "foo";'],
 		[
@@ -105,18 +106,21 @@ if (import.meta.vitest) {
 		],
 	];
 
-	it("runs", () => {
-		const ruleTester = new RuleTester({
-			parser: require.resolve("@typescript-eslint/parser"),
-		});
+	RuleTester.afterAll = afterAll;
+	RuleTester.it = it;
+	RuleTester.itOnly = it.only;
+	RuleTester.describe = describe;
 
-		ruleTester.run(RULE_NAME, rule, {
-			valid,
-			invalid: invalid.map((i) => ({
-				code: i[0],
-				output: i[1],
-				errors: [{ messageId: "noInlineTypeImport" }],
-			})),
-		});
+	const ruleTester = new RuleTester({
+		parser: require.resolve("@typescript-eslint/parser"),
+	});
+
+	ruleTester.run(RULE_NAME, rule as any, {
+		valid: valid.map((code) => ({ code })),
+		invalid: invalid.map((i) => ({
+			code: i[0],
+			output: i[1],
+			errors: [{ messageId: "noInlineTypeImport" }],
+		})),
 	});
 }
