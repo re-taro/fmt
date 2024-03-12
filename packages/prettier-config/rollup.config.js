@@ -1,31 +1,13 @@
 // @ts-check
 
-import path from "node:path";
 import terser from "@rollup/plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import replace from "@rollup/plugin-replace";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import outputSize, { summarize } from "rollup-plugin-output-size";
-import { dedent } from "@qnighy/dedent";
+import autoExternal from "rollup-plugin-auto-external";
 
-import pkg from "./package.json" assert { type: "json" };
-
-const { root } = path.parse(process.cwd());
-
-/**
- * @param {string} id
- */
-function external(id) {
-	return !id.startsWith(".") && !id.startsWith(root);
-}
-
-const banner = dedent`\
-  /**
-   * @license
-   * ${pkg.name} v${pkg.version}
-   * Released under the ${pkg.license} License.
-   */
-`;
+import pkg from "./package.json" with { type: "json" };
 
 /**
  * @type {import("rollup").RollupOptions}
@@ -36,15 +18,13 @@ const options = {
 		{
 			file: pkg.exports,
 			format: "es",
-			banner,
-			sourcemap: false,
 		},
 	],
-	external,
 	plugins: [
-		nodeResolve({
-			extensions: [".ts"],
+		autoExternal({
+			packagePath: "./package.json",
 		}),
+		nodeResolve(),
 		typescript({
 			declaration: true,
 			rootDir: "src",
