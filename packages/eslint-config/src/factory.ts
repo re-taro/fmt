@@ -1,25 +1,27 @@
+import process from "node:process";
 import fs from "node:fs";
-
-import gitignore from "eslint-config-flat-gitignore";
 import { isPackageExists } from "local-pkg";
-
+import type {
+	Awaitable,
+	FlatConfigItem,
+	OptionsConfig,
+	UserConfigItem,
+} from "./types";
 import {
+	astro,
 	comments,
-	formatting,
-	html,
 	ignores,
 	imports,
 	javascript,
+	jsdoc,
 	jsonc,
-	mdx,
-	next,
+	markdown,
 	node,
-	onlyError,
-	promise,
+	perfectionist,
 	react,
-	solid,
-	sortImports,
-	storybook,
+	sortPackageJson,
+	sortTsconfig,
+	stylistic,
 	svelte,
 	test,
 	toml,
@@ -28,9 +30,11 @@ import {
 	vue,
 	yaml,
 } from "./configs";
-import type { ConfigItem, Options } from "./types";
+import { combine, interopDefault } from "./utils";
+import { formatters } from "./configs/formatters";
 
-const flatConfigProps: (keyof ConfigItem)[] = [
+const flatConfigProps: (keyof FlatConfigItem)[] = [
+	"name",
 	"files",
 	"ignores",
 	"languageOptions",
@@ -42,36 +46,59 @@ const flatConfigProps: (keyof ConfigItem)[] = [
 ];
 
 const VuePackages = ["vue", "nuxt", "vitepress", "@slidev/cli"];
-const SveltePackages = ["svelte", "svelte-check", "@sveltejs/kit"];
 
 /**
  * Construct an array of ESLint flat config items.
  */
-export function re_taro(
-	options: Options & ConfigItem = {},
-	...userConfigs: (ConfigItem | ConfigItem[])[]
-) {
+export async function re_taro(
+	options: OptionsConfig & FlatConfigItem = {},
+	...userConfigs: Awaitable<UserConfigItem | UserConfigItem[]>[]
+): Promise<UserConfigItem[]> {
 	const {
-		vue: enableVue = VuePackages.some((i) => isPackageExists(i)),
-		svelte: enableSvelte = SveltePackages.some((i) => isPackageExists(i)),
-		solid: enableSolid = isPackageExists("solid-js"),
-		typescript: enableTypeScript = isPackageExists("typescript"),
-		react: enableReact = isPackageExists("react"),
-		next: enableNext = isPackageExists("next"),
-		storybook: enableStorybook = isPackageExists("storybook"),
-		gitignore: enableGitignore = true,
+		astro: enableAstro = false,
 		componentExts = [],
+		gitignore: enableGitignore = true,
+		isInEditor = !!(
+			(process.env.VSCODE_PID
+			|| process.env.VSCODE_CWD
+			|| process.env.JETBRAINS_IDE
+			|| process.env.VIM)
+			&& !process.env.CI
+		),
+		react: enableReact = false,
+		svelte: enableSvelte = false,
+		typescript: enableTypeScript = isPackageExists("typescript"),
+		vue: enableVue = VuePackages.some(i => isPackageExists(i)),
 	} = options;
 
-	const configs: ConfigItem[][] = [];
+	const stylisticOptions
+		= options.stylistic === false
+			? false
+			: typeof options.stylistic === "object"
+				? options.stylistic
+				: {};
+
+	if (stylisticOptions && !("jsx" in stylisticOptions))
+		stylisticOptions.jsx = options.jsx ?? true;
+
+	const configs: Awaitable<FlatConfigItem[]>[] = [];
 
 	if (enableGitignore) {
-		if (typeof enableGitignore === "boolean") {
+		if (typeof enableGitignore !== "boolean") {
+			configs.push(
+				interopDefault(import("eslint-config-flat-gitignore")).then(r => [
+					r(enableGitignore),
+				]),
+			);
+		}
+		else {
 			if (fs.existsSync(".gitignore")) {
-				configs.push([gitignore()]);
+				configs.push(
+					interopDefault(import("eslint-config-flat-gitignore")).then(r => [
+						r(),
+					]),
+				);
 			}
-		} else {
-			configs.push([gitignore(enableGitignore)]);
 		}
 	}
 
@@ -79,31 +106,41 @@ export function re_taro(
 	configs.push(
 		ignores(),
 		javascript({
+			isInEditor,
 			overrides: getOverrides(options, "javascript"),
 		}),
 		comments(),
 		node(),
-		onlyError(),
-		promise(),
-		sortImports(),
-		imports(),
+		jsdoc({
+			stylistic: stylisticOptions,
+		}),
+		imports({
+			stylistic: stylisticOptions,
+		}),
 		unicorn(),
-		html(),
+
+		// Optional plugins (installed but not enabled by default)
+		perfectionist(),
 	);
 
-	if (enableVue) {
+	if (enableVue)
 		componentExts.push("vue");
-	}
-
-	if (enableSvelte) {
-		componentExts.push("svelte");
-	}
 
 	if (enableTypeScript) {
 		configs.push(
 			typescript({
+				...resolveSubOptions(options, "typescript"),
 				componentExts,
 				overrides: getOverrides(options, "typescript"),
+			}),
+		);
+	}
+
+	if (stylisticOptions) {
+		configs.push(
+			stylistic({
+				...stylisticOptions,
+				overrides: getOverrides(options, "stylistic"),
 			}),
 		);
 	}
@@ -111,7 +148,19 @@ export function re_taro(
 	if (options.test ?? true) {
 		configs.push(
 			test({
+				isInEditor,
 				overrides: getOverrides(options, "test"),
+			}),
+		);
+	}
+
+	if (enableVue) {
+		configs.push(
+			vue({
+				...resolveSubOptions(options, "vue"),
+				overrides: getOverrides(options, "vue"),
+				stylistic: stylisticOptions,
+				typescript: !!enableTypeScript,
 			}),
 		);
 	}
@@ -120,22 +169,6 @@ export function re_taro(
 		configs.push(
 			react({
 				overrides: getOverrides(options, "react"),
-			}),
-		);
-	}
-
-	if (enableNext) {
-		configs.push(
-			next({
-				overrides: getOverrides(options, "next"),
-			}),
-		);
-	}
-
-	if (enableVue) {
-		configs.push(
-			vue({
-				overrides: getOverrides(options, "vue"),
 				typescript: !!enableTypeScript,
 			}),
 		);
@@ -145,37 +178,29 @@ export function re_taro(
 		configs.push(
 			svelte({
 				overrides: getOverrides(options, "svelte"),
+				stylistic: stylisticOptions,
 				typescript: !!enableTypeScript,
 			}),
 		);
 	}
 
-	if (enableSolid) {
+	if (enableAstro) {
 		configs.push(
-			solid({
-				overrides: getOverrides(options, "solid"),
-				typescript: !!enableTypeScript,
-			}),
-		);
-	}
-
-	if (enableStorybook) {
-		configs.push(
-			storybook({
-				overrides: getOverrides(options, "storybook"),
+			astro({
+				overrides: getOverrides(options, "astro"),
+				stylistic: stylisticOptions,
 			}),
 		);
 	}
 
 	if (options.jsonc ?? true) {
-		configs.push(jsonc());
-	}
-
-	if (options.toml ?? true) {
 		configs.push(
-			toml({
-				overrides: getOverrides(options, "toml"),
+			jsonc({
+				overrides: getOverrides(options, "jsonc"),
+				stylistic: stylisticOptions,
 			}),
+			sortPackageJson(),
+			sortTsconfig(),
 		);
 	}
 
@@ -183,55 +208,69 @@ export function re_taro(
 		configs.push(
 			yaml({
 				overrides: getOverrides(options, "yaml"),
+				stylistic: stylisticOptions,
 			}),
 		);
 	}
 
-	if (options.mdx ?? true) {
+	if (options.toml ?? true) {
 		configs.push(
-			mdx({
-				componentExts,
-				overrides: getOverrides(options, "mdx"),
+			toml({
+				overrides: getOverrides(options, "toml"),
+				stylistic: stylisticOptions,
 			}),
 		);
 	}
 
-	if (options.formatting ?? true) {
-		configs.push(formatting(options));
+	if (options.markdown ?? true) {
+		configs.push(
+			markdown({
+				componentExts,
+				overrides: getOverrides(options, "markdown"),
+			}),
+		);
+	}
+
+	if (options.formatters) {
+		configs.push(
+			formatters(
+				options.formatters,
+				typeof stylisticOptions === "boolean" ? {} : stylisticOptions,
+			),
+		);
 	}
 
 	// User can optionally pass a flat config item to the first argument
 	// We pick the known keys as ESLint would do schema validation
 	const fusedConfig = flatConfigProps.reduce((acc, key) => {
-		if (key in options) {
-			acc[key] = options[key as keyof Options] as any;
-		}
+		if (key in options)
+			acc[key] = options[key] as any;
 
 		return acc;
-	}, {} as ConfigItem);
-
-	if (Object.keys(fusedConfig).length > 0) {
+	}, {} as FlatConfigItem);
+	if (Object.keys(fusedConfig).length)
 		configs.push([fusedConfig]);
-	}
 
-	const merged = [...configs, ...userConfigs].flat();
+	const merged = combine(...configs, ...userConfigs);
 
 	return merged;
 }
 
-type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>;
+export type ResolvedOptions<T> = T extends boolean ? never : NonNullable<T>;
 
-const resolveSubOptions = <K extends keyof Options>(
-	options: Options & ConfigItem,
+export function resolveSubOptions<K extends keyof OptionsConfig>(
+	options: OptionsConfig,
 	key: K,
-): ResolvedOptions<Options[K]> =>
-	typeof options[key] === "boolean" ? ({} as any) : options[key] || {};
+): ResolvedOptions<OptionsConfig[K]> {
+	return typeof options[key] === "boolean" ? ({} as any) : options[key] || {};
+}
 
-function getOverrides<K extends keyof Options>(options: Options, key: K) {
+export function getOverrides<K extends keyof OptionsConfig>(
+	options: OptionsConfig,
+	key: K,
+) {
 	const sub = resolveSubOptions(options, key);
-
 	return {
-		// eslint-disable-next-line etc/no-deprecated
 		...(options.overrides as any)?.[key],
 		...("overrides" in sub ? sub.overrides : {}),
 	};

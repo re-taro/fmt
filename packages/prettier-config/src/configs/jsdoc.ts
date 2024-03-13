@@ -1,10 +1,12 @@
 import type { Config } from "../types";
 import { require } from "../utils";
 
-export const jsdoc = (): Config => ({
-	plugins: [require.resolve("@re-taro/prettier-plugin-curly-and-jsdoc")],
+export function jsdoc(): Config {
+	return {
+		jsdocCommentLineStrategy: "multiline",
 
-	jsdocPreferCodeFences: true,
-	jsdocCommentLineStrategy: "multiline",
-	tsdoc: true,
-});
+		jsdocPreferCodeFences: true,
+		plugins: [require.resolve("@re-taro/prettier-plugin-curly-and-jsdoc")],
+		tsdoc: true,
+	};
+}

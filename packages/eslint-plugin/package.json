@@ -1,15 +1,11 @@
 {
 	"name": "@re-taro/eslint-plugin",
+	"type": "module",
 	"version": "3.1.0",
 	"packageManager": "pnpm@8.15.4",
-	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
-	"type": "module",
 	"description": "ESLint plugin for re-taro",
-	"keywords": [
-		"eslint",
-		"eslint-config",
-		"eslint-plugin"
-	],
+	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
+	"license": "MIT",
 	"homepage": "https://github.com/re-taro/fmt#readme",
 	"repository": {
 		"type": "git",
@@ -19,10 +15,22 @@
 	"bugs": {
 		"url": "https://github.com/re-taro/fmt/issues"
 	},
-	"license": "MIT",
+	"keywords": [
+		"eslint",
+		"eslint-config",
+		"eslint-plugin"
+	],
 	"sideEffects": false,
-	"exports": "./dist/index.js",
-	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
 	],
@@ -33,18 +41,24 @@
 		"build": "rollup -c",
 		"fmt": "run-s -c fmt:*",
 		"fmt:eslint": "pnpm lint:eslint --fix",
-		"fmt:prettier": "prettier . -w",
 		"lint": "run-s -c lint:*",
 		"lint:eslint": "eslint .",
-		"lint:prettier": "prettier . -c",
 		"lint:ts": "tsc -p . --noEmit",
 		"test": "vitest"
 	},
-	"dependencies": {
-		"@typescript-eslint/types": "7.2.0",
-		"@typescript-eslint/utils": "7.2.0"
+	"peerDependencies": {
+		"eslint": "*"
 	},
 	"devDependencies": {
-		"@typescript-eslint/parser": "7.2.0"
+		"@types/eslint": "8.56.5",
+		"@types/lodash.merge": "4.6.9",
+		"@types/semver": "7.5.8",
+		"@typescript-eslint/parser": "7.2.0",
+		"@typescript-eslint/types": "7.2.0",
+		"@typescript-eslint/typescript-estree": "7.1.1",
+		"@typescript-eslint/utils": "7.1.1",
+		"ajv": "8.12.0",
+		"lodash.merge": "4.6.2",
+		"semver": "7.6.0"
 	}
 }

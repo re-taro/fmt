@@ -1,8 +1,10 @@
 import type { Config } from "../types";
 
-export const html = (): Config => ({
-	files: ["*.html"],
-	options: {
-		parser: "html",
-	},
-});
+export function html(): Config {
+	return {
+		files: ["*.html"],
+		options: {
+			parser: "html",
+		},
+	};
+}

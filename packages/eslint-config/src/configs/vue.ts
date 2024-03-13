@@ -1,210 +1,230 @@
-import tseslint from "typescript-eslint";
-
-import { GLOB_VUE } from "../globs";
-import { parserVue, pluginVue } from "../plugins";
+import { mergeProcessors } from "eslint-merge-processors";
+import { ensurePackages, interopDefault } from "../utils";
 import type {
-	ConfigItem,
+	FlatConfigItem,
+	OptionsFiles,
 	OptionsHasTypeScript,
 	OptionsOverrides,
+	OptionsStylistic,
+	OptionsVue,
 } from "../types";
+import { GLOB_VUE } from "../globs";
 
-export const vue = ({
-	overrides,
-	typescript,
-}: OptionsHasTypeScript & OptionsOverrides = {}): ConfigItem[] => [
-	{
-		plugins: {
-			vue: pluginVue,
-		},
-	},
-	{
-		files: [GLOB_VUE],
-		languageOptions: {
-			parser: parserVue,
-			parserOptions: {
-				ecmaFeatures: {
-					jsx: true,
+export async function vue(
+	options: OptionsVue &
+	OptionsHasTypeScript &
+	OptionsOverrides &
+	OptionsStylistic &
+	OptionsFiles = {},
+): Promise<FlatConfigItem[]> {
+	const {
+		files = [GLOB_VUE],
+		overrides = {},
+		stylistic = true,
+		vueVersion = 3,
+	} = options;
+
+	const sfcBlocks = options.sfcBlocks === true ? {} : options.sfcBlocks ?? {};
+
+	const { indent = "tab" } = typeof stylistic === "boolean" ? {} : stylistic;
+
+	await ensurePackages([
+		"eslint-plugin-vue",
+		"vue-eslint-parser",
+		"eslint-processor-vue-blocks",
+	]);
+
+	const [pluginVue, parserVue, processorVueBlocks] = await Promise.all([
+		// @ts-expect-error missing types
+		interopDefault(import("eslint-plugin-vue")),
+		interopDefault(import("vue-eslint-parser")),
+		interopDefault(import("eslint-processor-vue-blocks")),
+	] as const);
+
+	return [
+		{
+			// This allows Vue plugin to work with auto imports
+			// https://github.com/vuejs/eslint-plugin-vue/pull/2422
+			languageOptions: {
+				globals: {
+					computed: "readonly",
+					defineEmits: "readonly",
+					defineExpose: "readonly",
+					defineProps: "readonly",
+					onMounted: "readonly",
+					onUnmounted: "readonly",
+					reactive: "readonly",
+					ref: "readonly",
+					shallowReactive: "readonly",
+					shallowRef: "readonly",
+					toRef: "readonly",
+					toRefs: "readonly",
+					watch: "readonly",
+					watchEffect: "readonly",
 				},
-				extraFileExtensions: [".vue"],
-				parser: typescript ? (tseslint.parser as any) : null,
-				sourceType: "module",
+			},
+			name: "re-taro:vue:setup",
+			plugins: {
+				vue: pluginVue,
 			},
 		},
-		processor: pluginVue.processors[".vue"],
-		rules: {
-			...pluginVue.configs.base.rules,
-			...pluginVue.configs["vue3-essential"].rules,
-			...pluginVue.configs["vue3-strongly-recommended"].rules,
-			...pluginVue.configs["vue3-recommended"].rules,
-
-			"no-unused-vars": "off",
-			"no-undef": "off",
-			"ts/no-unused-vars": "off",
-
-			"vue/no-v-html": "off",
-			"vue/require-prop-types": "off",
-			"vue/require-default-prop": "off",
-			"vue/multi-word-component-names": "off",
-
-			"vue/no-ref-object-reactivity-loss": "error",
-			"vue/no-setup-props-reactivity-loss": "error",
-			"vue/block-order": [
-				"error",
-				{
-					order: ["script:not([setup])", "script[setup]", "template", "style"],
-				},
-			],
-			"vue/component-api-style": ["error", ["script-setup", "composition"]],
-			"vue/component-name-in-template-casing": [
-				"error",
-				"PascalCase",
-				{ registeredComponentsOnly: false },
-			],
-			"vue/component-options-name-casing": ["error", "PascalCase"],
-			"vue/custom-event-name-casing": ["error", "camelCase"],
-			"vue/define-macros-order": [
-				"error",
-				{
-					order: ["defineOptions", "defineEmits", "defineProps", "defineSlots"],
-				},
-			],
-			"vue/html-comment-content-spacing": [
-				"error",
-				"always",
-				{ exceptions: ["-"] },
-			],
-			"vue/no-restricted-v-bind": ["error", "/^v-/"],
-			"vue/no-useless-v-bind": ["error", { ignoreIncludesComment: true }],
-			"vue/no-unused-refs": "error",
-			"vue/no-v-text-v-html-on-component": "error",
-			"vue/padding-line-between-blocks": ["error", "always"],
-			"vue/prefer-separate-static-class": "error",
-
-			// extensions
-			"vue/dot-location": ["error", "property"],
-			"vue/dot-notation": ["error", { allowKeywords: true }],
-			"vue/eqeqeq": ["error", "smart"],
-			"vue/no-constant-condition": "error",
-			"vue/no-empty-pattern": "error",
-			"vue/no-irregular-whitespace": "error",
-			"vue/no-loss-of-precision": "error",
-			"vue/no-restricted-syntax": [
-				"error",
-				"DebuggerStatement",
-				"LabeledStatement",
-				"WithStatement",
-			],
-			"vue/no-sparse-arrays": "error",
-			"vue/object-curly-newline": [
-				"error",
-				{ multiline: true, consistent: true },
-			],
-			"vue/object-property-newline": [
-				"error",
-				{ allowMultiplePropertiesPerLine: true },
-			],
-			"vue/object-shorthand": [
-				"error",
-				"always",
-				{ ignoreConstructors: false, avoidQuotes: true },
-			],
-			"vue/prefer-template": "error",
-			"vue/quote-props": ["error", "consistent-as-needed"],
-			"vue/block-lang": [
-				"error",
-				{
-					script: {
-						lang: ["js", "ts"],
+		{
+			files,
+			languageOptions: {
+				parser: parserVue,
+				parserOptions: {
+					ecmaFeatures: {
+						jsx: true,
 					},
-					template: {
-						lang: ["html", "jade", "pug", "ejs"],
-					},
-					style: {
-						lang: ["css", "sass", "scss", "less", "stylus", "postcss"],
-					},
+					extraFileExtensions: [".vue"],
+					parser: options.typescript
+						? ((await interopDefault(
+								import("@typescript-eslint/parser"),
+							)) as any)
+						: null,
+					sourceType: "module",
 				},
-			],
-			"vue/require-macro-variable-name": [
-				"error",
-				{
-					defineProps: "props",
-					defineEmits: "emit",
-					defineSlots: "slots",
-					useSlots: "slots",
-					useAttrs: "attrs",
-				},
-			],
-			"vue/require-typed-ref": "error",
-			"vue/no-static-inline-styles": ["error", { allowBinding: true }],
-			"vue/no-console": [
-				"error",
-				{ allow: ["error", "warn", "table", "time"] },
-			],
-			"vue/camelcase": "error",
-			"vue/v-for-delimiter-style": ["error", "in"],
-			"vue/attributes-order": [
-				"error",
-				{
-					order: [
-						"DEFINITION",
-						"LIST_RENDERING",
-						"CONDITIONALS",
-						"RENDER_MODIFIERS",
-						"TWO_WAY_BINDING",
-						"OTHER_DIRECTIVES",
-						["UNIQUE", "SLOT"],
-						"GLOBAL",
-						"OTHER_ATTR",
-						"EVENTS",
-						"CONTENT",
-					],
-					alphabetical: true,
-				},
-			],
-			"vue/prefer-true-attribute-shorthand": "error",
-			"vue/prefer-define-options": "error",
-			"vue/html-comment-content-newline": [
-				"error",
-				{ singleline: "ignore", multiline: "always" },
-			],
-			"vue/html-comment-indent": ["error", "tab"],
-			"vue/html-self-closing": [
-				"error",
-				{
-					html: {
-						void: "always",
-						normal: "always",
-						component: "always",
-					},
-					svg: "always",
-					math: "always",
-				},
-			],
-			"vue/no-useless-concat": "error",
+			},
+			name: "re-taro:vue:rules",
+			processor:
+				sfcBlocks === false
+					? pluginVue.processors[".vue"]
+					: mergeProcessors([
+						pluginVue.processors[".vue"],
+						processorVueBlocks({
+							...sfcBlocks,
+							blocks: {
+								styles: true,
+								...sfcBlocks.blocks,
+							},
+						}),
+					]),
+			rules: {
+				...(pluginVue.configs.base.rules as any),
 
-			// off
-			"vue/no-multiple-template-root": "off",
-			"vue/multiline-html-element-content-newline": "off",
-			"vue/singleline-html-element-content-newline": "off",
-			"vue/no-extra-parens": "off",
-			"vue/array-bracket-spacing": "off",
-			"vue/arrow-spacing": "off",
-			"vue/block-spacing": "off",
-			"vue/brace-style": "off",
-			"vue/comma-dangle": "off",
-			"vue/comma-spacing": "off",
-			"vue/comma-style": "off",
-			"vue/operator-linebreak": "off",
-			"vue/template-curly-spacing": "off",
-			"vue/key-spacing": "off",
-			"vue/keyword-spacing": "off",
-			"vue/html-quotes": "off",
-			"vue/html-indent": "off",
-			"vue/no-multi-spaces": "off",
-			"vue/max-attributes-per-line": "off",
-			"vue/html-closing-bracket-spacing": "off",
+				...(vueVersion === 2
+					? {
+							...(pluginVue.configs.essential.rules as any),
+							...(pluginVue.configs["strongly-recommended"].rules as any),
+							...(pluginVue.configs.recommended.rules as any),
+						}
+					: {
+							...(pluginVue.configs["vue3-essential"].rules as any),
+							...(pluginVue.configs["vue3-strongly-recommended"].rules as any),
+							...(pluginVue.configs["vue3-recommended"].rules as any),
+						}),
 
-			...overrides,
+				"node/prefer-global/process": "off",
+				"vue/block-order": [
+					"error",
+					{
+						order: ["script", "template", "style"],
+					},
+				],
+
+				"vue/component-name-in-template-casing": ["error", "PascalCase"],
+				"vue/component-options-name-casing": ["error", "PascalCase"],
+				// this is deprecated
+				"vue/component-tags-order": "off",
+				"vue/custom-event-name-casing": ["error", "camelCase"],
+				"vue/define-macros-order": [
+					"error",
+					{
+						order: [
+							"defineOptions",
+							"defineProps",
+							"defineEmits",
+							"defineSlots",
+						],
+					},
+				],
+				"vue/dot-location": ["error", "property"],
+				"vue/dot-notation": ["error", { allowKeywords: true }],
+				"vue/eqeqeq": ["error", "smart"],
+				"vue/html-indent": ["error", indent],
+				"vue/html-quotes": ["error", "double"],
+				"vue/max-attributes-per-line": "off",
+				"vue/multi-word-component-names": "off",
+				"vue/no-dupe-keys": "off",
+				"vue/no-empty-pattern": "error",
+				"vue/no-irregular-whitespace": "error",
+				"vue/no-loss-of-precision": "error",
+				"vue/no-restricted-syntax": [
+					"error",
+					"DebuggerStatement",
+					"LabeledStatement",
+					"WithStatement",
+				],
+				"vue/no-restricted-v-bind": ["error", "/^v-/"],
+				"vue/no-setup-props-reactivity-loss": "off",
+				"vue/no-sparse-arrays": "error",
+				"vue/no-unused-refs": "error",
+				"vue/no-useless-v-bind": "error",
+				"vue/no-v-html": "off",
+				"vue/object-shorthand": [
+					"error",
+					"always",
+					{
+						avoidQuotes: true,
+						ignoreConstructors: false,
+					},
+				],
+				"vue/prefer-separate-static-class": "error",
+				"vue/prefer-template": "error",
+				"vue/prop-name-casing": ["error", "camelCase"],
+				"vue/require-default-prop": "off",
+				"vue/require-prop-types": "off",
+				"vue/space-infix-ops": "error",
+				"vue/space-unary-ops": ["error", { nonwords: false, words: true }],
+
+				...(stylistic
+					? {
+							"vue/array-bracket-spacing": ["error", "never"],
+							"vue/arrow-spacing": ["error", { after: true, before: true }],
+							"vue/block-spacing": ["error", "always"],
+							"vue/block-tag-newline": [
+								"error",
+								{
+									multiline: "always",
+									singleline: "always",
+								},
+							],
+							"vue/brace-style": [
+								"error",
+								"stroustrup",
+								{ allowSingleLine: true },
+							],
+							"vue/comma-dangle": ["error", "always-multiline"],
+							"vue/comma-spacing": ["error", { after: true, before: false }],
+							"vue/comma-style": ["error", "last"],
+							"vue/html-comment-content-spacing": [
+								"error",
+								"always",
+								{
+									exceptions: ["-"],
+								},
+							],
+							"vue/key-spacing": [
+								"error",
+								{ afterColon: true, beforeColon: false },
+							],
+							"vue/keyword-spacing": ["error", { after: true, before: true }],
+							"vue/object-curly-newline": "off",
+							"vue/object-curly-spacing": ["error", "always"],
+							"vue/object-property-newline": [
+								"error",
+								{ allowMultiplePropertiesPerLine: true },
+							],
+							"vue/operator-linebreak": ["error", "before"],
+							"vue/padding-line-between-blocks": ["error", "always"],
+							"vue/quote-props": ["error", "consistent-as-needed"],
+							"vue/space-in-parens": ["error", "never"],
+							"vue/template-curly-spacing": "error",
+						}
+					: {}),
+
+				...overrides,
+			},
 		},
-	},
-];
+	];
+}

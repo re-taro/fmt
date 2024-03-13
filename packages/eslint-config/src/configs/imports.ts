@@ -1,52 +1,40 @@
-import { GLOB_DTS } from "../globs";
-import { pluginImport } from "../plugins";
-import type { ConfigItem, Options } from "../types";
+import type { FlatConfigItem, OptionsStylistic } from "../types";
+import { pluginImport, pluginRetaro } from "../plugins";
 
-export const imports = (options: Options = {}): ConfigItem[] => [
-	{
-		plugins: {
-			import: pluginImport,
-		},
-	},
-	{
-		settings: {
-			"import/parsers": {
-				espree: [".js", ".cjs", ".mjs", ".jsx"],
+export async function imports(
+	options: OptionsStylistic = {},
+): Promise<FlatConfigItem[]> {
+	const { stylistic = true } = options;
+
+	return [
+		{
+			name: "re-taro:imports",
+			plugins: {
+				"import": pluginImport,
+				"re-taro": pluginRetaro,
 			},
-			"import/resolver": {
-				...(options.typescript
+			rules: {
+				"import/first": "error",
+				"import/no-duplicates": "error",
+				"import/no-mutable-exports": "error",
+
+				"import/no-named-default": "error",
+				"import/no-self-import": "error",
+				"import/no-webpack-loader-syntax": "error",
+				"import/order": "error",
+				"re-taro/import-dedupe": "error",
+				"re-taro/no-inline-type-import": "error",
+				"re-taro/pad-after-last-import": "error",
+
+				...(stylistic
 					? {
-							node: {
-								extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"],
-							},
-							typescript: {
-								extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"],
-							},
+							"import/newline-after-import": [
+								"error",
+								{ considerComments: true, count: 1 },
+							],
 						}
-					: {
-							node: { extensions: [".js", ".mjs"] },
-						}),
+					: {}),
 			},
 		},
-		rules: {
-			...pluginImport.configs.recommended.rules,
-			"import/first": "error",
-			"import/no-mutable-exports": "error",
-			"import/no-useless-path-segments": ["error", { noUselessIndex: true }],
-			"import/no-unresolved": "off",
-			"import/no-absolute-path": "off",
-			"import/namespace": "off", // Disable this for better performance
-			"import/export": "error",
-			"import/no-duplicates": "error",
-			"import/no-named-default": "error",
-			"import/no-webpack-loader-syntax": "error",
-			"import/no-named-as-default-member": "off",
-		},
-	},
-	{
-		files: [GLOB_DTS],
-		rules: {
-			"import/no-duplicates": "off",
-		},
-	},
-];
+	];
+}
