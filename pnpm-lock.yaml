@@ -268,8 +268,8 @@ importers:
         specifier: 7.2.0
         version: 7.2.0
       '@typescript-eslint/typescript-estree':
-        specifier: 7.1.1
-        version: 7.1.1(typescript@5.4.2)
+        specifier: 7.2.0
+        version: 7.2.0(typescript@5.4.2)
       '@typescript-eslint/utils':
         specifier: 7.1.1
         version: 7.1.1(eslint@8.57.0)(typescript@5.4.2)
