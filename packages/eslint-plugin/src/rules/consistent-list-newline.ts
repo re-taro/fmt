@@ -28,7 +28,7 @@ type Options = [
 	},
 ];
 
-function exportType<A, B extends A>() {}
+function exportType<A, _ extends A>() {}
 
 const rule = createEslintRule<Options, MessageIds>({
 	create: (context, [options = {}] = [{}]) => {

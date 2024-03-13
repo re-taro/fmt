@@ -55,6 +55,7 @@ if (import.meta.vitest) {
 	const valid = [
 		"const a = '1';",
 		"const a = \"1\"",
+		// eslint-disable-next-line no-template-curly-in-string
 		"const a = `1${b}`",
 		"String.raw`str`",
 		"`\"\"`",

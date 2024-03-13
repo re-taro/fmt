@@ -14,7 +14,6 @@ export interface RuleModule<T extends readonly unknown[]>
 /**
  * Creates reusable function to create rules with default options and docs URLs.
  *
- * @param urlCreator Creates a documentation URL for a given rule name.
  * @returns Function to create a rule with the docs URL format.
  */
 function RuleCreator() {
@@ -25,7 +24,6 @@ function RuleCreator() {
 		TMessageIds extends string,
 	>({
 		meta,
-		name,
 		...rule
 	}: Readonly<
 		RuleWithMetaAndName<TOptions, TMessageIds>
