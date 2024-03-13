@@ -5,46 +5,31 @@ type MessageIds = "importDedupe";
 type Options = [];
 
 const rule = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "problem",
-		docs: {
-			description: "Fix duplication in imports",
-			recommended: "strict",
-		},
-		fixable: "code",
-		schema: [],
-		messages: {
-			importDedupe: "Expect no duplication in imports",
-		},
-	},
-	defaultOptions: [],
 	create: (context) => {
 		return {
 			ImportDeclaration(node) {
-				if (node.specifiers.length <= 1) {
+				if (node.specifiers.length <= 1)
 					return;
-				}
 
 				const names = new Set<string>();
 				node.specifiers.forEach((n) => {
 					const id = n.local.name;
 					if (names.has(id)) {
 						context.report({
-							node,
-							loc: {
-								start: n.loc.end,
-								end: n.loc.start,
-							},
-							messageId: "importDedupe",
 							fix(fixer) {
 								const s = n.range[0];
 								let e = n.range[1];
-								if (context.sourceCode.text[e] === ",") {
+								if (context.sourceCode.text[e] === ",")
 									e += 1;
-								}
+
 								return fixer.removeRange([s, e]);
 							},
+							loc: {
+								end: n.loc.start,
+								start: n.loc.end,
+							},
+							messageId: "importDedupe",
+							node,
 						});
 					}
 					names.add(id);
@@ -52,12 +37,26 @@ const rule = createEslintRule<Options, MessageIds>({
 			},
 		};
 	},
+	defaultOptions: [],
+	meta: {
+		docs: {
+			description: "Fix duplication in imports",
+			recommended: "strict",
+		},
+		fixable: "code",
+		messages: {
+			importDedupe: "Expect no duplication in imports",
+		},
+		schema: [],
+		type: "problem",
+	},
+	name: RULE_NAME,
 });
 
 export default rule;
 
 if (import.meta.vitest) {
-	const { afterAll, it, describe } = import.meta.vitest;
+	const { afterAll, describe, it } = import.meta.vitest;
 	const { RuleTester } = await import("../vendor/rule-tester/src/RuleTester");
 
 	const valids = ["import { a } from 'foo'"];
@@ -78,15 +77,15 @@ if (import.meta.vitest) {
 	});
 
 	ruleTester.run(RULE_NAME, rule as any, {
-		valid: valids,
-		invalid: invalids.map((i) => ({
+		invalid: invalids.map(i => ({
 			code: i[0],
-			output: i[1],
 			errors: [
 				{ messageId: "importDedupe" },
 				{ messageId: "importDedupe" },
 				{ messageId: "importDedupe" },
 			],
+			output: i[1],
 		})),
+		valid: valids,
 	});
 }

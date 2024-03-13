@@ -20,7 +20,7 @@ declare module "@eslint/eslintrc" {
 }
 
 declare module "eslint" {
-	import { TSESLint } from "@typescript-eslint/utils";
+	import type { TSESLint } from "@typescript-eslint/utils";
 
 	export const SourceCode: TSESLint.SourceCode;
 }

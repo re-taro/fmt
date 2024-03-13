@@ -41,10 +41,10 @@ export function applyFixes(
 	sourceText: string,
 	messages: readonly LintMessage[],
 ): {
-	fixed: boolean;
-	messages: readonly LintMessage[];
-	output: string;
-} {
+		fixed: boolean;
+		messages: readonly LintMessage[];
+		output: string;
+	} {
 	// clone the array
 	const remainingMessages: LintMessage[] = [];
 	const fixes: LintMessageWithFix[] = [];
@@ -71,9 +71,8 @@ export function applyFixes(
 		}
 
 		// Remove BOM.
-		if ((start < 0 && end >= 0) || (start === 0 && fix.text.startsWith(BOM))) {
+		if ((start < 0 && end >= 0) || (start === 0 && fix.text.startsWith(BOM)))
 			output = "";
-		}
 
 		// Make output to this fix.
 		output += text.slice(Math.max(0, lastPos), Math.max(0, start));
@@ -83,11 +82,10 @@ export function applyFixes(
 	}
 
 	messages.forEach((problem) => {
-		if (hasOwnProperty(problem, "fix")) {
+		if (hasOwnProperty(problem, "fix"))
 			fixes.push(problem);
-		} else {
+		 else
 			remainingMessages.push(problem);
-		}
 	});
 
 	if (fixes.length) {

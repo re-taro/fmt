@@ -3,28 +3,29 @@ import type { JSONSchema } from "@typescript-eslint/utils";
 const baseConfigProperties: Record<string, JSONSchema.JSONSchema4> = {
 	$schema: { type: "string" },
 	defaultFilenames: {
-		type: "object",
+		additionalProperties: false,
 		properties: {
 			ts: { type: "string" },
 			tsx: { type: "string" },
 		},
 		required: ["ts", "tsx"],
-		additionalProperties: false,
+		type: "object",
 	},
 	dependencyConstraints: {
-		type: "object",
 		additionalProperties: {
 			type: "string",
 		},
+		type: "object",
 	},
+	ecmaFeatures: { type: "object" }, // deprecated; logs a warning when used
 	env: { type: "object" },
 	extends: { $ref: "#/definitions/stringOrStrings" },
 	globals: { type: "object" },
 	noInlineConfig: { type: "boolean" },
 	overrides: {
-		type: "array",
-		items: { $ref: "#/definitions/overrideConfig" },
 		additionalItems: false,
+		items: { $ref: "#/definitions/overrideConfig" },
+		type: "array",
 	},
 	parser: { type: ["string", "null"] },
 	parserOptions: { type: "object" },
@@ -32,58 +33,57 @@ const baseConfigProperties: Record<string, JSONSchema.JSONSchema4> = {
 	processor: { type: "string" },
 	reportUnusedDisableDirectives: { type: "boolean" },
 	rules: { type: "object" },
-	settings: { type: "object" },
 
-	ecmaFeatures: { type: "object" }, // deprecated; logs a warning when used
+	settings: { type: "object" },
 };
 
 export const configSchema: JSONSchema.JSONSchema4 = {
-	definitions: {
-		stringOrStrings: {
-			oneOf: [
-				{ type: "string" },
-				{
-					type: "array",
-					items: { type: "string" },
-					additionalItems: false,
-				},
-			],
-		},
-		stringOrStringsRequired: {
-			oneOf: [
-				{ type: "string" },
-				{
-					type: "array",
-					items: { type: "string" },
-					additionalItems: false,
-					minItems: 1,
-				},
-			],
-		},
+	$ref: "#/definitions/objectConfig",
 
+	definitions: {
 		// Config at top-level.
 		objectConfig: {
-			type: "object",
+			additionalProperties: false,
 			properties: {
-				root: { type: "boolean" },
 				ignorePatterns: { $ref: "#/definitions/stringOrStrings" },
+				root: { type: "boolean" },
 				...baseConfigProperties,
 			},
-			additionalProperties: false,
+			type: "object",
 		},
-
 		// Config in `overrides`.
 		overrideConfig: {
-			type: "object",
+			additionalProperties: false,
 			properties: {
 				excludedFiles: { $ref: "#/definitions/stringOrStrings" },
 				files: { $ref: "#/definitions/stringOrStringsRequired" },
 				...baseConfigProperties,
 			},
 			required: ["files"],
-			additionalProperties: false,
+			type: "object",
+		},
+
+		stringOrStrings: {
+			oneOf: [
+				{ type: "string" },
+				{
+					additionalItems: false,
+					items: { type: "string" },
+					type: "array",
+				},
+			],
+		},
+
+		stringOrStringsRequired: {
+			oneOf: [
+				{ type: "string" },
+				{
+					additionalItems: false,
+					items: { type: "string" },
+					minItems: 1,
+					type: "array",
+				},
+			],
 		},
 	},
-
-	$ref: "#/definitions/objectConfig",
 };

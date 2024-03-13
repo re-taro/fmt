@@ -4,8 +4,8 @@ import type { Config } from "./types";
 
 export const require = createRequire(import.meta.url);
 
-export const mergeConfig = (...configs: Config[]): Config =>
-	configs.reduce<Config>(
+export function mergeConfig(...configs: Config[]): Config {
+	return configs.reduce<Config>(
 		(acc, config) => ({
 			...acc,
 			...config,
@@ -14,3 +14,4 @@ export const mergeConfig = (...configs: Config[]): Config =>
 		}),
 		{},
 	);
+}

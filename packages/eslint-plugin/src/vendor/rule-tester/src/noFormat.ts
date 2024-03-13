@@ -3,5 +3,5 @@
  *   for the plugin-test-formatting lint rule
  */
 export function noFormat(raw: TemplateStringsArray, ...keys: string[]): string {
-  return String.raw({ raw }, ...keys)
+	return String.raw({ raw }, ...keys);
 }

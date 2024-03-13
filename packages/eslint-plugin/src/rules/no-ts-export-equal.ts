@@ -5,43 +5,42 @@ type MessageIds = "noTsExportEqual";
 type Options = [];
 
 const rule = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "problem",
-		docs: {
-			description: "Do not use `exports =`",
-			recommended: "recommended",
-		},
-		schema: [],
-		messages: {
-			noTsExportEqual: "Use ESM `export default` instead",
-		},
-	},
-	defaultOptions: [],
 	create: (context) => {
 		const extension = context.filename.split(".").pop();
-		if (!extension) {
+		if (!extension)
 			return {};
-		}
-		if (!["ts", "tsx", "mts", "cts"].includes(extension)) {
+
+		if (!["ts", "tsx", "mts", "cts"].includes(extension))
 			return {};
-		}
 
 		return {
 			TSExportAssignment(node) {
 				context.report({
-					node,
 					messageId: "noTsExportEqual",
+					node,
 				});
 			},
 		};
 	},
+	defaultOptions: [],
+	meta: {
+		docs: {
+			description: "Do not use `exports =`",
+			recommended: "recommended",
+		},
+		messages: {
+			noTsExportEqual: "Use ESM `export default` instead",
+		},
+		schema: [],
+		type: "problem",
+	},
+	name: RULE_NAME,
 });
 
 export default rule;
 
 if (import.meta.vitest) {
-	const { afterAll, it, describe } = import.meta.vitest;
+	const { afterAll, describe, it } = import.meta.vitest;
 	const { RuleTester } = await import("../vendor/rule-tester/src/RuleTester");
 
 	const valids = [
@@ -61,10 +60,10 @@ if (import.meta.vitest) {
 	});
 
 	ruleTester.run(RULE_NAME, rule as any, {
-		valid: valids,
-		invalid: invalids.map((i) => ({
+		invalid: invalids.map(i => ({
 			...i,
 			errors: [{ messageId: "noTsExportEqual" }],
 		})),
+		valid: valids,
 	});
 }

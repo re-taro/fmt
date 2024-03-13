@@ -14,8 +14,8 @@ function satisfiesDependencyConstraint(
 	packageName: string,
 	constraintIn: DependencyConstraint[string],
 ): boolean {
-	const constraint: SemverVersionConstraint =
-		typeof constraintIn === "string"
+	const constraint: SemverVersionConstraint
+		= typeof constraintIn === "string"
 			? {
 					range: `>=${constraintIn}`,
 				}
@@ -33,16 +33,14 @@ function satisfiesDependencyConstraint(
 export function satisfiesAllDependencyConstraints(
 	dependencyConstraints: DependencyConstraint | undefined,
 ): boolean {
-	if (dependencyConstraints == null) {
+	if (dependencyConstraints == null)
 		return true;
-	}
 
 	for (const [packageName, constraint] of Object.entries(
 		dependencyConstraints,
 	)) {
-		if (!satisfiesDependencyConstraint(packageName, constraint)) {
+		if (!satisfiesDependencyConstraint(packageName, constraint))
 			return false;
-		}
 	}
 
 	return true;

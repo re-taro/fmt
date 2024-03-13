@@ -46,8 +46,9 @@ type AfterAll = (fn: () => void) => void;
 export abstract class TestFramework {
 	static OVERRIDE_AFTER_ALL: Maybe<AfterAll> = null;
 	static OVERRIDE_DESCRIBE: Maybe<RuleTesterTestFrameworkFunction> = null;
-	static OVERRIDE_DESCRIBE_SKIP: Maybe<RuleTesterTestFrameworkFunctionBase> =
-		null;
+	static OVERRIDE_DESCRIBE_SKIP: Maybe<RuleTesterTestFrameworkFunctionBase>
+		= null;
+
 	static OVERRIDE_IT: Maybe<RuleTesterTestFrameworkItFunction> = null;
 	static OVERRIDE_IT_ONLY: Maybe<RuleTesterTestFrameworkFunctionBase> = null;
 	static OVERRIDE_IT_SKIP: Maybe<RuleTesterTestFrameworkFunctionBase> = null;
@@ -56,9 +57,8 @@ export abstract class TestFramework {
 	 * Runs a function after all the tests in this file have completed.
 	 */
 	static get afterAll(): AfterAll {
-		if (this.OVERRIDE_AFTER_ALL != null) {
+		if (this.OVERRIDE_AFTER_ALL != null)
 			return this.OVERRIDE_AFTER_ALL;
-		}
 
 		throw new Error(
 			"Missing definition for `afterAll` - you must set one using `RuleTester.afterAll` or there must be one defined globally as `afterAll`.",
@@ -73,9 +73,8 @@ export abstract class TestFramework {
 	 * Creates a test grouping
 	 */
 	static get describe(): RuleTesterTestFrameworkFunction {
-		if (this.OVERRIDE_DESCRIBE != null) {
+		if (this.OVERRIDE_DESCRIBE != null)
 			return this.OVERRIDE_DESCRIBE;
-		}
 
 		throw new Error(
 			"Missing definition for `describe` - you must set one using `RuleTester.describe` or there must be one defined globally as `describe`.",
@@ -90,27 +89,24 @@ export abstract class TestFramework {
 	 * Skips running the tests inside this `describe` for the current file
 	 */
 	static get describeSkip(): RuleTesterTestFrameworkFunctionBase {
-		if (this.OVERRIDE_DESCRIBE_SKIP != null) {
+		if (this.OVERRIDE_DESCRIBE_SKIP != null)
 			return this.OVERRIDE_DESCRIBE_SKIP;
-		}
 
 		if (
-			typeof this.OVERRIDE_DESCRIBE === "function" &&
-			typeof this.OVERRIDE_DESCRIBE.skip === "function"
-		) {
+			typeof this.OVERRIDE_DESCRIBE === "function"
+			&& typeof this.OVERRIDE_DESCRIBE.skip === "function"
+		)
 			return this.OVERRIDE_DESCRIBE.skip.bind(this.OVERRIDE_DESCRIBE);
-		}
 
 		if (
-			typeof this.describe === "function" &&
-			typeof this.describe.skip === "function"
-		) {
+			typeof this.describe === "function"
+			&& typeof this.describe.skip === "function"
+		)
 			return this.describe.skip.bind(this.describe);
-		}
 
 		if (
-			typeof this.OVERRIDE_DESCRIBE === "function" ||
-			typeof this.OVERRIDE_IT === "function"
+			typeof this.OVERRIDE_DESCRIBE === "function"
+			|| typeof this.OVERRIDE_IT === "function"
 		) {
 			throw new TypeError(
 				"Set `RuleTester.describeSkip` to use `dependencyConstraints` with a custom test framework.",
@@ -134,9 +130,8 @@ export abstract class TestFramework {
 	 * Creates a test closure
 	 */
 	static get it(): RuleTesterTestFrameworkItFunction {
-		if (this.OVERRIDE_IT != null) {
+		if (this.OVERRIDE_IT != null)
 			return this.OVERRIDE_IT;
-		}
 
 		throw new Error(
 			"Missing definition for `it` - you must set one using `RuleTester.it` or there must be one defined globally as `it`.",
@@ -151,28 +146,25 @@ export abstract class TestFramework {
 	 * Only runs this test in the current file.
 	 */
 	static get itOnly(): RuleTesterTestFrameworkFunctionBase {
-		if (this.OVERRIDE_IT_ONLY != null) {
+		if (this.OVERRIDE_IT_ONLY != null)
 			return this.OVERRIDE_IT_ONLY;
-		}
 
 		if (
-			typeof this.OVERRIDE_IT === "function" &&
-			typeof this.OVERRIDE_IT.only === "function"
-		) {
-			return this.OVERRIDE_IT.only.bind(this.OVERRIDE_IT);
-		}
-
-		if (typeof this.it === "function" && typeof this.it.only === "function") {
-			return this.it.only.bind(this.it);
-		}
-
-		if (
-			typeof this.OVERRIDE_DESCRIBE === "function" ||
 			typeof this.OVERRIDE_IT === "function"
+			&& typeof this.OVERRIDE_IT.only === "function"
+		)
+			return this.OVERRIDE_IT.only.bind(this.OVERRIDE_IT);
+
+		if (typeof this.it === "function" && typeof this.it.only === "function")
+			return this.it.only.bind(this.it);
+
+		if (
+			typeof this.OVERRIDE_DESCRIBE === "function"
+			|| typeof this.OVERRIDE_IT === "function"
 		) {
 			throw new TypeError(
-				"Set `RuleTester.itOnly` to use `only` with a custom test framework.\n" +
-					"See https://eslint.org/docs/latest/integrate/nodejs-api#customizing-ruletester for more.",
+				"Set `RuleTester.itOnly` to use `only` with a custom test framework.\n"
+				+ "See https://eslint.org/docs/latest/integrate/nodejs-api#customizing-ruletester for more.",
 			);
 		}
 		if (typeof this.it === "function") {
@@ -193,24 +185,21 @@ export abstract class TestFramework {
 	 * Skips running this test in the current file.
 	 */
 	static get itSkip(): RuleTesterTestFrameworkFunctionBase {
-		if (this.OVERRIDE_IT_SKIP != null) {
+		if (this.OVERRIDE_IT_SKIP != null)
 			return this.OVERRIDE_IT_SKIP;
-		}
 
 		if (
-			typeof this.OVERRIDE_IT === "function" &&
-			typeof this.OVERRIDE_IT.skip === "function"
-		) {
-			return this.OVERRIDE_IT.skip.bind(this.OVERRIDE_IT);
-		}
-
-		if (typeof this.it === "function" && typeof this.it.skip === "function") {
-			return this.it.skip.bind(this.it);
-		}
-
-		if (
-			typeof this.OVERRIDE_DESCRIBE === "function" ||
 			typeof this.OVERRIDE_IT === "function"
+			&& typeof this.OVERRIDE_IT.skip === "function"
+		)
+			return this.OVERRIDE_IT.skip.bind(this.OVERRIDE_IT);
+
+		if (typeof this.it === "function" && typeof this.it.skip === "function")
+			return this.it.skip.bind(this.it);
+
+		if (
+			typeof this.OVERRIDE_DESCRIBE === "function"
+			|| typeof this.OVERRIDE_IT === "function"
 		) {
 			throw new TypeError(
 				"Set `RuleTester.itSkip` to use `only` with a custom test framework.",

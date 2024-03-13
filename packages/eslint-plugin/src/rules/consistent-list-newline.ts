@@ -31,46 +31,6 @@ type Options = [
 function exportType<A, B extends A>() {}
 
 const rule = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "layout",
-		docs: {
-			description:
-				"Having line breaks styles to object, array and named imports",
-			recommended: "stylistic",
-		},
-		fixable: "whitespace",
-		schema: [
-			{
-				type: "object",
-				properties: {
-					ArrayExpression: { type: "boolean" },
-					ArrowFunctionExpression: { type: "boolean" },
-					CallExpression: { type: "boolean" },
-					ExportNamedDeclaration: { type: "boolean" },
-					FunctionDeclaration: { type: "boolean" },
-					FunctionExpression: { type: "boolean" },
-					ImportDeclaration: { type: "boolean" },
-					NewExpression: { type: "boolean" },
-					ObjectExpression: { type: "boolean" },
-					TSInterfaceDeclaration: { type: "boolean" },
-					TSTupleType: { type: "boolean" },
-					TSTypeLiteral: { type: "boolean" },
-					TSTypeParameterDeclaration: { type: "boolean" },
-					TSTypeParameterInstantiation: { type: "boolean" },
-					ObjectPattern: { type: "boolean" },
-					ArrayPattern: { type: "boolean" },
-				} satisfies Record<keyof Options[0], { type: "boolean" }>,
-				additionalProperties: false,
-			},
-		],
-		messages: {
-			shouldWrap: "Should have line breaks between items, in node {{name}}",
-			shouldNotWrap:
-				"Should not have line breaks between items, in node {{name}}",
-		},
-	},
-	defaultOptions: [{}],
 	create: (context, [options = {}] = [{}]) => {
 		function removeLines(fixer: RuleFixer, start: number, end: number) {
 			const range = [start, end] as const;
@@ -84,27 +44,24 @@ const rule = createEslintRule<Options, MessageIds>({
 			nextNode?: TSESTree.Node,
 		) {
 			const items = children.filter(Boolean) as TSESTree.Node[];
-			if (items.length === 0) {
+			if (items.length === 0)
 				return;
-			}
 
 			// Look for the opening bracket, we first try to get the first token of the parent node
 			// and fallback to the token before the first item
 			let startToken = ["CallExpression", "NewExpression"].includes(node.type)
 				? undefined
 				: context.sourceCode.getFirstToken(node);
-			if (startToken?.type !== "Punctuator") {
+			if (startToken?.type !== "Punctuator")
 				startToken = context.sourceCode.getTokenBefore(items[0]);
-			}
 
 			const endToken = context.sourceCode.getTokenAfter(
 				items[items.length - 1],
 			);
 			const startLine = startToken!.loc.start.line;
 
-			if (startToken!.loc.start.line === endToken!.loc.end.line) {
+			if (startToken!.loc.start.line === endToken!.loc.end.line)
 				return;
-			}
 
 			let mode: "inline" | "newline" | null = null;
 			let lastLine = startLine;
@@ -120,29 +77,30 @@ const rule = createEslintRule<Options, MessageIds>({
 
 				if (mode === "newline" && currentStart === lastLine) {
 					context.report({
-						node: item,
-						messageId: "shouldWrap",
 						data: {
 							name: node.type,
 						},
 						*fix(fixer) {
 							yield fixer.insertTextBefore(item, "\n");
 						},
-					});
-				} else if (mode === "inline" && currentStart !== lastLine) {
-					const lastItem = items[idx - 1];
-					if (context.sourceCode.getCommentsBefore(item).length > 0) {
-						return;
-					}
-					context.report({
+						messageId: "shouldWrap",
 						node: item,
-						messageId: "shouldNotWrap",
+					});
+				}
+				else if (mode === "inline" && currentStart !== lastLine) {
+					const lastItem = items[idx - 1];
+					if (context.sourceCode.getCommentsBefore(item).length > 0)
+						return;
+
+					context.report({
 						data: {
 							name: node.type,
 						},
 						*fix(fixer) {
 							yield removeLines(fixer, lastItem!.range[1], item.range[0]);
 						},
+						messageId: "shouldNotWrap",
+						node: item,
 					});
 				}
 
@@ -151,35 +109,35 @@ const rule = createEslintRule<Options, MessageIds>({
 
 			const endRange = nextNode
 				? Math.min(
-						context.sourceCode.getTokenBefore(nextNode)!.range[0],
-						node.range[1],
-					)
+					context.sourceCode.getTokenBefore(nextNode)!.range[0],
+					node.range[1],
+				)
 				: node.range[1];
 			const endLoc = context.sourceCode.getLocFromIndex(endRange);
 
 			const lastItem = items[items.length - 1]!;
 			if (mode === "newline" && endLoc.line === lastLine) {
 				context.report({
-					node: lastItem,
-					messageId: "shouldWrap",
 					data: {
 						name: node.type,
 					},
 					*fix(fixer) {
 						yield fixer.insertTextAfter(lastItem, "\n");
 					},
+					messageId: "shouldWrap",
+					node: lastItem,
 				});
-			} else if (mode === "inline" && endLoc.line !== lastLine) {
+			}
+			else if (mode === "inline" && endLoc.line !== lastLine) {
 				// If there is only one multiline item, we allow the closing bracket to be on the a different line
 				if (
-					items.length === 1 &&
-					items[0].loc.start.line !== items[1]?.loc.start.line
-				) {
+					items.length === 1
+					&& items[0].loc.start.line !== items[1]?.loc.start.line
+				)
 					return;
-				}
-				if (context.sourceCode.getCommentsAfter(lastItem).length > 0) {
+
+				if (context.sourceCode.getCommentsAfter(lastItem).length > 0)
 					return;
-				}
 
 				const content = context.sourceCode.text.slice(
 					lastItem.range[1],
@@ -187,28 +145,34 @@ const rule = createEslintRule<Options, MessageIds>({
 				);
 				if (content.includes("\n")) {
 					context.report({
-						node: lastItem,
-						messageId: "shouldNotWrap",
 						data: {
 							name: node.type,
 						},
 						*fix(fixer) {
 							yield removeLines(fixer, lastItem.range[1], endRange);
 						},
+						messageId: "shouldNotWrap",
+						node: lastItem,
 					});
 				}
 			}
 		}
 
 		const listenser = {
-			ObjectExpression: (node) => {
-				check(node, node.properties);
-			},
 			ArrayExpression: (node) => {
 				check(node, node.elements);
 			},
-			ImportDeclaration: (node) => {
-				check(node, node.specifiers);
+			ArrayPattern(node) {
+				check(node, node.elements);
+			},
+			ArrowFunctionExpression: (node) => {
+				if (node.params.length <= 1)
+					return;
+
+				check(node, node.params, node.returnType || node.body);
+			},
+			CallExpression: (node) => {
+				check(node, node.arguments);
 			},
 			ExportNamedDeclaration: (node) => {
 				check(node, node.specifiers);
@@ -219,38 +183,32 @@ const rule = createEslintRule<Options, MessageIds>({
 			FunctionExpression: (node) => {
 				check(node, node.params, node.returnType || node.body);
 			},
-			ArrowFunctionExpression: (node) => {
-				if (node.params.length <= 1) {
-					return;
-				}
-				check(node, node.params, node.returnType || node.body);
+			ImportDeclaration: (node) => {
+				check(node, node.specifiers);
 			},
-			CallExpression: (node) => {
+			NewExpression: (node) => {
 				check(node, node.arguments);
+			},
+			ObjectExpression: (node) => {
+				check(node, node.properties);
+			},
+			ObjectPattern(node) {
+				check(node, node.properties, node.typeAnnotation);
 			},
 			TSInterfaceDeclaration: (node) => {
 				check(node, node.body.body);
 			},
-			TSTypeLiteral: (node) => {
-				check(node, node.members);
-			},
 			TSTupleType: (node) => {
 				check(node, node.elementTypes);
 			},
-			NewExpression: (node) => {
-				check(node, node.arguments);
+			TSTypeLiteral: (node) => {
+				check(node, node.members);
 			},
 			TSTypeParameterDeclaration(node) {
 				check(node, node.params);
 			},
 			TSTypeParameterInstantiation(node) {
 				check(node, node.params);
-			},
-			ObjectPattern(node) {
-				check(node, node.properties, node.typeAnnotation);
-			},
-			ArrayPattern(node) {
-				check(node, node.elements);
 			},
 		} satisfies RuleListener;
 
@@ -261,28 +219,67 @@ const rule = createEslintRule<Options, MessageIds>({
 		exportType<KeysListener, KeysOptions>();
 		exportType<KeysOptions, KeysListener>();
 		(Object.keys(options) as KeysOptions[]).forEach((key) => {
-			if (options[key] === false) {
+			if (options[key] === false)
 				delete listenser[key];
-			}
 		});
 
 		return listenser;
 	},
+	defaultOptions: [{}],
+	meta: {
+		docs: {
+			description:
+				"Having line breaks styles to object, array and named imports",
+			recommended: "stylistic",
+		},
+		fixable: "whitespace",
+		messages: {
+			shouldNotWrap:
+				"Should not have line breaks between items, in node {{name}}",
+			shouldWrap: "Should have line breaks between items, in node {{name}}",
+		},
+		schema: [
+			{
+				additionalProperties: false,
+				properties: {
+					ArrayExpression: { type: "boolean" },
+					ArrayPattern: { type: "boolean" },
+					ArrowFunctionExpression: { type: "boolean" },
+					CallExpression: { type: "boolean" },
+					ExportNamedDeclaration: { type: "boolean" },
+					FunctionDeclaration: { type: "boolean" },
+					FunctionExpression: { type: "boolean" },
+					ImportDeclaration: { type: "boolean" },
+					NewExpression: { type: "boolean" },
+					ObjectExpression: { type: "boolean" },
+					ObjectPattern: { type: "boolean" },
+					TSInterfaceDeclaration: { type: "boolean" },
+					TSTupleType: { type: "boolean" },
+					TSTypeLiteral: { type: "boolean" },
+					TSTypeParameterDeclaration: { type: "boolean" },
+					TSTypeParameterInstantiation: { type: "boolean" },
+				} satisfies Record<keyof Options[0], { type: "boolean" }>,
+				type: "object",
+			},
+		],
+		type: "layout",
+	},
+	name: RULE_NAME,
 });
 
 export default rule;
 
 if (import.meta.vitest) {
-	const { expect, afterAll, it, describe } = import.meta.vitest;
+	const { afterAll, describe, expect, it } = import.meta.vitest;
 	const { RuleTester } = await import("../vendor/rule-tester/src/RuleTester");
 
 	const valids = [
-		'const a = { foo: "bar", bar: 2 }',
-		'const a = {\nfoo: "bar",\nbar: 2\n}',
+		"const a = { foo: \"bar\", bar: 2 }",
+		"const a = {\nfoo: \"bar\",\nbar: 2\n}",
 		"const a = [1, 2, 3]",
 		"const a = [\n1,\n2,\n3\n]",
-		'import { foo, bar } from "foo"',
-		'import {\nfoo,\nbar\n} from "foo"',
+		"import { foo, bar } from \"foo\"",
+		"import {\nfoo,\nbar\n} from \"foo\"",
 		"const a = [`\n\n`, `\n\n`]",
 		"log(a, b)",
 		"log(\na,\nb\n)",
@@ -369,18 +366,18 @@ if (import.meta.vitest) {
 		(2)
 	];
 		`,
-		`const a = [(1), (2)];`,
+		"const a = [(1), (2)];",
 	];
 
 	// Check snapshot for fixed code
 	const invalid = [
-		'const a = {\nfoo: "bar", bar: 2 }',
-		'const a = {foo: "bar", \nbar: 2\n}',
+		"const a = {\nfoo: \"bar\", bar: 2 }",
+		"const a = {foo: \"bar\", \nbar: 2\n}",
 		"const a = [\n1, 2, 3]",
 		"const a = [1, \n2, 3\n]",
-		'import {\nfoo, bar } from "foo"',
-		'import { foo, \nbar } from "foo"',
-		'const a = {foo: "bar", \r\nbar: 2\r\n}',
+		"import {\nfoo, bar } from \"foo\"",
+		"import { foo, \nbar } from \"foo\"",
+		"const a = {foo: \"bar\", \r\nbar: 2\r\n}",
 		"log(\na, b)",
 		"function foo(\na, b) {}",
 		"const foo = (\na, b) => {}",
@@ -449,8 +446,7 @@ if (import.meta.vitest) {
 	});
 
 	ruleTester.run(RULE_NAME, rule as any, {
-		valid: valids,
-		invalid: invalid.map((i) =>
+		invalid: invalid.map(i =>
 			typeof i === "string"
 				? {
 						code: i,
@@ -467,5 +463,6 @@ if (import.meta.vitest) {
 						},
 					},
 		),
+		valid: valids,
 	});
 }

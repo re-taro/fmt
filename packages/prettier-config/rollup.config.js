@@ -46,6 +46,7 @@ const options = {
 		}),
 		outputSize({
 			summary(summary) {
+				// eslint-disable-next-line no-console
 				console.log(summarize(summary));
 			},
 		}),

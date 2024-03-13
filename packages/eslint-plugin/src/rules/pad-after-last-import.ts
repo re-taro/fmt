@@ -7,20 +7,6 @@ type MessageIds = "padAfterLastImport";
 type Options = [];
 
 const rule = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "problem",
-		docs: {
-			description: "Pad after the last import.",
-			recommended: "stylistic",
-		},
-		fixable: "code",
-		schema: [],
-		messages: {
-			padAfterLastImport: "Expected a blank line after the last import.",
-		},
-	},
-	defaultOptions: [],
 	create: (context) => {
 		const sourceCode = context.sourceCode;
 		let lastImportNode: TSESTree.ImportDeclaration | null = null;
@@ -29,49 +15,63 @@ const rule = createEslintRule<Options, MessageIds>({
 			ImportDeclaration(node) {
 				lastImportNode = node;
 			},
-			"Program:exit"() {
+			"Program:exit": function () {
 				if (lastImportNode) {
 					const nextToken = sourceCode.getTokenAfter(lastImportNode);
-					const firstCommentAfterTokenStartLine =
-						sourceCode.getCommentsAfter(lastImportNode)[0]?.loc.start.line;
+					const firstCommentAfterTokenStartLine
+						= sourceCode.getCommentsAfter(lastImportNode)[0]?.loc.start.line;
 					const expectedLine = lastImportNode.loc.end.line + 1;
 					const nextTokenStartLine = nextToken?.loc.start.line;
 
 					if (
-						nextToken &&
+						nextToken
 						// Workaround: Vue
-						nextToken.value !== "</script>" &&
-						(expectedLine === nextTokenStartLine ||
-							expectedLine === firstCommentAfterTokenStartLine)
+						&& nextToken.value !== "</script>"
+						&& (expectedLine === nextTokenStartLine
+						|| expectedLine === firstCommentAfterTokenStartLine)
 					) {
 						context.report({
-							node: lastImportNode,
+							fix: fixer => fixer.insertTextAfter(lastImportNode!, "\n"),
 							messageId: "padAfterLastImport",
-							fix: (fixer) => fixer.insertTextAfter(lastImportNode!, "\n"),
+							node: lastImportNode,
 						});
 					}
 				}
 			},
 		};
 	},
+	defaultOptions: [],
+	meta: {
+		docs: {
+			description: "Pad after the last import.",
+			recommended: "stylistic",
+		},
+		fixable: "code",
+		messages: {
+			padAfterLastImport: "Expected a blank line after the last import.",
+		},
+		schema: [],
+		type: "problem",
+	},
+	name: RULE_NAME,
 });
 
 export default rule;
 
 if (import.meta.vitest) {
-	const { afterAll, it, describe } = import.meta.vitest;
+	const { afterAll, describe, it } = import.meta.vitest;
 	const { RuleTester } = await import("../vendor/rule-tester/src/RuleTester");
 
-	const valids = ['import a from "foo";\n\nconst b = 1;'];
+	const valids = ["import a from \"foo\";\n\nconst b = 1;"];
 
 	const invalids = [
 		[
-			'import a from "foo";\nconst b = 1;',
-			'import a from "foo";\n\nconst b = 1;',
+			"import a from \"foo\";\nconst b = 1;",
+			"import a from \"foo\";\n\nconst b = 1;",
 		],
 		[
-			'import a from "foo";\n// comment\nconst b = 1;',
-			'import a from "foo";\n\n// comment\nconst b = 1;',
+			"import a from \"foo\";\n// comment\nconst b = 1;",
+			"import a from \"foo\";\n\n// comment\nconst b = 1;",
 		],
 	];
 
@@ -85,11 +85,11 @@ if (import.meta.vitest) {
 	});
 
 	ruleTester.run(RULE_NAME, rule as any, {
-		valid: valids,
-		invalid: invalids.map((i) => ({
+		invalid: invalids.map(i => ({
 			code: i[0],
-			output: i[1],
 			errors: [{ messageId: "padAfterLastImport" }],
+			output: i[1],
 		})),
+		valid: valids,
 	});
 }

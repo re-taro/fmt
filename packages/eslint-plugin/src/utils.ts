@@ -24,8 +24,8 @@ function RuleCreator() {
 		TOptions extends readonly unknown[],
 		TMessageIds extends string,
 	>({
-		name,
 		meta,
+		name,
 		...rule
 	}: Readonly<
 		RuleWithMetaAndName<TOptions, TMessageIds>
@@ -78,8 +78,8 @@ export const createEslintRule = RuleCreator() as <
 	TOptions extends readonly unknown[],
 	TMessageIds extends string,
 >({
-	name,
 	meta,
+	name,
 	...rule
 }: Readonly<
 	RuleWithMetaAndName<TOptions, TMessageIds>

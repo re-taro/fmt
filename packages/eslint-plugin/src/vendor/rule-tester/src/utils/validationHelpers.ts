@@ -35,7 +35,7 @@ export const ERROR_OBJECT_PARAMETERS: ReadonlySet<string> = new Set([
 export const FRIENDLY_ERROR_OBJECT_PARAMETER_LIST = `[${[
 	...ERROR_OBJECT_PARAMETERS,
 ]
-	.map((key) => `'${key}'`)
+	.map(key => `'${key}'`)
 	.join(", ")}]`;
 
 /*
@@ -50,21 +50,20 @@ export const SUGGESTION_OBJECT_PARAMETERS: ReadonlySet<string> = new Set([
 export const FRIENDLY_SUGGESTION_OBJECT_PARAMETER_LIST = `[${[
 	...SUGGESTION_OBJECT_PARAMETERS,
 ]
-	.map((key) => `'${key}'`)
+	.map(key => `'${key}'`)
 	.join(", ")}]`;
 
 /**
  * Replace control characters by `\u00xx` form.
  */
 export function sanitize(text: string): string {
-	if (typeof text !== "string") {
+	if (typeof text !== "string")
 		return "";
-	}
 
 	return text.replace(
 		// eslint-disable-next-line no-control-regex
 		/[\u0000-\u0009\u000B-\u001A]/gu,
-		(c) => `\\u${c.codePointAt(0)!.toString(16).padStart(4, "0")}`,
+		c => `\\u${c.codePointAt(0)!.toString(16).padStart(4, "0")}`,
 	);
 }
 
@@ -93,57 +92,57 @@ export function wrapParser(
 		 */
 		function defineStartEndAsError(objName: string, node: unknown): void {
 			Object.defineProperties(node, {
-				start: {
-					get() {
-						throw new Error(
-							`Use ${objName}.range[0] instead of ${objName}.start`,
-						);
-					},
+				end: {
 					configurable: true,
 					enumerable: false,
-				},
-				end: {
 					get() {
 						throw new Error(
 							`Use ${objName}.range[1] instead of ${objName}.end`,
 						);
 					},
+				},
+				start: {
 					configurable: true,
 					enumerable: false,
+					get() {
+						throw new Error(
+							`Use ${objName}.range[0] instead of ${objName}.start`,
+						);
+					},
 				},
 			});
 		}
 
 		simpleTraverse(ast, {
+			enter: node => defineStartEndAsError("node", node),
 			visitorKeys,
-			enter: (node) => defineStartEndAsError("node", node),
 		});
-		ast.tokens?.forEach((token) => defineStartEndAsError("token", token));
-		ast.comments?.forEach((comment) => defineStartEndAsError("token", comment));
+		ast.tokens?.forEach(token => defineStartEndAsError("token", token));
+		ast.comments?.forEach(comment => defineStartEndAsError("token", comment));
 	}
 
 	if ("parseForESLint" in parser) {
 		return {
-			// @ts-expect-error -- see above
-			[parserSymbol]: parser,
 			parseForESLint(...args): TSESLint.Parser.ParseResult {
 				const ret = parser.parseForESLint(...args);
 
 				defineStartEndAsErrorInTree(ret.ast, ret.visitorKeys);
 				return ret;
 			},
+			// @ts-expect-error -- see above
+			[parserSymbol]: parser,
 		};
 	}
 
 	return {
-		// @ts-expect-error -- see above
-		[parserSymbol]: parser,
 		parse(...args): TSESTree.Program {
 			const ast = parser.parse(...args);
 
 			defineStartEndAsErrorInTree(ast);
 			return ast;
 		},
+		// @ts-expect-error -- see above
+		[parserSymbol]: parser,
 	};
 }
 

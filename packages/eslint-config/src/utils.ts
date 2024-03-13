@@ -1,55 +1,85 @@
-import type { ConfigItem } from "./types";
+import process from "node:process";
+import { isPackageExists } from "local-pkg";
+import type { Awaitable, UserConfigItem } from "./types";
 
-export const renameRules = (
+export const parserPlain = {
+	meta: {
+		name: "parser-plain",
+	},
+	parseForESLint: (code: string) => ({
+		ast: {
+			body: [],
+			comments: [],
+			loc: { end: code.length, start: 0 },
+			range: [0, code.length],
+			tokens: [],
+			type: "Program",
+		},
+		scopeManager: null,
+		services: { isPlain: true },
+		visitorKeys: {
+			Program: [],
+		},
+	}),
+};
+
+/**
+ * Combine array and non-array configs into a single array.
+ */
+export async function combine(
+	...configs: Awaitable<UserConfigItem | UserConfigItem[]>[]
+): Promise<UserConfigItem[]> {
+	const resolved = await Promise.all(configs);
+	return resolved.flat();
+}
+
+export function renameRules(
 	rules: Record<string, any>,
 	from: string,
 	to: string,
-) =>
-	Object.fromEntries(
+) {
+	return Object.fromEntries(
 		Object.entries(rules).map(([key, value]) => {
-			if (key.startsWith(from)) {
+			if (key.startsWith(from))
 				return [to + key.slice(from.length), value];
-			}
 
 			return [key, value];
 		}),
 	);
-
-const rulesOn = new Set<string>();
-const rulesOff = new Set<string>();
-
-export function recordRulesStateConfigs(configs: ConfigItem[]): ConfigItem[] {
-	for (const config of configs) {
-		recordRulesState(config.rules ?? {});
-	}
-
-	return configs;
 }
 
-export function recordRulesState(
-	rules: ConfigItem["rules"],
-): ConfigItem["rules"] {
-	for (const [key, value] of Object.entries(rules ?? {})) {
-		const firstValue = Array.isArray(value) ? value[0] : value;
-		if (firstValue == null) {
-			continue;
-		}
-		if (firstValue === "off" || firstValue === 0) {
-			rulesOff.add(key);
-		} else {
-			rulesOn.add(key);
-		}
-	}
-
-	return rules;
+export function toArray<T>(value: T | T[]): T[] {
+	return Array.isArray(value) ? value : [value];
 }
 
-export function warnUnnecessaryOffRules() {
-	const unnecessaryOffRules = [...rulesOff].filter((key) => !rulesOn.has(key));
+export async function interopDefault<T>(
+	m: Awaitable<T>,
+): Promise<T extends { default: infer U } ? U : T> {
+	const resolved = await m;
+	return (resolved as any).default || resolved;
+}
 
-	for (const off of unnecessaryOffRules) {
-		console.warn(
-			`[eslint] rule \`${off}\` is never turned on, you can remove the rule from your config`,
+export async function ensurePackages(packages: (string | undefined)[]) {
+	if (process.env.CI || process.stdout.isTTY === false)
+		return;
+
+	const nonExistingPackages = packages.filter(
+		i => i && !isPackageExists(i),
+	) as string[];
+	if (nonExistingPackages.length === 0)
+		return;
+
+	const { default: prompts } = await import("prompts");
+	const { result } = await prompts([
+		{
+			message: `${nonExistingPackages.length === 1 ? "Package is" : "Packages are"} required for this config: ${nonExistingPackages.join(", ")}. Do you want to install them?`,
+			name: "result",
+			type: "confirm",
+		},
+	]);
+	if (result) {
+		await import("@antfu/install-pkg").then(i =>
+			i.installPackage(nonExistingPackages, { dev: true }),
 		);
 	}
 }

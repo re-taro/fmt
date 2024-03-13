@@ -54,9 +54,9 @@ const DUPLICATE_PARSER_ERROR_MESSAGE = `Do not set the parser at the test level 
  * the initial default configuration
  */
 const testerDefaultConfig: Readonly<TesterConfigWithDefaults> = {
+	defaultFilenames: { ts: "file.ts", tsx: "react.tsx" },
 	parser: TYPESCRIPT_ESLINT_PARSER,
 	rules: {},
-	defaultFilenames: { ts: "file.ts", tsx: "react.tsx" },
 };
 let defaultConfig = ESLintUtils.deepMerge(
 	{},
@@ -69,6 +69,7 @@ export class RuleTester extends TestFramework {
 		string,
 		TSESLint.AnyRuleCreateFunction | TSESLint.AnyRuleModule
 	> = {};
+
 	readonly #linter = new TSESLint.Linter();
 
 	/**
@@ -82,11 +83,11 @@ export class RuleTester extends TestFramework {
 		 * configuration and the default configuration.
 		 */
 		this.#testerConfig = merge({}, defaultConfig, testerConfig, {
-			rules: { "rule-tester/validate-ast": "error" },
-			// as of eslint 6 you have to provide an absolute path to the parser
-			// but that's not as clean to type, this saves us trying to manually enforce
 			// that contributors require.resolve everything
 			parser: require.resolve((testerConfig ?? defaultConfig).parser),
+			// as of eslint 6 you have to provide an absolute path to the parser
+			// but that's not as clean to type, this saves us trying to manually enforce
+			rules: { "rule-tester/validate-ast": "error" },
 		});
 
 		// make sure that the parser doesn't hold onto file handles between tests
@@ -98,7 +99,8 @@ export class RuleTester extends TestFramework {
 				// a bit weird, but if they're using this tooling, it'll be installed
 				const parser = require(TYPESCRIPT_ESLINT_PARSER) as typeof ParserType;
 				parser.clearCaches();
-			} catch {
+			}
+			catch {
 				// ignored on purpose
 			}
 		});
@@ -154,9 +156,8 @@ export class RuleTester extends TestFramework {
 			| ValidTestCase<TOptions>
 			| string,
 	): InvalidTestCase<TMessageIds, TOptions> | ValidTestCase<TOptions> {
-		if (typeof item === "string") {
+		if (typeof item === "string")
 			return { code: item, only: true };
-		}
 
 		return { ...item, only: true };
 	}
@@ -204,14 +205,13 @@ export class RuleTester extends TestFramework {
 			TMessageIds extends string,
 			TOptions extends readonly unknown[],
 			T extends
-				| InvalidTestCase<TMessageIds, TOptions>
-				| ValidTestCase<TOptions>,
+			| InvalidTestCase<TMessageIds, TOptions>
+			| ValidTestCase<TOptions>,
 		>(
-			test: T,
-		): T => {
-			if (test.parser === TYPESCRIPT_ESLINT_PARSER) {
+				test: T,
+			): T => {
+			if (test.parser === TYPESCRIPT_ESLINT_PARSER)
 				throw new Error(DUPLICATE_PARSER_ERROR_MESSAGE);
-			}
 
 			if (!test.filename) {
 				return {
@@ -223,36 +223,32 @@ export class RuleTester extends TestFramework {
 		};
 
 		const normalizedTests = {
+			invalid: rawTests.invalid.map(normalizeTest),
 			valid: rawTests.valid
 				.map((test) => {
-					if (typeof test === "string") {
+					if (typeof test === "string")
 						return { code: test };
-					}
 
 					return test;
 				})
 				.map(normalizeTest),
-			invalid: rawTests.invalid.map(normalizeTest),
 		};
 
 		// convenience iterator to make it easy to loop all tests without a concat
 		const allTestsIterator = {
 			*[Symbol.iterator](): Generator<ValidTestCase<TOptions>, void, unknown> {
-				for (const testCase of normalizedTests.valid) {
+				for (const testCase of normalizedTests.valid)
 					yield testCase;
-				}
 
-				for (const testCase of normalizedTests.invalid) {
+				for (const testCase of normalizedTests.invalid)
 					yield testCase;
-				}
 			},
 		};
 
 		const hasOnly = ((): boolean => {
 			for (const test of allTestsIterator) {
-				if (test.only) {
+				if (test.only)
 					return true;
-				}
 			}
 			return false;
 		})();
@@ -265,17 +261,15 @@ export class RuleTester extends TestFramework {
 		const hasConstraints = ((): boolean => {
 			for (const test of allTestsIterator) {
 				if (
-					test.dependencyConstraints &&
-					Object.keys(test.dependencyConstraints).length > 0
-				) {
+					test.dependencyConstraints
+					&& Object.keys(test.dependencyConstraints).length > 0
+				)
 					return true;
-				}
 			}
 			return false;
 		})();
-		if (!hasConstraints) {
+		if (!hasConstraints)
 			return normalizedTests;
-		}
 
 		/*
     Mark all unsatisfactory tests as `skip: true`.
@@ -285,11 +279,11 @@ export class RuleTester extends TestFramework {
     */
 		const maybeMarkAsOnly = <
 			T extends
-				| InvalidTestCase<TMessageIds, TOptions>
-				| ValidTestCase<TOptions>,
+			| InvalidTestCase<TMessageIds, TOptions>
+			| ValidTestCase<TOptions>,
 		>(
-			test: T,
-		): T => {
+				test: T,
+			): T => {
 			return {
 				...test,
 				skip: !satisfiesAllDependencyConstraints(test.dependencyConstraints),
@@ -312,8 +306,8 @@ export class RuleTester extends TestFramework {
 		const constructor = this.constructor as typeof RuleTester;
 
 		if (
-			this.#testerConfig.dependencyConstraints &&
-			!satisfiesAllDependencyConstraints(
+			this.#testerConfig.dependencyConstraints
+			&& !satisfiesAllDependencyConstraints(
 				this.#testerConfig.dependencyConstraints,
 			)
 		) {
@@ -357,9 +351,8 @@ export class RuleTester extends TestFramework {
 			);
 		}
 
-		if (typeof rule === "function") {
+		if (typeof rule === "function")
 			emitLegacyRuleAPIWarning(ruleName);
-		}
 
 		this.#linter.defineRule(
 			ruleName,
@@ -382,13 +375,11 @@ export class RuleTester extends TestFramework {
 		function getTestMethod(
 			test: ValidTestCase<TOptions>,
 		): "it" | "itOnly" | "itSkip" {
-			if (test.skip) {
+			if (test.skip)
 				return "itSkip";
-			}
 
-			if (test.only) {
+			if (test.only)
 				return "itOnly";
-			}
 
 			return "it";
 		}
@@ -402,9 +393,8 @@ export class RuleTester extends TestFramework {
 				constructor.describe("valid", () => {
 					normalizedTests.valid.forEach((valid) => {
 						const testName = ((): string => {
-							if (valid.name == null || valid.name.length === 0) {
+							if (valid.name == null || valid.name.length === 0)
 								return valid.code;
-							}
 
 							return valid.name;
 						})();
@@ -419,9 +409,8 @@ export class RuleTester extends TestFramework {
 				constructor.describe("invalid", () => {
 					normalizedTests.invalid.forEach((invalid) => {
 						const name = ((): string => {
-							if (invalid.name == null || invalid.name.length === 0) {
+							if (invalid.name == null || invalid.name.length === 0)
 								return invalid.code;
-							}
 
 							return invalid.name;
 						})();
@@ -448,11 +437,11 @@ export class RuleTester extends TestFramework {
 		rule: TSESLint.RuleModule<TMessageIds, TOptions>,
 		item: InvalidTestCase<TMessageIds, TOptions> | ValidTestCase<TOptions>,
 	): {
-		messages: TSESLint.Linter.LintMessage[];
-		output: string;
-		beforeAST: TSESTree.Program;
-		afterAST: TSESTree.Program;
-	} {
+			messages: TSESLint.Linter.LintMessage[];
+			output: string;
+			beforeAST: TSESTree.Program;
+			afterAST: TSESTree.Program;
+		} {
 		let config: TesterConfigWithDefaults = merge({}, this.#testerConfig);
 		let code;
 		let filename;
@@ -462,7 +451,8 @@ export class RuleTester extends TestFramework {
 
 		if (typeof item === "string") {
 			code = item;
-		} else {
+		}
+		else {
 			code = item.code;
 
 			/*
@@ -471,9 +461,8 @@ export class RuleTester extends TestFramework {
 			 */
 			const itemConfig: Record<string, unknown> = { ...item };
 
-			for (const parameter of RULE_TESTER_PARAMETERS) {
+			for (const parameter of RULE_TESTER_PARAMETERS)
 				delete itemConfig[parameter];
-			}
 
 			/*
 			 * Create the config object from the tester config and this item
@@ -482,22 +471,21 @@ export class RuleTester extends TestFramework {
 			config = merge(config, itemConfig);
 		}
 
-		if (item.filename) {
+		if (item.filename)
 			filename = item.filename;
-		}
 
 		if (hasOwnProperty(item, "options")) {
 			assert(Array.isArray(item.options), "options must be an array");
 			if (
-				item.options.length > 0 &&
-				typeof rule === "object" &&
-				(!rule.meta || (rule.meta && rule.meta.schema == null))
-			) {
+				item.options.length > 0
+				&& typeof rule === "object"
+				&& (!rule.meta || (rule.meta && rule.meta.schema == null))
+			)
 				emitMissingSchemaWarning(ruleName);
-			}
 
 			config.rules[ruleName] = ["error", ...item.options];
-		} else {
+		}
+		else {
 			config.rules[ruleName] = "error";
 		}
 
@@ -526,7 +514,8 @@ export class RuleTester extends TestFramework {
 				path.isAbsolute(config.parser),
 				"Parsers provided as strings to RuleTester must be absolute paths",
 			);
-		} else {
+		}
+		else {
 			config.parser = require.resolve(TYPESCRIPT_ESLINT_PARSER);
 		}
 
@@ -541,8 +530,8 @@ export class RuleTester extends TestFramework {
 			if (ajv.errors) {
 				const errors = ajv.errors
 					.map((error) => {
-						const field =
-							error.dataPath[0] === "."
+						const field
+							= error.dataPath[0] === "."
 								? error.dataPath.slice(1)
 								: error.dataPath;
 
@@ -566,7 +555,8 @@ export class RuleTester extends TestFramework {
 			 */
 			try {
 				ajv.compile(schema);
-			} catch (err) {
+			}
+			catch (err) {
 				throw new Error(
 					`Schema for rule ${ruleName} is invalid: ${(err as Error).message}`,
 				);
@@ -582,12 +572,13 @@ export class RuleTester extends TestFramework {
 		try {
 			SourceCode.prototype.getComments = getCommentsDeprecation;
 			messages = this.#linter.verify(code, config, filename);
-		} finally {
+		}
+		finally {
 			// @ts-expect-error -- we don't define deprecated members on our types
 			SourceCode.prototype.getComments = getComments;
 		}
 
-		const fatalErrorMessage = messages.find((m) => m.fatal);
+		const fatalErrorMessage = messages.find(m => m.fatal);
 
 		assert(
 			!fatalErrorMessage,
@@ -595,11 +586,11 @@ export class RuleTester extends TestFramework {
 		);
 
 		// Verify if autofix makes a syntax error or not.
-		if (messages.some((m) => m.fix)) {
+		if (messages.some(m => m.fix)) {
 			output = SourceCodeFixer.applyFixes(code, messages).output;
 			const errorMessageInFix = this.#linter
 				.verify(output, config, filename)
-				.find((m) => m.fatal);
+				.find(m => m.fatal);
 
 			assert(
 				!errorMessageInFix,
@@ -610,17 +601,18 @@ export class RuleTester extends TestFramework {
 					output,
 				].join("\n"),
 			);
-		} else {
+		}
+		else {
 			output = code;
 		}
 
 		return {
-			messages,
-			output,
-			// is definitely assigned within the `rule-tester/validate-ast` rule
-			beforeAST: beforeAST!,
 			// is definitely assigned within the `rule-tester/validate-ast` rule
 			afterAST: cloneDeeplyExcludesParent(afterAST!),
+			// is definitely assigned within the `rule-tester/validate-ast` rule
+			beforeAST: beforeAST!,
+			messages,
+			output,
 		};
 	}
 
@@ -635,8 +627,8 @@ export class RuleTester extends TestFramework {
 		rule: TSESLint.RuleModule<TMessageIds, TOptions>,
 		itemIn: ValidTestCase<TOptions> | string,
 	): void {
-		const item: ValidTestCase<TOptions> =
-			typeof itemIn === "object" ? itemIn : { code: itemIn };
+		const item: ValidTestCase<TOptions>
+			= typeof itemIn === "object" ? itemIn : { code: itemIn };
 
 		assert.ok(
 			typeof item.code === "string",
@@ -691,15 +683,14 @@ export class RuleTester extends TestFramework {
 		//   `Did not specify errors for an invalid test of ${ruleName}`,
 		// )
 
-		if (Array.isArray(item.errors) && item.errors.length === 0) {
+		if (Array.isArray(item.errors) && item.errors.length === 0)
 			assert.fail("Invalid cases must have at least one error");
-		}
 
-		const ruleHasMetaMessages =
-			hasOwnProperty(rule, "meta") && hasOwnProperty(rule.meta, "messages");
+		const ruleHasMetaMessages
+			= hasOwnProperty(rule, "meta") && hasOwnProperty(rule.meta, "messages");
 		const friendlyIDList = ruleHasMetaMessages
 			? `[${Object.keys(rule.meta.messages)
-					.map((key) => `'${key}'`)
+					.map(key => `'${key}'`)
 					.join(", ")}]`
 			: null;
 
@@ -708,10 +699,10 @@ export class RuleTester extends TestFramework {
 
 		if (item.errors == null) {
 			assert.ok(messages.length > 0, "Should have at least one error");
-		} else if (typeof item.errors === "number") {
-			if (item.errors === 0) {
+		}
+		else if (typeof item.errors === "number") {
+			if (item.errors === 0)
 				assert.fail("Invalid cases must have 'error' value greater than 0");
-			}
 
 			assert.strictEqual(
 				messages.length,
@@ -724,7 +715,8 @@ export class RuleTester extends TestFramework {
 					util.inspect(messages),
 				),
 			);
-		} else {
+		}
+		else {
 			assert.strictEqual(
 				messages.length,
 				item.errors.length,
@@ -737,7 +729,7 @@ export class RuleTester extends TestFramework {
 				),
 			);
 
-			const hasMessageOfThisRule = messages.some((m) => m.ruleId === ruleName);
+			const hasMessageOfThisRule = messages.some(m => m.ruleId === ruleName);
 
 			for (let i = 0, l = item.errors.length; i < l; i++) {
 				const error = item.errors[i] as any;
@@ -751,7 +743,8 @@ export class RuleTester extends TestFramework {
 				if (typeof error === "string" || error instanceof RegExp) {
 					// Just an error message.
 					assertMessageMatches(message.message, error);
-				} else if (typeof error === "object" && error != null) {
+				}
+				else if (typeof error === "object" && error != null) {
 					/*
 					 * Error object.
 					 * This may have a message, messageId, data, node type, line, and/or
@@ -779,7 +772,8 @@ export class RuleTester extends TestFramework {
 							// @ts-expect-error -- we purposely don't define `message` on our types as the current standard is `messageId`
 							error.message as unknown,
 						);
-					} else if (hasOwnProperty(error, "messageId")) {
+					}
+					else if (hasOwnProperty(error, "messageId")) {
 						assert.ok(
 							ruleHasMetaMessages,
 							"Error can not use 'messageId' if rule under test doesn't define 'meta.messages'.",
@@ -801,8 +795,8 @@ export class RuleTester extends TestFramework {
 							 *  interpolated message using the same message ID and data provided in the test.
 							 *  See https://github.com/eslint/eslint/issues/9890 for context.
 							 */
-							const unformattedOriginalMessage =
-								rule.meta.messages[error.messageId];
+							const unformattedOriginalMessage
+								= rule.meta.messages[error.messageId];
 							const rehydratedMessage = interpolate(
 								unformattedOriginalMessage,
 								error.data,
@@ -866,19 +860,20 @@ export class RuleTester extends TestFramework {
 					if (hasOwnProperty(error, "suggestions")) {
 						// Support asserting there are no suggestions
 						if (
-							!error.suggestions ||
-							(isReadonlyArray(error.suggestions) &&
-								error.suggestions.length === 0)
+							!error.suggestions
+							|| (isReadonlyArray(error.suggestions)
+							&& error.suggestions.length === 0)
 						) {
 							if (
-								Array.isArray(message.suggestions) &&
-								message.suggestions.length > 0
+								Array.isArray(message.suggestions)
+								&& message.suggestions.length > 0
 							) {
 								assert.fail(
 									`Error should have no suggestions on error with message: "${message.message}"`,
 								);
 							}
-						} else {
+						}
+						else {
 							assert(
 								Array.isArray(message.suggestions),
 								`Error should have an array of suggestions. Instead received "${String(
@@ -894,8 +889,8 @@ export class RuleTester extends TestFramework {
 
 							error.suggestions.forEach((expectedSuggestion, index) => {
 								assert.ok(
-									typeof expectedSuggestion === "object" &&
-										expectedSuggestion != null,
+									typeof expectedSuggestion === "object"
+									&& expectedSuggestion != null,
 									"Test suggestion in 'suggestions' array must be an object.",
 								);
 								Object.keys(expectedSuggestion).forEach((propertyName) => {
@@ -940,8 +935,8 @@ export class RuleTester extends TestFramework {
 										`${suggestionPrefix} messageId should be '${expectedSuggestion.messageId}' but got '${actualSuggestion.messageId}' instead.`,
 									);
 									if (hasOwnProperty(expectedSuggestion, "data")) {
-										const unformattedMetaMessage =
-											rule.meta.messages[expectedSuggestion.messageId];
+										const unformattedMetaMessage
+											= rule.meta.messages[expectedSuggestion.messageId];
 										const rehydratedDesc = interpolate(
 											unformattedMetaMessage,
 											expectedSuggestion.data,
@@ -953,7 +948,8 @@ export class RuleTester extends TestFramework {
 											`${suggestionPrefix} Hydrated test desc "${rehydratedDesc}" does not match received desc "${actualSuggestion.desc}".`,
 										);
 									}
-								} else {
+								}
+								else {
 									assert.ok(
 										!hasOwnProperty(expectedSuggestion, "data"),
 										`${suggestionPrefix} Test must specify 'messageId' if 'data' is used.`,
@@ -975,7 +971,8 @@ export class RuleTester extends TestFramework {
 							});
 						}
 					}
-				} else {
+				}
+				else {
 					// Message was an unexpected type
 					assert.fail(
 						`Error should be a string, object, or RegExp, but found (${util.inspect(
@@ -993,12 +990,15 @@ export class RuleTester extends TestFramework {
 					item.code,
 					"Expected no autofixes to be suggested",
 				);
-			} else {
+			}
+			else {
 				assert.strictEqual(result.output, item.output, "Output is incorrect.");
 			}
-		} else if (item.onOutput) {
+		}
+		else if (item.onOutput) {
 			item.onOutput(result.output);
-		} else {
+		}
+		else {
 			assert.strictEqual(
 				result.output,
 				item.code,
@@ -1028,7 +1028,8 @@ function assertMessageMatches(actual: string, expected: RegExp | string): void {
 			expected.test(actual),
 			`Expected '${actual}' to match ${expected}`,
 		);
-	} else {
+	}
+	else {
 		assert.strictEqual(actual, expected);
 	}
 }

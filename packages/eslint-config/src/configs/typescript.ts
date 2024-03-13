@@ -1,270 +1,185 @@
-import tseslint from "typescript-eslint";
-
-import { GLOB_MARKDOWN_CODE, GLOB_TS, GLOB_TSX } from "../globs";
-import { pluginEtc, pluginImport } from "../plugins";
+import process from "node:process";
+import { GLOB_SRC, GLOB_TS, GLOB_TSX } from "../globs";
 import type {
-	ConfigItem,
+	FlatConfigItem,
 	OptionsComponentExts,
+	OptionsFiles,
 	OptionsOverrides,
 	OptionsTypeScriptParserOptions,
-	RenamedRules,
+	OptionsTypeScriptWithTypes,
 } from "../types";
-import { renameRules } from "../utils";
+import { pluginRetaro } from "../plugins";
+import { interopDefault, renameRules, toArray } from "../utils";
 
-export function typescript({
-	componentExts = [],
-	parserOptions,
-	overrides,
-}: OptionsTypeScriptParserOptions &
+export async function typescript(
+	options: OptionsFiles &
 	OptionsComponentExts &
-	OptionsOverrides = {}): ConfigItem[] {
-	const typeAwareRules: RenamedRules = {
-		"etc/no-assign-mutated-array": "error",
-		"etc/no-deprecated": "warn",
-		"etc/no-internal": "error",
+	OptionsOverrides &
+	OptionsTypeScriptWithTypes &
+	OptionsTypeScriptParserOptions = {},
+): Promise<FlatConfigItem[]> {
+	const { componentExts = [], overrides = {}, parserOptions = {} } = options;
 
-		"no-throw-literal": "off",
-		"ts/no-throw-literal": "error",
-		"no-implied-eval": "off",
-		"ts/no-implied-eval": "error",
+	const files = options.files ?? [
+		GLOB_SRC,
+		...componentExts.map(ext => `**/*.${ext}`),
+	];
+
+	const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX];
+	const tsconfigPath = options?.tsconfigPath
+		? toArray(options.tsconfigPath)
+		: undefined;
+	const isTypeAware = !!tsconfigPath;
+
+	const typeAwareRules: FlatConfigItem["rules"] = {
 		"dot-notation": "off",
-		"ts/dot-notation": ["error", { allowKeywords: true }],
-		"no-void": ["error", { allowAsStatement: true }],
+		"no-implied-eval": "off",
+		"no-throw-literal": "off",
 		"ts/await-thenable": "error",
+		"ts/dot-notation": ["error", { allowKeywords: true }],
+		"ts/no-floating-promises": "error",
 		"ts/no-for-in-array": "error",
+		"ts/no-implied-eval": "error",
+		"ts/no-misused-promises": "error",
+		"ts/no-throw-literal": "error",
 		"ts/no-unnecessary-type-assertion": "error",
-		"ts/restrict-template-expressions": [
-			"error",
-			{
-				allowAny: true,
-				allowNumber: true,
-				allowBoolean: true,
-			},
-		],
-		"ts/array-type": ["error", { default: "array", readonly: "array" }],
-		"ts/consistent-generic-constructors": "error",
-		"ts/consistent-type-exports": "error",
-		"ts/consistent-type-assertions": [
-			"error",
-			{ assertionStyle: "as", objectLiteralTypeAssertions: "allow" },
-		],
-		"ts/prefer-nullish-coalescing": "error",
-		"ts/prefer-optional-chain": "error",
-		"ts/prefer-return-this-type": "error",
-		"ts/no-unnecessary-type-arguments": "error",
-		"ts/non-nullable-type-assertion-style": "error",
+		"ts/no-unsafe-argument": "error",
+		"ts/no-unsafe-assignment": "error",
+		"ts/no-unsafe-call": "error",
+		"ts/no-unsafe-member-access": "error",
+		"ts/no-unsafe-return": "error",
+		"ts/restrict-plus-operands": "error",
+		"ts/restrict-template-expressions": "error",
+		"ts/unbound-method": "error",
 	};
+
+	const [pluginTs, parserTs] = await Promise.all([
+		interopDefault(import("@typescript-eslint/eslint-plugin")),
+		interopDefault(import("@typescript-eslint/parser")),
+	] as const);
+
+	function makeParser(
+		typeAware: boolean,
+		files: string[],
+		ignores?: string[],
+	): FlatConfigItem {
+		return {
+			files,
+			...(ignores ? { ignores } : {}),
+			languageOptions: {
+				parser: parserTs,
+				parserOptions: {
+					extraFileExtensions: componentExts.map(ext => `.${ext}`),
+					sourceType: "module",
+					...(typeAware
+						? {
+								project: tsconfigPath,
+								tsconfigRootDir: process.cwd(),
+							}
+						: {}),
+					...(parserOptions as any),
+				},
+			},
+			name: `re-taro:typescript:${typeAware ? "type-aware-parser" : "parser"}`,
+		};
+	}
 
 	return [
 		{
 			// Install the plugins without globs, so they can be configured separately.
+			name: "re-taro:typescript:setup",
 			plugins: {
-				import: pluginImport,
-				ts: tseslint.plugin,
-				etc: pluginEtc,
+				"re-taro": pluginRetaro,
+				"ts": pluginTs,
 			},
 		},
+		// assign type-aware parser for type-aware files and type-unaware parser for the rest
+		...(isTypeAware
+			? [
+					makeParser(true, filesTypeAware),
+					makeParser(false, files, filesTypeAware),
+				]
+			: [makeParser(false, files)]),
 		{
-			files: [GLOB_TS, GLOB_TSX, ...componentExts.map((ext) => `**/*.${ext}`)],
-			languageOptions: {
-				parser: tseslint.parser,
-				parserOptions: {
-					sourceType: "module",
-					extraFileExtensions: componentExts.map((ext) => `.${ext}`),
-					...(parserOptions as any),
-				},
-			},
-			settings: {
-				"import/resolver": {
-					node: { extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"] },
-					typescript: {
-						extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"],
-					},
-				},
-			},
+			files,
+			name: "re-taro:typescript:rules",
 			rules: {
 				...renameRules(
-					tseslint.configs.eslintRecommended.rules!,
+					pluginTs.configs["eslint-recommended"].overrides![0].rules!,
 					"@typescript-eslint/",
 					"ts/",
 				),
 				...renameRules(
-					tseslint.configs.recommended
-						.map((config) => config.rules)
-						.filter(Boolean)
-						.reduce((a, b) => ({ ...a, ...b }), {})!,
+					pluginTs.configs.strict.rules!,
 					"@typescript-eslint/",
 					"ts/",
 				),
-
-				"import/named": "off",
-
-				// TS
-				"ts/comma-dangle": "off",
-				"ts/brace-style": "off",
-				"ts/comma-spacing": "off",
-				"ts/func-call-spacing": "off",
-				"ts/indent": "off",
-				"ts/keyword-spacing": "off",
-				"ts/member-delimiter-style": "off",
-				"ts/no-extra-parens": "off",
-				"ts/no-extra-semi": "off",
-				"ts/quotes": "off",
-				"ts/semi": "off",
-				"ts/space-before-function-paren": "off",
-				"ts/type-annotation-spacing": "off",
+				"no-dupe-class-members": "off",
+				"no-loss-of-precision": "off",
+				"no-redeclare": "off",
+				"no-use-before-define": "off",
+				"no-useless-constructor": "off",
 				"ts/ban-ts-comment": [
 					"error",
-					{
-						minimumDescriptionLength: 0,
-					},
+					{ "ts-ignore": "allow-with-description" },
 				],
-				"ts/ban-types": [
-					"error",
-					{
-						extendDefaults: false,
-						types: {
-							String: {
-								message: "Use `string` instead.",
-								fixWith: "string",
-							},
-							Number: {
-								message: "Use `number` instead.",
-								fixWith: "number",
-							},
-							Boolean: {
-								message: "Use `boolean` instead.",
-								fixWith: "boolean",
-							},
-							Symbol: {
-								message: "Use `symbol` instead.",
-								fixWith: "symbol",
-							},
-							BigInt: {
-								message: "Use `bigint` instead.",
-								fixWith: "bigint",
-							},
-							Object: {
-								message:
-									"The `Object` type is mostly the same as `unknown`. You probably want `Record<PropertyKey, unknown>` instead. See https://github.com/typescript-eslint/typescript-eslint/pull/848",
-								fixWith: "Record<PropertyKey, unknown>",
-							},
-							object: {
-								message:
-									"The `object` type is hard to use. Use `Record<PropertyKey, unknown>` instead. See: https://github.com/typescript-eslint/typescript-eslint/pull/848",
-								fixWith: "Record<PropertyKey, unknown>",
-							},
-							Function: {
-								message: "Use `(...args: any[]) => any` instead.",
-								fixWith: "(...args: any[]) => any",
-							},
-						},
-					},
-				],
+				"ts/ban-types": ["error", { types: { Function: false } }],
+				"ts/consistent-type-definitions": ["error", "interface"],
 				"ts/consistent-type-imports": [
 					"error",
-					{ prefer: "type-imports", disallowTypeAnnotations: false },
+					{ disallowTypeAnnotations: false, prefer: "type-imports" },
 				],
-				"ts/consistent-type-definitions": ["error", "interface"],
-				"ts/consistent-indexed-object-style": ["error", "record"],
-				"ts/prefer-ts-expect-error": "error",
-				"ts/prefer-for-of": "error",
-				"ts/no-duplicate-enum-values": "error",
-				"ts/no-non-null-asserted-nullish-coalescing": "error",
-				"ts/no-require-imports": "error",
-				"ts/method-signature-style": ["error", "property"],
-				"ts/explicit-member-accessibility": [
-					"error",
-					{
-						accessibility: "explicit",
-						overrides: {
-							constructors: "no-public",
-						},
-					},
-				],
-
-				// Override JS
-				"no-useless-constructor": "off",
-				"no-invalid-this": "off",
-				"ts/no-invalid-this": "error",
-				"no-redeclare": "off",
+				"ts/method-signature-style": ["error", "property"], // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
+				"ts/no-dupe-class-members": "error",
+				"ts/no-dynamic-delete": "off",
+				"ts/no-explicit-any": "off",
+				"ts/no-extraneous-class": "off",
+				"ts/no-import-type-side-effects": "error",
+				"ts/no-invalid-void-type": "off",
+				"ts/no-loss-of-precision": "error",
+				"ts/no-non-null-assertion": "off",
 				"ts/no-redeclare": "error",
-				"no-use-before-define": "off",
+				"ts/no-require-imports": "error",
+				"ts/no-unused-vars": "off",
 				"ts/no-use-before-define": [
 					"error",
-					{ functions: false, classes: false, variables: true },
+					{ classes: false, functions: false, variables: true },
 				],
-				"object-curly-spacing": "off",
-				"space-before-blocks": "off",
-				"ts/space-before-blocks": "off",
-				"space-before-function-paren": "off",
-				"no-dupe-class-members": "off",
-				"ts/no-dupe-class-members": "error",
-				"no-loss-of-precision": "off",
-				"ts/no-loss-of-precision": "error",
-				"lines-between-class-members": "off",
-				"ts/lines-between-class-members": [
-					"error",
-					"always",
-					{ exceptAfterSingleLine: true },
-				],
-
-				// re-taro
-				"re-taro/no-inline-type-import": "error",
-
-				// off
-				"ts/camelcase": "off",
-				"ts/explicit-function-return-type": "off",
-				"ts/no-explicit-any": "off",
-				"ts/no-parameter-properties": "off",
-				"ts/no-empty-interface": "off",
-				"ts/ban-ts-ignore": "off",
-				"ts/no-empty-function": "off",
-				"ts/no-non-null-assertion": "off",
-				"ts/explicit-module-boundary-types": "off",
+				"ts/no-useless-constructor": "off",
+				"ts/prefer-ts-expect-error": "error",
 				"ts/triple-slash-reference": "off",
-				// handled by unused-imports/no-unused-imports
-				"ts/no-unused-vars": "off",
-
+				"ts/unified-signatures": "off",
 				...overrides,
 			},
 		},
 		{
-			files: [GLOB_TS, GLOB_TSX, ...componentExts.map((ext) => `**/*.${ext}`)],
-			ignores: [GLOB_MARKDOWN_CODE],
-			languageOptions: {
-				parser: tseslint.parser,
-				parserOptions: {
-					sourceType: "module",
-					// EXPERIMENTAL_useProjectService: true,
-					project: true,
-					tsconfigRootDir: process.cwd(),
-				},
-			},
-			settings: {
-				"import/resolver": {
-					node: {
-						extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"],
-					},
-					typescript: {
-						extensions: [".js", ".jsx", ".mjs", ".ts", ".tsx", ".d.ts"],
-					},
-				},
-			},
+			files: filesTypeAware,
+			name: "re-taro:typescript:rules-type-aware",
 			rules: {
-				...typeAwareRules,
+				...(tsconfigPath ? typeAwareRules : {}),
+				...overrides,
 			},
 		},
 		{
 			files: ["**/*.d.ts"],
+			name: "re-taro:typescript:dts-overrides",
 			rules: {
 				"eslint-comments/no-unlimited-disable": "off",
 				"import/no-duplicates": "off",
+				"no-restricted-syntax": "off",
 				"unused-imports/no-unused-vars": "off",
 			},
 		},
 		{
+			files: ["**/*.{test,spec}.ts?(x)"],
+			name: "re-taro:typescript:tests-overrides",
+			rules: {
+				"no-unused-expressions": "off",
+			},
+		},
+		{
 			files: ["**/*.js", "**/*.cjs"],
+			name: "re-taro:typescript:javascript-overrides",
 			rules: {
 				"ts/no-require-imports": "off",
 				"ts/no-var-requires": "off",

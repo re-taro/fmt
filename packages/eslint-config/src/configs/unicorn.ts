@@ -1,53 +1,41 @@
+import type { FlatConfigItem } from "../types";
 import { pluginUnicorn } from "../plugins";
-import type { ConfigItem } from "../types";
 
-export const unicorn = (): ConfigItem[] => [
-	{
-		plugins: {
-			unicorn: pluginUnicorn,
+export async function unicorn(): Promise<FlatConfigItem[]> {
+	return [
+		{
+			name: "re-taro:unicorn",
+			plugins: {
+				unicorn: pluginUnicorn,
+			},
+			rules: {
+				// Pass error message when throwing errors
+				"unicorn/error-message": "error",
+				// Uppercase regex escapes
+				"unicorn/escape-case": "error",
+				// Array.isArray instead of instanceof
+				"unicorn/no-instanceof-array": "error",
+				// Ban `new Array` as `Array` constructor's params are ambiguous
+				"unicorn/no-new-array": "error",
+				// Prevent deprecated `new Buffer()`
+				"unicorn/no-new-buffer": "error",
+				// Lowercase number formatting for octal, hex, binary (0x1'error' instead of 0X1'error')
+				"unicorn/number-literal-case": "error",
+				// textContent instead of innerText
+				"unicorn/prefer-dom-node-text-content": "error",
+				// includes over indexOf when checking for existence
+				"unicorn/prefer-includes": "error",
+				// Prefer using the node: protocol
+				"unicorn/prefer-node-protocol": "error",
+				// Prefer using number properties like `Number.isNaN` rather than `isNaN`
+				"unicorn/prefer-number-properties": "error",
+				// String methods startsWith/endsWith instead of more complicated stuff
+				"unicorn/prefer-string-starts-ends-with": "error",
+				// Enforce throwing type error when throwing error while checking typeof
+				"unicorn/prefer-type-error": "error",
+				// Use new when throwing error
+				"unicorn/throw-new-error": "error",
+			},
 		},
-		rules: {
-			"unicorn/throw-new-error": "error",
-			"unicorn/relative-url-style": ["error", "always"],
-			"unicorn/switch-case-braces": "error",
-			"unicorn/number-literal-case": "error",
-			"unicorn/numeric-separators-style": "error",
-			"unicorn/new-for-builtins": "error",
-			"unicorn/error-message": "error",
-			"unicorn/escape-case": "error",
-			"unicorn/explicit-length-check": "error",
-			"unicorn/no-instanceof-array": "error",
-			"unicorn/no-new-buffer": "error",
-			"unicorn/no-new-array": "error",
-			"unicorn/no-array-for-each": "error",
-			"unicorn/no-array-method-this-argument": "error",
-			"unicorn/no-for-loop": "error",
-			"unicorn/no-lonely-if": "error",
-			"unicorn/no-negated-condition": "error",
-			"unicorn/no-useless-spread": "error",
-			"unicorn/prefer-ternary": "error",
-			"unicorn/prefer-query-selector": "error",
-			"unicorn/prefer-modern-dom-apis": "error",
-			"unicorn/prefer-modern-math-apis": "error",
-			"unicorn/prefer-json-parse-buffer": "error",
-			"unicorn/prefer-date-now": "error",
-			"unicorn/prefer-array-some": "error",
-			"unicorn/prefer-array-index-of": "error",
-			"unicorn/prefer-array-flat": "error",
-			"unicorn/prefer-array-find": "error",
-			"unicorn/prefer-spread": "error",
-			"unicorn/prefer-set-size": "error",
-			"unicorn/prefer-string-slice": "error",
-			"unicorn/prefer-includes": "error",
-			"unicorn/prefer-string-starts-ends-with": "error",
-			"unicorn/prefer-text-content": "error",
-			"unicorn/prefer-type-error": "error",
-			"unicorn/prefer-node-protocol": "error",
-			"unicorn/prefer-negative-index": "error",
-			"unicorn/prefer-regexp-test": "error",
-			"unicorn/prefer-optional-catch-binding": "error",
-			"unicorn/prefer-object-from-entries": "error",
-			"unicorn/prefer-prototype-methods": "error",
-		},
-	},
-];
+	];
+}

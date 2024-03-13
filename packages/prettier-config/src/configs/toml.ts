@@ -1,6 +1,8 @@
 import type { Config } from "../types";
 import { require } from "../utils";
 
-export const toml = (): Config => ({
-	plugins: [require.resolve("prettier-plugin-toml")],
-});
+export function toml(): Config {
+	return {
+		plugins: [require.resolve("prettier-plugin-toml")],
+	};
+}

@@ -8,8 +8,8 @@ export function re_taro(
 	options: OptionsConfig = {},
 	userConfig: Config = {},
 ): Config {
-	const { astro: enableAstro = isPackageExists("astro"), ignoreFiles = [] } =
-		options;
+	const { astro: enableAstro = isPackageExists("astro"), ignoreFiles = [] }
+		= options;
 
 	const configs: Config[] = [];
 
@@ -21,9 +21,8 @@ export function re_taro(
 		ignores({ ignoreFiles }),
 	);
 
-	if (enableAstro) {
+	if (enableAstro)
 		configs.push(astro());
-	}
 
 	return mergeConfig(...configs, userConfig);
 }
