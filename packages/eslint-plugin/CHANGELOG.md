@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0
+
+### Major Changes
+
+- [#1006](https://github.com/re-taro/fmt/pull/1006) [`0a18a45`](https://github.com/re-taro/fmt/commit/0a18a45f68476dbcd14c8daf0cd85af859e86c01) Thanks [@re-taro](https://github.com/re-taro)! - Refactor some rules
+
 ## 3.1.0
 
 ### Minor Changes

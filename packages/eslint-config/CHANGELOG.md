@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.0.0
+
+### Major Changes
+
+- [#1006](https://github.com/re-taro/fmt/pull/1006) [`0a18a45`](https://github.com/re-taro/fmt/commit/0a18a45f68476dbcd14c8daf0cd85af859e86c01) Thanks [@re-taro](https://github.com/re-taro)! - Update configs and more DX
+
+### Patch Changes
+
+- Updated dependencies [[`0a18a45`](https://github.com/re-taro/fmt/commit/0a18a45f68476dbcd14c8daf0cd85af859e86c01)]:
+  - @re-taro/eslint-plugin@4.0.0
+
 ## 3.1.1
 
 ### Patch Changes
