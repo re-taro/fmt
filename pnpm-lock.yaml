@@ -98,8 +98,8 @@ importers:
         specifier: 0.1.3
         version: 0.1.3
       eslint-define-config:
-        specifier: 1.24.1
-        version: 1.24.1
+        specifier: 2.1.0
+        version: 2.1.0
       eslint-import-resolver-typescript:
         specifier: 3.6.1
         version: 3.6.1(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)
@@ -2889,9 +2889,9 @@ packages:
       parse-gitignore: 2.0.0
     dev: false
 
-  /eslint-define-config@1.24.1:
-    resolution: {integrity: sha512-o36vBhPSWyIQlHoMqGhhcGmOOm2A2ccBVIdLTG/AWdm9YmjpsLpf+5ntf9LlHR6dduLREgxtGwvwPwSt7vnXJg==}
-    engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>= 8.6.0'}
+  /eslint-define-config@2.1.0:
+    resolution: {integrity: sha512-QUp6pM9pjKEVannNAbSJNeRuYwW3LshejfyBBpjeMGaJjaDUpVps4C6KVR8R7dWZnD3i0synmrE36znjTkJvdQ==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>=8.6.0'}
     dev: false
 
   /eslint-etc@5.2.1(eslint@8.57.0)(typescript@5.4.2):
