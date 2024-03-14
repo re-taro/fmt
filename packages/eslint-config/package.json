@@ -92,7 +92,7 @@
 	"dependencies": {
 		"@antfu/eslint-define-config": "1.23.0-2",
 		"@antfu/install-pkg": "0.3.1",
-		"@eslint-types/jsdoc": "46.9.1",
+		"@eslint-types/jsdoc": "48.2.0",
 		"@eslint-types/typescript-eslint": "7.0.2",
 		"@eslint-types/unicorn": "51.0.1",
 		"@re-taro/eslint-plugin": "workspace:*",
