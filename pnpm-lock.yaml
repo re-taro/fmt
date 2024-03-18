@@ -80,8 +80,8 @@ importers:
         specifier: 0.3.1
         version: 0.3.1
       '@eslint-types/jsdoc':
-        specifier: 48.2.0
-        version: 48.2.0
+        specifier: 48.2.1
+        version: 48.2.1
       '@eslint-types/typescript-eslint':
         specifier: 7.0.2
         version: 7.0.2
@@ -884,8 +884,8 @@ packages:
     resolution: {integrity: sha512-EdyFKr1BHcx45o6gMZuCkFS64XHzVGFql0V3oL6mZwepnueulpmjsPxTiRRdrYdRknmQA+vjj1/znFkGRrPWHQ==}
     dev: true
 
-  /@eslint-types/jsdoc@48.2.0:
-    resolution: {integrity: sha512-IdSdckN+Tv5qTaBia5GOEeD837B1ENuqiPVWUKYI5dkK5vX6osV/EBSVFF6ti1NlEmm3IjkgnfUeRMhRV4BxSQ==}
+  /@eslint-types/jsdoc@48.2.1:
+    resolution: {integrity: sha512-ElgrRgEw262ca9BirIeylVQ834IfCVSr/7wMvv2+Dkl3SaPnzjs00bjmaT6srQs58gdxyZXVV6ZPiPyiV2xxsQ==}
     dev: false
 
   /@eslint-types/typescript-eslint@7.0.2:
