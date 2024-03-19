@@ -32,7 +32,7 @@ jobs:
         run: pnpm build
       - name: Release | Changesets
         id: changesets
-        uses: changesets/action@v1.4.6
+        uses: changesets/action@v1.4.7
         with:
           publish: pnpm changeset publish
         env:
