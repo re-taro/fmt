@@ -47,7 +47,7 @@
 	"peerDependencies": {
 		"astro-eslint-parser": "^0.16.3",
 		"eslint": ">=8.40.0",
-		"eslint-plugin-astro": "^0.31.4",
+		"eslint-plugin-astro": "^0.31.4 || ^0.32.0",
 		"eslint-plugin-format": ">=0.1.0",
 		"eslint-plugin-svelte": "^2.34.1",
 		"eslint-plugin-vue": "^9.2.3",
@@ -133,7 +133,7 @@
 		"@types/prompts": "2.4.9",
 		"astro-eslint-parser": "0.16.3",
 		"eslint-flat-config-viewer": "0.1.11",
-		"eslint-plugin-astro": "0.31.4",
+		"eslint-plugin-astro": "0.32.0",
 		"eslint-plugin-format": "0.1.0",
 		"eslint-plugin-svelte": "2.35.1",
 		"eslint-plugin-vue": "9.23.0",
