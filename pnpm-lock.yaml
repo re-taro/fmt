@@ -201,8 +201,8 @@ importers:
         specifier: 0.1.14
         version: 0.1.14(eslint@8.57.0)(typescript@5.4.3)
       eslint-plugin-astro:
-        specifier: 0.33.0
-        version: 0.33.0(eslint@8.57.0)
+        specifier: 0.33.1
+        version: 0.33.1(eslint@8.57.0)
       eslint-plugin-format:
         specifier: 0.1.0
         version: 0.1.0(eslint@8.57.0)
@@ -2856,8 +2856,8 @@ packages:
     resolution: {integrity: sha512-oOeA6FWU0UJT/Rxc3XF5Cq0nbIZbylm7j8+plqq0CZoE6m4u32OXJrR+9iy4srGMmF6v6pmgvP1zPxSRIGh3sg==}
     dev: true
 
-  /eslint-plugin-astro@0.33.0(eslint@8.57.0):
-    resolution: {integrity: sha512-Plvj8Kg1/4IbFThzhLSZ+tackLT/BR1VVkrmyDYDScZFxB6AmuTcn9d6SW71QL6xgnEKjGI8mQiTjSq8BdCl7Q==}
+  /eslint-plugin-astro@0.33.1(eslint@8.57.0):
+    resolution: {integrity: sha512-wVyxAf8Ulmljv5qJQLgspWe17LR4hLXcksIENtUlEC3W7rleBVEKXS+hIqzBfCbpkBLZpl1tsYes1AGpYHd13w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=7.0.0'
