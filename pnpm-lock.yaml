@@ -198,8 +198,8 @@ importers:
         specifier: 0.16.3
         version: 0.16.3
       eslint-flat-config-viewer:
-        specifier: 0.1.17
-        version: 0.1.17(eslint@8.57.0)(typescript@5.4.3)
+        specifier: 0.1.18
+        version: 0.1.18(eslint@8.57.0)(typescript@5.4.3)
       eslint-plugin-astro:
         specifier: 0.33.1
         version: 0.33.1(eslint@8.57.0)
@@ -2784,8 +2784,8 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=9.0.0', pnpm: '>=8.6.0'}
     dev: false
 
-  /eslint-flat-config-viewer@0.1.17(eslint@8.57.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-lNGqvJAU+FJAXBhP+UDdHQto5DOMWTAtnkW6atz6KW2KA6PkZIS9Y/g5VucvcV/T0LFV1gB0f50XWRrdV5pc7A==}
+  /eslint-flat-config-viewer@0.1.18(eslint@8.57.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-9kOdAkwny870PmAU+Lf7V3IEwLL3kL7hz00cvCFPg4MEv8QwEiXIcNndw17AeKZ3J60bZTEJGikN4WOUjZ/UuA==}
     hasBin: true
     peerDependencies:
       eslint: ^8.50.0
