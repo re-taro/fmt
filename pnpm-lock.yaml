@@ -122,8 +122,8 @@ importers:
         specifier: 48.2.2
         version: 48.2.2(eslint@8.57.0)
       eslint-plugin-jsonc:
-        specifier: 2.14.1
-        version: 2.14.1(eslint@8.57.0)
+        specifier: 2.15.0
+        version: 2.15.0(eslint@8.57.0)
       eslint-plugin-markdown:
         specifier: 4.0.1
         version: 4.0.1(eslint@8.57.0)
@@ -146,8 +146,8 @@ importers:
         specifier: 0.4.6
         version: 0.4.6(eslint@8.57.0)
       eslint-plugin-toml:
-        specifier: 0.10.0
-        version: 0.10.0(eslint@8.57.0)
+        specifier: 0.11.0
+        version: 0.11.0(eslint@8.57.0)
       eslint-plugin-unicorn:
         specifier: 51.0.1
         version: 51.0.1(eslint@8.57.0)
@@ -2909,8 +2909,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-jsonc@2.14.1(eslint@8.57.0):
-    resolution: {integrity: sha512-Tei6G4N7pZulP5MHi0EIdtseiCqUPkDMd0O8Zrw4muMIlsjJ5/B9X+U3Pfo6B7l0mTL9LN9FwuWT70dRJ6z7tg==}
+  /eslint-plugin-jsonc@2.15.0(eslint@8.57.0):
+    resolution: {integrity: sha512-wAphMVgTQPAKAYV8d/QEkEYDg8uer9nMQ85N17IUiJcAWLxJs83/Exe59dEH9yKUpvpLf46H+wR7/U7lZ3/NpQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
@@ -3066,8 +3066,8 @@ packages:
       - ts-node
     dev: true
 
-  /eslint-plugin-toml@0.10.0(eslint@8.57.0):
-    resolution: {integrity: sha512-HzhRjePs4FDszPRY6ryHXV90MsSEkJsWnP175x33Iop/W6/hb80qjzImO5LlQfqhX3B0TkotOFSIigNI4AdGsw==}
+  /eslint-plugin-toml@0.11.0(eslint@8.57.0):
+    resolution: {integrity: sha512-sau+YvPU4fWTjB+qtBt3n8WS87aoDCs+BVbSUAemGaIsRNbvR9uEk+Tt892iLHTGvp/DPWYoCX4/8DoyAbB+sQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
