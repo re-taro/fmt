@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.1
       - name: Setup | Node.js
-        uses: re-taro/actions/setup-node@v3.5.3
+        uses: re-taro/actions/setup-node@v3.5.4
         with:
           node-version-file: .tool-versions
       - name: Test | Run changeset status
