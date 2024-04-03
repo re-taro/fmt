@@ -97,7 +97,7 @@
 		"@eslint-types/unicorn": "51.0.1",
 		"@re-taro/eslint-plugin": "workspace:*",
 		"@stylistic/eslint-plugin": "1.7.0",
-		"@typescript-eslint/eslint-plugin": "7.4.0",
+		"@typescript-eslint/eslint-plugin": "7.5.0",
 		"@typescript-eslint/parser": "7.5.0",
 		"eslint-config-flat-gitignore": "0.1.5",
 		"eslint-define-config": "2.1.0",
