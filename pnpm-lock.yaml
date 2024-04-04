@@ -86,8 +86,8 @@ importers:
         specifier: 7.5.0
         version: 7.5.0
       '@eslint-types/unicorn':
-        specifier: 51.0.1
-        version: 51.0.1
+        specifier: 52.0.0
+        version: 52.0.0
       '@re-taro/eslint-plugin':
         specifier: workspace:*
         version: link:../eslint-plugin
@@ -892,8 +892,8 @@ packages:
     resolution: {integrity: sha512-zKvsPBDq6o0L4p2sRtq8fxOtGc+mm37aZSXLsiD4DIRl2kYUxKNO9CKDTAgmuMYUzih9J7lbLxAomreLrdAiVQ==}
     dev: false
 
-  /@eslint-types/unicorn@51.0.1:
-    resolution: {integrity: sha512-RuuEK+dBISEikf7a8lrWOrDCUYv09sZfqLoG/kozH+5UqEvot1xMmGHXomGkTyB68rzjgJe0N4uESVyL62obJw==}
+  /@eslint-types/unicorn@52.0.0:
+    resolution: {integrity: sha512-1+Om/IekT0AwlPiARvhbtKsSgVMu3ZAtP99YCzhHkDSnF5f8sQegh8/3ZmMhlCnKipa7/x8qEC7Bn4rbaagnSA==}
     dev: false
 
   /@eslint/eslintrc@2.1.4:
