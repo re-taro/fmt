@@ -1,14 +1,14 @@
 import { interopDefault } from "../utils";
-import type { FlatConfigItem, OptionsStylistic } from "../types";
+import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
 
-export async function jsdoc(
-	options: OptionsStylistic = {},
-): Promise<FlatConfigItem[]> {
-	const { stylistic = true } = options;
+export async function jsdoc(options: OptionsStylistic = {}): Promise<TypedFlatConfigItem[]> {
+	const {
+		stylistic = true,
+	} = options;
 
 	return [
 		{
-			name: "re-taro:jsdoc",
+			name: "re-taro/jsdoc/rules",
 			plugins: {
 				jsdoc: await interopDefault(import("eslint-plugin-jsdoc")),
 			},
@@ -29,12 +29,12 @@ export async function jsdoc(
 				"jsdoc/require-returns-description": "warn",
 				"jsdoc/require-yields-check": "warn",
 
-				...(stylistic
+				...stylistic
 					? {
 							"jsdoc/check-alignment": "warn",
 							"jsdoc/multiline-blocks": "warn",
 						}
-					: {}),
+					: {},
 			},
 		},
 	];

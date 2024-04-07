@@ -25,25 +25,17 @@ export const GLOB_YAML = "**/*.y?(a)ml";
 export const GLOB_TOML = "**/*.toml";
 export const GLOB_HTML = "**/*.htm?(l)";
 export const GLOB_ASTRO = "**/*.astro";
+export const GLOB_GRAPHQL = "**/*.{g,graph}ql";
 
 export const GLOB_MARKDOWN_CODE = `${GLOB_MARKDOWN}/${GLOB_SRC}`;
 
 export const GLOB_TESTS = [
-	`**/__tests__/**/*.${GLOB_SRC_EXT}`,
-	`**/*.spec.${GLOB_SRC_EXT}`,
-	`**/*.test.${GLOB_SRC_EXT}`,
-	`**/*.bench.${GLOB_SRC_EXT}`,
-	`**/*.benchmark.${GLOB_SRC_EXT}`,
+  `**/__tests__/**/*.${GLOB_SRC_EXT}`,
+  `**/*.spec.${GLOB_SRC_EXT}`,
+  `**/*.test.${GLOB_SRC_EXT}`,
+  `**/*.bench.${GLOB_SRC_EXT}`,
+  `**/*.benchmark.${GLOB_SRC_EXT}`,
 ];
-
-export const GLOB_STORIES = [
-	`**/*.stories.${GLOB_SRC_EXT}`,
-	`**/*.story.${GLOB_SRC_EXT}`,
-	"**/*.stories.mdx",
-	"**/*.story.mdx",
-];
-
-export const GLOB_STORYBOOKCONFIG = `**/.storybook/config.${GLOB_SRC_EXT}`;
 
 export const GLOB_ALL_SRC = [
 	GLOB_SRC,
@@ -60,8 +52,6 @@ export const GLOB_ALL_SRC = [
 export const GLOB_EXCLUDE = [
 	"**/node_modules",
 	"**/dist",
-	"**/out",
-	"**/output",
 	"**/package-lock.json",
 	"**/yarn.lock",
 	"**/pnpm-lock.yaml",

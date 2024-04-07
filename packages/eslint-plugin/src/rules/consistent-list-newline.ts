@@ -1,34 +1,27 @@
-import type {
-	RuleFixer,
-	RuleListener,
-} from "@typescript-eslint/utils/ts-eslint";
+import type { RuleFixer, RuleListener } from "@typescript-eslint/utils/ts-eslint";
 import type { TSESTree } from "@typescript-eslint/utils";
 import { createEslintRule } from "../utils";
 
 const RULE_NAME = "consistent-list-newline";
 type MessageIds = "shouldWrap" | "shouldNotWrap";
-type Options = [
-	{
-		ArrayExpression?: boolean;
-		ArrowFunctionExpression?: boolean;
-		CallExpression?: boolean;
-		ExportNamedDeclaration?: boolean;
-		FunctionDeclaration?: boolean;
-		FunctionExpression?: boolean;
-		ImportDeclaration?: boolean;
-		NewExpression?: boolean;
-		ObjectExpression?: boolean;
-		TSInterfaceDeclaration?: boolean;
-		TSTupleType?: boolean;
-		TSTypeLiteral?: boolean;
-		TSTypeParameterDeclaration?: boolean;
-		TSTypeParameterInstantiation?: boolean;
-		ObjectPattern?: boolean;
-		ArrayPattern?: boolean;
-	},
-];
-
-function exportType<A, _ extends A>() {}
+type Options = [{
+	ArrayExpression?: boolean;
+	ArrowFunctionExpression?: boolean;
+	CallExpression?: boolean;
+	ExportNamedDeclaration?: boolean;
+	FunctionDeclaration?: boolean;
+	FunctionExpression?: boolean;
+	ImportDeclaration?: boolean;
+	NewExpression?: boolean;
+	ObjectExpression?: boolean;
+	TSInterfaceDeclaration?: boolean;
+	TSTupleType?: boolean;
+	TSTypeLiteral?: boolean;
+	TSTypeParameterDeclaration?: boolean;
+	TSTypeParameterInstantiation?: boolean;
+	ObjectPattern?: boolean;
+	ArrayPattern?: boolean;
+}];
 
 const rule = createEslintRule<Options, MessageIds>({
 	create: (context, [options = {}] = [{}]) => {
@@ -55,9 +48,7 @@ const rule = createEslintRule<Options, MessageIds>({
 			if (startToken?.type !== "Punctuator")
 				startToken = context.sourceCode.getTokenBefore(items[0]);
 
-			const endToken = context.sourceCode.getTokenAfter(
-				items[items.length - 1],
-			);
+			const endToken = context.sourceCode.getTokenAfter(items[items.length - 1]);
 			const startLine = startToken!.loc.start.line;
 
 			if (startToken!.loc.start.line === endToken!.loc.end.line)
@@ -91,7 +82,6 @@ const rule = createEslintRule<Options, MessageIds>({
 					const lastItem = items[idx - 1];
 					if (context.sourceCode.getCommentsBefore(item).length > 0)
 						return;
-
 					context.report({
 						data: {
 							name: node.type,
@@ -130,19 +120,12 @@ const rule = createEslintRule<Options, MessageIds>({
 			}
 			else if (mode === "inline" && endLoc.line !== lastLine) {
 				// If there is only one multiline item, we allow the closing bracket to be on the a different line
-				if (
-					items.length === 1
-					&& items[0].loc.start.line !== items[1]?.loc.start.line
-				)
+				if (items.length === 1 && items[0].loc.start.line !== items[1]?.loc.start.line)
 					return;
-
 				if (context.sourceCode.getCommentsAfter(lastItem).length > 0)
 					return;
 
-				const content = context.sourceCode.text.slice(
-					lastItem.range[1],
-					endRange,
-				);
+				const content = context.sourceCode.text.slice(lastItem.range[1], endRange);
 				if (content.includes("\n")) {
 					context.report({
 						data: {
@@ -168,8 +151,11 @@ const rule = createEslintRule<Options, MessageIds>({
 			ArrowFunctionExpression: (node) => {
 				if (node.params.length <= 1)
 					return;
-
-				check(node, node.params, node.returnType || node.body);
+				check(
+					node,
+					node.params,
+					node.returnType || node.body,
+				);
 			},
 			CallExpression: (node) => {
 				check(node, node.arguments);
@@ -178,10 +164,18 @@ const rule = createEslintRule<Options, MessageIds>({
 				check(node, node.specifiers);
 			},
 			FunctionDeclaration: (node) => {
-				check(node, node.params, node.returnType || node.body);
+				check(
+					node,
+					node.params,
+					node.returnType || node.body,
+				);
 			},
 			FunctionExpression: (node) => {
-				check(node, node.params, node.returnType || node.body);
+				check(
+					node,
+					node.params,
+					node.returnType || node.body,
+				);
 			},
 			ImportDeclaration: (node) => {
 				check(node, node.specifiers);
@@ -218,6 +212,7 @@ const rule = createEslintRule<Options, MessageIds>({
 		// Type assertion to check if all keys are exported
 		exportType<KeysListener, KeysOptions>();
 		exportType<KeysOptions, KeysListener>();
+
 		(Object.keys(options) as KeysOptions[]).forEach((key) => {
 			if (options[key] === false)
 				delete listenser[key];
@@ -228,44 +223,43 @@ const rule = createEslintRule<Options, MessageIds>({
 	defaultOptions: [{}],
 	meta: {
 		docs: {
-			description:
-				"Having line breaks styles to object, array and named imports",
+			description: "Having line breaks styles to object, array and named imports",
 			recommended: "stylistic",
 		},
 		fixable: "whitespace",
 		messages: {
-			shouldNotWrap:
-				"Should not have line breaks between items, in node {{name}}",
+			shouldNotWrap: "Should not have line breaks between items, in node {{name}}",
 			shouldWrap: "Should have line breaks between items, in node {{name}}",
 		},
-		schema: [
-			{
-				additionalProperties: false,
-				properties: {
-					ArrayExpression: { type: "boolean" },
-					ArrayPattern: { type: "boolean" },
-					ArrowFunctionExpression: { type: "boolean" },
-					CallExpression: { type: "boolean" },
-					ExportNamedDeclaration: { type: "boolean" },
-					FunctionDeclaration: { type: "boolean" },
-					FunctionExpression: { type: "boolean" },
-					ImportDeclaration: { type: "boolean" },
-					NewExpression: { type: "boolean" },
-					ObjectExpression: { type: "boolean" },
-					ObjectPattern: { type: "boolean" },
-					TSInterfaceDeclaration: { type: "boolean" },
-					TSTupleType: { type: "boolean" },
-					TSTypeLiteral: { type: "boolean" },
-					TSTypeParameterDeclaration: { type: "boolean" },
-					TSTypeParameterInstantiation: { type: "boolean" },
-				} satisfies Record<keyof Options[0], { type: "boolean" }>,
-				type: "object",
-			},
-		],
+		schema: [{
+			additionalProperties: false,
+			properties: {
+				ArrayExpression: { type: "boolean" },
+				ArrayPattern: { type: "boolean" },
+				ArrowFunctionExpression: { type: "boolean" },
+				CallExpression: { type: "boolean" },
+				ExportNamedDeclaration: { type: "boolean" },
+				FunctionDeclaration: { type: "boolean" },
+				FunctionExpression: { type: "boolean" },
+				ImportDeclaration: { type: "boolean" },
+				NewExpression: { type: "boolean" },
+				ObjectExpression: { type: "boolean" },
+				ObjectPattern: { type: "boolean" },
+				TSInterfaceDeclaration: { type: "boolean" },
+				TSTupleType: { type: "boolean" },
+				TSTypeLiteral: { type: "boolean" },
+				TSTypeParameterDeclaration: { type: "boolean" },
+				TSTypeParameterInstantiation: { type: "boolean" },
+			} satisfies Record<keyof Options[0], { type: "boolean" }>,
+			type: "object",
+		}],
 		type: "layout",
 	},
 	name: RULE_NAME,
 });
+
+// eslint-disable-next-line unused-imports/no-unused-vars
+function exportType<A, B extends A>() {}
 
 export default rule;
 
@@ -367,6 +361,7 @@ if (import.meta.vitest) {
 	];
 		`,
 		"const a = [(1), (2)];",
+
 	];
 
 	// Check snapshot for fixed code
@@ -415,7 +410,7 @@ if (import.meta.vitest) {
 			},
 		},
 		`
-	export default re_taro({
+	export default antfu({
 	},
 	{
 		foo: 'bar'
@@ -423,8 +418,8 @@ if (import.meta.vitest) {
 		// some comment
 		// hello
 	)`,
-		`
-	export default re_taro({
+	`
+	export default antfu({
 	},
 	// some comment
 	{
@@ -446,22 +441,21 @@ if (import.meta.vitest) {
 	});
 
 	ruleTester.run(RULE_NAME, rule as any, {
-		invalid: invalid.map(i =>
-			typeof i === "string"
-				? {
-						code: i,
-						errors: null,
-						onOutput: (output: string) => {
-							expect(output).toMatchSnapshot();
-						},
-					}
-				: {
-						...i,
-						errors: null,
-						onOutput: (output: string) => {
-							expect(output).toMatchSnapshot();
-						},
+		invalid: invalid.map(i => typeof i === "string"
+			? {
+					code: i,
+					errors: null,
+					onOutput: (output: string) => {
+						expect(output).toMatchSnapshot();
 					},
+				}
+			: {
+					...i,
+					errors: null,
+					onOutput: (output: string) => {
+						expect(output).toMatchSnapshot();
+					},
+				},
 		),
 		valid: valids,
 	});

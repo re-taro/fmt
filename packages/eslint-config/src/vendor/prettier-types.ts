@@ -7,7 +7,6 @@ export type VendoredPrettierOptions = Partial<VendoredPrettierOptionsRequired>;
 export interface VendoredPrettierOptionsRequired {
 	/**
 	 * Specify the line length that the printer will wrap on.
-	 *
 	 * @default 120
 	 */
 	printWidth: number;
@@ -40,16 +39,13 @@ export interface VendoredPrettierOptionsRequired {
 	 */
 	bracketSpacing: boolean;
 	/**
-	 * Put the `>` of a multi-line HTML (HTML, JSX, Vue, Angular) element at the
-	 * end of the last line instead of being alone on the next line (does not
-	 * apply to self closing elements).
+	 * Put the `>` of a multi-line HTML (HTML, JSX, Vue, Angular) element at the end of the last line instead of being
+	 * alone on the next line (does not apply to self closing elements).
 	 */
 	bracketSameLine: boolean;
 	/**
-	 * Put the `>` of a multi-line JSX element at the end of the last line instead
-	 * of being alone on the next line.
-	 *
-	 * @deprecated Use bracketSameLine instead
+	 * Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line.
+	 * @deprecated use bracketSameLine instead
 	 */
 	jsxBracketSameLine: boolean;
 	/**
@@ -58,21 +54,17 @@ export interface VendoredPrettierOptionsRequired {
 	rangeStart: number;
 	/**
 	 * Format only a segment of a file.
-	 *
 	 * @default Number.POSITIVE_INFINITY
 	 */
 	rangeEnd: number;
 	/**
-	 * By default, Prettier will wrap markdown text as-is since some services use
-	 * a linebreak-sensitive renderer. In some cases you may want to rely on
-	 * editor/viewer soft wrapping instead, so this option allows you to opt out.
-	 *
+	 * By default, Prettier will wrap markdown text as-is since some services use a linebreak-sensitive renderer.
+	 * In some cases you may want to rely on editor/viewer soft wrapping instead, so this option allows you to opt out.
 	 * @default "preserve"
 	 */
 	proseWrap: "always" | "never" | "preserve";
 	/**
 	 * Include parentheses around a sole arrow function parameter.
-	 *
 	 * @default "always"
 	 */
 	arrowParens: "avoid" | "always";
@@ -82,32 +74,26 @@ export interface VendoredPrettierOptionsRequired {
 	plugins: Array<string | any>;
 	/**
 	 * How to handle whitespaces in HTML.
-	 *
 	 * @default "css"
 	 */
 	htmlWhitespaceSensitivity: "css" | "strict" | "ignore";
 	/**
 	 * Which end of line characters to apply.
-	 *
 	 * @default "lf"
 	 */
 	endOfLine: "auto" | "lf" | "crlf" | "cr";
 	/**
 	 * Change when properties in objects are quoted.
-	 *
 	 * @default "as-needed"
 	 */
 	quoteProps: "as-needed" | "consistent" | "preserve";
 	/**
-	 * Whether or not to indent the code inside <script> and <style> tags in Vue
-	 * files.
-	 *
+	 * Whether or not to indent the code inside <script> and <style> tags in Vue files.
 	 * @default false
 	 */
 	vueIndentScriptAndStyle: boolean;
 	/**
 	 * Enforce single attribute per line in HTML, Vue and JSX.
-	 *
 	 * @default false
 	 */
 	singleAttributePerLine: boolean;

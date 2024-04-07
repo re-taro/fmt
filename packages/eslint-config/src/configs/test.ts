@@ -1,18 +1,20 @@
 import { interopDefault } from "../utils";
-import type {
-	FlatConfigItem,
-	OptionsFiles,
-	OptionsIsInEditor,
-	OptionsOverrides,
-} from "../types";
+import type { OptionsFiles, OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types";
 import { GLOB_TESTS } from "../globs";
 
 export async function test(
 	options: OptionsFiles & OptionsIsInEditor & OptionsOverrides = {},
-): Promise<FlatConfigItem[]> {
-	const { files = GLOB_TESTS, isInEditor = false, overrides = {} } = options;
+): Promise<TypedFlatConfigItem[]> {
+	const {
+		files = GLOB_TESTS,
+		isInEditor = false,
+		overrides = {},
+	} = options;
 
-	const [pluginVitest, pluginNoOnlyTests] = await Promise.all([
+	const [
+		pluginVitest,
+		pluginNoOnlyTests,
+	] = await Promise.all([
 		interopDefault(import("eslint-plugin-vitest")),
 		// @ts-expect-error missing types
 		interopDefault(import("eslint-plugin-no-only-tests")),
@@ -20,7 +22,7 @@ export async function test(
 
 	return [
 		{
-			name: "re-taro:test:setup",
+			name: "re-taro/test/setup",
 			plugins: {
 				test: {
 					...pluginVitest,
@@ -34,14 +36,11 @@ export async function test(
 		},
 		{
 			files,
-			name: "re-taro:test:rules",
+			name: "re-taro/test/rules",
 			rules: {
 				"node/prefer-global/process": "off",
 
-				"test/consistent-test-it": [
-					"error",
-					{ fn: "it", withinDescribe: "it" },
-				],
+				"test/consistent-test-it": ["error", { fn: "it", withinDescribe: "it" }],
 				"test/no-identical-title": "error",
 				"test/no-import-node-test": "error",
 				"test/no-only-tests": isInEditor ? "off" : "error",

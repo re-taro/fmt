@@ -1,14 +1,14 @@
-import type { FlatConfigItem, OptionsStylistic } from "../types";
+import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
 import { pluginImport, pluginRetaro } from "../plugins";
 
-export async function imports(
-	options: OptionsStylistic = {},
-): Promise<FlatConfigItem[]> {
-	const { stylistic = true } = options;
+export async function imports(options: OptionsStylistic = {}): Promise<TypedFlatConfigItem[]> {
+	const {
+		stylistic = true,
+	} = options;
 
 	return [
 		{
-			name: "re-taro:imports",
+			name: "re-taro/imports/rules",
 			plugins: {
 				"import": pluginImport,
 				"re-taro": pluginRetaro,
@@ -26,14 +26,11 @@ export async function imports(
 				"re-taro/no-inline-type-import": "error",
 				"re-taro/pad-after-last-import": "error",
 
-				...(stylistic
+				...stylistic
 					? {
-							"import/newline-after-import": [
-								"error",
-								{ considerComments: true, count: 1 },
-							],
+							"import/newline-after-import": ["error", { count: 1 }],
 						}
-					: {}),
+					: {},
 			},
 		},
 	];

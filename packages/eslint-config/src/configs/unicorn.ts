@@ -1,10 +1,10 @@
-import type { FlatConfigItem } from "../types";
+import type { TypedFlatConfigItem } from "../types";
 import { pluginUnicorn } from "../plugins";
 
-export async function unicorn(): Promise<FlatConfigItem[]> {
+export async function unicorn(): Promise<TypedFlatConfigItem[]> {
 	return [
 		{
-			name: "re-taro:unicorn",
+			name: "re-taro/unicorn/rules",
 			plugins: {
 				unicorn: pluginUnicorn,
 			},
