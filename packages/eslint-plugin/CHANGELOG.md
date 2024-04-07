@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.1
+
+### Patch Changes
+
+- [#1096](https://github.com/re-taro/fmt/pull/1096) [`f9a6bb9`](https://github.com/re-taro/fmt/commit/f9a6bb9a37d09186f1bc827c78fb8f3b392c1da9) Thanks [@re-taro](https://github.com/re-taro)! - Fix edge case bug
+
 ## 4.0.0
 
 ### Major Changes
