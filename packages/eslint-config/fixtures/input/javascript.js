@@ -30,8 +30,8 @@ people.forEach((person) => {
 
 // Use a template literal to create a multiline string
 const multilineString = `
-	This is a multiline string
-	that spans multiple lines.
+  This is a multiline string
+  that spans multiple lines.
 `;
 
 // Use destructuring assignment to extract values from an object

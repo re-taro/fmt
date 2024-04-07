@@ -1,35 +1,31 @@
 import { isPackageExists } from "local-pkg";
 import { interopDefault } from "../utils";
-import type {
-	FlatConfigItem,
-	OptionsFiles,
-	OptionsHasTypeScript,
-	OptionsOverrides,
-} from "../types";
+import type { OptionsFiles, OptionsHasTypeScript, OptionsOverrides, TypedFlatConfigItem } from "../types";
 import { GLOB_JSX, GLOB_TSX } from "../globs";
 
 // react refresh
-const ReactRefreshAllowConstantExportPackages = ["vite"];
+const ReactRefreshAllowConstantExportPackages = [
+	"vite",
+];
 
 export async function react(
 	options: OptionsHasTypeScript & OptionsOverrides & OptionsFiles = {},
-): Promise<FlatConfigItem[]> {
+): Promise<TypedFlatConfigItem[]> {
 	const {
 		files = [GLOB_JSX, GLOB_TSX],
 		overrides = {},
 		typescript = true,
 	} = options;
 
-	const [pluginReact, pluginReactHooks, pluginReactRefresh] = await Promise.all(
-		[
-			// @ts-expect-error missing types
-			interopDefault(import("eslint-plugin-react")),
-			// @ts-expect-error missing types
-			interopDefault(import("eslint-plugin-react-hooks")),
-			// @ts-expect-error missing types
-			interopDefault(import("eslint-plugin-react-refresh")),
-		] as const,
-	);
+	const [
+		pluginReact,
+		pluginReactHooks,
+		pluginReactRefresh,
+	] = await Promise.all([
+		interopDefault(import("eslint-plugin-react")),
+		interopDefault(import("eslint-plugin-react-hooks")),
+		interopDefault(import("eslint-plugin-react-refresh")),
+	] as const);
 
 	const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some(
 		i => isPackageExists(i),
@@ -37,7 +33,7 @@ export async function react(
 
 	return [
 		{
-			name: "re-taro:react:setup",
+			name: "re-taro/react/setup",
 			plugins: {
 				"react": pluginReact,
 				"react-hooks": pluginReactHooks,
@@ -58,7 +54,7 @@ export async function react(
 					},
 				},
 			},
-			name: "re-taro:react:rules",
+			name: "re-taro/react/rules",
 			rules: {
 				// recommended rules react-hooks
 				"react-hooks/exhaustive-deps": "warn",
@@ -94,12 +90,12 @@ export async function react(
 				"react/react-in-jsx-scope": "off",
 				"react/require-render-return": "error",
 
-				...(typescript
+				...typescript
 					? {
 							"react/jsx-no-undef": "off",
 							"react/prop-type": "off",
 						}
-					: {}),
+					: {},
 
 				// overrides
 				...overrides,

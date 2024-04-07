@@ -1,27 +1,31 @@
-import type {
-	FlatConfigItem,
-	OptionsFiles,
-	OptionsOverrides,
-	OptionsStylistic,
-} from "../types";
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types";
 import { GLOB_TOML } from "../globs";
 import { interopDefault } from "../utils";
 
 export async function toml(
 	options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
-): Promise<FlatConfigItem[]> {
-	const { files = [GLOB_TOML], overrides = {}, stylistic = true } = options;
+): Promise<TypedFlatConfigItem[]> {
+	const {
+		files = [GLOB_TOML],
+		overrides = {},
+		stylistic = true,
+	} = options;
 
-	const { indent = 2 } = typeof stylistic === "boolean" ? {} : stylistic;
+	const {
+		indent = 2,
+	} = typeof stylistic === "boolean" ? {} : stylistic;
 
-	const [pluginToml, parserToml] = await Promise.all([
+	const [
+		pluginToml,
+		parserToml,
+	] = await Promise.all([
 		interopDefault(import("eslint-plugin-toml")),
 		interopDefault(import("toml-eslint-parser")),
 	] as const);
 
 	return [
 		{
-			name: "re-taro:toml:setup",
+			name: "re-taro/toml/setup",
 			plugins: {
 				toml: pluginToml,
 			},
@@ -31,7 +35,7 @@ export async function toml(
 			languageOptions: {
 				parser: parserToml,
 			},
-			name: "re-taro:toml:rules",
+			name: "re-taro/toml/rules",
 			rules: {
 				"style/spaced-comment": "off",
 
@@ -45,7 +49,7 @@ export async function toml(
 
 				"toml/vue-custom-block/no-parsing-error": "error",
 
-				...(stylistic
+				...stylistic
 					? {
 							"toml/array-bracket-newline": "error",
 							"toml/array-bracket-spacing": "error",
@@ -59,7 +63,7 @@ export async function toml(
 							"toml/spaced-comment": "error",
 							"toml/table-bracket-spacing": "error",
 						}
-					: {}),
+					: {},
 
 				...overrides,
 			},

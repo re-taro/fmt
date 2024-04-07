@@ -1,13 +1,28 @@
-// @ts-expect-error missing types
+// @ts-check
+
 import styleMigrate from "@stylistic/eslint-plugin-migrate";
-import { re_taro } from "./src";
+import JITI from "jiti";
+
+const jiti = JITI(import.meta.url);
+/**
+ * @type {import('./src')}
+ */
+const { re_taro } = jiti("./src");
 
 export default re_taro(
 	{
 		vue: true,
+		react: true,
+		svelte: true,
+		astro: true,
 		typescript: true,
-		ignores: ["fixtures", "_fixtures"],
 		formatters: true,
+	},
+	{
+		ignores: [
+			"fixtures",
+			"_fixtures",
+		],
 	},
 	{
 		files: ["src/**/*.ts"],

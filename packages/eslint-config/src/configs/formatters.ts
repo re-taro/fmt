@@ -1,25 +1,14 @@
 import { isPackageExists } from "local-pkg";
-import {
-	GLOB_ASTRO,
-	GLOB_CSS,
-	GLOB_LESS,
-	GLOB_MARKDOWN,
-	GLOB_POSTCSS,
-	GLOB_SCSS,
-} from "../globs";
+import { GLOB_ASTRO, GLOB_CSS, GLOB_GRAPHQL, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS } from "../globs";
 import type { VendoredPrettierOptions } from "../vendor/prettier-types";
 import { ensurePackages, interopDefault, parserPlain } from "../utils";
-import type {
-	FlatConfigItem,
-	OptionsFormatters,
-	StylisticConfig,
-} from "../types";
+import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "../types";
 import { StylisticConfigDefaults } from "./stylistic";
 
 export async function formatters(
 	options: OptionsFormatters | true = {},
 	stylistic: StylisticConfig = {},
-): Promise<FlatConfigItem[]> {
+): Promise<TypedFlatConfigItem[]> {
 	if (options === true) {
 		options = {
 			astro: isPackageExists("astro"),
@@ -37,32 +26,26 @@ export async function formatters(
 		options.astro ? "prettier-plugin-astro" : undefined,
 	]);
 
-	if (
-		options.slidev
-		&& options.markdown !== true
-		&& options.markdown !== "prettier"
-	) {
-		throw new Error(
-			"`slidev` option only works when `markdown` is enabled with `prettier`",
-		);
-	}
+	if (options.slidev && options.markdown !== true && options.markdown !== "prettier")
+		throw new Error("`slidev` option only works when `markdown` is enabled with `prettier`");
 
-	const { indent, quotes, semi } = {
+	const {
+		indent,
+		quotes,
+		semi,
+	} = {
 		...StylisticConfigDefaults,
 		...stylistic,
 	};
 
-	const prettierOptions: VendoredPrettierOptions = Object.assign(
-		{
-			endOfLine: "auto",
-			semi,
-			singleQuote: quotes === "single",
-			tabWidth: typeof indent === "number" ? indent : 2,
-			trailingComma: "all",
-			useTabs: indent === "tab",
-		} satisfies VendoredPrettierOptions,
-		options.prettierOptions || {},
-	);
+	const prettierOptions: VendoredPrettierOptions = Object.assign({
+		endOfLine: "auto",
+		semi,
+		singleQuote: quotes === "single",
+		tabWidth: typeof indent === "number" ? indent : 2,
+		trailingComma: "all",
+		useTabs: indent === "tab",
+	} satisfies VendoredPrettierOptions, options.prettierOptions || {});
 
 	const dprintOptions = Object.assign(
 		{
@@ -75,9 +58,9 @@ export async function formatters(
 
 	const pluginFormat = await interopDefault(import("eslint-plugin-format"));
 
-	const configs: FlatConfigItem[] = [
+	const configs: TypedFlatConfigItem[] = [
 		{
-			name: "re-taro:formatters:setup",
+			name: "re-taro/formatter/setup",
 			plugins: {
 				format: pluginFormat,
 			},
@@ -91,7 +74,7 @@ export async function formatters(
 				languageOptions: {
 					parser: parserPlain,
 				},
-				name: "re-taro:formatter:css",
+				name: "re-taro/formatter/css",
 				rules: {
 					"format/prettier": [
 						"error",
@@ -107,7 +90,7 @@ export async function formatters(
 				languageOptions: {
 					parser: parserPlain,
 				},
-				name: "re-taro:formatter:scss",
+				name: "re-taro/formatter/scss",
 				rules: {
 					"format/prettier": [
 						"error",
@@ -123,7 +106,7 @@ export async function formatters(
 				languageOptions: {
 					parser: parserPlain,
 				},
-				name: "re-taro:formatter:less",
+				name: "re-taro/formatter/less",
 				rules: {
 					"format/prettier": [
 						"error",
@@ -143,7 +126,7 @@ export async function formatters(
 			languageOptions: {
 				parser: parserPlain,
 			},
-			name: "re-taro:formatter:html",
+			name: "re-taro/formatter/html",
 			rules: {
 				"format/prettier": [
 					"error",
@@ -157,7 +140,9 @@ export async function formatters(
 	}
 
 	if (options.markdown) {
-		const formater = options.markdown === true ? "prettier" : options.markdown;
+		const formater = options.markdown === true
+			? "prettier"
+			: options.markdown;
 
 		const GLOB_SLIDEV = !options.slidev
 			? []
@@ -171,7 +156,7 @@ export async function formatters(
 			languageOptions: {
 				parser: parserPlain,
 			},
-			name: "re-taro:formatter:markdown",
+			name: "re-taro/formatter/markdown",
 			rules: {
 				[`format/${formater}`]: [
 					"error",
@@ -196,7 +181,7 @@ export async function formatters(
 				languageOptions: {
 					parser: parserPlain,
 				},
-				name: "re-taro:formatter:slidev",
+				name: "re-taro/formatter/slidev",
 				rules: {
 					"format/prettier": [
 						"error",
@@ -205,7 +190,9 @@ export async function formatters(
 							...prettierOptions,
 							embeddedLanguageFormatting: "off",
 							parser: "slidev",
-							plugins: ["prettier-plugin-slidev"],
+							plugins: [
+								"prettier-plugin-slidev",
+							],
 						},
 					],
 				},
@@ -219,14 +206,16 @@ export async function formatters(
 			languageOptions: {
 				parser: parserPlain,
 			},
-			name: "re-taro:formatter:astro",
+			name: "re-taro/formatter/astro",
 			rules: {
 				"format/prettier": [
 					"error",
 					{
 						...prettierOptions,
 						parser: "astro",
-						plugins: ["prettier-plugin-astro"],
+						plugins: [
+							"prettier-plugin-astro",
+						],
 					},
 				],
 			},
@@ -235,11 +224,11 @@ export async function formatters(
 
 	if (options.graphql) {
 		configs.push({
-			files: ["**/*.graphql"],
+			files: [GLOB_GRAPHQL],
 			languageOptions: {
 				parser: parserPlain,
 			},
-			name: "re-taro:formatter:graphql",
+			name: "re-taro/formatter/graphql",
 			rules: {
 				"format/prettier": [
 					"error",

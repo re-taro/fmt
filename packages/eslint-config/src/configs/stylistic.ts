@@ -1,9 +1,5 @@
 import { interopDefault } from "../utils";
-import type {
-	FlatConfigItem,
-	OptionsOverrides,
-	StylisticConfig,
-} from "../types";
+import type { OptionsOverrides, StylisticConfig, TypedFlatConfigItem } from "../types";
 import { pluginRetaro } from "../plugins";
 
 export const StylisticConfigDefaults: StylisticConfig = {
@@ -15,7 +11,7 @@ export const StylisticConfigDefaults: StylisticConfig = {
 
 export async function stylistic(
 	options: StylisticConfig & OptionsOverrides = {},
-): Promise<FlatConfigItem[]> {
+): Promise<TypedFlatConfigItem[]> {
 	const {
 		indent,
 		jsx,
@@ -27,9 +23,7 @@ export async function stylistic(
 		...options,
 	};
 
-	const pluginStylistic = await interopDefault(
-		import("@stylistic/eslint-plugin"),
-	);
+	const pluginStylistic = await interopDefault(import("@stylistic/eslint-plugin"));
 
 	const config = pluginStylistic.configs.customize({
 		flat: true,
@@ -42,7 +36,7 @@ export async function stylistic(
 
 	return [
 		{
-			name: "re-taro:stylistic",
+			name: "re-taro/stylistic/rules",
 			plugins: {
 				"re-taro": pluginRetaro,
 				"style": pluginStylistic,

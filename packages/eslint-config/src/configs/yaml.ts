@@ -1,28 +1,32 @@
-import type {
-	FlatConfigItem,
-	OptionsFiles,
-	OptionsOverrides,
-	OptionsStylistic,
-} from "../types";
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types";
 import { GLOB_YAML } from "../globs";
 import { interopDefault } from "../utils";
 
 export async function yaml(
 	options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
-): Promise<FlatConfigItem[]> {
-	const { files = [GLOB_YAML], overrides = {}, stylistic = true } = options;
+): Promise<TypedFlatConfigItem[]> {
+	const {
+		files = [GLOB_YAML],
+		overrides = {},
+		stylistic = true,
+	} = options;
 
-	const { indent = "tab", quotes = "double" }
-		= typeof stylistic === "boolean" ? {} : stylistic;
+	const {
+		indent = 2,
+		quotes = "double",
+	} = typeof stylistic === "boolean" ? {} : stylistic;
 
-	const [pluginYaml, parserYaml] = await Promise.all([
+	const [
+		pluginYaml,
+		parserYaml,
+	] = await Promise.all([
 		interopDefault(import("eslint-plugin-yml")),
 		interopDefault(import("yaml-eslint-parser")),
 	] as const);
 
 	return [
 		{
-			name: "re-taro:yaml:setup",
+			name: "re-taro/yaml/setup",
 			plugins: {
 				yaml: pluginYaml,
 			},
@@ -32,7 +36,7 @@ export async function yaml(
 			languageOptions: {
 				parser: parserYaml,
 			},
-			name: "re-taro:yaml:rules",
+			name: "re-taro/yaml/rules",
 			rules: {
 				"style/spaced-comment": "off",
 
@@ -45,7 +49,7 @@ export async function yaml(
 
 				"yaml/vue-custom-block/no-parsing-error": "error",
 
-				...(stylistic
+				...stylistic
 					? {
 							"yaml/block-mapping-question-indicator-newline": "error",
 							"yaml/block-sequence-hyphen-indicator-newline": "error",
@@ -59,7 +63,7 @@ export async function yaml(
 							"yaml/quotes": ["error", { avoidEscape: false, prefer: quotes }],
 							"yaml/spaced-comment": "error",
 						}
-					: {}),
+					: {},
 
 				...overrides,
 			},

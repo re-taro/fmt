@@ -1,20 +1,11 @@
 import { mergeProcessors, processorPassThrough } from "eslint-merge-processors";
-import type {
-	FlatConfigItem,
-	OptionsComponentExts,
-	OptionsFiles,
-	OptionsOverrides,
-} from "../types";
-import {
-	GLOB_MARKDOWN,
-	GLOB_MARKDOWN_CODE,
-	GLOB_MARKDOWN_IN_MARKDOWN,
-} from "../globs";
+import type { OptionsComponentExts, OptionsFiles, OptionsOverrides, TypedFlatConfigItem } from "../types";
+import { GLOB_MARKDOWN, GLOB_MARKDOWN_CODE, GLOB_MARKDOWN_IN_MARKDOWN } from "../globs";
 import { interopDefault, parserPlain } from "../utils";
 
 export async function markdown(
 	options: OptionsFiles & OptionsComponentExts & OptionsOverrides = {},
-): Promise<FlatConfigItem[]> {
+): Promise<TypedFlatConfigItem[]> {
 	const {
 		componentExts = [],
 		files = [GLOB_MARKDOWN],
@@ -26,7 +17,7 @@ export async function markdown(
 
 	return [
 		{
-			name: "re-taro:markdown:setup",
+			name: "re-taro/markdown/setup",
 			plugins: {
 				markdown,
 			},
@@ -34,7 +25,7 @@ export async function markdown(
 		{
 			files,
 			ignores: [GLOB_MARKDOWN_IN_MARKDOWN],
-			name: "re-taro:markdown:processor",
+			name: "re-taro/markdown/processor",
 			// `eslint-plugin-markdown` only creates virtual files for code blocks,
 			// but not the markdown file itself. We use `eslint-merge-processors` to
 			// add a pass-through processor for the markdown file itself.
@@ -48,7 +39,7 @@ export async function markdown(
 			languageOptions: {
 				parser: parserPlain,
 			},
-			name: "re-taro:markdown:parser",
+			name: "re-taro/markdown/parser",
 		},
 		{
 			files: [
@@ -62,7 +53,7 @@ export async function markdown(
 					},
 				},
 			},
-			name: "re-taro:markdown:disables",
+			name: "re-taro/markdown/disables",
 			rules: {
 				"import/newline-after-import": "off",
 

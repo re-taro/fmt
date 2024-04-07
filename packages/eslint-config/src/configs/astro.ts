@@ -1,18 +1,21 @@
-import type {
-	FlatConfigItem,
-	OptionsFiles,
-	OptionsOverrides,
-	OptionsStylistic,
-} from "../types";
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types";
 import { GLOB_ASTRO } from "../globs";
 import { interopDefault } from "../utils";
 
 export async function astro(
 	options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
-): Promise<FlatConfigItem[]> {
-	const { files = [GLOB_ASTRO], overrides = {}, stylistic = true } = options;
+): Promise<TypedFlatConfigItem[]> {
+	const {
+		files = [GLOB_ASTRO],
+		overrides = {},
+		stylistic = true,
+	} = options;
 
-	const [pluginAstro, parserAstro, parserTs] = await Promise.all([
+	const [
+		pluginAstro,
+		parserAstro,
+		parserTs,
+	] = await Promise.all([
 		interopDefault(import("eslint-plugin-astro")),
 		interopDefault(import("astro-eslint-parser")),
 		interopDefault(import("@typescript-eslint/parser")),
@@ -20,7 +23,7 @@ export async function astro(
 
 	return [
 		{
-			name: "re-taro:astro:setup",
+			name: "re-taro/astro/setup",
 			plugins: {
 				astro: pluginAstro,
 			},
@@ -34,12 +37,12 @@ export async function astro(
 					parser: parserTs as any,
 				},
 			},
-			name: "re-taro:astro:rules",
+			name: "re-taro/astro/rules",
 			rules: {
 				"astro/no-set-html-directive": "off",
 				"astro/semi": "off",
 
-				...(stylistic
+				...stylistic
 					? {
 							"style/indent": "off",
 							"style/jsx-closing-tag-location": "off",
@@ -47,7 +50,7 @@ export async function astro(
 							"style/jsx-one-expression-per-line": "off",
 							"style/no-multiple-empty-lines": "off",
 						}
-					: {}),
+					: {},
 
 				...overrides,
 			},
