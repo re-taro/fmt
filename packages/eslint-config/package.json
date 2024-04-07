@@ -1,7 +1,7 @@
 {
 	"name": "@re-taro/eslint-config",
 	"type": "module",
-	"version": "4.0.0",
+	"version": "4.1.0",
 	"packageManager": "pnpm@8.15.6",
 	"description": "ESLint config for re-taro projects",
 	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",

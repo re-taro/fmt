@@ -1,5 +1,16 @@
 # Changelog
 
+## 4.1.0
+
+### Minor Changes
+
+- [#1096](https://github.com/re-taro/fmt/pull/1096) [`f9a6bb9`](https://github.com/re-taro/fmt/commit/f9a6bb9a37d09186f1bc827c78fb8f3b392c1da9) Thanks [@re-taro](https://github.com/re-taro)! - Support v9 change
+
+### Patch Changes
+
+- Updated dependencies [[`f9a6bb9`](https://github.com/re-taro/fmt/commit/f9a6bb9a37d09186f1bc827c78fb8f3b392c1da9)]:
+  - @re-taro/eslint-plugin@4.0.1
+
 ## 4.0.0
 
 ### Major Changes
