@@ -213,8 +213,8 @@ importers:
         specifier: 8.57.0-0
         version: 8.57.0-0
       eslint-typegen:
-        specifier: 0.2.1
-        version: 0.2.1(eslint@8.57.0)
+        specifier: 0.2.2
+        version: 0.2.2(eslint@8.57.0)
       execa:
         specifier: 8.0.1
         version: 8.0.1
@@ -3635,8 +3635,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-typegen@0.2.1(eslint@8.57.0):
-    resolution: {integrity: sha512-y2iFHUAkw0hWUmG3r7yuuMYChZloPChuduP7XPsirsgPo3nScV6OXzRYJe+ldw9uyBQXqE0ETHQ3cIQmlTtU5g==}
+  /eslint-typegen@0.2.2(eslint@8.57.0):
+    resolution: {integrity: sha512-hgKW5octZPdbnOvzWYjzdk3fD8P8n2c7RvmYlVF3zLFjkf2wyvAf9QRt/r8a7jYzqh6lZrVgr81XOe5jwz3z9g==}
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0
     dependencies:
