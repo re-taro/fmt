@@ -30,7 +30,7 @@
 		"@types/node": "20.12.7",
 		"eslint": "9.0.0",
 		"npm-run-all2": "6.1.2",
-		"rollup": "4.14.1",
+		"rollup": "4.14.2",
 		"rollup-plugin-auto-external": "2.0.0",
 		"rollup-plugin-output-size": "1.4.0",
 		"terser": "5.30.3",
