@@ -180,8 +180,8 @@ importers:
         specifier: 1.7.0
         version: 1.7.0(eslint@8.57.0)(typescript@5.4.5)
       '@types/eslint':
-        specifier: 8.56.8
-        version: 8.56.8
+        specifier: 8.56.9
+        version: 8.56.9
       '@types/fs-extra':
         specifier: 11.0.4
         version: 11.0.4
@@ -256,8 +256,8 @@ importers:
         version: 8.57.0
     devDependencies:
       '@types/eslint':
-        specifier: 8.56.8
-        version: 8.56.8
+        specifier: 8.56.9
+        version: 8.56.9
       '@types/lodash.merge':
         specifier: 4.6.9
         version: 4.6.9
@@ -1327,7 +1327,7 @@ packages:
     peerDependencies:
       eslint: '>=8.40.0'
     dependencies:
-      '@types/eslint': 8.56.8
+      '@types/eslint': 8.56.9
       acorn: 8.11.3
       escape-string-regexp: 4.0.0
       eslint: 8.57.0
@@ -1342,7 +1342,7 @@ packages:
       eslint: '>=8.40.0'
     dependencies:
       '@stylistic/eslint-plugin-js': 1.7.0(eslint@8.57.0)
-      '@types/eslint': 8.56.8
+      '@types/eslint': 8.56.9
       eslint: 8.57.0
       estraverse: 5.3.0
       picomatch: 4.0.1
@@ -1365,7 +1365,7 @@ packages:
     peerDependencies:
       eslint: '*'
     dependencies:
-      '@types/eslint': 8.56.8
+      '@types/eslint': 8.56.9
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
     transitivePeerDependencies:
@@ -1380,7 +1380,7 @@ packages:
       eslint: '>=8.40.0'
     dependencies:
       '@stylistic/eslint-plugin-js': 1.7.0(eslint@8.57.0)
-      '@types/eslint': 8.56.8
+      '@types/eslint': 8.56.9
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
     transitivePeerDependencies:
@@ -1398,7 +1398,7 @@ packages:
       '@stylistic/eslint-plugin-jsx': 1.7.0(eslint@8.57.0)
       '@stylistic/eslint-plugin-plus': 1.7.0(eslint@8.57.0)(typescript@5.4.5)
       '@stylistic/eslint-plugin-ts': 1.7.0(eslint@8.57.0)(typescript@5.4.5)
-      '@types/eslint': 8.56.8
+      '@types/eslint': 8.56.9
       eslint: 8.57.0
     transitivePeerDependencies:
       - supports-color
@@ -1421,8 +1421,8 @@ packages:
       '@types/ms': 0.7.33
     dev: false
 
-  /@types/eslint@8.56.8:
-    resolution: {integrity: sha512-LdDdQVDzDXf3ijhhMnE27C5vc0QEknD8GiMR/Hi+fVbdZNfAfCy2j69m0LjUd2MAy0+kIgnOtd5ndTmDk/VWCA==}
+  /@types/eslint@8.56.9:
+    resolution: {integrity: sha512-W4W3KcqzjJ0sHg2vAq9vfml6OhsJ53TcUjUqfzzZf/EChUtwspszj/S0pzMxnfRcO55/iGq47dscXw71Fxc4Zg==}
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
@@ -2892,7 +2892,7 @@ packages:
   /eslint-flat-config-utils@0.2.2:
     resolution: {integrity: sha512-iWjXCsGBuyqlGhmam4V9IXlxpDfnc7l0VC1YzncROF2PYIPSRpejugrIp2bXPT5mutKF3zq69Vbt7J9su9E/Lw==}
     dependencies:
-      '@types/eslint': 8.56.8
+      '@types/eslint': 8.56.9
       pathe: 1.1.2
     dev: false
 
@@ -3367,7 +3367,7 @@ packages:
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0
     dependencies:
-      '@types/eslint': 8.56.8
+      '@types/eslint': 8.56.9
       eslint: 8.57.0
       json-schema-to-typescript-lite: 14.0.0
       ohash: 1.1.3
