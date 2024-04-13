@@ -131,8 +131,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       eslint-plugin-perfectionist:
-        specifier: 2.8.0
-        version: 2.8.0(astro-eslint-parser@0.17.0)(eslint@8.57.0)(svelte-eslint-parser@0.34.1)(svelte@4.2.14)(typescript@5.4.5)(vue-eslint-parser@9.4.2)
+        specifier: 2.9.0
+        version: 2.9.0(astro-eslint-parser@0.17.0)(eslint@8.57.0)(svelte-eslint-parser@0.34.1)(svelte@4.2.14)(typescript@5.4.5)(vue-eslint-parser@9.4.2)
       eslint-plugin-react:
         specifier: 7.34.1
         version: 7.34.1(eslint@8.57.0)
@@ -3103,8 +3103,8 @@ packages:
     engines: {node: '>=5.0.0'}
     dev: false
 
-  /eslint-plugin-perfectionist@2.8.0(astro-eslint-parser@0.17.0)(eslint@8.57.0)(svelte-eslint-parser@0.34.1)(svelte@4.2.14)(typescript@5.4.5)(vue-eslint-parser@9.4.2):
-    resolution: {integrity: sha512-XBjQ4ctU1rOzQ4bFJoUowe8XdsIIz42JqNrouFlae1TO78HjoyYBaRP8+gAHDDQCSdHY10pbChyzlJeBA6D51w==}
+  /eslint-plugin-perfectionist@2.9.0(astro-eslint-parser@0.17.0)(eslint@8.57.0)(svelte-eslint-parser@0.34.1)(svelte@4.2.14)(typescript@5.4.5)(vue-eslint-parser@9.4.2):
+    resolution: {integrity: sha512-ipFtDrqtF99qVVo+FE1fo6aHyLLp7hg6PNGfzY5KxQjcl0XCbyEFvjtR1NfkHDTN9rdFeEDxg59LLOv3VOAHAw==}
     peerDependencies:
       astro-eslint-parser: ^0.16.0
       eslint: '>=8.0.0'
