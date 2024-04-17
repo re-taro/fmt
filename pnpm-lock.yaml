@@ -132,7 +132,7 @@ importers:
         version: 3.1.0
       eslint-plugin-perfectionist:
         specifier: 2.9.0
-        version: 2.9.0(astro-eslint-parser@0.17.0(typescript@5.4.5))(eslint@8.57.0)(svelte-eslint-parser@0.34.1(svelte@4.2.14))(svelte@4.2.14)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@8.57.0))
+        version: 2.9.0(astro-eslint-parser@0.17.0(typescript@5.4.5))(eslint@8.57.0)(svelte-eslint-parser@0.34.1(svelte@4.2.15))(svelte@4.2.15)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@8.57.0))
       eslint-plugin-react:
         specifier: 7.34.1
         version: 7.34.1(eslint@8.57.0)
@@ -202,7 +202,7 @@ importers:
         version: 0.1.1(eslint@8.57.0)
       eslint-plugin-svelte:
         specifier: 2.37.0
-        version: 2.37.0(eslint@8.57.0)(svelte@4.2.14)
+        version: 2.37.0(eslint@8.57.0)(svelte@4.2.15)
       eslint-plugin-vue:
         specifier: 9.25.0
         version: 9.25.0(eslint@8.57.0)
@@ -234,11 +234,11 @@ importers:
         specifier: 1.0.5
         version: 1.0.5(prettier@3.2.5)
       svelte:
-        specifier: 4.2.14
-        version: 4.2.14
+        specifier: 4.2.15
+        version: 4.2.15
       svelte-eslint-parser:
         specifier: 0.34.1
-        version: 0.34.1(svelte@4.2.14)
+        version: 0.34.1(svelte@4.2.15)
       tsx:
         specifier: 4.7.2
         version: 4.7.2
@@ -3442,8 +3442,8 @@ packages:
       svelte:
         optional: true
 
-  svelte@4.2.14:
-    resolution: {integrity: sha512-ry3+YlWqZpHxLy45MW4MZIxNdvB+Wl7p2nnstWKbOAewaJyNJuOtivSbRChcfIej6wFBjWqyKmf/NgK1uW2JAA==}
+  svelte@4.2.15:
+    resolution: {integrity: sha512-j9KJSccHgLeRERPlhMKrCXpk2TqL2m5Z+k+OBTQhZOhIdCCd3WfqV+ylPWeipEwq17P/ekiSFWwrVQv93i3bsg==}
     engines: {node: '>=16'}
 
   synckit@0.6.2:
@@ -5695,7 +5695,7 @@ snapshots:
 
   eslint-plugin-no-only-tests@3.1.0: {}
 
-  eslint-plugin-perfectionist@2.9.0(astro-eslint-parser@0.17.0(typescript@5.4.5))(eslint@8.57.0)(svelte-eslint-parser@0.34.1(svelte@4.2.14))(svelte@4.2.14)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@8.57.0)):
+  eslint-plugin-perfectionist@2.9.0(astro-eslint-parser@0.17.0(typescript@5.4.5))(eslint@8.57.0)(svelte-eslint-parser@0.34.1(svelte@4.2.15))(svelte@4.2.15)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@8.57.0)):
     dependencies:
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
@@ -5703,8 +5703,8 @@ snapshots:
       natural-compare-lite: 1.4.0
     optionalDependencies:
       astro-eslint-parser: 0.17.0(typescript@5.4.5)
-      svelte: 4.2.14
-      svelte-eslint-parser: 0.34.1(svelte@4.2.14)
+      svelte: 4.2.15
+      svelte-eslint-parser: 0.34.1(svelte@4.2.15)
       vue-eslint-parser: 9.4.2(eslint@8.57.0)
     transitivePeerDependencies:
       - supports-color
@@ -5740,7 +5740,7 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.10
 
-  eslint-plugin-svelte@2.37.0(eslint@8.57.0)(svelte@4.2.14):
+  eslint-plugin-svelte@2.37.0(eslint@8.57.0)(svelte@4.2.15):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -5754,9 +5754,9 @@ snapshots:
       postcss-safe-parser: 6.0.0(postcss@8.4.38)
       postcss-selector-parser: 6.0.16
       semver: 7.6.0
-      svelte-eslint-parser: 0.34.1(svelte@4.2.14)
+      svelte-eslint-parser: 0.34.1(svelte@4.2.15)
     optionalDependencies:
-      svelte: 4.2.14
+      svelte: 4.2.15
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -7539,7 +7539,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-eslint-parser@0.34.1(svelte@4.2.14):
+  svelte-eslint-parser@0.34.1(svelte@4.2.15):
     dependencies:
       eslint-scope: 7.2.2
       eslint-visitor-keys: 3.4.3
@@ -7547,9 +7547,9 @@ snapshots:
       postcss: 8.4.38
       postcss-scss: 4.0.9(postcss@8.4.38)
     optionalDependencies:
-      svelte: 4.2.14
+      svelte: 4.2.15
 
-  svelte@4.2.14:
+  svelte@4.2.15:
     dependencies:
       '@ampproject/remapping': 2.2.1
       '@jridgewell/sourcemap-codec': 1.4.15
