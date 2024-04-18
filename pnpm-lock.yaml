@@ -207,8 +207,8 @@ importers:
         specifier: 9.25.0
         version: 9.25.0(eslint@8.57.0)
       eslint-processor-vue-blocks:
-        specifier: 0.1.1
-        version: 0.1.1(@vue/compiler-sfc@3.4.23)(eslint@8.57.0)
+        specifier: 0.1.2
+        version: 0.1.2(@vue/compiler-sfc@3.4.23)(eslint@8.57.0)
       eslint-ts-patch:
         specifier: 8.57.0-0
         version: 8.57.0-0
@@ -1914,11 +1914,11 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-processor-vue-blocks@0.1.1:
-    resolution: {integrity: sha512-9+dU5lU881log570oBwpelaJmOfOzSniben7IWEDRYQPPWwlvaV7NhOtsTuUWDqpYT+dtKKWPsgz4OkOi+aZnA==}
+  eslint-processor-vue-blocks@0.1.2:
+    resolution: {integrity: sha512-PfpJ4uKHnqeL/fXUnzYkOax3aIenlwewXRX8jFinA1a2yCFnLgMuiH3xvCgvHHUlV2xJWQHbCTdiJWGwb3NqpQ==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.3.0
-      eslint: ^8.50.0
+      eslint: ^8.50.0 || ^9.0.0
 
   eslint-rule-composer@0.3.0:
     resolution: {integrity: sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==}
@@ -5836,7 +5836,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-processor-vue-blocks@0.1.1(@vue/compiler-sfc@3.4.23)(eslint@8.57.0):
+  eslint-processor-vue-blocks@0.1.2(@vue/compiler-sfc@3.4.23)(eslint@8.57.0):
     dependencies:
       '@vue/compiler-sfc': 3.4.23
       eslint: 8.57.0
