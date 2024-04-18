@@ -50,7 +50,7 @@
 		"eslint": "*"
 	},
 	"devDependencies": {
-		"@types/eslint": "8.56.9",
+		"@types/eslint": "8.56.10",
 		"@types/lodash.merge": "4.6.9",
 		"@types/semver": "7.5.8",
 		"@typescript-eslint/parser": "7.7.0",
