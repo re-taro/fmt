@@ -33,7 +33,7 @@
 		"rollup": "4.17.2",
 		"rollup-plugin-auto-external": "2.0.0",
 		"rollup-plugin-output-size": "1.4.0",
-		"terser": "5.30.4",
+		"terser": "5.31.0",
 		"turbo": "1.13.3",
 		"typescript": "5.4.5",
 		"vitest": "1.5.3"
