@@ -132,7 +132,7 @@ importers:
         version: 3.1.0
       eslint-plugin-perfectionist:
         specifier: 2.9.0
-        version: 2.9.0(astro-eslint-parser@1.0.1(typescript@5.4.5))(eslint@8.57.0)(svelte-eslint-parser@0.35.0(svelte@4.2.15))(svelte@4.2.15)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@8.57.0))
+        version: 2.9.0(astro-eslint-parser@1.0.2(typescript@5.4.5))(eslint@8.57.0)(svelte-eslint-parser@0.35.0(svelte@4.2.15))(svelte@4.2.15)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@8.57.0))
       eslint-plugin-react:
         specifier: 7.34.1
         version: 7.34.1(eslint@8.57.0)
@@ -189,8 +189,8 @@ importers:
         specifier: 2.4.9
         version: 2.4.9
       astro-eslint-parser:
-        specifier: 1.0.1
-        version: 1.0.1(typescript@5.4.5)
+        specifier: 1.0.2
+        version: 1.0.2(typescript@5.4.5)
       eslint-flat-config-viewer:
         specifier: 0.1.20
         version: 0.1.20(eslint@8.57.0)(typescript@5.4.5)
@@ -1306,8 +1306,8 @@ packages:
   assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
 
-  astro-eslint-parser@1.0.1:
-    resolution: {integrity: sha512-dbBnHjxLjX4G6mFo9GCl8VcHIM8xwtxfqzqefUjOU1PwRJ48qWrVeIl2/mz4Usl3YyT+BFO2AP3it17oLjdqtQ==}
+  astro-eslint-parser@1.0.2:
+    resolution: {integrity: sha512-8hJaCuqxObShWl2wEsnASqh/DbQ2O+S66m0Q3ctJlzBPEQ4pfGwwama3FCjZO3GDLQsjvn1T0v93Vxyu/+5fGw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   astrojs-compiler-sync@1.0.0:
@@ -5014,12 +5014,12 @@ snapshots:
 
   assertion-error@1.1.0: {}
 
-  astro-eslint-parser@1.0.1(typescript@5.4.5):
+  astro-eslint-parser@1.0.2(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.7.0
-      '@typescript-eslint/scope-manager': 7.7.1
-      '@typescript-eslint/types': 7.7.1
-      '@typescript-eslint/typescript-estree': 7.7.1(typescript@5.4.5)
+      '@typescript-eslint/scope-manager': 7.8.0
+      '@typescript-eslint/types': 7.8.0
+      '@typescript-eslint/typescript-estree': 7.8.0(typescript@5.4.5)
       astrojs-compiler-sync: 1.0.0(@astrojs/compiler@2.7.0)
       debug: 4.3.4
       entities: 4.5.0
@@ -5561,7 +5561,7 @@ snapshots:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
       '@jridgewell/sourcemap-codec': 1.4.15
       '@typescript-eslint/types': 7.7.1
-      astro-eslint-parser: 1.0.1(typescript@5.4.5)
+      astro-eslint-parser: 1.0.2(typescript@5.4.5)
       eslint: 8.57.0
       eslint-compat-utils: 0.5.0(eslint@8.57.0)
       globals: 13.24.0
@@ -5657,14 +5657,14 @@ snapshots:
 
   eslint-plugin-no-only-tests@3.1.0: {}
 
-  eslint-plugin-perfectionist@2.9.0(astro-eslint-parser@1.0.1(typescript@5.4.5))(eslint@8.57.0)(svelte-eslint-parser@0.35.0(svelte@4.2.15))(svelte@4.2.15)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@8.57.0)):
+  eslint-plugin-perfectionist@2.9.0(astro-eslint-parser@1.0.2(typescript@5.4.5))(eslint@8.57.0)(svelte-eslint-parser@0.35.0(svelte@4.2.15))(svelte@4.2.15)(typescript@5.4.5)(vue-eslint-parser@9.4.2(eslint@8.57.0)):
     dependencies:
       '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       minimatch: 9.0.4
       natural-compare-lite: 1.4.0
     optionalDependencies:
-      astro-eslint-parser: 1.0.1(typescript@5.4.5)
+      astro-eslint-parser: 1.0.2(typescript@5.4.5)
       svelte: 4.2.15
       svelte-eslint-parser: 0.35.0(svelte@4.2.15)
       vue-eslint-parser: 9.4.2(eslint@8.57.0)
