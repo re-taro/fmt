@@ -95,7 +95,7 @@
 		"@antfu/install-pkg": "0.3.3",
 		"@clack/prompts": "0.7.0",
 		"@re-taro/eslint-plugin": "workspace:*",
-		"@stylistic/eslint-plugin": "2.0.0",
+		"@stylistic/eslint-plugin": "2.1.0",
 		"@typescript-eslint/eslint-plugin": "7.7.1",
 		"@typescript-eslint/parser": "7.8.0",
 		"eslint-config-flat-gitignore": "0.1.5",
