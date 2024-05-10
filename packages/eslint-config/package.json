@@ -139,7 +139,7 @@
 		"eslint-processor-vue-blocks": "0.1.2",
 		"eslint-ts-patch": "8.57.0-0",
 		"eslint-typegen": "0.2.4",
-		"execa": "9.0.1",
+		"execa": "9.0.2",
 		"fast-glob": "3.3.2",
 		"fs-extra": "11.2.0",
 		"jiti": "1.21.0",
