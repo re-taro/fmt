@@ -55,7 +55,7 @@
 		"@types/semver": "7.5.8",
 		"@typescript-eslint/parser": "7.10.0",
 		"@typescript-eslint/types": "7.10.0",
-		"@typescript-eslint/typescript-estree": "7.9.0",
+		"@typescript-eslint/typescript-estree": "7.10.0",
 		"@typescript-eslint/utils": "7.9.0",
 		"ajv": "8.13.0",
 		"lodash.merge": "4.6.2",
