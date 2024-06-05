@@ -225,8 +225,8 @@ importers:
         specifier: 11.2.0
         version: 11.2.0
       jiti:
-        specifier: 1.21.0
-        version: 1.21.0
+        specifier: 1.21.3
+        version: 1.21.3
       prettier-plugin-astro:
         specifier: 0.14.0
         version: 0.14.0
@@ -2662,8 +2662,8 @@ packages:
   iterator.prototype@1.1.2:
     resolution: {integrity: sha512-DR33HMMr8EzwuRL8Y9D3u2BMj8+RqSE850jfGu59kS7tbmPLzGkZmVSfyCFSDxuZiEY6Rzt3T2NA/qU+NwVj1w==}
 
-  jiti@1.21.0:
-    resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
+  jiti@1.21.3:
+    resolution: {integrity: sha512-uy2bNX5zQ+tESe+TiC7ilGRz8AtRGmnJH55NC5S0nSUjvvvM2hJHmefHErugGXN4pNv4Qx7vLsnNw9qJ9mtIsw==}
     hasBin: true
 
   js-tokens@4.0.0:
@@ -6038,7 +6038,7 @@ snapshots:
       eslint: 8.57.0
       fast-glob: 3.3.2
       get-port-please: 3.1.2
-      jiti: 1.21.0
+      jiti: 1.21.3
       minimatch: 9.0.4
       ofetch: 1.3.4
       open: 10.1.0
@@ -6333,7 +6333,7 @@ snapshots:
     dependencies:
       debug: 4.3.4
       eslint: 8.57.0
-      jiti: 1.21.0
+      jiti: 1.21.3
     transitivePeerDependencies:
       - supports-color
 
@@ -6940,7 +6940,7 @@ snapshots:
       reflect.getprototypeof: 1.0.4
       set-function-name: 2.0.1
 
-  jiti@1.21.0: {}
+  jiti@1.21.3: {}
 
   js-tokens@4.0.0: {}
 
