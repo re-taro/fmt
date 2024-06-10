@@ -55,7 +55,7 @@
 		"eslint-processor-vue-blocks": "^0.1.1",
 		"prettier-plugin-astro": "^0.13.0 || ^0.14.0",
 		"prettier-plugin-slidev": "^1.0.5",
-		"svelte-eslint-parser": "^0.33.1 || ^0.34.0 || ^0.35.0 || ^0.36.0",
+		"svelte-eslint-parser": "^0.33.1 || ^0.34.0 || ^0.35.0 || ^0.36.0 || ^0.37.0",
 		"vue-eslint-parser": "^9.4.2"
 	},
 	"peerDependenciesMeta": {
@@ -146,7 +146,7 @@
 		"prettier-plugin-astro": "0.14.0",
 		"prettier-plugin-slidev": "1.0.5",
 		"svelte": "4.2.18",
-		"svelte-eslint-parser": "0.36.0",
+		"svelte-eslint-parser": "0.37.0",
 		"tsx": "4.15.1",
 		"vue": "3.4.27",
 		"vue-eslint-parser": "9.4.3"
