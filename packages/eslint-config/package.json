@@ -2,7 +2,7 @@
 	"name": "@re-taro/eslint-config",
 	"type": "module",
 	"version": "4.1.0",
-	"packageManager": "pnpm@9.2.0",
+	"packageManager": "pnpm@9.3.0",
 	"description": "ESLint config for re-taro projects",
 	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
 	"license": "MIT",
