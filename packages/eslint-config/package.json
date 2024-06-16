@@ -118,7 +118,7 @@
 		"eslint-plugin-unused-imports": "4.0.0",
 		"eslint-plugin-vitest": "0.5.4",
 		"eslint-plugin-yml": "1.14.0",
-		"globals": "15.4.0",
+		"globals": "15.5.0",
 		"jsonc-eslint-parser": "2.4.0",
 		"local-pkg": "0.5.0",
 		"parse-gitignore": "2.0.0",
