@@ -177,8 +177,8 @@ importers:
         version: 1.2.3
     devDependencies:
       '@stylistic/eslint-plugin-migrate':
-        specifier: 2.2.0
-        version: 2.2.0(eslint@8.57.0)(typescript@5.4.5)
+        specifier: 2.2.1
+        version: 2.2.1(eslint@8.57.0)(typescript@5.4.5)
       '@types/eslint':
         specifier: 8.56.10
         version: 8.56.10
@@ -785,8 +785,8 @@ packages:
     resolution: {integrity: sha512-Cu96Sd2By9mCNTx2iyKOmq10v22jUVQv0lQnlGNy16oE9589yE+QADPbrMGCkA51cKZSg3Pu/aTJVTGfL/qjUA==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  '@eslint-stylistic/metadata@2.2.0':
-    resolution: {integrity: sha512-LOsjJ7jt0y+fVbZllPNBzZbfpBxg9LZ881LPXLPdNRibuh9FXP8X6/Uxkaf+KQ57nBtDATs7xLuOZwLG0NH9nQ==}
+  '@eslint-stylistic/metadata@2.2.1':
+    resolution: {integrity: sha512-BU/kKchtGi2SrCvLOTGWMXllNDqHVXtaXQuNlYGQD8WyKyz9ETHSXLO7xtKw6sn/Sjw7KXx+94/3DixO7oWqkg==}
 
   '@eslint/eslintrc@2.1.4':
     resolution: {integrity: sha512-269Z39MS6wVJtsoUl10L60WdkhJVdPG24Q4eZTH3nnF6lpvSShEK3wQjDX9JRWAUPvPh7COouPpU9IrqaZFvtQ==}
@@ -1069,8 +1069,8 @@ packages:
     peerDependencies:
       eslint: '>=8.40.0'
 
-  '@stylistic/eslint-plugin-migrate@2.2.0':
-    resolution: {integrity: sha512-K2MJCOSoLhXgzHpT8bHmuXX6PrEtKcwpQnAOKxN842ep0cjtwRK96ZYg/O18amk2Z1WXOstnaxPOhAG60ZZKJQ==}
+  '@stylistic/eslint-plugin-migrate@2.2.1':
+    resolution: {integrity: sha512-2sz+9TL7ewXCPkq5OlSW6Nlv/Kw6NWatfGUqgR/NBFrlOJaEXRiWlKtqoMonxYRqJM5Wt4JaKldyXiGp3kUJww==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@stylistic/eslint-plugin-plus@2.2.0':
@@ -4659,7 +4659,7 @@ snapshots:
 
   '@eslint-community/regexpp@4.10.0': {}
 
-  '@eslint-stylistic/metadata@2.2.0': {}
+  '@eslint-stylistic/metadata@2.2.1': {}
 
   '@eslint/eslintrc@2.1.4':
     dependencies:
@@ -4931,9 +4931,9 @@ snapshots:
       estraverse: 5.3.0
       picomatch: 4.0.2
 
-  '@stylistic/eslint-plugin-migrate@2.2.0(eslint@8.57.0)(typescript@5.4.5)':
+  '@stylistic/eslint-plugin-migrate@2.2.1(eslint@8.57.0)(typescript@5.4.5)':
     dependencies:
-      '@eslint-stylistic/metadata': 2.2.0
+      '@eslint-stylistic/metadata': 2.2.1
       '@typescript-eslint/utils': 7.13.0(eslint@8.57.0)(typescript@5.4.5)
     transitivePeerDependencies:
       - eslint
