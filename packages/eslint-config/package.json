@@ -146,7 +146,7 @@
 		"prettier-plugin-astro": "0.14.0",
 		"prettier-plugin-slidev": "1.0.5",
 		"svelte": "4.2.18",
-		"svelte-eslint-parser": "0.39.1",
+		"svelte-eslint-parser": "0.39.2",
 		"tsx": "4.15.7",
 		"vue": "3.4.30",
 		"vue-eslint-parser": "9.4.3"
