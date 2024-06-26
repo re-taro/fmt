@@ -122,7 +122,7 @@
 		"jsonc-eslint-parser": "2.4.0",
 		"local-pkg": "0.5.0",
 		"parse-gitignore": "2.0.0",
-		"toml-eslint-parser": "0.9.3",
+		"toml-eslint-parser": "0.10.0",
 		"yaml-eslint-parser": "1.2.3"
 	},
 	"devDependencies": {
