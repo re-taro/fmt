@@ -113,8 +113,8 @@ importers:
         specifier: 3.2.0
         version: 3.2.0(eslint@8.57.0)
       eslint-plugin-import-x:
-        specifier: 0.5.2
-        version: 0.5.2(eslint@8.57.0)(typescript@5.5.3)
+        specifier: 0.5.3
+        version: 0.5.3(eslint@8.57.0)(typescript@5.5.3)
       eslint-plugin-jsdoc:
         specifier: 48.2.15
         version: 48.2.15(eslint@8.57.0)
@@ -1983,8 +1983,8 @@ packages:
     peerDependencies:
       eslint: ^8.40.0 || ^9.0.0
 
-  eslint-plugin-import-x@0.5.2:
-    resolution: {integrity: sha512-6f1YMmg3PdLwfiJDYnCRPfh67zJKbwbOKL99l6xGZDmIFkMht/4xyudafGEcDOmDlgp36e41W4RXDfOn7+pGRg==}
+  eslint-plugin-import-x@0.5.3:
+    resolution: {integrity: sha512-hJ/wkMcsLQXAZL3+txXIDpbW5cqwdm1rLTqV4VRY03aIbzE3zWE7rPZKW6Gzf7xyl1u3V1iYC6tOG77d9NF4GQ==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: ^8.56.0 || ^9.0.0-0
@@ -3571,6 +3571,9 @@ packages:
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
+  stable-hash@0.0.4:
+    resolution: {integrity: sha512-LjdcbuBeLcdETCrPn9i8AYAZ1eCtu4ECAWtP7UleOiZ9LzVxRzzUZEoZ8zB24nhkQnDWyET0I+3sWokSDS3E7g==}
+
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
@@ -4769,7 +4772,7 @@ snapshots:
   '@stylistic/eslint-plugin-plus@2.2.2(eslint@8.57.0)(typescript@5.5.3)':
     dependencies:
       '@types/eslint': 8.56.10
-      '@typescript-eslint/utils': 7.14.1(eslint@8.57.0)(typescript@5.5.3)
+      '@typescript-eslint/utils': 7.15.0(eslint@8.57.0)(typescript@5.5.3)
       eslint: 8.57.0
     transitivePeerDependencies:
       - supports-color
@@ -4779,7 +4782,7 @@ snapshots:
     dependencies:
       '@stylistic/eslint-plugin-js': 2.2.2(eslint@8.57.0)
       '@types/eslint': 8.56.10
-      '@typescript-eslint/utils': 7.14.1(eslint@8.57.0)(typescript@5.5.3)
+      '@typescript-eslint/utils': 7.15.0(eslint@8.57.0)(typescript@5.5.3)
       eslint: 8.57.0
     transitivePeerDependencies:
       - supports-color
@@ -5971,7 +5974,7 @@ snapshots:
       prettier: 3.3.2
       synckit: 0.9.0
 
-  eslint-plugin-import-x@0.5.2(eslint@8.57.0)(typescript@5.5.3):
+  eslint-plugin-import-x@0.5.3(eslint@8.57.0)(typescript@5.5.3):
     dependencies:
       '@typescript-eslint/utils': 7.10.0(eslint@8.57.0)(typescript@5.5.3)
       debug: 4.3.4
@@ -5982,6 +5985,7 @@ snapshots:
       is-glob: 4.0.3
       minimatch: 9.0.4
       semver: 7.6.2
+      stable-hash: 0.0.4
       tslib: 2.6.2
     transitivePeerDependencies:
       - supports-color
@@ -7795,6 +7799,8 @@ snapshots:
   spdx-license-ids@3.0.12: {}
 
   sprintf-js@1.0.3: {}
+
+  stable-hash@0.0.4: {}
 
   stackback@0.0.2: {}
 
