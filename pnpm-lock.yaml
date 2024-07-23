@@ -180,8 +180,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(eslint@8.57.0)(typescript@5.5.3)
       '@types/eslint':
-        specifier: 8.56.10
-        version: 8.56.10
+        specifier: 8.56.11
+        version: 8.56.11
       '@types/fs-extra':
         specifier: 11.0.4
         version: 11.0.4
@@ -256,8 +256,8 @@ importers:
         version: 8.57.0
     devDependencies:
       '@types/eslint':
-        specifier: 8.56.10
-        version: 8.56.10
+        specifier: 8.56.11
+        version: 8.56.11
       '@types/lodash.merge':
         specifier: 4.6.9
         version: 4.6.9
@@ -1096,8 +1096,8 @@ packages:
   '@types/debug@4.1.10':
     resolution: {integrity: sha512-tOSCru6s732pofZ+sMv9o4o3Zc+Sa8l3bxd/tweTQudFn06vAzb13ZX46Zi6m6EJ+RUbRTHvgQJ1gBtSgkaUYA==}
 
-  '@types/eslint@8.56.10':
-    resolution: {integrity: sha512-Shavhk87gCtY2fhXDctcfS3e6FdxWkCx1iUZ9eEUbh7rTqlZT0/IzOkCOVt0fCjcFuZ9FPYfuezTBImfHCDBGQ==}
+  '@types/eslint@8.56.11':
+    resolution: {integrity: sha512-sVBpJMf7UPo/wGecYOpk2aQya2VUGeHhe38WG7/mN5FufNSubf5VT9Uh9Uyp8/eLJpu1/tuhJ/qTo4mhSB4V4Q==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -4321,7 +4321,7 @@ snapshots:
 
   '@es-joy/jsdoccomment@0.43.1':
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 8.56.11
       '@types/estree': 1.0.5
       '@typescript-eslint/types': 7.10.0
       comment-parser: 1.4.1
@@ -4745,7 +4745,7 @@ snapshots:
 
   '@stylistic/eslint-plugin-js@2.2.2(eslint@8.57.0)':
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 8.56.11
       acorn: 8.11.3
       eslint: 8.57.0
       eslint-visitor-keys: 4.0.0
@@ -4754,7 +4754,7 @@ snapshots:
   '@stylistic/eslint-plugin-jsx@2.2.2(eslint@8.57.0)':
     dependencies:
       '@stylistic/eslint-plugin-js': 2.2.2(eslint@8.57.0)
-      '@types/eslint': 8.56.10
+      '@types/eslint': 8.56.11
       eslint: 8.57.0
       estraverse: 5.3.0
       picomatch: 4.0.2
@@ -4770,7 +4770,7 @@ snapshots:
 
   '@stylistic/eslint-plugin-plus@2.2.2(eslint@8.57.0)(typescript@5.5.3)':
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 8.56.11
       '@typescript-eslint/utils': 7.15.0(eslint@8.57.0)(typescript@5.5.3)
       eslint: 8.57.0
     transitivePeerDependencies:
@@ -4780,7 +4780,7 @@ snapshots:
   '@stylistic/eslint-plugin-ts@2.2.2(eslint@8.57.0)(typescript@5.5.3)':
     dependencies:
       '@stylistic/eslint-plugin-js': 2.2.2(eslint@8.57.0)
-      '@types/eslint': 8.56.10
+      '@types/eslint': 8.56.11
       '@typescript-eslint/utils': 7.15.0(eslint@8.57.0)(typescript@5.5.3)
       eslint: 8.57.0
     transitivePeerDependencies:
@@ -4793,7 +4793,7 @@ snapshots:
       '@stylistic/eslint-plugin-jsx': 2.2.2(eslint@8.57.0)
       '@stylistic/eslint-plugin-plus': 2.2.2(eslint@8.57.0)(typescript@5.5.3)
       '@stylistic/eslint-plugin-ts': 2.2.2(eslint@8.57.0)(typescript@5.5.3)
-      '@types/eslint': 8.56.10
+      '@types/eslint': 8.56.11
       eslint: 8.57.0
     transitivePeerDependencies:
       - supports-color
@@ -4809,7 +4809,7 @@ snapshots:
     dependencies:
       '@types/ms': 0.7.33
 
-  '@types/eslint@8.56.10':
+  '@types/eslint@8.56.11':
     dependencies:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
@@ -5923,7 +5923,7 @@ snapshots:
 
   eslint-flat-config-utils@0.2.5:
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 8.56.11
       pathe: 1.1.2
 
   eslint-flat-config-viewer@0.1.20(eslint@8.57.0)(typescript@5.5.3):
@@ -6240,7 +6240,7 @@ snapshots:
 
   eslint-typegen@0.2.4(eslint@8.57.0):
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 8.56.11
       eslint: 8.57.0
       json-schema-to-typescript-lite: 14.0.1
       ohash: 1.1.3
