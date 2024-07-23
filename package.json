@@ -35,7 +35,7 @@
 		"rollup-plugin-output-size": "1.4.0",
 		"terser": "5.31.3",
 		"turbo": "1.13.4",
-		"typescript": "5.5.3",
+		"typescript": "5.5.4",
 		"vitest": "2.0.4"
 	},
 	"pnpm": {
