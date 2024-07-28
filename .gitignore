@@ -77,10 +77,5 @@ dist
 # IDE
 .idea
 
-*.lerna_backup
-
-# turborepo
-.turbo
-
 # Auto generated
 **/typegen.d.ts
