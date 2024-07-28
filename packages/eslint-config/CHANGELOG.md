@@ -1,5 +1,16 @@
 # Changelog
 
+## 5.0.0
+
+### Major Changes
+
+- [#1419](https://github.com/re-taro/fmt/pull/1419) [`5caa8f2`](https://github.com/re-taro/fmt/commit/5caa8f2705f6abf64bf235d349fa0e9c8f1f3f15) Thanks [@re-taro](https://github.com/re-taro)! - Support ESLint v9
+
+### Patch Changes
+
+- Updated dependencies [[`5caa8f2`](https://github.com/re-taro/fmt/commit/5caa8f2705f6abf64bf235d349fa0e9c8f1f3f15)]:
+  - @re-taro/eslint-plugin@5.0.0
+
 ## 4.1.0
 
 ### Minor Changes
