@@ -126,7 +126,7 @@
 		"yaml-eslint-parser": "1.2.3"
 	},
 	"devDependencies": {
-		"@stylistic/eslint-plugin-migrate": "2.3.0",
+		"@stylistic/eslint-plugin-migrate": "2.4.0",
 		"@types/eslint": "8.56.11",
 		"@types/fs-extra": "11.0.4",
 		"@types/prompts": "2.4.9",
