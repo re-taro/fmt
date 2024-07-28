@@ -12,20 +12,6 @@ const POSSIBLE_IMPORT_SOURCES = [
 ]
 
 export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "problem",
-		docs: {
-			description: "Disallow import promises as.",
-			recommended: "stylistic",
-		},
-		fixable: "code",
-		schema: [],
-		messages: {
-			noImportPromisesAs: "Expect no import promises as.",
-		},
-	},
-	defaultOptions: [],
 	create: (context) => {
 		const sourceCode = context.sourceCode
 		const { text } = sourceCode
@@ -46,8 +32,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 					return
 				}
 				context.report({
-					node,
-					messageId: "noImportPromisesAs",
 					*fix(fixer) {
 						const s = promisesSpecifier.range[0]
 						let e = promisesSpecifier.range[1]
@@ -61,8 +45,24 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 							`\nimport ${as} from "${node.source.value}/promises";`,
 						)
 					},
+					messageId: "noImportPromisesAs",
+					node,
 				})
 			},
 		}
 	},
+	defaultOptions: [],
+	meta: {
+		docs: {
+			description: "Disallow import promises as.",
+			recommended: "stylistic",
+		},
+		fixable: "code",
+		messages: {
+			noImportPromisesAs: "Expect no import promises as.",
+		},
+		schema: [],
+		type: "problem",
+	},
+	name: RULE_NAME,
 })

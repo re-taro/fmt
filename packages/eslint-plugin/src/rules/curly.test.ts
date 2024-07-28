@@ -3,6 +3,119 @@ import { run } from "./_test"
 import { RULE_NAME, rule } from "./curly"
 
 run({
+	invalid: [
+		{
+			code: $`
+        if (true)
+          console.log({
+            foo
+          })
+      `,
+			description: "multi",
+			output: $`
+        if (true) {
+          console.log({
+            foo
+          })
+        }
+      `,
+		},
+		{
+			code: $`
+        if (true)
+          if (false) console.log('bar')
+      `,
+			description: "nested",
+			output: $`
+        if (true) {
+          if (false) console.log('bar')
+        }
+      `,
+		},
+		{
+			code: $`
+        if (true)
+          console.log('bar')
+        else
+          console.log({
+            foo
+          })
+      `,
+			description: "consistent",
+			output: $`
+        if (true) {
+          console.log('bar')
+        }
+        else {
+          console.log({
+            foo
+          })
+        }
+      `,
+		},
+		{
+			code: $`
+        while (true)
+          console.log({
+            foo
+          })
+      `,
+			description: "while",
+			output: $`
+        while (true) {
+          console.log({
+            foo
+          })
+        }
+      `,
+		},
+		{
+			code: $`
+        if (true)
+          console.log('foo')
+        else if (false)
+          console.log('bar')
+        else if (true)
+          console.log('baz')
+        else {
+          console.log('qux')
+        }
+      `,
+			description: "if-else-if",
+			output: $`
+        if (true) {
+          console.log('foo')
+        }
+        else if (false) {
+          console.log('bar')
+        }
+        else if (true) {
+          console.log('baz')
+        }
+        else {
+          console.log('qux')
+        }
+      `,
+		},
+		{
+			code: $`
+        if (
+          foo
+          || bar
+        )
+          return true
+      `,
+			description: "multiline-test",
+			output: $`
+        if (
+          foo
+          || bar
+        ) {
+          return true
+        }
+      `,
+		},
+	],
 	name: RULE_NAME,
 	rule,
 	valid: [
@@ -53,118 +166,5 @@ run({
           return x;
       }
     `,
-	],
-	invalid: [
-		{
-			description: "multi",
-			code: $`
-        if (true)
-          console.log({
-            foo
-          })
-      `,
-			output: $`
-        if (true) {
-          console.log({
-            foo
-          })
-        }
-      `,
-		},
-		{
-			description: "nested",
-			code: $`
-        if (true)
-          if (false) console.log('bar')
-      `,
-			output: $`
-        if (true) {
-          if (false) console.log('bar')
-        }
-      `,
-		},
-		{
-			description: "consistent",
-			code: $`
-        if (true)
-          console.log('bar')
-        else
-          console.log({
-            foo
-          })
-      `,
-			output: $`
-        if (true) {
-          console.log('bar')
-        }
-        else {
-          console.log({
-            foo
-          })
-        }
-      `,
-		},
-		{
-			description: "while",
-			code: $`
-        while (true)
-          console.log({
-            foo
-          })
-      `,
-			output: $`
-        while (true) {
-          console.log({
-            foo
-          })
-        }
-      `,
-		},
-		{
-			description: "if-else-if",
-			code: $`
-        if (true)
-          console.log('foo')
-        else if (false)
-          console.log('bar')
-        else if (true)
-          console.log('baz')
-        else {
-          console.log('qux')
-        }
-      `,
-			output: $`
-        if (true) {
-          console.log('foo')
-        }
-        else if (false) {
-          console.log('bar')
-        }
-        else if (true) {
-          console.log('baz')
-        }
-        else {
-          console.log('qux')
-        }
-      `,
-		},
-		{
-			description: "multiline-test",
-			code: $`
-        if (
-          foo
-          || bar
-        )
-          return true
-      `,
-			output: $`
-        if (
-          foo
-          || bar
-        ) {
-          return true
-        }
-      `,
-		},
 	],
 })

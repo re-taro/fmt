@@ -7,20 +7,6 @@ export type MessageIds = "noInlineTypeImport"
 export type Options = []
 
 export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "layout",
-		docs: {
-			description: "Disallow inline type import.",
-			recommended: "stylistic",
-		},
-		fixable: "code",
-		schema: [],
-		messages: {
-			noInlineTypeImport: "Expected no inline type import.",
-		},
-	},
-	defaultOptions: [],
 	create: (context) => {
 		const sourceCode = context.sourceCode
 
@@ -42,8 +28,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 				)
 				if (typeSpecifiers.length > 0 && valueSpecifiers.length > 0) {
 					context.report({
-						node,
-						messageId: "noInlineTypeImport",
 						fix(fixer) {
 							const typeSpecifiersText = typeSpecifiers
 								.map(s => sourceCode.getText(s).replace("type ", ""))
@@ -64,12 +48,12 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 
 							return fixer.replaceText(node, texts.join("\n"))
 						},
+						messageId: "noInlineTypeImport",
+						node,
 					})
 				}
 				else if (typeSpecifiers.length > 0) {
 					context.report({
-						node,
-						messageId: "noInlineTypeImport",
 						fix(fixer) {
 							const typeSpecifiersText = typeSpecifiers
 								.map(s => sourceCode.getText(s).replace("type ", ""))
@@ -80,9 +64,25 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 								`import type { ${typeSpecifiersText} } from "${node.source.value}";`,
 							)
 						},
+						messageId: "noInlineTypeImport",
+						node,
 					})
 				}
 			},
 		}
 	},
+	defaultOptions: [],
+	meta: {
+		docs: {
+			description: "Disallow inline type import.",
+			recommended: "stylistic",
+		},
+		fixable: "code",
+		messages: {
+			noInlineTypeImport: "Expected no inline type import.",
+		},
+		schema: [],
+		type: "layout",
+	},
+	name: RULE_NAME,
 })

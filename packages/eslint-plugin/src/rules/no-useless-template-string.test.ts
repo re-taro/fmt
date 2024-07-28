@@ -18,12 +18,12 @@ const invalids = [
 ]
 
 run({
+	invalid: invalids.map(i => ({
+		code: i[0],
+		errors: [{ messageId: "noUselessTemplateString" }],
+		output: i[1],
+	})),
 	name: RULE_NAME,
 	rule,
 	valid: valids,
-	invalid: invalids.map(i => ({
-		code: i[0],
-		output: i[1],
-		errors: [{ messageId: "noUselessTemplateString" }],
-	})),
 })

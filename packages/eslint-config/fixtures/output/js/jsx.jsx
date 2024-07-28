@@ -1,8 +1,8 @@
 export function HelloWorld({
-	greeting = "hello",
 	greeted = "\"World\"",
-	silent = false,
+	greeting = "hello",
 	onMouseOver,
+	silent = false,
 }) {
 	if (!greeting) {
 		return null
@@ -13,7 +13,7 @@ export function HelloWorld({
 		.replace(/\.\d+/g, "")
 
 	return (
-		<div className="HelloWorld" title={`You are visitor number ${num}`} onMouseOver={onMouseOver}>
+		<div className="HelloWorld" onMouseOver={onMouseOver} title={`You are visitor number ${num}`}>
 			<strong>{ greeting.slice(0, 1).toUpperCase() + greeting.slice(1).toLowerCase() }</strong>
 			{greeting.endsWith(",")
 				? " "

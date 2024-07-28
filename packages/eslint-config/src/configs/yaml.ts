@@ -3,7 +3,7 @@ import { GLOB_YAML } from "../globs"
 import { interopDefault } from "../utils"
 
 export async function yaml(
-	options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
+	options: OptionsFiles & OptionsOverrides & OptionsStylistic = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		files = [GLOB_YAML],

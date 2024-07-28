@@ -3,7 +3,7 @@ import { GLOB_ASTRO } from "../globs"
 import { ensurePackages, interopDefault } from "../utils"
 
 export async function astro(
-	options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
+	options: OptionsFiles & OptionsOverrides & OptionsStylistic = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		files = [GLOB_ASTRO],

@@ -23,12 +23,6 @@ export default re_taro(
     ],
   },
   {
-    files: ['packages/eslint-config/src/**/*.ts'],
-    rules: {
-      'perfectionist/sort-objects': 'error',
-    },
-  },
-  {
     files: ['packages/eslint-config/src/configs/*.ts'],
     plugins: {
       'style-migrate': styleMigrate,

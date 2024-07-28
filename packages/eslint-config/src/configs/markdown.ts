@@ -4,7 +4,7 @@ import { GLOB_MARKDOWN, GLOB_MARKDOWN_CODE, GLOB_MARKDOWN_IN_MARKDOWN } from "..
 import { interopDefault, parserPlain } from "../utils"
 
 export async function markdown(
-	options: OptionsFiles & OptionsComponentExts & OptionsOverrides = {},
+	options: OptionsComponentExts & OptionsFiles & OptionsOverrides = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		componentExts = [],

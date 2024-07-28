@@ -6,10 +6,10 @@ import fg from "fast-glob"
 import type { OptionsConfig, TypedFlatConfigItem } from "../src/types"
 
 beforeAll(async () => {
-	await fs.rm("_fixtures", { recursive: true, force: true })
+	await fs.rm("_fixtures", { force: true, recursive: true })
 })
 afterAll(async () => {
-	await fs.rm("_fixtures", { recursive: true, force: true })
+	await fs.rm("_fixtures", { force: true, recursive: true })
 })
 
 runWithConfig("js", {
@@ -17,15 +17,15 @@ runWithConfig("js", {
 	vue: false,
 })
 runWithConfig("all", {
+	astro: true,
+	svelte: true,
 	typescript: true,
 	vue: true,
-	svelte: true,
-	astro: true,
 })
 runWithConfig("no-style", {
+	stylistic: false,
 	typescript: true,
 	vue: true,
-	stylistic: false,
 })
 
 // https://github.com/antfu/eslint-config/issues/255
@@ -59,22 +59,22 @@ runWithConfig(
 runWithConfig(
 	"with-formatters",
 	{
-		typescript: true,
-		vue: true,
 		astro: true,
 		formatters: true,
+		typescript: true,
+		vue: true,
 	},
 )
 
 runWithConfig(
 	"no-markdown-with-formatters",
 	{
-		jsx: false,
-		vue: false,
-		markdown: false,
 		formatters: {
 			markdown: true,
 		},
+		jsx: false,
+		markdown: false,
+		vue: false,
 	},
 )
 
@@ -105,11 +105,11 @@ export default re_taro(
 		})
 
 		const files = await fg("**/*", {
+			cwd: target,
 			ignore: [
 				"node_modules",
 				"eslint.config.js",
 			],
-			cwd: target,
 		})
 
 		await Promise.all(files.map(async (file) => {

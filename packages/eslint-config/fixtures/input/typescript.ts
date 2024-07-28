@@ -1,14 +1,14 @@
 // Define a TypeScript interface
-interface Person { 
-  name: string; age: number;
+interface Person {
+  name: string;
+  age: number;
 }
 
 // Create an array of objects with the defined interface
 const people: Person[] = [
   { name: 'Alice', age: 30 },
  { name: 'Bob', age: 25 },
-  { name: 'Charlie', 
-  age: 35 }
+  { name: 'Charlie', age: 35 }
 ];
 
 // eslint-disable-next-line no-console
@@ -37,7 +37,7 @@ interface Car {
 
 // Create objects using the interface
 const car1: Car = { make: 'Toyota' };
-const car2:  Car = { 
+const car2:  Car = {
   make: 'Ford', model: 'Focus' };
 
 // Use union types
@@ -77,4 +77,3 @@ var fn = (): string => {
 }
 
 log(car1, car2, favoriteFruit, numericValue, fn())
-

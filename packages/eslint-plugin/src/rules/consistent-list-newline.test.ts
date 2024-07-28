@@ -198,7 +198,6 @@ const valids: ValidTestCase[] = [
 		},
 	},
 	{
-		description: "Ignore when there is a comment",
 		code: $`
 			{
 				"foo": {          "a": "1",
@@ -207,6 +206,7 @@ const valids: ValidTestCase[] = [
 				},
 			}
 		`,
+		description: "Ignore when there is a comment",
 		languageOptions: {
 			parser: jsoncParser,
 		},
@@ -228,32 +228,32 @@ const invalid: InvalidTestCase[] = [
 	"const foo = (\na, b): {a:b} => {}",
 	"interface Foo {\na: 1,b: 2\n}",
 	{
-		description: "Add delimiter to avoid syntax error, (interface)",
 		code: "interface Foo {a: 1\nb: 2\n}",
+		description: "Add delimiter to avoid syntax error, (interface)",
 		output: o => expect(o)
 			.toMatchInlineSnapshot(`"interface Foo {a: 1,b: 2,}"`),
 	},
 	{
-		description: "Delimiter already exists",
 		code: "interface Foo {a: 1;\nb: 2,\nc: 3}",
+		description: "Delimiter already exists",
 		output: o => expect(o)
 			.toMatchInlineSnapshot(`"interface Foo {a: 1;b: 2,c: 3}"`),
 	},
 	{
-		description: "Delimiter in the middle",
 		code: $`
 			export interface Foo {        a: 1
 				b: Pick<Bar, 'baz'>
 				c: 3
 			}
 		`,
+		description: "Delimiter in the middle",
 		output: o => expect(o)
 			.toMatchInlineSnapshot(`"export interface Foo {        a: 1,	b: Pick<Bar, 'baz'>,	c: 3,}"`),
 	},
 	"type Foo = {\na: 1,b: 2\n}",
 	{
-		description: "Add delimiter to avoid syntax error, (type)",
 		code: "type Foo = {a: 1\nb: 2\n}",
+		description: "Add delimiter to avoid syntax error, (type)",
 		output: o => expect(o)
 			.toMatchInlineSnapshot(`"type Foo = {a: 1,b: 2,}"`),
 	},
@@ -270,8 +270,8 @@ const invalid: InvalidTestCase[] = [
 	"foo(([\na,b]) => {})",
 
 	{
-		description: "CRLF",
 		code: "const a = {foo: \"bar\", \r\nbar: 2\r\n}",
+		description: "CRLF",
 		output: o => expect(o.replace(/\r/g, "\\r"))
 			.toMatchInlineSnapshot(`"const a = {foo: "bar", bar: 2}"`),
 	},
@@ -485,7 +485,6 @@ const invalid: InvalidTestCase[] = [
 		`),
 	},
 	{
-		description: "Only ignore when there is a comment",
 		code: $`
 			{
 				"foo": {          "a": "1",
@@ -496,6 +495,7 @@ const invalid: InvalidTestCase[] = [
 				"2"]
 			}
 		`,
+		description: "Only ignore when there is a comment",
 		languageOptions: {
 			parser: jsoncParser,
 		},
@@ -512,10 +512,6 @@ const invalid: InvalidTestCase[] = [
 ]
 
 run({
-	name: RULE_NAME,
-	rule,
-
-	valid: valids,
 	invalid: invalid.map((i): InvalidTestCase =>
 		typeof i === "string"
 			? {
@@ -524,4 +520,8 @@ run({
 				}
 			: i,
 	),
+	name: RULE_NAME,
+
+	rule,
+	valid: valids,
 })

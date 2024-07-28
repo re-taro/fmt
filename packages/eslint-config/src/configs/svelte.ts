@@ -3,7 +3,7 @@ import type { OptionsFiles, OptionsHasTypeScript, OptionsOverrides, OptionsStyli
 import { GLOB_SVELTE } from "../globs"
 
 export async function svelte(
-	options: OptionsHasTypeScript & OptionsOverrides & OptionsStylistic & OptionsFiles = {},
+	options: OptionsFiles & OptionsHasTypeScript & OptionsOverrides & OptionsStylistic = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		files = [GLOB_SVELTE],

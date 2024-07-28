@@ -7,29 +7,15 @@ export type MessageIds = "missingCurlyBrackets"
 export type Options = []
 
 export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "layout",
-		docs: {
-			description: "Enforce style of curly bracket",
-			recommended: "stylistic",
-		},
-		fixable: "whitespace",
-		schema: [],
-		messages: {
-			missingCurlyBrackets: "Expect curly brackets",
-		},
-	},
-	defaultOptions: [],
 	create: (context) => {
-		function requireCurly(body: TSESTree.Statement | TSESTree.Expression): boolean {
+		function requireCurly(body: TSESTree.Expression | TSESTree.Statement): boolean {
 			if (!body)
 				return false
 			// already has curly brackets
 			if (body.type === "BlockStatement")
 				return true
 			// nested statements
-			if (["IfStatement", "WhileStatement", "DoWhileStatement", "ForStatement", "ForInStatement", "ForOfStatement"].includes(body.type))
+			if (["DoWhileStatement", "ForInStatement", "ForOfStatement", "ForStatement", "IfStatement", "WhileStatement"].includes(body.type))
 				return true
 			const statement = body.type === "ExpressionStatement"
 				? body.expression
@@ -44,13 +30,13 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 			if (body.type === "BlockStatement")
 				return
 			context.report({
-				node: body,
-				messageId: "missingCurlyBrackets",
 				*fix(fixer) {
 					yield fixer.insertTextAfter(body, "\n}")
 					const token = context.sourceCode.getTokenBefore(body)
 					yield fixer.insertTextAfterRange(token!.range, " {")
 				},
+				messageId: "missingCurlyBrackets",
+				node: body,
 			})
 		}
 
@@ -63,6 +49,18 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 		}
 
 		return {
+			DoWhileStatement(node) {
+				check([node.body], [node.test])
+			},
+			ForInStatement(node) {
+				check([node.body])
+			},
+			ForOfStatement(node) {
+				check([node.body])
+			},
+			ForStatement(node) {
+				check([node.body])
+			},
 			IfStatement(node) {
 				const parent = node.parent
 				// Already handled by the upper level if statement
@@ -90,18 +88,20 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 			WhileStatement(node) {
 				check([node.body], [node.test])
 			},
-			DoWhileStatement(node) {
-				check([node.body], [node.test])
-			},
-			ForStatement(node) {
-				check([node.body])
-			},
-			ForInStatement(node) {
-				check([node.body])
-			},
-			ForOfStatement(node) {
-				check([node.body])
-			},
 		}
 	},
+	defaultOptions: [],
+	meta: {
+		docs: {
+			description: "Enforce style of curly bracket",
+			recommended: "stylistic",
+		},
+		fixable: "whitespace",
+		messages: {
+			missingCurlyBrackets: "Expect curly brackets",
+		},
+		schema: [],
+		type: "layout",
+	},
+	name: RULE_NAME,
 })

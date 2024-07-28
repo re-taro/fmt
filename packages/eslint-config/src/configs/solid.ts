@@ -3,7 +3,7 @@ import type { OptionsFiles, OptionsHasTypeScript, OptionsOverrides, OptionsTypeS
 import { GLOB_JSX, GLOB_TSX } from "../globs"
 
 export async function solid(
-	options: OptionsHasTypeScript & OptionsOverrides & OptionsFiles & OptionsTypeScriptWithTypes = {},
+	options: OptionsFiles & OptionsHasTypeScript & OptionsOverrides & OptionsTypeScriptWithTypes = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		files = [GLOB_JSX, GLOB_TSX],

@@ -4,69 +4,30 @@ import { createEslintRule } from "../utils"
 import type { RuleModule } from "../utils"
 
 export const RULE_NAME = "consistent-list-newline"
-export type MessageIds = "shouldWrap" | "shouldNotWrap"
+export type MessageIds = "shouldNotWrap" | "shouldWrap"
 export type Options = [{
 	ArrayExpression?: boolean
+	ArrayPattern?: boolean
 	ArrowFunctionExpression?: boolean
 	CallExpression?: boolean
 	ExportNamedDeclaration?: boolean
 	FunctionDeclaration?: boolean
 	FunctionExpression?: boolean
 	ImportDeclaration?: boolean
+	JSONArrayExpression?: boolean
+	JSONObjectExpression?: boolean
+	JSXOpeningElement?: boolean
 	NewExpression?: boolean
 	ObjectExpression?: boolean
+	ObjectPattern?: boolean
 	TSInterfaceDeclaration?: boolean
 	TSTupleType?: boolean
 	TSTypeLiteral?: boolean
 	TSTypeParameterDeclaration?: boolean
 	TSTypeParameterInstantiation?: boolean
-	ObjectPattern?: boolean
-	ArrayPattern?: boolean
-	JSXOpeningElement?: boolean
-	JSONArrayExpression?: boolean
-	JSONObjectExpression?: boolean
 }]
 
 export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "layout",
-		docs: {
-			description: "Having line breaks styles to object, array and named imports",
-			recommended: "stylistic",
-		},
-		fixable: "whitespace",
-		schema: [{
-			type: "object",
-			properties: {
-				ArrayExpression: { type: "boolean" },
-				ArrowFunctionExpression: { type: "boolean" },
-				CallExpression: { type: "boolean" },
-				ExportNamedDeclaration: { type: "boolean" },
-				FunctionDeclaration: { type: "boolean" },
-				FunctionExpression: { type: "boolean" },
-				ImportDeclaration: { type: "boolean" },
-				NewExpression: { type: "boolean" },
-				ObjectExpression: { type: "boolean" },
-				TSInterfaceDeclaration: { type: "boolean" },
-				TSTupleType: { type: "boolean" },
-				TSTypeLiteral: { type: "boolean" },
-				TSTypeParameterDeclaration: { type: "boolean" },
-				TSTypeParameterInstantiation: { type: "boolean" },
-				ObjectPattern: { type: "boolean" },
-				ArrayPattern: { type: "boolean" },
-				JSXOpeningElement: { type: "boolean" },
-				JSONArrayExpression: { type: "boolean" },
-				JSONObjectExpression: { type: "boolean" },
-			} satisfies Record<keyof Options[0], { type: "boolean" }>,
-			additionalProperties: false,
-		}],
-		messages: {
-			shouldWrap: "Should have line breaks between items, in node {{name}}",
-			shouldNotWrap: "Should not have line breaks between items, in node {{name}}",
-		},
-	},
-	defaultOptions: [{}],
 	create: (context, [options = {}] = [{}]) => {
 		function removeLines(fixer: RuleFixer, start: number, end: number, delimiter?: string): RuleFix {
 			const range = [start, end] as const
@@ -142,14 +103,14 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 
 				if (mode === "newline" && currentStart === lastLine) {
 					context.report({
-						node: item,
-						messageId: "shouldWrap",
 						data: {
 							name: node.type,
 						},
 						*fix(fixer) {
 							yield fixer.insertTextBefore(item, "\n")
 						},
+						messageId: "shouldWrap",
+						node: item,
 					})
 				}
 				else if (mode === "inline" && currentStart !== lastLine) {
@@ -159,14 +120,14 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 					const content = context.sourceCode.text.slice(lastItem!.range[1], item.range[0])
 					if (content.includes("\n")) {
 						context.report({
-							node: item,
-							messageId: "shouldNotWrap",
 							data: {
 								name: node.type,
 							},
 							*fix(fixer) {
 								yield removeLines(fixer, lastItem!.range[1], item.range[0], getDelimiter(node, lastItem))
 							},
+							messageId: "shouldNotWrap",
+							node: item,
 						})
 					}
 				}
@@ -185,14 +146,14 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 			const lastItem = items[items.length - 1]!
 			if (mode === "newline" && endLoc.line === lastLine) {
 				context.report({
-					node: lastItem,
-					messageId: "shouldWrap",
 					data: {
 						name: node.type,
 					},
 					*fix(fixer) {
 						yield fixer.insertTextAfter(lastItem, "\n")
 					},
+					messageId: "shouldWrap",
+					node: lastItem,
 				})
 			}
 			else if (mode === "inline" && endLoc.line !== lastLine) {
@@ -205,33 +166,37 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 				const content = context.sourceCode.text.slice(lastItem.range[1], endRange)
 				if (content.includes("\n")) {
 					context.report({
-						node: lastItem,
-						messageId: "shouldNotWrap",
 						data: {
 							name: node.type,
 						},
 						*fix(fixer) {
 							yield removeLines(fixer, lastItem.range[1], endRange, getDelimiter(node, lastItem))
 						},
+						messageId: "shouldNotWrap",
+						node: lastItem,
 					})
 				}
 			}
 		}
 
 		const listenser = {
-			ObjectExpression: (node) => {
-				check(node, node.properties)
-			},
 			ArrayExpression: (node) => {
 				check(node, node.elements)
 			},
-			ImportDeclaration: (node) => {
+			ArrayPattern(node) {
+				check(node, node.elements)
+			},
+			ArrowFunctionExpression: (node) => {
+				if (node.params.length <= 1)
+					return
 				check(
 					node,
-					node.specifiers[0]?.type === "ImportDefaultSpecifier"
-						? node.specifiers.slice(1)
-						: node.specifiers,
+					node.params,
+					node.returnType || node.body,
 				)
+			},
+			CallExpression: (node) => {
+				check(node, node.arguments)
 			},
 			ExportNamedDeclaration: (node) => {
 				check(node, node.specifiers)
@@ -250,47 +215,13 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 					node.returnType || node.body,
 				)
 			},
-			ArrowFunctionExpression: (node) => {
-				if (node.params.length <= 1)
-					return
+			ImportDeclaration: (node) => {
 				check(
 					node,
-					node.params,
-					node.returnType || node.body,
+					node.specifiers[0]?.type === "ImportDefaultSpecifier"
+						? node.specifiers.slice(1)
+						: node.specifiers,
 				)
-			},
-			CallExpression: (node) => {
-				check(node, node.arguments)
-			},
-			TSInterfaceDeclaration: (node) => {
-				check(node, node.body.body)
-			},
-			TSTypeLiteral: (node) => {
-				check(node, node.members)
-			},
-			TSTupleType: (node) => {
-				check(node, node.elementTypes)
-			},
-			NewExpression: (node) => {
-				check(node, node.arguments)
-			},
-			TSTypeParameterDeclaration(node) {
-				check(node, node.params)
-			},
-			TSTypeParameterInstantiation(node) {
-				check(node, node.params)
-			},
-			ObjectPattern(node) {
-				check(node, node.properties, node.typeAnnotation)
-			},
-			ArrayPattern(node) {
-				check(node, node.elements)
-			},
-			JSXOpeningElement(node) {
-				if (node.attributes.some(attr => attr.loc.start.line !== attr.loc.end.line))
-					return
-
-				check(node, node.attributes)
 			},
 			JSONArrayExpression(node: TSESTree.ArrayExpression) {
 				if (hasComments(node))
@@ -302,6 +233,36 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 					return
 
 				check(node, node.properties)
+			},
+			JSXOpeningElement(node) {
+				if (node.attributes.some(attr => attr.loc.start.line !== attr.loc.end.line))
+					return
+
+				check(node, node.attributes)
+			},
+			NewExpression: (node) => {
+				check(node, node.arguments)
+			},
+			ObjectExpression: (node) => {
+				check(node, node.properties)
+			},
+			ObjectPattern(node) {
+				check(node, node.properties, node.typeAnnotation)
+			},
+			TSInterfaceDeclaration: (node) => {
+				check(node, node.body.body)
+			},
+			TSTupleType: (node) => {
+				check(node, node.elementTypes)
+			},
+			TSTypeLiteral: (node) => {
+				check(node, node.members)
+			},
+			TSTypeParameterDeclaration(node) {
+				check(node, node.params)
+			},
+			TSTypeParameterInstantiation(node) {
+				check(node, node.params)
 			},
 		} satisfies RuleListener
 
@@ -319,6 +280,45 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 
 		return listenser
 	},
+	defaultOptions: [{}],
+	meta: {
+		docs: {
+			description: "Having line breaks styles to object, array and named imports",
+			recommended: "stylistic",
+		},
+		fixable: "whitespace",
+		messages: {
+			shouldNotWrap: "Should not have line breaks between items, in node {{name}}",
+			shouldWrap: "Should have line breaks between items, in node {{name}}",
+		},
+		schema: [{
+			additionalProperties: false,
+			properties: {
+				ArrayExpression: { type: "boolean" },
+				ArrayPattern: { type: "boolean" },
+				ArrowFunctionExpression: { type: "boolean" },
+				CallExpression: { type: "boolean" },
+				ExportNamedDeclaration: { type: "boolean" },
+				FunctionDeclaration: { type: "boolean" },
+				FunctionExpression: { type: "boolean" },
+				ImportDeclaration: { type: "boolean" },
+				JSONArrayExpression: { type: "boolean" },
+				JSONObjectExpression: { type: "boolean" },
+				JSXOpeningElement: { type: "boolean" },
+				NewExpression: { type: "boolean" },
+				ObjectExpression: { type: "boolean" },
+				ObjectPattern: { type: "boolean" },
+				TSInterfaceDeclaration: { type: "boolean" },
+				TSTupleType: { type: "boolean" },
+				TSTypeLiteral: { type: "boolean" },
+				TSTypeParameterDeclaration: { type: "boolean" },
+				TSTypeParameterInstantiation: { type: "boolean" },
+			} satisfies Record<keyof Options[0], { type: "boolean" }>,
+			type: "object",
+		}],
+		type: "layout",
+	},
+	name: RULE_NAME,
 })
 
 // eslint-disable-next-line ts/explicit-function-return-type

@@ -5,7 +5,7 @@ import { pluginRetaro } from "../plugins"
 import { interopDefault, renameRules } from "../utils"
 
 export async function typescript(
-	options: OptionsFiles & OptionsComponentExts & OptionsOverrides & OptionsTypeScriptWithTypes & OptionsTypeScriptParserOptions & OptionsProjectType = {},
+	options: OptionsComponentExts & OptionsFiles & OptionsOverrides & OptionsProjectType & OptionsTypeScriptParserOptions & OptionsTypeScriptWithTypes = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		componentExts = [],
@@ -122,13 +122,14 @@ export async function typescript(
 				"no-redeclare": "off",
 				"no-use-before-define": "off",
 				"no-useless-constructor": "off",
+				"re-taro/no-inline-type-import": "error",
 				"ts/ban-ts-comment": ["error", { "ts-expect-error": "allow-with-description" }],
 				"ts/consistent-type-definitions": ["error", "interface"],
+
 				"ts/consistent-type-imports": ["error", {
 					disallowTypeAnnotations: false,
 					prefer: "type-imports",
 				}],
-
 				"ts/method-signature-style": ["error", "property"], // https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
 				"ts/no-dupe-class-members": "error",
 				"ts/no-dynamic-delete": "off",
@@ -146,9 +147,8 @@ export async function typescript(
 				"ts/no-useless-constructor": "off",
 				"ts/no-wrapper-object-types": "error",
 				"ts/triple-slash-reference": "off",
-				"ts/unified-signatures": "off",
 
-				"re-taro/no-inline-type-import": "error",
+				"ts/unified-signatures": "off",
 
 				...(type === "lib"
 					? {

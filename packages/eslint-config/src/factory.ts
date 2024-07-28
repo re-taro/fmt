@@ -77,7 +77,7 @@ export const defaultPluginRenaming = {
  */
 export function re_taro(
 	options: OptionsConfig & TypedFlatConfigItem = {},
-	...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]
+	...userConfigs: Awaitable<FlatConfigComposer<any, any> | Linter.Config[] | TypedFlatConfigItem | TypedFlatConfigItem[]>[]
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
 	const {
 		astro: enableAstro = false,
@@ -101,8 +101,17 @@ export function re_taro(
 			? options.stylistic
 			: {}
 
+	const perfectionistOptions = typeof options.perfectionist === "object"
+		? options.perfectionist
+		: {}
+
 	if (stylisticOptions && !("jsx" in stylisticOptions))
 		stylisticOptions.jsx = enableJsx
+
+	perfectionistOptions.jsx = enableJsx
+	perfectionistOptions.astro = !!enableAstro
+	perfectionistOptions.svelte = !!enableSvelte
+	perfectionistOptions.vue = !!enableVue
 
 	const configs: Awaitable<TypedFlatConfigItem[]>[] = []
 
@@ -135,9 +144,7 @@ export function re_taro(
 		}),
 		unicorn(),
 		command(),
-
-		// Optional plugins (installed but not enabled by default)
-		perfectionist(),
+		perfectionist(perfectionistOptions),
 	)
 
 	if (enableVue) {

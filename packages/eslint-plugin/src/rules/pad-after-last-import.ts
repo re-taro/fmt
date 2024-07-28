@@ -7,20 +7,6 @@ export type MessageIds = "padAfterLastImport"
 export type Options = []
 
 export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
-	name: RULE_NAME,
-	meta: {
-		type: "problem",
-		docs: {
-			description: "Pad after the last import.",
-			recommended: "stylistic",
-		},
-		fixable: "code",
-		schema: [],
-		messages: {
-			padAfterLastImport: "Expected a blank line after the last import.",
-		},
-	},
-	defaultOptions: [],
 	create: (context) => {
 		const sourceCode = context.sourceCode
 		let lastImportNode: TSESTree.ImportDeclaration | null = null
@@ -45,13 +31,27 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 						|| expectedLine === firstCommentAfterTokenStartLine)
 					) {
 						context.report({
-							node: lastImportNode,
-							messageId: "padAfterLastImport",
 							fix: fixer => fixer.insertTextAfter(lastImportNode!, "\n"),
+							messageId: "padAfterLastImport",
+							node: lastImportNode,
 						})
 					}
 				}
 			},
 		}
 	},
+	defaultOptions: [],
+	meta: {
+		docs: {
+			description: "Pad after the last import.",
+			recommended: "stylistic",
+		},
+		fixable: "code",
+		messages: {
+			padAfterLastImport: "Expected a blank line after the last import.",
+		},
+		schema: [],
+		type: "problem",
+	},
+	name: RULE_NAME,
 })

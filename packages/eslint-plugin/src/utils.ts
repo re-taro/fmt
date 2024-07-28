@@ -23,8 +23,8 @@ function RuleCreator(urlCreator: (name: string) => string) {
 		TOptions extends readonly unknown[],
 		TMessageIds extends string,
 	>({
-		name,
-    meta,
+		meta,
+    name,
     ...rule
 	}: Readonly<RuleWithMetaAndName<TOptions, TMessageIds>>): RuleModule<TOptions> {
 		return createRule<TOptions, TMessageIds>({
@@ -73,4 +73,4 @@ function createRule<
 
 export const createEslintRule = RuleCreator(
 	ruleName => `${blobUrl}${ruleName}.test.ts`,
-) as any as <TOptions extends readonly unknown[], TMessageIds extends string>({ name, meta, ...rule }: Readonly<RuleWithMetaAndName<TOptions, TMessageIds>>) => RuleModule<TOptions>
+) as any as <TOptions extends readonly unknown[], TMessageIds extends string>({ meta, name, ...rule }: Readonly<RuleWithMetaAndName<TOptions, TMessageIds>>) => RuleModule<TOptions>
