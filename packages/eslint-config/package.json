@@ -100,7 +100,7 @@
 		"@typescript-eslint/parser": "7.17.0",
 		"eslint-config-flat-gitignore": "0.1.8",
 		"eslint-define-config": "2.1.0",
-		"eslint-flat-config-utils": "0.2.5",
+		"eslint-flat-config-utils": "0.3.0",
 		"eslint-merge-processors": "0.1.0",
 		"eslint-plugin-eslint-comments": "3.2.0",
 		"eslint-plugin-import-x": "3.0.1",
