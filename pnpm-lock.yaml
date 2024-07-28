@@ -229,8 +229,8 @@ importers:
         specifier: 7.10.0
         version: 7.10.0
       '@typescript-eslint/typescript-estree':
-        specifier: 7.12.0
-        version: 7.12.0(typescript@5.5.4)
+        specifier: 7.17.0
+        version: 7.17.0(typescript@5.5.4)
       '@typescript-eslint/utils':
         specifier: 7.10.0
         version: 7.10.0(eslint@9.1.1)(typescript@5.5.4)
@@ -5337,7 +5337,7 @@ snapshots:
       debug: 4.3.5
       globby: 11.1.0
       is-glob: 4.0.3
-      minimatch: 9.0.4
+      minimatch: 9.0.5
       semver: 7.6.3
       ts-api-utils: 1.3.0(typescript@5.5.4)
     optionalDependencies:

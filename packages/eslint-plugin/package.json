@@ -55,7 +55,7 @@
     "@types/semver": "7.5.8",
     "@typescript-eslint/parser": "7.17.0",
     "@typescript-eslint/types": "7.10.0",
-    "@typescript-eslint/typescript-estree": "7.12.0",
+    "@typescript-eslint/typescript-estree": "7.17.0",
     "@typescript-eslint/utils": "7.10.0",
     "eslint": "9.1.1",
     "eslint-vitest-rule-tester": "0.3.3",
