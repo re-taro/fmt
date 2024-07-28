@@ -28,7 +28,6 @@ runWithConfig("no-style", {
 	vue: true,
 });
 
-// https://github.com/antfu/eslint-config/issues/255
 runWithConfig(
 	"ts-override",
 	{
@@ -41,12 +40,11 @@ runWithConfig(
 	},
 );
 
-// https://github.com/antfu/eslint-config/issues/255
 runWithConfig(
 	"ts-strict",
 	{
 		typescript: {
-			tsconfigPath: "../../../../tsconfig.json",
+			tsconfigPath: "./tsconfig.json",
 		},
 	},
 	{
@@ -89,6 +87,28 @@ function runWithConfig(name: string, configs: OptionsConfig, ...items: TypedFlat
 				return !src.includes("node_modules");
 			},
 		});
+		await fs.writeFile(join(target, "tsconfig.json"), `
+{
+	"compilerOptions": {
+		"target": "ESNext" ,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"types": ["vitest/globals"],
+		"allowArbitraryExtensions": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"declaration": true,
+		"noEmit": true,
+		"isolatedDeclarations": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"skipLibCheck": true
+	},
+	"include": ["**/*.ts", "**/*.tsx"],
+}
+
+		`);
 		await fs.writeFile(join(target, "eslint.config.js"), `
 // @eslint-disable
 import { re_taro } from '@re-taro/eslint-config'
@@ -109,6 +129,7 @@ export default re_taro(
 			ignore: [
 				"node_modules",
 				"eslint.config.js",
+				"tsconfig.json",
 			],
 		});
 
