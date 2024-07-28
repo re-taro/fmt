@@ -1,15 +1,23 @@
 {
 	"compilerOptions": {
-		"target": "es2020",
-		"lib": ["esnext"],
-		"module": "esnext",
-		"moduleResolution": "bundler",
-		"resolveJsonModule": true,
-		"types": ["vitest/importMeta"],
+		"target": "ESNext" ,
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"types": ["vitest/globals"],
+		"allowArbitraryExtensions": true,
 		"strict": true,
-		"strictNullChecks": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"declaration": true,
+		"noEmit": true,
+		"isolatedDeclarations": true,
 		"esModuleInterop": true,
-		"skipDefaultLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
 		"skipLibCheck": true
-	}
+	},
+	"include": ["packages/**/src/**/*", "packages/eslint-config/test/*.ts"],
+	"exclude": [
+		"packages/eslint-config/fixtures/**/*.*",
+		"packages/eslint-config/_fixtures/**/*.*"
+	]
 }

@@ -1,10 +1,11 @@
-import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
-import { pluginImport, pluginRetaro } from "../plugins";
+import type { OptionsStylistic, TypedFlatConfigItem } from "../types"
+import { pluginImport, pluginRetaro } from "../plugins"
+import { GLOB_DTS } from "../globs"
 
 export async function imports(options: OptionsStylistic = {}): Promise<TypedFlatConfigItem[]> {
 	const {
 		stylistic = true,
-	} = options;
+	} = options
 
 	return [
 		{
@@ -17,14 +18,10 @@ export async function imports(options: OptionsStylistic = {}): Promise<TypedFlat
 				"import/first": "error",
 				"import/no-duplicates": "error",
 				"import/no-mutable-exports": "error",
-
 				"import/no-named-default": "error",
 				"import/no-self-import": "error",
 				"import/no-webpack-loader-syntax": "error",
 				"import/order": "error",
-				"re-taro/import-dedupe": "error",
-				"re-taro/no-inline-type-import": "error",
-				"re-taro/pad-after-last-import": "error",
 
 				...stylistic
 					? {
@@ -33,5 +30,12 @@ export async function imports(options: OptionsStylistic = {}): Promise<TypedFlat
 					: {},
 			},
 		},
-	];
+		{
+			files: [GLOB_DTS],
+			name: "re-taro/imports/rules/dts",
+			rules: {
+				"import/no-duplicates": "off",
+			},
+		},
+	]
 }

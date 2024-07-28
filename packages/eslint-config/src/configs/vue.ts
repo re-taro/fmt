@@ -1,31 +1,31 @@
-import { mergeProcessors } from "eslint-merge-processors";
-import { ensurePackages, interopDefault } from "../utils";
-import type { OptionsFiles, OptionsHasTypeScript, OptionsOverrides, OptionsStylistic, OptionsVue, TypedFlatConfigItem } from "../types";
-import { GLOB_VUE } from "../globs";
+import { mergeProcessors } from "eslint-merge-processors"
+import { ensurePackages, interopDefault } from "../utils"
+import type { OptionsFiles, OptionsHasTypeScript, OptionsOverrides, OptionsStylistic, OptionsVue, TypedFlatConfigItem } from "../types"
+import { GLOB_VUE } from "../globs"
 
 export async function vue(
-	options: OptionsVue & OptionsHasTypeScript & OptionsOverrides & OptionsStylistic & OptionsFiles = {},
+	options: OptionsFiles & OptionsHasTypeScript & OptionsOverrides & OptionsStylistic & OptionsVue = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		files = [GLOB_VUE],
 		overrides = {},
 		stylistic = true,
 		vueVersion = 3,
-	} = options;
-
-	const sfcBlocks = options.sfcBlocks === true
-		? {}
-		: options.sfcBlocks ?? {};
-
-	const {
-		indent = "tab",
-	} = typeof stylistic === "boolean" ? {} : stylistic;
+	} = options
 
 	await ensurePackages([
 		"eslint-plugin-vue",
 		"vue-eslint-parser",
 		"eslint-processor-vue-blocks",
-	]);
+	])
+
+	const sfcBlocks = options.sfcBlocks === true
+		? {}
+		: options.sfcBlocks ?? {}
+
+	const {
+		indent = 2,
+	} = typeof stylistic === "boolean" ? {} : stylistic
 
 	const [
 		pluginVue,
@@ -36,7 +36,7 @@ export async function vue(
 		interopDefault(import("eslint-plugin-vue")),
 		interopDefault(import("vue-eslint-parser")),
 		interopDefault(import("eslint-processor-vue-blocks")),
-	] as const);
+	] as const)
 
 	return [
 		{
@@ -192,5 +192,5 @@ export async function vue(
 				...overrides,
 			},
 		},
-	];
+	]
 }

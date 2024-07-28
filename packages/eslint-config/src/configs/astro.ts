@@ -1,15 +1,20 @@
-import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types";
-import { GLOB_ASTRO } from "../globs";
-import { interopDefault } from "../utils";
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types"
+import { GLOB_ASTRO } from "../globs"
+import { ensurePackages, interopDefault } from "../utils"
 
 export async function astro(
-	options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
+	options: OptionsFiles & OptionsOverrides & OptionsStylistic = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		files = [GLOB_ASTRO],
 		overrides = {},
 		stylistic = true,
-	} = options;
+	} = options
+
+	await ensurePackages([
+		"eslint-plugin-astro",
+		"astro-eslint-parser",
+	])
 
 	const [
 		pluginAstro,
@@ -19,7 +24,7 @@ export async function astro(
 		interopDefault(import("eslint-plugin-astro")),
 		interopDefault(import("astro-eslint-parser")),
 		interopDefault(import("@typescript-eslint/parser")),
-	] as const);
+	] as const)
 
 	return [
 		{
@@ -31,16 +36,28 @@ export async function astro(
 		{
 			files,
 			languageOptions: {
+				globals: pluginAstro.environments.astro.globals,
 				parser: parserAstro,
 				parserOptions: {
 					extraFileExtensions: [".astro"],
-					parser: parserTs as any,
+					parser: parserTs,
 				},
+				sourceType: "module",
 			},
 			name: "re-taro/astro/rules",
+			processor: "astro/client-side-ts",
 			rules: {
+				// use recommended rules
+				"astro/missing-client-only-directive-value": "error",
+				"astro/no-conflict-set-directives": "error",
+				"astro/no-deprecated-astro-canonicalurl": "error",
+				"astro/no-deprecated-astro-fetchcontent": "error",
+				"astro/no-deprecated-astro-resolve": "error",
+				"astro/no-deprecated-getentrybyslug": "error",
 				"astro/no-set-html-directive": "off",
+				"astro/no-unused-define-vars-in-style": "error",
 				"astro/semi": "off",
+				"astro/valid-compile": "error",
 
 				...stylistic
 					? {
@@ -55,5 +72,5 @@ export async function astro(
 				...overrides,
 			},
 		},
-	];
+	]
 }

@@ -1,5 +1,5 @@
-import type { TypedFlatConfigItem } from "../types";
-import { pluginUnicorn } from "../plugins";
+import type { TypedFlatConfigItem } from "../types"
+import { pluginUnicorn } from "../plugins"
 
 export async function unicorn(): Promise<TypedFlatConfigItem[]> {
 	return [
@@ -37,5 +37,5 @@ export async function unicorn(): Promise<TypedFlatConfigItem[]> {
 				"unicorn/throw-new-error": "error",
 			},
 		},
-	];
+	]
 }

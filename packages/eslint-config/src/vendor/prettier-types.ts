@@ -2,117 +2,138 @@
  * Vendor types from Prettier so we don't rely on the dependency.
  */
 
-export type VendoredPrettierOptions = Partial<VendoredPrettierOptionsRequired>;
+export type VendoredPrettierOptions = Partial<VendoredPrettierOptionsRequired>
 
 export interface VendoredPrettierOptionsRequired {
 	/**
-	 * Specify the line length that the printer will wrap on.
-	 * @default 120
+	 * Include parentheses around a sole arrow function parameter.
+	 * @default "always"
 	 */
-	printWidth: number;
+	arrowParens: "always" | "avoid"
 	/**
-	 * Specify the number of spaces per indentation-level.
+	 * Put the `>` of a multi-line HTML (HTML, XML, JSX, Vue, Angular) element at the end of the last line instead of being
+	 * alone on the next line (does not apply to self closing elements).
 	 */
-	tabWidth: number;
-	/**
-	 * Indent lines with tabs instead of spaces
-	 */
-	useTabs?: boolean;
-	/**
-	 * Print semicolons at the ends of statements.
-	 */
-	semi: boolean;
-	/**
-	 * Use single quotes instead of double quotes.
-	 */
-	singleQuote: boolean;
-	/**
-	 * Use single quotes in JSX.
-	 */
-	jsxSingleQuote: boolean;
-	/**
-	 * Print trailing commas wherever possible.
-	 */
-	trailingComma: "none" | "es5" | "all";
+	bracketSameLine: boolean
 	/**
 	 * Print spaces between brackets in object literals.
 	 */
-	bracketSpacing: boolean;
+	bracketSpacing: boolean
 	/**
-	 * Put the `>` of a multi-line HTML (HTML, JSX, Vue, Angular) element at the end of the last line instead of being
-	 * alone on the next line (does not apply to self closing elements).
+	 * Which end of line characters to apply.
+	 * @default "lf"
 	 */
-	bracketSameLine: boolean;
+	endOfLine: "auto" | "cr" | "crlf" | "lf"
+	/**
+	 * How to handle whitespaces in HTML.
+	 * @default "css"
+	 */
+	htmlWhitespaceSensitivity: "css" | "ignore" | "strict"
 	/**
 	 * Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line.
 	 * @deprecated use bracketSameLine instead
 	 */
-	jsxBracketSameLine: boolean;
+	jsxBracketSameLine: boolean
 	/**
-	 * Format only a segment of a file.
+	 * Use single quotes in JSX.
 	 */
-	rangeStart: number;
+	jsxSingleQuote: boolean
 	/**
-	 * Format only a segment of a file.
-	 * @default Number.POSITIVE_INFINITY
+	 * Provide ability to support new languages to prettier.
 	 */
-	rangeEnd: number;
+	plugins: Array<any | string>
+	/**
+	 * Specify the line length that the printer will wrap on.
+	 * @default 120
+	 */
+	printWidth: number
 	/**
 	 * By default, Prettier will wrap markdown text as-is since some services use a linebreak-sensitive renderer.
 	 * In some cases you may want to rely on editor/viewer soft wrapping instead, so this option allows you to opt out.
 	 * @default "preserve"
 	 */
-	proseWrap: "always" | "never" | "preserve";
-	/**
-	 * Include parentheses around a sole arrow function parameter.
-	 * @default "always"
-	 */
-	arrowParens: "avoid" | "always";
-	/**
-	 * Provide ability to support new languages to prettier.
-	 */
-	plugins: Array<string | any>;
-	/**
-	 * How to handle whitespaces in HTML.
-	 * @default "css"
-	 */
-	htmlWhitespaceSensitivity: "css" | "strict" | "ignore";
-	/**
-	 * Which end of line characters to apply.
-	 * @default "lf"
-	 */
-	endOfLine: "auto" | "lf" | "crlf" | "cr";
+	proseWrap: "always" | "never" | "preserve"
 	/**
 	 * Change when properties in objects are quoted.
 	 * @default "as-needed"
 	 */
-	quoteProps: "as-needed" | "consistent" | "preserve";
+	quoteProps: "as-needed" | "consistent" | "preserve"
+	/**
+	 * Format only a segment of a file.
+	 * @default Number.POSITIVE_INFINITY
+	 */
+	rangeEnd: number
+	/**
+	 * Format only a segment of a file.
+	 */
+	rangeStart: number
+	/**
+	 * Print semicolons at the ends of statements.
+	 */
+	semi: boolean
+	/**
+	 * Enforce single attribute per line in HTML, XML, Vue and JSX.
+	 * @default false
+	 */
+	singleAttributePerLine: boolean
+	/**
+	 * Use single quotes instead of double quotes.
+	 */
+	singleQuote: boolean
+	/**
+	 * Specify the number of spaces per indentation-level.
+	 */
+	tabWidth: number
+	/**
+	 * Print trailing commas wherever possible.
+	 */
+	trailingComma: "all" | "es5" | "none"
 	/**
 	 * Whether or not to indent the code inside <script> and <style> tags in Vue files.
 	 * @default false
 	 */
-	vueIndentScriptAndStyle: boolean;
+	vueIndentScriptAndStyle: boolean
 	/**
-	 * Enforce single attribute per line in HTML, Vue and JSX.
+	 * How to handle whitespaces in XML.
+	 * @default "preserve"
+	 */
+	xmlQuoteAttributes: "double" | "preserve" | "single"
+
+	/**
+	 * Whether to put a space inside the brackets of self-closing XML elements.
+	 * @default true
+	 */
+	xmlSelfClosingSpace: boolean
+	/**
+	 * Whether to sort attributes by key in XML elements.
 	 * @default false
 	 */
-	singleAttributePerLine: boolean;
+	xmlSortAttributesByKey: boolean
+	/**
+	 * How to handle whitespaces in XML.
+	 * @default "ignore"
+	 */
+	xmlWhitespaceSensitivity: "ignore" | "preserve" | "strict"
+	/**
+	 * Indent lines with tabs instead of spaces
+	 */
+	useTabs?: boolean
 }
 
 export type BuiltInParserName =
 	| "acorn"
 	| "angular"
+	| "babel"
 	| "babel-flow"
 	| "babel-ts"
-	| "babel"
 	| "css"
 	| "espree"
 	| "flow"
 	| "glimmer"
 	| "graphql"
 	| "html"
-	| "json-stringify"
 	| "json"
+	| "json-stringify"
 	| "json5"
 	| "less"
 	| "lwc"
@@ -122,7 +143,8 @@ export type BuiltInParserName =
 	| "scss"
 	| "typescript"
 	| "vue"
-	| "yaml";
+	| "xml"
+	| "yaml"
 
 // This utility is here to handle the case where you have an explicit union
 // between string literals and the generic string type. It would normally
@@ -133,4 +155,4 @@ export type BuiltInParserName =
 //   https://github.com/microsoft/TypeScript/issues/29729#issuecomment-700527227
 export type LiteralUnion<T extends U, U = string> =
 	| T
-	| (Pick<U, never> & { _?: never | undefined });
+	| ({ _?: never | undefined } & Pick<U, never>)
