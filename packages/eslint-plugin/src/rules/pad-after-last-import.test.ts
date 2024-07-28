@@ -1,8 +1,8 @@
-import { unindent as $ } from "eslint-vitest-rule-tester"
-import { run } from "./_test"
-import { RULE_NAME, rule } from "./pad-after-last-import"
+import { unindent as $ } from "eslint-vitest-rule-tester";
+import { run } from "./_test";
+import { RULE_NAME, rule } from "./pad-after-last-import";
 
-const valids = ["import a from \"foo\";\n\nconst b = 1;"]
+const valids = ["import a from \"foo\";\n\nconst b = 1;"];
 const invalids = [
 	[
 		"import a from \"foo\";\nconst b = 1;",
@@ -21,7 +21,7 @@ const invalids = [
 			const b = 1;
 		`,
 	],
-]
+];
 
 run({
 	invalid: invalids.map(i => ({
@@ -32,4 +32,4 @@ run({
 	name: RULE_NAME,
 	rule,
 	valid: valids,
-})
+});

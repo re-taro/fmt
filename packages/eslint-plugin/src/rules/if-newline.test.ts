@@ -1,5 +1,5 @@
-import { run } from "./_test"
-import { RULE_NAME, rule } from "./if-newline"
+import { run } from "./_test";
+import { RULE_NAME, rule } from "./if-newline";
 
 const valids = [
   `if (true)
@@ -8,10 +8,10 @@ const valids = [
   `if (true) {
   console.log('hello')
 }`,
-]
+];
 const invalids = [
 	["if (true) console.log('hello')", "if (true) \nconsole.log('hello')"],
-]
+];
 
 run({
 	invalid: invalids.map(i => ({
@@ -22,4 +22,4 @@ run({
 	name: RULE_NAME,
 	rule,
 	valid: valids,
-})
+});

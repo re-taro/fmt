@@ -1,8 +1,8 @@
-import process from "node:process"
-import { GLOB_ASTRO_TS, GLOB_MARKDOWN, GLOB_TS, GLOB_TSX } from "../globs"
-import type { OptionsComponentExts, OptionsFiles, OptionsOverrides, OptionsProjectType, OptionsTypeScriptParserOptions, OptionsTypeScriptWithTypes, TypedFlatConfigItem } from "../types"
-import { pluginRetaro } from "../plugins"
-import { interopDefault, renameRules } from "../utils"
+import process from "node:process";
+import { GLOB_ASTRO_TS, GLOB_MARKDOWN, GLOB_TS, GLOB_TSX } from "../globs";
+import type { OptionsComponentExts, OptionsFiles, OptionsOverrides, OptionsProjectType, OptionsTypeScriptParserOptions, OptionsTypeScriptWithTypes, TypedFlatConfigItem } from "../types";
+import { pluginRetaro } from "../plugins";
+import { interopDefault, renameRules } from "../utils";
 
 export async function typescript(
 	options: OptionsComponentExts & OptionsFiles & OptionsOverrides & OptionsProjectType & OptionsTypeScriptParserOptions & OptionsTypeScriptWithTypes = {},
@@ -12,23 +12,23 @@ export async function typescript(
 		overrides = {},
 		parserOptions = {},
 		type = "app",
-	} = options
+	} = options;
 
 	const files = options.files ?? [
 		GLOB_TS,
 		GLOB_TSX,
 		...componentExts.map(ext => `**/*.${ext}`),
-	]
+	];
 
-	const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX]
+	const filesTypeAware = options.filesTypeAware ?? [GLOB_TS, GLOB_TSX];
 	const ignoresTypeAware = options.ignoresTypeAware ?? [
     `${GLOB_MARKDOWN}/**`,
     GLOB_ASTRO_TS,
-	]
+	];
 	const tsconfigPath = options?.tsconfigPath
 		? options.tsconfigPath
-		: undefined
-	const isTypeAware = !!tsconfigPath
+		: undefined;
+	const isTypeAware = !!tsconfigPath;
 
 	const typeAwareRules: TypedFlatConfigItem["rules"] = {
 		"dot-notation": "off",
@@ -52,7 +52,7 @@ export async function typescript(
 		"ts/strict-boolean-expressions": ["error", { allowNullableBoolean: true, allowNullableObject: true }],
 		"ts/switch-exhaustiveness-check": "error",
 		"ts/unbound-method": "error",
-	}
+	};
 
 	const [
 		pluginTs,
@@ -60,7 +60,7 @@ export async function typescript(
 	] = await Promise.all([
 		interopDefault(import("@typescript-eslint/eslint-plugin")),
 		interopDefault(import("@typescript-eslint/parser")),
-	] as const)
+	] as const);
 
 	function makeParser(typeAware: boolean, files: string[], ignores?: string[]): TypedFlatConfigItem {
 		return {
@@ -84,7 +84,7 @@ export async function typescript(
 				},
 			},
 			name: `re-taro/typescript/${typeAware ? "type-aware-parser" : "parser"}`,
-		}
+		};
 	}
 
 	return [
@@ -196,5 +196,5 @@ export async function typescript(
 				"ts/no-var-requires": "off",
 			},
 		},
-	]
+	];
 }

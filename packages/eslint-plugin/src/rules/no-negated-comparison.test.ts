@@ -1,7 +1,7 @@
-import { run } from "./_test"
-import { RULE_NAME, rule } from "./no-negated-comparison"
+import { run } from "./_test";
+import { RULE_NAME, rule } from "./no-negated-comparison";
 
-const valids = ["a != b", "a !== b"]
+const valids = ["a != b", "a !== b"];
 const invalids = [
 	[
 		"!(a == b)",
@@ -35,7 +35,7 @@ const invalids = [
 		"!(a >= b)",
 		"(a<b)",
 	],
-]
+];
 
 run({
 	invalid: invalids.map(i => ({
@@ -46,4 +46,4 @@ run({
 	name: RULE_NAME,
 	rule,
 	valid: valids,
-})
+});

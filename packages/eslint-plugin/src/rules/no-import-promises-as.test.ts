@@ -1,8 +1,8 @@
-import { unindent as $ } from "eslint-vitest-rule-tester"
-import { run } from "./_test"
-import { RULE_NAME, rule } from "./no-import-promises-as"
+import { unindent as $ } from "eslint-vitest-rule-tester";
+import { run } from "./_test";
+import { RULE_NAME, rule } from "./no-import-promises-as";
 
-const valids = ["import { promises } from 'fs';"]
+const valids = ["import { promises } from 'fs';"];
 const invalids = [
 	[
 		"import { promises as fs } from 'fs';",
@@ -18,7 +18,7 @@ const invalids = [
 			import fs from "node:fs/promises";
 		`,
 	],
-]
+];
 
 run({
 	invalid: invalids.map(i => ({
@@ -29,4 +29,4 @@ run({
 	name: RULE_NAME,
 	rule,
 	valid: valids,
-})
+});

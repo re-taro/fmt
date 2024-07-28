@@ -1,5 +1,5 @@
-import { run } from "./_test"
-import { RULE_NAME, rule } from "./top-level-function"
+import { run } from "./_test";
+import { RULE_NAME, rule } from "./top-level-function";
 
 const valids = [
 	"function foo() {}",
@@ -21,7 +21,7 @@ const valids = [
 	"const foo = async (x, y) => x + y",
 	"const foo = () => String(123)",
 	"const foo = () => ({})",
-]
+];
 
 const invalids = [
 	[
@@ -48,7 +48,7 @@ const invalids = [
 		"export const foo = async () => \n({})",
 		"export async function foo () {\n  return {}\n}",
 	],
-]
+];
 
 run({
 	invalid: invalids.map(i => ({
@@ -59,4 +59,4 @@ run({
 	name: RULE_NAME,
 	rule,
 	valid: valids,
-})
+});

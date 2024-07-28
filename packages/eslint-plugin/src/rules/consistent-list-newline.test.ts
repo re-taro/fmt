@@ -1,9 +1,9 @@
-import { expect } from "vitest"
-import type { InvalidTestCase, ValidTestCase } from "eslint-vitest-rule-tester"
-import { unindent as $ } from "eslint-vitest-rule-tester"
-import jsoncParser from "jsonc-eslint-parser"
-import { RULE_NAME, rule } from "./consistent-list-newline"
-import { run } from "./_test"
+import { expect } from "vitest";
+import type { InvalidTestCase, ValidTestCase } from "eslint-vitest-rule-tester";
+import { unindent as $ } from "eslint-vitest-rule-tester";
+import jsoncParser from "jsonc-eslint-parser";
+import { RULE_NAME, rule } from "./consistent-list-newline";
+import { run } from "./_test";
 
 const valids: ValidTestCase[] = [
 	"const a = { foo: \"bar\", bar: 2 }",
@@ -211,7 +211,7 @@ const valids: ValidTestCase[] = [
 			parser: jsoncParser,
 		},
 	},
-]
+];
 
 // Check snapshot for fixed code
 const invalid: InvalidTestCase[] = [
@@ -509,7 +509,7 @@ const invalid: InvalidTestCase[] = [
 			}"
 		`),
 	},
-]
+];
 
 run({
 	invalid: invalid.map((i): InvalidTestCase =>
@@ -524,4 +524,4 @@ run({
 
 	rule,
 	valid: valids,
-})
+});

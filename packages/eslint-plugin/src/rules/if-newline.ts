@@ -1,22 +1,22 @@
-import { createEslintRule } from "../utils"
-import type { RuleModule } from "../utils"
+import { createEslintRule } from "../utils";
+import type { RuleModule } from "../utils";
 
-export const RULE_NAME = "if-newline"
-export type MessageIds = "missingIfNewline"
-export type Options = []
+export const RULE_NAME = "if-newline";
+export type MessageIds = "missingIfNewline";
+export type Options = [];
 
 export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	create: (context) => {
 		return {
 			IfStatement(node) {
 				if (!node.consequent)
-					return
+					return;
 				if (node.consequent.type === "BlockStatement")
-					return
+					return;
 				if (node.test.loc.end.line === node.consequent.loc.start.line) {
 					context.report({
 						fix(fixer) {
-							return fixer.replaceTextRange([node.consequent.range[0], node.consequent.range[0]], "\n")
+							return fixer.replaceTextRange([node.consequent.range[0], node.consequent.range[0]], "\n");
 						},
 						loc: {
 							end: node.consequent.loc.start,
@@ -24,10 +24,10 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 						},
 						messageId: "missingIfNewline",
 						node,
-					})
+					});
 				}
 			},
-		}
+		};
 	},
 	defaultOptions: [],
 	meta: {
@@ -43,4 +43,4 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 		type: "layout",
 	},
 	name: RULE_NAME,
-})
+});

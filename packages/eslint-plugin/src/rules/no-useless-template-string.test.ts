@@ -1,5 +1,5 @@
-import { run } from "./_test"
-import { RULE_NAME, rule } from "./no-useless-template-string"
+import { run } from "./_test";
+import { RULE_NAME, rule } from "./no-useless-template-string";
 
 const valids = [
 	"const a = '1';",
@@ -9,13 +9,13 @@ const valids = [
 	"String.raw`str`",
 	"`\"\"`",
 	"`''`",
-]
+];
 const invalids = [
 	[
 		"const a = `1`",
 		"const a = \"1\"",
 	],
-]
+];
 
 run({
 	invalid: invalids.map(i => ({
@@ -26,4 +26,4 @@ run({
 	name: RULE_NAME,
 	rule,
 	valid: valids,
-})
+});

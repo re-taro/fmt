@@ -1,7 +1,7 @@
-import { isPackageExists } from "local-pkg"
-import { FlatConfigComposer } from "eslint-flat-config-utils"
-import type { Linter } from "eslint"
-import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from "./types"
+import { isPackageExists } from "local-pkg";
+import { FlatConfigComposer } from "eslint-flat-config-utils";
+import type { Linter } from "eslint";
+import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from "./types";
 import {
 	astro,
 	command,
@@ -28,11 +28,11 @@ import {
 	unocss,
 	vue,
 	yaml,
-} from "./configs"
-import { interopDefault, isInEditorEnv } from "./utils"
-import { formatters } from "./configs/formatters"
-import { regexp } from "./configs/regexp"
-import type { RuleOptions } from "./typegen"
+} from "./configs";
+import { interopDefault, isInEditorEnv } from "./utils";
+import { formatters } from "./configs/formatters";
+import { regexp } from "./configs/regexp";
+import type { RuleOptions } from "./typegen";
 
 const flatConfigProps: (keyof TypedFlatConfigItem)[] = [
 	"name",
@@ -44,12 +44,12 @@ const flatConfigProps: (keyof TypedFlatConfigItem)[] = [
 	"plugins",
 	"rules",
 	"settings",
-]
+];
 
 const reactpackages = [
 	"react",
 	"react-dom",
-]
+];
 
 export const defaultPluginRenaming = {
 	"@eslint-react": "react",
@@ -63,7 +63,7 @@ export const defaultPluginRenaming = {
 	"n": "node",
 	"vitest": "test",
 	"yml": "yaml",
-}
+};
 
 /**
  * Construct an array of ESLint flat config items.
@@ -93,39 +93,39 @@ export function re_taro(
 		typescript: enableTypeScript = isPackageExists("typescript"),
 		unocss: enableUnoCSS = false,
 		vue: enableVue = false,
-	} = options
+	} = options;
 
 	const stylisticOptions = options.stylistic === false
 		? false
 		: typeof options.stylistic === "object"
 			? options.stylistic
-			: {}
+			: {};
 
 	const perfectionistOptions = typeof options.perfectionist === "object"
 		? options.perfectionist
-		: {}
+		: {};
 
 	if (stylisticOptions && !("jsx" in stylisticOptions))
-		stylisticOptions.jsx = enableJsx
+		stylisticOptions.jsx = enableJsx;
 
-	perfectionistOptions.jsx = enableJsx
-	perfectionistOptions.astro = !!enableAstro
-	perfectionistOptions.svelte = !!enableSvelte
-	perfectionistOptions.vue = !!enableVue
+	perfectionistOptions.jsx = enableJsx;
+	perfectionistOptions.astro = !!enableAstro;
+	perfectionistOptions.svelte = !!enableSvelte;
+	perfectionistOptions.vue = !!enableVue;
 
-	const configs: Awaitable<TypedFlatConfigItem[]>[] = []
+	const configs: Awaitable<TypedFlatConfigItem[]>[] = [];
 
 	if (enableGitignore) {
 		if (typeof enableGitignore !== "boolean") {
-			configs.push(interopDefault(import("eslint-config-flat-gitignore")).then(r => [r(enableGitignore)]))
+			configs.push(interopDefault(import("eslint-config-flat-gitignore")).then(r => [r(enableGitignore)]));
 		}
 		else {
-			configs.push(interopDefault(import("eslint-config-flat-gitignore")).then(r => [r({ strict: false })]))
+			configs.push(interopDefault(import("eslint-config-flat-gitignore")).then(r => [r({ strict: false })]));
 		}
 	}
 
-	const typescriptOptions = resolveSubOptions(options, "typescript")
-	const tsconfigPath = "tsconfigPath" in typescriptOptions ? typescriptOptions.tsconfigPath : undefined
+	const typescriptOptions = resolveSubOptions(options, "typescript");
+	const tsconfigPath = "tsconfigPath" in typescriptOptions ? typescriptOptions.tsconfigPath : undefined;
 
 	// Base configs
 	configs.push(
@@ -145,14 +145,14 @@ export function re_taro(
 		unicorn(),
 		command(),
 		perfectionist(perfectionistOptions),
-	)
+	);
 
 	if (enableVue) {
-		componentExts.push("vue")
+		componentExts.push("vue");
 	}
 
 	if (enableJsx) {
-		configs.push(jsx())
+		configs.push(jsx());
 	}
 
 	if (enableTypeScript) {
@@ -161,25 +161,25 @@ export function re_taro(
 			componentExts,
 			overrides: getOverrides(options, "typescript"),
 			type: options.type,
-		}))
+		}));
 	}
 
 	if (stylisticOptions) {
 		configs.push(stylistic({
 			...stylisticOptions,
 			overrides: getOverrides(options, "stylistic"),
-		}))
+		}));
 	}
 
 	if (enableRegexp) {
-		configs.push(regexp(typeof enableRegexp === "boolean" ? {} : enableRegexp))
+		configs.push(regexp(typeof enableRegexp === "boolean" ? {} : enableRegexp));
 	}
 
 	if (options.test ?? true) {
 		configs.push(test({
 			isInEditor,
 			overrides: getOverrides(options, "test"),
-		}))
+		}));
 	}
 
 	if (enableVue) {
@@ -188,14 +188,14 @@ export function re_taro(
 			overrides: getOverrides(options, "vue"),
 			stylistic: stylisticOptions,
 			typescript: !!enableTypeScript,
-		}))
+		}));
 	}
 
 	if (enableReact) {
 		configs.push(react({
 			overrides: getOverrides(options, "react"),
 			tsconfigPath,
-		}))
+		}));
 	}
 
 	if (enableSolid) {
@@ -203,7 +203,7 @@ export function re_taro(
 			overrides: getOverrides(options, "solid"),
 			tsconfigPath,
 			typescript: !!enableTypeScript,
-		}))
+		}));
 	}
 
 	if (enableSvelte) {
@@ -211,21 +211,21 @@ export function re_taro(
 			overrides: getOverrides(options, "svelte"),
 			stylistic: stylisticOptions,
 			typescript: !!enableTypeScript,
-		}))
+		}));
 	}
 
 	if (enableUnoCSS) {
 		configs.push(unocss({
 			...resolveSubOptions(options, "unocss"),
 			overrides: getOverrides(options, "unocss"),
-		}))
+		}));
 	}
 
 	if (enableAstro) {
 		configs.push(astro({
 			overrides: getOverrides(options, "astro"),
 			stylistic: stylisticOptions,
-		}))
+		}));
 	}
 
 	if (options.jsonc ?? true) {
@@ -236,21 +236,21 @@ export function re_taro(
 			}),
 			sortPackageJson(),
 			sortTsconfig(),
-		)
+		);
 	}
 
 	if (options.yaml ?? true) {
 		configs.push(yaml({
 			overrides: getOverrides(options, "yaml"),
 			stylistic: stylisticOptions,
-		}))
+		}));
 	}
 
 	if (options.toml ?? true) {
 		configs.push(toml({
 			overrides: getOverrides(options, "toml"),
 			stylistic: stylisticOptions,
-		}))
+		}));
 	}
 
 	if (options.markdown ?? true) {
@@ -261,45 +261,45 @@ export function re_taro(
 					overrides: getOverrides(options, "markdown"),
 				},
 			),
-		)
+		);
 	}
 
 	if (options.formatters) {
 		configs.push(formatters(
 			options.formatters,
 			typeof stylisticOptions === "boolean" ? {} : stylisticOptions,
-		))
+		));
 	}
 
 	// User can optionally pass a flat config item to the first argument
 	// We pick the known keys as ESLint would do schema validation
 	const fusedConfig = flatConfigProps.reduce((acc, key) => {
 		if (key in options)
-			acc[key] = options[key] as any
-		return acc
-	}, {} as TypedFlatConfigItem)
+			acc[key] = options[key] as any;
+		return acc;
+	}, {} as TypedFlatConfigItem);
 	if (Object.keys(fusedConfig).length)
-		configs.push([fusedConfig])
+		configs.push([fusedConfig]);
 
-	let composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>()
+	let composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>();
 
 	composer = composer
 		.append(
 			...configs,
 			...userConfigs as any,
-		)
+		);
 
 	if (autoRenamePlugins) {
 		composer = composer
-			.renamePlugins(defaultPluginRenaming)
+			.renamePlugins(defaultPluginRenaming);
 	}
 
-	return composer
+	return composer;
 }
 
 export type ResolvedOptions<T> = T extends boolean
 	? never
-	: NonNullable<T>
+	: NonNullable<T>;
 
 export function resolveSubOptions<K extends keyof OptionsConfig>(
 	options: OptionsConfig,
@@ -307,18 +307,18 @@ export function resolveSubOptions<K extends keyof OptionsConfig>(
 ): ResolvedOptions<OptionsConfig[K]> {
 	return typeof options[key] === "boolean"
 		? {} as any
-		: options[key] || {}
+		: options[key] || {};
 }
 
 export function getOverrides<K extends keyof OptionsConfig>(
 	options: OptionsConfig,
 	key: K,
 ): Partial<Linter.RulesRecord & RuleOptions> {
-	const sub = resolveSubOptions(options, key)
+	const sub = resolveSubOptions(options, key);
 	return {
 		...(options.overrides as any)?.[key],
 		..."overrides" in sub
 			? sub.overrides
 			: {},
-	}
+	};
 }

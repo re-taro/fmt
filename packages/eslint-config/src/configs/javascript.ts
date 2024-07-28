@@ -1,7 +1,7 @@
-import globals from "globals"
-import type { OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types"
-import { pluginRetaro, pluginUnusedImports } from "../plugins"
-import { GLOB_SRC, GLOB_SRC_EXT } from "../globs"
+import globals from "globals";
+import type { OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types";
+import { pluginRetaro, pluginUnusedImports } from "../plugins";
+import { GLOB_SRC, GLOB_SRC_EXT } from "../globs";
 
 export async function javascript(
 	options: OptionsIsInEditor & OptionsOverrides = {},
@@ -9,7 +9,7 @@ export async function javascript(
 	const {
 		isInEditor = false,
 		overrides = {},
-	} = options
+	} = options;
 
 	return [
 		{
@@ -231,5 +231,5 @@ export async function javascript(
 				"no-console": "off",
 			},
 		},
-	]
+	];
 }

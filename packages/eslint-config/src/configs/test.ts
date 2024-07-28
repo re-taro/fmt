@@ -1,9 +1,9 @@
-import { interopDefault } from "../utils"
-import type { OptionsFiles, OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types"
-import { GLOB_TESTS } from "../globs"
+import { interopDefault } from "../utils";
+import type { OptionsFiles, OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types";
+import { GLOB_TESTS } from "../globs";
 
 // Hold the reference so we don't redeclare the plugin on each call
-let _pluginTest: any
+let _pluginTest: any;
 
 export async function test(
 	options: OptionsFiles & OptionsIsInEditor & OptionsOverrides = {},
@@ -12,7 +12,7 @@ export async function test(
 		files = GLOB_TESTS,
 		isInEditor = false,
 		overrides = {},
-	} = options
+	} = options;
 
 	const [
 		pluginVitest,
@@ -21,7 +21,7 @@ export async function test(
 		interopDefault(import("eslint-plugin-vitest")),
 		// @ts-expect-error missing types
 		interopDefault(import("eslint-plugin-no-only-tests")),
-	] as const)
+	] as const);
 
 	_pluginTest = _pluginTest || {
 		...pluginVitest,
@@ -30,7 +30,7 @@ export async function test(
 			// extend `test/no-only-tests` rule
 			...pluginNoOnlyTests.rules,
 		},
-	}
+	};
 
 	return [
 		{
@@ -57,5 +57,5 @@ export async function test(
 				...overrides,
 			},
 		},
-	]
+	];
 }

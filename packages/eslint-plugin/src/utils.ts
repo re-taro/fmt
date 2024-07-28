@@ -1,13 +1,13 @@
-import type { RuleListener, RuleWithMeta, RuleWithMetaAndName } from "@typescript-eslint/utils/eslint-utils"
-import type { RuleContext } from "@typescript-eslint/utils/ts-eslint"
-import type { Rule } from "eslint"
+import type { RuleListener, RuleWithMeta, RuleWithMetaAndName } from "@typescript-eslint/utils/eslint-utils";
+import type { RuleContext } from "@typescript-eslint/utils/ts-eslint";
+import type { Rule } from "eslint";
 
-const blobUrl = "https://github.com/re-taro/fmt/blob/main/packages/eslint-plugin/src/rules/"
+const blobUrl = "https://github.com/re-taro/fmt/blob/main/packages/eslint-plugin/src/rules/";
 
 export interface RuleModule<
 	T extends readonly unknown[],
 > extends Rule.RuleModule {
-	defaultOptions: T
+	defaultOptions: T;
 }
 
 /**
@@ -36,8 +36,8 @@ function RuleCreator(urlCreator: (name: string) => string) {
 				},
 			},
 			...rule,
-		})
-	}
+		});
+	};
 }
 
 /**
@@ -62,15 +62,15 @@ function createRule<
 				return {
 					...defaultOptions[index] || {},
 					...options || {},
-				}
-			}) as unknown as TOptions
-			return create(context, optionsWithDefault)
+				};
+			}) as unknown as TOptions;
+			return create(context, optionsWithDefault);
 		}) as any,
 		defaultOptions,
 		meta: meta as any,
-	}
+	};
 }
 
 export const createEslintRule = RuleCreator(
 	ruleName => `${blobUrl}${ruleName}.test.ts`,
-) as any as <TOptions extends readonly unknown[], TMessageIds extends string>({ meta, name, ...rule }: Readonly<RuleWithMetaAndName<TOptions, TMessageIds>>) => RuleModule<TOptions>
+) as any as <TOptions extends readonly unknown[], TMessageIds extends string>({ meta, name, ...rule }: Readonly<RuleWithMetaAndName<TOptions, TMessageIds>>) => RuleModule<TOptions>;
