@@ -1,16 +1,20 @@
-import { interopDefault } from "../utils";
-import type { OptionsOverrides, StylisticConfig, TypedFlatConfigItem } from "../types";
-import { pluginRetaro } from "../plugins";
+import { interopDefault } from "../utils"
+import type { OptionsOverrides, StylisticConfig, TypedFlatConfigItem } from "../types"
+import { pluginRetaro } from "../plugins"
 
 export const StylisticConfigDefaults: StylisticConfig = {
 	indent: "tab",
 	jsx: true,
 	quotes: "double",
-	semi: true,
-};
+	semi: false,
+}
+
+export interface StylisticOptions extends StylisticConfig, OptionsOverrides {
+	lessOpinionated?: boolean
+}
 
 export async function stylistic(
-	options: StylisticConfig & OptionsOverrides = {},
+	options: StylisticOptions = {},
 ): Promise<TypedFlatConfigItem[]> {
 	const {
 		indent,
@@ -21,9 +25,9 @@ export async function stylistic(
 	} = {
 		...StylisticConfigDefaults,
 		...options,
-	};
+	}
 
-	const pluginStylistic = await interopDefault(import("@stylistic/eslint-plugin"));
+	const pluginStylistic = await interopDefault(import("@stylistic/eslint-plugin"))
 
 	const config = pluginStylistic.configs.customize({
 		flat: true,
@@ -32,7 +36,7 @@ export async function stylistic(
 		pluginName: "style",
 		quotes,
 		semi,
-	});
+	})
 
 	return [
 		{
@@ -44,16 +48,13 @@ export async function stylistic(
 			rules: {
 				...config.rules,
 
-				"curly": ["error", "multi-or-nest", "consistent"],
 				"re-taro/consistent-list-newline": "error",
+				"re-taro/curly": "error",
 				"re-taro/if-newline": "error",
-				"re-taro/no-negated-comparison": "error",
-				"re-taro/no-useless-template-string": "error",
-
 				"re-taro/top-level-function": "error",
 
 				...overrides,
 			},
 		},
-	];
+	]
 }

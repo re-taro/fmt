@@ -1,5 +1,5 @@
 <script lang="ts">
-	export const content = "hi!";
+	export const content = "hi!"
 </script>
 
 <article>

@@ -1,4 +1,4 @@
-import type { TypedFlatConfigItem } from "../types";
+import type { TypedFlatConfigItem } from "../types"
 
 /**
  * Sort package.json
@@ -31,6 +31,7 @@ export async function sortPackageJson(): Promise<TypedFlatConfigItem[]> {
 							"packageManager",
 							"description",
 							"author",
+							"contributors",
 							"license",
 							"funding",
 							"homepage",
@@ -104,7 +105,7 @@ export async function sortPackageJson(): Promise<TypedFlatConfigItem[]> {
 				],
 			},
 		},
-	];
+	]
 }
 /**
  * Sort tsconfig.json
@@ -223,6 +224,7 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
 							"allowSyntheticDefaultImports",
 							"esModuleInterop",
 							"forceConsistentCasingInFileNames",
+							"isolatedDeclarations",
 							"isolatedModules",
 							"preserveSymlinks",
 							"verbatimModuleSyntax",
@@ -235,5 +237,5 @@ export function sortTsconfig(): TypedFlatConfigItem[] {
 				],
 			},
 		},
-	];
+	]
 }

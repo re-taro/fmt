@@ -1,7 +1,7 @@
-import globals from "globals";
-import type { OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types";
-import { pluginRetaro, pluginUnusedImports } from "../plugins";
-import { GLOB_SRC, GLOB_SRC_EXT } from "../globs";
+import globals from "globals"
+import type { OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types"
+import { pluginRetaro, pluginUnusedImports } from "../plugins"
+import { GLOB_SRC, GLOB_SRC_EXT } from "../globs"
 
 export async function javascript(
 	options: OptionsIsInEditor & OptionsOverrides = {},
@@ -9,7 +9,7 @@ export async function javascript(
 	const {
 		isInEditor = false,
 		overrides = {},
-	} = options;
+	} = options
 
 	return [
 		{
@@ -35,6 +35,9 @@ export async function javascript(
 			linterOptions: {
 				reportUnusedDisableDirectives: true,
 			},
+			name: "re-taro/javascript/setup",
+		},
+		{
 			name: "re-taro/javascript/rules",
 			plugins: {
 				"re-taro": pluginRetaro,
@@ -187,6 +190,8 @@ export async function javascript(
 				"prefer-rest-params": "error",
 				"prefer-spread": "error",
 				"prefer-template": "error",
+				"re-taro/import-dedupe": "error",
+
 				"sort-imports": [
 					"error",
 					{
@@ -197,18 +202,23 @@ export async function javascript(
 						memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
 					},
 				],
-
 				"symbol-description": "error",
 				"unicode-bom": ["error", "never"],
 				"unused-imports/no-unused-imports": isInEditor ? "off" : "error",
-
 				"unused-imports/no-unused-vars": [
 					"error",
-					{ args: "after-used", argsIgnorePattern: "^_", vars: "all", varsIgnorePattern: "^_" },
+					{
+						args: "after-used",
+						argsIgnorePattern: "^_",
+						ignoreRestSiblings: true,
+						vars: "all",
+						varsIgnorePattern: "^_",
+					},
 				],
 				"use-isnan": ["error", { enforceForIndexOf: true, enforceForSwitchCase: true }],
 				"valid-typeof": ["error", { requireStringLiterals: true }],
 				"vars-on-top": "error",
+
 				"yoda": ["error", "never"],
 
 				...overrides,
@@ -221,5 +231,5 @@ export async function javascript(
 				"no-console": "off",
 			},
 		},
-	];
+	]
 }

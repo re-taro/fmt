@@ -1,6 +1,6 @@
-import { ensurePackages, interopDefault } from "../utils";
-import type { OptionsFiles, OptionsHasTypeScript, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types";
-import { GLOB_SVELTE } from "../globs";
+import { ensurePackages, interopDefault } from "../utils"
+import type { OptionsFiles, OptionsHasTypeScript, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types"
+import { GLOB_SVELTE } from "../globs"
 
 export async function svelte(
 	options: OptionsHasTypeScript & OptionsOverrides & OptionsStylistic & OptionsFiles = {},
@@ -9,16 +9,16 @@ export async function svelte(
 		files = [GLOB_SVELTE],
 		overrides = {},
 		stylistic = true,
-	} = options;
+	} = options
 
 	const {
 		indent = "tab",
 		quotes = "double",
-	} = typeof stylistic === "boolean" ? {} : stylistic;
+	} = typeof stylistic === "boolean" ? {} : stylistic
 
 	await ensurePackages([
 		"eslint-plugin-svelte",
-	]);
+	])
 
 	const [
 		pluginSvelte,
@@ -26,7 +26,7 @@ export async function svelte(
 	] = await Promise.all([
 		interopDefault(import("eslint-plugin-svelte")),
 		interopDefault(import("svelte-eslint-parser")),
-	] as const);
+	] as const)
 
 	return [
 		{
@@ -56,7 +56,7 @@ export async function svelte(
 					caughtErrors: "none",
 					ignoreRestSiblings: true,
 					vars: "all",
-					varsIgnorePattern: "^\\$\\$Props$",
+					varsIgnorePattern: "^(\\$\\$Props$|\\$\\$Events$|\\$\\$Slots$)",
 				}],
 
 				"svelte/comment-directive": "error",
@@ -78,12 +78,16 @@ export async function svelte(
 				"svelte/no-useless-mustaches": "error",
 				"svelte/require-store-callbacks-use-set-param": "error",
 				"svelte/system": "error",
-				"svelte/valid-compile": "error",
 				"svelte/valid-each-key": "error",
 
 				"unused-imports/no-unused-vars": [
 					"error",
-					{ args: "after-used", argsIgnorePattern: "^_", vars: "all", varsIgnorePattern: "^(_|\\$\\$Props$)" },
+					{
+						args: "after-used",
+						argsIgnorePattern: "^_",
+						vars: "all",
+						varsIgnorePattern: "^(_|\\$\\$Props$|\\$\\$Events$|\\$\\$Slots$)",
+					},
 				],
 
 				...stylistic
@@ -104,5 +108,5 @@ export async function svelte(
 				...overrides,
 			},
 		},
-	];
+	]
 }

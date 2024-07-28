@@ -1,6 +1,9 @@
-import { interopDefault } from "../utils";
-import type { OptionsFiles, OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types";
-import { GLOB_TESTS } from "../globs";
+import { interopDefault } from "../utils"
+import type { OptionsFiles, OptionsIsInEditor, OptionsOverrides, TypedFlatConfigItem } from "../types"
+import { GLOB_TESTS } from "../globs"
+
+// Hold the reference so we don't redeclare the plugin on each call
+let _pluginTest: any
 
 export async function test(
 	options: OptionsFiles & OptionsIsInEditor & OptionsOverrides = {},
@@ -9,7 +12,7 @@ export async function test(
 		files = GLOB_TESTS,
 		isInEditor = false,
 		overrides = {},
-	} = options;
+	} = options
 
 	const [
 		pluginVitest,
@@ -18,20 +21,22 @@ export async function test(
 		interopDefault(import("eslint-plugin-vitest")),
 		// @ts-expect-error missing types
 		interopDefault(import("eslint-plugin-no-only-tests")),
-	] as const);
+	] as const)
+
+	_pluginTest = _pluginTest || {
+		...pluginVitest,
+		rules: {
+			...pluginVitest.rules,
+			// extend `test/no-only-tests` rule
+			...pluginNoOnlyTests.rules,
+		},
+	}
 
 	return [
 		{
 			name: "re-taro/test/setup",
 			plugins: {
-				test: {
-					...pluginVitest,
-					rules: {
-						...pluginVitest.rules,
-						// extend `test/no-only-tests` rule
-						...pluginNoOnlyTests.rules,
-					},
-				},
+				test: _pluginTest,
 			},
 		},
 		{
@@ -47,8 +52,10 @@ export async function test(
 				"test/prefer-hooks-in-order": "error",
 				"test/prefer-lowercase-title": "error",
 
+				"ts/explicit-function-return-type": "off",
+
 				...overrides,
 			},
 		},
-	];
+	]
 }

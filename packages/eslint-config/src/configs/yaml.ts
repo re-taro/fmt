@@ -1,6 +1,6 @@
-import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types";
-import { GLOB_YAML } from "../globs";
-import { interopDefault } from "../utils";
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types"
+import { GLOB_YAML } from "../globs"
+import { interopDefault } from "../utils"
 
 export async function yaml(
 	options: OptionsOverrides & OptionsStylistic & OptionsFiles = {},
@@ -9,12 +9,12 @@ export async function yaml(
 		files = [GLOB_YAML],
 		overrides = {},
 		stylistic = true,
-	} = options;
+	} = options
 
 	const {
 		indent = 2,
-		quotes = "double",
-	} = typeof stylistic === "boolean" ? {} : stylistic;
+		quotes = "single",
+	} = typeof stylistic === "boolean" ? {} : stylistic
 
 	const [
 		pluginYaml,
@@ -22,7 +22,7 @@ export async function yaml(
 	] = await Promise.all([
 		interopDefault(import("eslint-plugin-yml")),
 		interopDefault(import("yaml-eslint-parser")),
-	] as const);
+	] as const)
 
 	return [
 		{
@@ -68,5 +68,5 @@ export async function yaml(
 				...overrides,
 			},
 		},
-	];
+	]
 }
