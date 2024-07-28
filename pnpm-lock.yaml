@@ -81,8 +81,8 @@ importers:
         specifier: 0.1.8
         version: 0.1.8
       eslint-flat-config-utils:
-        specifier: 0.2.5
-        version: 0.2.5
+        specifier: 0.3.0
+        version: 0.3.0
       eslint-merge-processors:
         specifier: 0.1.0
         version: 0.1.0(eslint@8.57.0)
@@ -2039,8 +2039,8 @@ packages:
   eslint-config-flat-gitignore@0.1.8:
     resolution: {integrity: sha512-OEUbS2wzzYtUfshjOqzFo4Bl4lHykXUdM08TCnYNl7ki+niW4Q1R0j0FDFDr0vjVsI5ZFOz5LvluxOP+Ew+dYw==}
 
-  eslint-flat-config-utils@0.2.5:
-    resolution: {integrity: sha512-iO+yLZtC/LKgACerkpvsZ6NoRVB2sxT04mOpnNcEM1aTwKy+6TsT46PUvrML4y2uVBS6I67hRCd2JiKAPaL/Uw==}
+  eslint-flat-config-utils@0.3.0:
+    resolution: {integrity: sha512-FaFQLUunAl6YK7aU/pT23DXYVWg/cEHbSfxwAxpCGT6Su8H9RfkmzKLh1G2bba46p6dTlQeA4VTiV5//0SeToQ==}
 
   eslint-formatting-reporter@0.0.0:
     resolution: {integrity: sha512-k9RdyTqxqN/wNYVaTk/ds5B5rA8lgoAmvceYN7bcZMBwU7TuXx5ntewJv81eF3pIL/CiJE+pJZm36llG8yhyyw==}
@@ -6101,9 +6101,9 @@ snapshots:
       find-up-simple: 1.0.0
       parse-gitignore: 2.0.0
 
-  eslint-flat-config-utils@0.2.5:
+  eslint-flat-config-utils@0.3.0:
     dependencies:
-      '@types/eslint': 8.56.11
+      '@types/eslint': 9.6.0
       pathe: 1.1.2
 
   eslint-formatting-reporter@0.0.0(eslint@8.57.0):

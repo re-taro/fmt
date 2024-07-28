@@ -112,7 +112,7 @@
     "@typescript-eslint/eslint-plugin": "8.0.0-alpha.54",
     "@typescript-eslint/parser": "8.0.0-alpha.40",
     "eslint-config-flat-gitignore": "0.1.8",
-    "eslint-flat-config-utils": "0.2.5",
+    "eslint-flat-config-utils": "0.3.0",
     "eslint-merge-processors": "0.1.0",
     "eslint-plugin-command": "0.2.3",
     "eslint-plugin-eslint-comments": "3.2.0",
