@@ -143,7 +143,7 @@
     "@types/eslint": "9.6.0",
     "@types/fs-extra": "11.0.4",
     "@types/prompts": "2.4.9",
-    "eslint-typegen": "0.2.4",
+    "eslint-typegen": "0.3.0",
     "execa": "9.3.0",
     "fast-glob": "3.3.2",
     "fs-extra": "11.2.0",
