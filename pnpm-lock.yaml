@@ -232,8 +232,8 @@ importers:
         specifier: 7.17.0
         version: 7.17.0(typescript@5.5.4)
       '@typescript-eslint/utils':
-        specifier: 7.10.0
-        version: 7.10.0(eslint@9.8.0)(typescript@5.5.4)
+        specifier: 7.17.0
+        version: 7.17.0(eslint@9.8.0)(typescript@5.5.4)
       eslint:
         specifier: 9.8.0
         version: 9.8.0
@@ -5363,17 +5363,6 @@ snapshots:
       '@typescript-eslint/types': 7.10.0
       '@typescript-eslint/typescript-estree': 7.10.0(typescript@5.5.4)
       eslint: 8.57.0
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-
-  '@typescript-eslint/utils@7.10.0(eslint@9.8.0)(typescript@5.5.4)':
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@9.8.0)
-      '@typescript-eslint/scope-manager': 7.10.0
-      '@typescript-eslint/types': 7.10.0
-      '@typescript-eslint/typescript-estree': 7.10.0(typescript@5.5.4)
-      eslint: 9.8.0
     transitivePeerDependencies:
       - supports-color
       - typescript
