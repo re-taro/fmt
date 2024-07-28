@@ -1,6 +1,6 @@
-import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types"
-import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from "../globs"
-import { interopDefault } from "../utils"
+import type { OptionsFiles, OptionsOverrides, OptionsStylistic, TypedFlatConfigItem } from "../types";
+import { GLOB_JSON, GLOB_JSON5, GLOB_JSONC } from "../globs";
+import { interopDefault } from "../utils";
 
 export async function jsonc(
 	options: OptionsFiles & OptionsOverrides & OptionsStylistic = {},
@@ -9,11 +9,11 @@ export async function jsonc(
 		files = [GLOB_JSON, GLOB_JSON5, GLOB_JSONC],
 		overrides = {},
 		stylistic = true,
-	} = options
+	} = options;
 
 	const {
 		indent = 2,
-	} = typeof stylistic === "boolean" ? {} : stylistic
+	} = typeof stylistic === "boolean" ? {} : stylistic;
 
 	const [
 		pluginJsonc,
@@ -21,7 +21,7 @@ export async function jsonc(
 	] = await Promise.all([
 		interopDefault(import("eslint-plugin-jsonc")),
 		interopDefault(import("jsonc-eslint-parser")),
-	] as const)
+	] as const);
 
 	return [
 		{
@@ -82,5 +82,5 @@ export async function jsonc(
 				...overrides,
 			},
 		},
-	]
+	];
 }

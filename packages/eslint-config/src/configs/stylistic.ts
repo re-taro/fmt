@@ -1,16 +1,16 @@
-import { interopDefault } from "../utils"
-import type { OptionsOverrides, StylisticConfig, TypedFlatConfigItem } from "../types"
-import { pluginRetaro } from "../plugins"
+import { interopDefault } from "../utils";
+import type { OptionsOverrides, StylisticConfig, TypedFlatConfigItem } from "../types";
+import { pluginRetaro } from "../plugins";
 
 export const StylisticConfigDefaults: StylisticConfig = {
 	indent: "tab",
 	jsx: true,
 	quotes: "double",
-	semi: false,
-}
+	semi: true,
+};
 
 export interface StylisticOptions extends StylisticConfig, OptionsOverrides {
-	lessOpinionated?: boolean
+	lessOpinionated?: boolean;
 }
 
 export async function stylistic(
@@ -25,9 +25,9 @@ export async function stylistic(
 	} = {
 		...StylisticConfigDefaults,
 		...options,
-	}
+	};
 
-	const pluginStylistic = await interopDefault(import("@stylistic/eslint-plugin"))
+	const pluginStylistic = await interopDefault(import("@stylistic/eslint-plugin"));
 
 	const config = pluginStylistic.configs.customize({
 		flat: true,
@@ -36,7 +36,7 @@ export async function stylistic(
 		pluginName: "style",
 		quotes,
 		semi,
-	})
+	});
 
 	return [
 		{
@@ -56,5 +56,5 @@ export async function stylistic(
 				...overrides,
 			},
 		},
-	]
+	];
 }

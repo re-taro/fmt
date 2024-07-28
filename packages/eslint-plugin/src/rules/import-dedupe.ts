@@ -1,28 +1,28 @@
-import { createEslintRule } from "../utils"
-import type { RuleModule } from "../utils"
+import { createEslintRule } from "../utils";
+import type { RuleModule } from "../utils";
 
-export const RULE_NAME = "import-dedupe"
-export type MessageIds = "importDedupe"
-export type Options = []
+export const RULE_NAME = "import-dedupe";
+export type MessageIds = "importDedupe";
+export type Options = [];
 
 export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	create: (context) => {
 		return {
 			ImportDeclaration(node) {
 				if (node.specifiers.length <= 1)
-					return
+					return;
 
-				const names = new Set<string>()
+				const names = new Set<string>();
 				node.specifiers.forEach((n) => {
-					const id = n.local.name
+					const id = n.local.name;
 					if (names.has(id)) {
 						context.report({
 							fix(fixer) {
-								const s = n.range[0]
-								let e = n.range[1]
+								const s = n.range[0];
+								let e = n.range[1];
 								if (context.sourceCode.text[e] === ",")
-									e += 1
-								return fixer.removeRange([s, e])
+									e += 1;
+								return fixer.removeRange([s, e]);
 							},
 							loc: {
 								end: n.loc.start,
@@ -30,12 +30,12 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 							},
 							messageId: "importDedupe",
 							node,
-						})
+						});
 					}
-					names.add(id)
-				})
+					names.add(id);
+				});
 			},
-		}
+		};
 	},
 	defaultOptions: [],
 	meta: {
@@ -51,4 +51,4 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 		type: "problem",
 	},
 	name: RULE_NAME,
-})
+});

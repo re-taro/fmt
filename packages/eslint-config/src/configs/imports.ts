@@ -1,11 +1,11 @@
-import type { OptionsStylistic, TypedFlatConfigItem } from "../types"
-import { pluginImport, pluginRetaro } from "../plugins"
-import { GLOB_DTS } from "../globs"
+import type { OptionsStylistic, TypedFlatConfigItem } from "../types";
+import { pluginImport, pluginRetaro } from "../plugins";
+import { GLOB_DTS } from "../globs";
 
 export async function imports(options: OptionsStylistic = {}): Promise<TypedFlatConfigItem[]> {
 	const {
 		stylistic = true,
-	} = options
+	} = options;
 
 	return [
 		{
@@ -37,5 +37,5 @@ export async function imports(options: OptionsStylistic = {}): Promise<TypedFlat
 				"import/no-duplicates": "off",
 			},
 		},
-	]
+	];
 }

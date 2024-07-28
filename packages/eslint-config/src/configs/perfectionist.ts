@@ -1,6 +1,6 @@
-import type { OptionsPerfectionist, TypedFlatConfigItem } from "../types"
-import { pluginPerfectionist } from "../plugins"
-import { GLOB_ASTRO, GLOB_JSX, GLOB_SVELTE, GLOB_TSX, GLOB_VUE } from "../globs"
+import type { OptionsPerfectionist, TypedFlatConfigItem } from "../types";
+import { pluginPerfectionist } from "../plugins";
+import { GLOB_ASTRO, GLOB_JSX, GLOB_SVELTE, GLOB_TSX, GLOB_VUE } from "../globs";
 
 /**
  * Optional perfectionist plugin for props and items sorting.
@@ -98,7 +98,7 @@ export async function perfectionist(options: OptionsPerfectionist = {}): Promise
 				],
 			},
 		},
-	]
+	];
 
 	if (options.astro) {
 		configs.push({
@@ -113,7 +113,7 @@ export async function perfectionist(options: OptionsPerfectionist = {}): Promise
 					},
 				],
 			},
-		})
+		});
 	}
 
 	if (options.jsx) {
@@ -129,7 +129,7 @@ export async function perfectionist(options: OptionsPerfectionist = {}): Promise
 					},
 				],
 			},
-		})
+		});
 	}
 
 	if (options.svelte) {
@@ -145,7 +145,7 @@ export async function perfectionist(options: OptionsPerfectionist = {}): Promise
 					},
 				],
 			},
-		})
+		});
 	}
 
 	if (options.vue) {
@@ -161,8 +161,8 @@ export async function perfectionist(options: OptionsPerfectionist = {}): Promise
 					},
 				],
 			},
-		})
+		});
 	}
 
-	return configs
+	return configs;
 }

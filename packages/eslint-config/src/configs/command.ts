@@ -1,5 +1,5 @@
-import createCommand from "eslint-plugin-command/config"
-import type { TypedFlatConfigItem } from "../types"
+import createCommand from "eslint-plugin-command/config";
+import type { TypedFlatConfigItem } from "../types";
 
 export async function command(): Promise<TypedFlatConfigItem[]> {
 	return [
@@ -7,5 +7,5 @@ export async function command(): Promise<TypedFlatConfigItem[]> {
 			...createCommand(),
 			name: "re-taro/command/rules",
 		},
-	]
+	];
 }

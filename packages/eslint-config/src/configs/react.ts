@@ -1,18 +1,18 @@
-import { isPackageExists } from "local-pkg"
-import { interopDefault, toArray } from "../utils"
-import type { OptionsFiles, OptionsOverrides, OptionsTypeScriptWithTypes, TypedFlatConfigItem } from "../types"
-import { GLOB_SRC } from "../globs"
+import { isPackageExists } from "local-pkg";
+import { interopDefault, toArray } from "../utils";
+import type { OptionsFiles, OptionsOverrides, OptionsTypeScriptWithTypes, TypedFlatConfigItem } from "../types";
+import { GLOB_SRC } from "../globs";
 
 // react refresh
 const ReactRefreshAllowConstantExportPackages = [
 	"vite",
-]
+];
 const RemixPackages = [
 	"@remix-run/react",
-]
+];
 const NextJsPackages = [
 	"next",
-]
+];
 
 export async function react(
 	options: OptionsFiles & OptionsOverrides & OptionsTypeScriptWithTypes = {},
@@ -20,12 +20,12 @@ export async function react(
 	const {
 		files = [GLOB_SRC],
 		overrides = {},
-	} = options
+	} = options;
 
 	const tsconfigPath = options?.tsconfigPath
 		? toArray(options.tsconfigPath)
-		: undefined
-	const isTypeAware = !!tsconfigPath
+		: undefined;
+	const isTypeAware = !!tsconfigPath;
 
 	const [
 		pluginReact,
@@ -37,13 +37,13 @@ export async function react(
 		interopDefault(import("eslint-plugin-react-hooks")),
 		interopDefault(import("eslint-plugin-react-refresh")),
 		interopDefault(import("@typescript-eslint/parser")),
-	] as const)
+	] as const);
 
-	const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some(i => isPackageExists(i))
-	const isUsingRemix = RemixPackages.some(i => isPackageExists(i))
-	const isUsingNext = NextJsPackages.some(i => isPackageExists(i))
+	const isAllowConstantExport = ReactRefreshAllowConstantExportPackages.some(i => isPackageExists(i));
+	const isUsingRemix = RemixPackages.some(i => isPackageExists(i));
+	const isUsingNext = NextJsPackages.some(i => isPackageExists(i));
 
-	const plugins = pluginReact.configs.all.plugins
+	const plugins = pluginReact.configs.all.plugins;
 
 	return [
 		{
@@ -165,5 +165,5 @@ export async function react(
 				...overrides,
 			},
 		},
-	]
+	];
 }

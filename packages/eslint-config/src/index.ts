@@ -1,9 +1,9 @@
-import { re_taro } from "./factory"
+import { re_taro } from "./factory";
 
-export * from "./configs"
-export * from "./factory"
-export * from "./globs"
-export * from "./types"
-export * from "./utils"
+export * from "./configs";
+export * from "./factory";
+export * from "./globs";
+export * from "./types";
+export * from "./utils";
 
-export { re_taro }
+export { re_taro };

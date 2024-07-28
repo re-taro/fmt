@@ -1,10 +1,10 @@
-import { isPackageExists } from "local-pkg"
-import { GLOB_ASTRO, GLOB_ASTRO_TS, GLOB_CSS, GLOB_GRAPHQL, GLOB_HTML, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS, GLOB_XML } from "../globs"
-import type { VendoredPrettierOptions } from "../vendor/prettier-types"
-import { ensurePackages, interopDefault, parserPlain } from "../utils"
-import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "../types"
-import { pluginRetaro } from "../plugins"
-import { StylisticConfigDefaults } from "./stylistic"
+import { isPackageExists } from "local-pkg";
+import { GLOB_ASTRO, GLOB_ASTRO_TS, GLOB_CSS, GLOB_GRAPHQL, GLOB_HTML, GLOB_LESS, GLOB_MARKDOWN, GLOB_POSTCSS, GLOB_SCSS, GLOB_XML } from "../globs";
+import type { VendoredPrettierOptions } from "../vendor/prettier-types";
+import { ensurePackages, interopDefault, parserPlain } from "../utils";
+import type { OptionsFormatters, StylisticConfig, TypedFlatConfigItem } from "../types";
+import { pluginRetaro } from "../plugins";
+import { StylisticConfigDefaults } from "./stylistic";
 
 export async function formatters(
 	options: OptionsFormatters | true = {},
@@ -19,7 +19,7 @@ export async function formatters(
 			markdown: true,
 			slidev: isPackageExists("@slidev/cli"),
 			xml: isPackageExists("@prettier/plugin-xml"),
-		}
+		};
 	}
 
 	await ensurePackages([
@@ -27,10 +27,10 @@ export async function formatters(
 		options.markdown && options.slidev ? "prettier-plugin-slidev" : undefined,
 		options.astro ? "prettier-plugin-astro" : undefined,
 		options.xml ? "@prettier/plugin-xml" : undefined,
-	])
+	]);
 
 	if (options.slidev && options.markdown !== true && options.markdown !== "prettier")
-		throw new Error("`slidev` option only works when `markdown` is enabled with `prettier`")
+		throw new Error("`slidev` option only works when `markdown` is enabled with `prettier`");
 
 	const {
 		indent,
@@ -39,7 +39,7 @@ export async function formatters(
 	} = {
 		...StylisticConfigDefaults,
 		...stylistic,
-	}
+	};
 
 	const vendoredPrettierOptions: VendoredPrettierOptions = {
 		endOfLine: "auto",
@@ -48,16 +48,16 @@ export async function formatters(
 		tabWidth: typeof indent === "number" ? indent : 2,
 		trailingComma: "all",
 		useTabs: indent === "tab",
-	}
+	};
 
-	const prettierOptions: VendoredPrettierOptions = Object.assign(vendoredPrettierOptions, options.prettierOptions || {})
+	const prettierOptions: VendoredPrettierOptions = Object.assign(vendoredPrettierOptions, options.prettierOptions || {});
 
 	const prettierXmlOptions = {
 		xmlQuoteAttributes: "double",
 		xmlSelfClosingSpace: true,
 		xmlSortAttributesByKey: false,
 		xmlWhitespaceSensitivity: "ignore",
-	}
+	};
 
 	const dprintOptions = Object.assign(
 		{
@@ -66,9 +66,9 @@ export async function formatters(
 			useTabs: indent === "tab",
 		},
 		options.dprintOptions || {},
-	)
+	);
 
-	const pluginFormat = await interopDefault(import("eslint-plugin-format"))
+	const pluginFormat = await interopDefault(import("eslint-plugin-format"));
 
 	const configs: TypedFlatConfigItem[] = [
 		{
@@ -87,7 +87,7 @@ export async function formatters(
 				"re-taro/pad-after-last-import": "error",
 			},
 		},
-	]
+	];
 
 	if (options.css) {
 		configs.push(
@@ -139,7 +139,7 @@ export async function formatters(
 					],
 				},
 			},
-		)
+		);
 	}
 
 	if (options.html) {
@@ -158,7 +158,7 @@ export async function formatters(
 					},
 				],
 			},
-		})
+		});
 	}
 
 	if (options.xml) {
@@ -181,19 +181,19 @@ export async function formatters(
 					},
 				],
 			},
-		})
+		});
 	}
 
 	if (options.markdown) {
 		const formater = options.markdown === true
 			? "prettier"
-			: options.markdown
+			: options.markdown;
 
 		const GLOB_SLIDEV = !options.slidev
 			? []
 			: options.slidev === true
 				? ["**/slides.md"]
-				: options.slidev.files
+				: options.slidev.files;
 
 		configs.push({
 			files: [GLOB_MARKDOWN],
@@ -218,7 +218,7 @@ export async function formatters(
 							},
 				],
 			},
-		})
+		});
 
 		if (options.slidev) {
 			configs.push({
@@ -241,7 +241,7 @@ export async function formatters(
 						},
 					],
 				},
-			})
+			});
 		}
 	}
 
@@ -264,7 +264,7 @@ export async function formatters(
 					},
 				],
 			},
-		})
+		});
 
 		configs.push({
 			files: [GLOB_ASTRO, GLOB_ASTRO_TS],
@@ -278,7 +278,7 @@ export async function formatters(
 				"style/quotes": "off",
 				"style/semi": "off",
 			},
-		})
+		});
 	}
 
 	if (options.graphql) {
@@ -297,8 +297,8 @@ export async function formatters(
 					},
 				],
 			},
-		})
+		});
 	}
 
-	return configs
+	return configs;
 }

@@ -1,6 +1,6 @@
-import { unindent as $ } from "eslint-vitest-rule-tester"
-import { run } from "./_test"
-import { RULE_NAME, rule } from "./curly"
+import { unindent as $ } from "eslint-vitest-rule-tester";
+import { run } from "./_test";
+import { RULE_NAME, rule } from "./curly";
 
 run({
 	invalid: [
@@ -167,4 +167,4 @@ run({
       }
     `,
 	],
-})
+});
