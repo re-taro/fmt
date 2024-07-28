@@ -38,9 +38,8 @@
   },
   "scripts": {
     "build": "pnpm typegen && unbuild",
-    "fmt": "run-s -c fmt:*",
-    "fmt:eslint": "pnpm lint:eslint --fix",
-    "lint": "run-s -c lint:*",
+    "fmt": "pnpm lint:eslint --fix",
+    "lint": "pnpm run /^lint:.*/",
     "lint:eslint": "eslint .",
     "lint:ts": "tsc",
     "test": "vitest",
