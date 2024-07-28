@@ -39,5 +39,7 @@ jobs:
         uses: re-taro/actions/setup-node@v3.6.0
         with:
           node-version-file: .tool-versions
+      - name: Setup | Build
+        run: pnpm build
       - name: Test | Unit
         run: pnpm test
