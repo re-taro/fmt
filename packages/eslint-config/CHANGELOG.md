@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.0
+
+### Minor Changes
+
+- [#1426](https://github.com/re-taro/fmt/pull/1426) [`0d920bf`](https://github.com/re-taro/fmt/commit/0d920bff637179a4cae8967496dbc223379a232e) Thanks [@re-taro](https://github.com/re-taro)! - Restrict semi
+
 ## 5.0.0
 
 ### Major Changes
