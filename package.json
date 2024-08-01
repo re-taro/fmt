@@ -22,7 +22,7 @@
 		"@changesets/changelog-github": "0.5.0",
 		"@changesets/cli": "2.27.7",
 		"@eslint/config-inspector": "0.5.2",
-		"@stylistic/eslint-plugin-migrate": "2.4.0",
+		"@stylistic/eslint-plugin-migrate": "2.6.0",
 		"@types/node": "20.14.13",
 		"eslint": "9.8.0",
 		"tsx": "4.16.3",
