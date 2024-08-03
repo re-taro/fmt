@@ -55,7 +55,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "Disallow import promises as.",
-			recommended: "stylistic",
 		},
 		fixable: "code",
 		messages: {

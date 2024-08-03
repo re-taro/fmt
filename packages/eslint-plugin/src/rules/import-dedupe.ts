@@ -41,7 +41,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "Fix duplication in imports",
-			recommended: "strict",
 		},
 		fixable: "code",
 		messages: {

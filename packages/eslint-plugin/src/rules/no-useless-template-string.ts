@@ -34,7 +34,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "No useless template string.",
-			recommended: "stylistic",
 		},
 		fixable: "code",
 		messages: {

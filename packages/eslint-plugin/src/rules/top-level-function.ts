@@ -74,7 +74,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "Enforce top-level functions to be declared with function keyword",
-			recommended: "stylistic",
 		},
 		fixable: "code",
 		messages: {
