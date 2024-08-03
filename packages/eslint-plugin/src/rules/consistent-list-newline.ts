@@ -284,7 +284,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "Having line breaks styles to object, array and named imports",
-			recommended: "stylistic",
 		},
 		fixable: "whitespace",
 		messages: {

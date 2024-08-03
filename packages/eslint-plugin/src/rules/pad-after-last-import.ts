@@ -44,7 +44,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "Pad after the last import.",
-			recommended: "stylistic",
 		},
 		fixable: "code",
 		messages: {

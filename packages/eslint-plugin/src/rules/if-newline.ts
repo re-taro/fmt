@@ -33,7 +33,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "Newline after if",
-			recommended: "stylistic",
 		},
 		fixable: "whitespace",
 		messages: {

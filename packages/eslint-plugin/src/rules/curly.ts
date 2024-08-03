@@ -94,7 +94,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "Enforce style of curly bracket",
-			recommended: "stylistic",
 		},
 		fixable: "whitespace",
 		messages: {

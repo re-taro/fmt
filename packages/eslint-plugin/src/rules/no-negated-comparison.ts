@@ -49,7 +49,6 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 	meta: {
 		docs: {
 			description: "Disallow negated comparison.",
-			recommended: "stylistic",
 		},
 		fixable: "code",
 		messages: {
