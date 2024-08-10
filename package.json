@@ -24,7 +24,7 @@
 		"@eslint/config-inspector": "0.5.2",
 		"@stylistic/eslint-plugin-migrate": "2.6.2",
 		"@types/node": "20.14.15",
-		"eslint": "9.8.0",
+		"eslint": "9.9.0",
 		"tsx": "4.17.0",
 		"typescript": "5.5.4",
 		"unbuild": "2.0.0",
