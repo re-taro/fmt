@@ -21,7 +21,7 @@
 	"devDependencies": {
 		"@changesets/changelog-github": "0.5.0",
 		"@changesets/cli": "2.27.7",
-		"@eslint/config-inspector": "0.5.2",
+		"@eslint/config-inspector": "0.5.3",
 		"@stylistic/eslint-plugin-migrate": "2.6.2",
 		"@types/node": "20.14.15",
 		"eslint": "9.9.0",
