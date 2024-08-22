@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "0.0.0",
 	"private": true,
-	"packageManager": "pnpm@9.7.1",
+	"packageManager": "pnpm@9.8.0",
 	"description": "My personal formatter config monorepo.",
 	"author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
 	"license": "MIT",
