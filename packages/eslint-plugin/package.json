@@ -50,7 +50,7 @@
     "eslint": "*"
   },
   "devDependencies": {
-    "@types/eslint": "9.6.0",
+    "@types/eslint": "9.6.1",
     "@types/semver": "7.5.8",
     "@typescript-eslint/parser": "8.2.0",
     "@typescript-eslint/types": "8.2.0",
