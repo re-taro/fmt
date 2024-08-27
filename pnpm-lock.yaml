@@ -96,8 +96,8 @@ importers:
         specifier: '>=0.1.0'
         version: 0.1.2(eslint@8.57.0)
       eslint-plugin-import-x:
-        specifier: 4.0.0
-        version: 4.0.0(eslint@8.57.0)(typescript@5.5.4)
+        specifier: 4.1.0
+        version: 4.1.0(eslint@8.57.0)(typescript@5.5.4)
       eslint-plugin-jsdoc:
         specifier: 50.2.2
         version: 50.2.2(eslint@8.57.0)
@@ -2055,8 +2055,8 @@ packages:
     peerDependencies:
       eslint: ^8.40.0 || ^9.0.0
 
-  eslint-plugin-import-x@4.0.0:
-    resolution: {integrity: sha512-5bWZ+2p3DKlpLSP830cAUmRUoYEnnvuBmSOSlURffEUuXL68uQUX0v2JpoXxyoDRIQWApzbqhnFeHA0XoQWosA==}
+  eslint-plugin-import-x@4.1.0:
+    resolution: {integrity: sha512-1BYJU0C5NBJLY4qukmwDbFrf2w8fLGEU9zZV3viWa7gNnbn4o4meQy5O4LVXn56eFh9Y4fQxu3udhIqQuVITvw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -6096,7 +6096,7 @@ snapshots:
       prettier: 3.3.2
       synckit: 0.9.1
 
-  eslint-plugin-import-x@4.0.0(eslint@8.57.0)(typescript@5.5.4):
+  eslint-plugin-import-x@4.1.0(eslint@8.57.0)(typescript@5.5.4):
     dependencies:
       '@typescript-eslint/typescript-estree': 8.3.0(typescript@5.5.4)
       '@typescript-eslint/utils': 8.3.0(eslint@8.57.0)(typescript@5.5.4)
