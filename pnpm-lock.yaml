@@ -18,8 +18,8 @@ importers:
         specifier: 0.5.4
         version: 0.5.4(eslint@9.9.1(jiti@1.21.6))
       '@stylistic/eslint-plugin-migrate':
-        specifier: 2.7.1
-        version: 2.7.1(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
+        specifier: 2.7.2
+        version: 2.7.2(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       '@types/node':
         specifier: 20.16.2
         version: 20.16.2
@@ -184,8 +184,8 @@ importers:
         version: 1.2.3
     devDependencies:
       '@stylistic/eslint-plugin-migrate':
-        specifier: 2.7.1
-        version: 2.7.1(eslint@8.57.0)(typescript@5.5.4)
+        specifier: 2.7.2
+        version: 2.7.2(eslint@8.57.0)(typescript@5.5.4)
       '@types/eslint':
         specifier: 9.6.1
         version: 9.6.1
@@ -917,8 +917,8 @@ packages:
   '@eslint-react/var@1.12.3':
     resolution: {integrity: sha512-K9lBA5Ap3bFfH2OxcpZYyK7HieWmJOtyjAmvC2E2StsPcQlBci+ID82xQEqrPvdL1qdRYWKpSzvSd8Xu4cJf/w==}
 
-  '@eslint-stylistic/metadata@2.7.1':
-    resolution: {integrity: sha512-WQZZfIlAxXq+JkJZxq9fiikthPEnv/js4Vim6EXEPEb9n5tsI1piUxDNLaa5pDZoZY9GW7iSNp/eWWp7FiLtTQ==}
+  '@eslint-stylistic/metadata@2.7.2':
+    resolution: {integrity: sha512-CpG+BtbxaMgPDI4Q3GuLNNzMtWGvE5Xd1nQaLmhj/YOdhxREt3amcs0KfMiNrkURZthp1U+gTXbYkeBAgN0pYQ==}
 
   '@eslint/config-array@0.17.1':
     resolution: {integrity: sha512-BlYOpej8AQ8Ev9xVqroV7a02JK3SkBAaN9GfMMH9W6Ch8FlQlkjGw4Ir7+FgYwfirivAf4t+GtzuAxqfukmISA==}
@@ -1195,8 +1195,8 @@ packages:
     peerDependencies:
       eslint: '>=8.40.0'
 
-  '@stylistic/eslint-plugin-migrate@2.7.1':
-    resolution: {integrity: sha512-YPu2i+CsqD7ewq+DPif97P9Duikmvv3kbGI9nY1Y5KVLoSQPsJmlDKUnr+36HPZvZjJPlytgJCkRGI7KIyPxzQ==}
+  '@stylistic/eslint-plugin-migrate@2.7.2':
+    resolution: {integrity: sha512-pAq7LkWjBng6P80arJZ8z4CTdsC6fnUakfznJmdSMlIr5MbjbfkWPym15i+ceOaQacW9eoC3158DLiC+7fhP+g==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@stylistic/eslint-plugin-plus@2.6.2':
@@ -4668,7 +4668,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@eslint-stylistic/metadata@2.7.1': {}
+  '@eslint-stylistic/metadata@2.7.2': {}
 
   '@eslint/config-array@0.17.1':
     dependencies:
@@ -4955,18 +4955,18 @@ snapshots:
       estraverse: 5.3.0
       picomatch: 4.0.2
 
-  '@stylistic/eslint-plugin-migrate@2.7.1(eslint@8.57.0)(typescript@5.5.4)':
+  '@stylistic/eslint-plugin-migrate@2.7.2(eslint@8.57.0)(typescript@5.5.4)':
     dependencies:
-      '@eslint-stylistic/metadata': 2.7.1
+      '@eslint-stylistic/metadata': 2.7.2
       '@typescript-eslint/utils': 8.3.0(eslint@8.57.0)(typescript@5.5.4)
     transitivePeerDependencies:
       - eslint
       - supports-color
       - typescript
 
-  '@stylistic/eslint-plugin-migrate@2.7.1(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)':
+  '@stylistic/eslint-plugin-migrate@2.7.2(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)':
     dependencies:
-      '@eslint-stylistic/metadata': 2.7.1
+      '@eslint-stylistic/metadata': 2.7.2
       '@typescript-eslint/utils': 8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
     transitivePeerDependencies:
       - eslint
