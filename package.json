@@ -23,7 +23,7 @@
 		"@changesets/cli": "2.27.7",
 		"@eslint/config-inspector": "0.5.4",
 		"@stylistic/eslint-plugin-migrate": "2.7.2",
-		"@types/node": "20.16.3",
+		"@types/node": "20.16.4",
 		"eslint": "9.9.1",
 		"tsx": "4.19.0",
 		"typescript": "5.5.4",
