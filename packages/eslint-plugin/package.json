@@ -56,7 +56,7 @@
     "@typescript-eslint/types": "8.7.0",
     "@typescript-eslint/typescript-estree": "8.7.0",
     "@typescript-eslint/utils": "8.7.0",
-    "eslint": "9.9.1",
+    "eslint": "9.11.1",
     "eslint-vitest-rule-tester": "0.5.2",
     "semver": "7.6.3"
   }
