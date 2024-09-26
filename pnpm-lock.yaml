@@ -87,8 +87,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.3(eslint@8.57.0)(typescript@5.6.2)
       eslint-plugin-command:
-        specifier: 0.2.5
-        version: 0.2.5(eslint@8.57.0)
+        specifier: 0.2.6
+        version: 0.2.6(eslint@8.57.0)
       eslint-plugin-eslint-comments:
         specifier: 3.2.0
         version: 3.2.0(eslint@8.57.0)
@@ -2090,8 +2090,8 @@ packages:
     peerDependencies:
       eslint: '>=8.57.0'
 
-  eslint-plugin-command@0.2.5:
-    resolution: {integrity: sha512-mbCaSHD37MT8nVJnJUz2oeDfhz0wdOjfrqQVWkSpXuj3uU8m7/FK/niV2bL922af3M1js5x7Xcu3PwqWsrahfA==}
+  eslint-plugin-command@0.2.6:
+    resolution: {integrity: sha512-T0bHZ1oblW1xUHUVoBKZJR2osSNNGkfZuK4iqboNwuNS/M7tdp3pmURaJtTi/XDzitxaQ02lvOdFH0mUd5QLvQ==}
     peerDependencies:
       eslint: '*'
 
@@ -6129,7 +6129,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-command@0.2.5(eslint@8.57.0):
+  eslint-plugin-command@0.2.6(eslint@8.57.0):
     dependencies:
       '@es-joy/jsdoccomment': 0.48.0
       eslint: 8.57.0
