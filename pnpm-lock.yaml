@@ -69,8 +69,8 @@ importers:
         specifier: '>=0.50.0'
         version: 0.61.6(eslint@8.57.0)(typescript@5.6.3)
       '@vitest/eslint-plugin':
-        specifier: 1.0.1
-        version: 1.0.1(@typescript-eslint/utils@8.8.1(eslint@8.57.0)(typescript@5.6.3))(eslint@8.57.0)(typescript@5.6.3)(vitest@2.1.2(@types/node@20.16.11)(terser@5.31.3))
+        specifier: 1.1.7
+        version: 1.1.7(@typescript-eslint/utils@8.8.1(eslint@8.57.0)(typescript@5.6.3))(eslint@8.57.0)(typescript@5.6.3)(vitest@2.1.2(@types/node@20.16.11)(terser@5.31.3))
       astro-eslint-parser:
         specifier: ^1.0.2
         version: 1.0.2(typescript@5.6.3)
@@ -1475,16 +1475,14 @@ packages:
     resolution: {integrity: sha512-vLAAOMB1s5PyBse3jbCExmg40p0kDSa5vPP0MGVyre8IAVC9qUa9ASxWaRxUU0jQYyQbEpx7iiF3KeEt2QBpQA==}
     engines: {node: '>=14'}
 
-  '@vitest/eslint-plugin@1.0.1':
-    resolution: {integrity: sha512-albpL56cL9XMwHJWCWZqjDxkuDkBXBF3WpPGOv6q2WA3cipCP41cKEwfSGktoRNGmPN77wuX452O8pM+z+ApNw==}
+  '@vitest/eslint-plugin@1.1.7':
+    resolution: {integrity: sha512-pTWGW3y6lH2ukCuuffpan6kFxG6nIuoesbhMiQxskyQMRcCN5t9SXsKrNHvEw3p8wcCsgJoRqFZVkOTn6TjclA==}
     peerDependencies:
       '@typescript-eslint/utils': '>= 8.0'
       eslint: '>= 8.57.0'
       typescript: '>= 5.0.0'
       vitest: '*'
     peerDependenciesMeta:
-      '@typescript-eslint/utils':
-        optional: true
       typescript:
         optional: true
       vitest:
@@ -5385,11 +5383,11 @@ snapshots:
       - supports-color
       - typescript
 
-  '@vitest/eslint-plugin@1.0.1(@typescript-eslint/utils@8.8.1(eslint@8.57.0)(typescript@5.6.3))(eslint@8.57.0)(typescript@5.6.3)(vitest@2.1.2(@types/node@20.16.11)(terser@5.31.3))':
+  '@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.8.1(eslint@8.57.0)(typescript@5.6.3))(eslint@8.57.0)(typescript@5.6.3)(vitest@2.1.2(@types/node@20.16.11)(terser@5.31.3))':
     dependencies:
+      '@typescript-eslint/utils': 8.8.1(eslint@8.57.0)(typescript@5.6.3)
       eslint: 8.57.0
     optionalDependencies:
-      '@typescript-eslint/utils': 8.8.1(eslint@8.57.0)(typescript@5.6.3)
       typescript: 5.6.3
       vitest: 2.1.2(@types/node@20.16.11)(terser@5.31.3)
 
