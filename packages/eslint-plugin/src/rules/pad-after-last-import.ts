@@ -28,7 +28,7 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 						// Workaround: Vue
 						&& nextToken.value !== "</script>"
 						&& (expectedLine === nextTokenStartLine
-						|| expectedLine === firstCommentAfterTokenStartLine)
+							|| expectedLine === firstCommentAfterTokenStartLine)
 					) {
 						context.report({
 							fix: fixer => fixer.insertTextAfter(lastImportNode!, "\n"),

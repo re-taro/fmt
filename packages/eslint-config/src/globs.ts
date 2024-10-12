@@ -33,11 +33,11 @@ export const GLOB_GRAPHQL = "**/*.{g,graph}ql";
 export const GLOB_MARKDOWN_CODE: `${typeof GLOB_MARKDOWN}/${typeof GLOB_SRC}` = `${GLOB_MARKDOWN}/${GLOB_SRC}`;
 
 export const GLOB_TESTS: Array<string> = [
-  `**/__tests__/**/*.${GLOB_SRC_EXT}`,
-  `**/*.spec.${GLOB_SRC_EXT}`,
-  `**/*.test.${GLOB_SRC_EXT}`,
-  `**/*.bench.${GLOB_SRC_EXT}`,
-  `**/*.benchmark.${GLOB_SRC_EXT}`,
+	`**/__tests__/**/*.${GLOB_SRC_EXT}`,
+	`**/*.spec.${GLOB_SRC_EXT}`,
+	`**/*.test.${GLOB_SRC_EXT}`,
+	`**/*.bench.${GLOB_SRC_EXT}`,
+	`**/*.benchmark.${GLOB_SRC_EXT}`,
 ];
 
 export const GLOB_ALL_SRC: Array<string> = [
