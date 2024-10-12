@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.1.1
+
+### Patch Changes
+
+- [#1584](https://github.com/re-taro/fmt/pull/1584) [`e3ce243`](https://github.com/re-taro/fmt/commit/e3ce2430a2f40dc0188b80943690bbee8c04cc82) Thanks [@renovate](https://github.com/apps/renovate)! - Update deps
+
 ## 5.1.0
 
 ### Minor Changes
