@@ -27,7 +27,7 @@ jobs:
         with:
           node-version-file: .tool-versions
       - name: Setup | Registry
-        uses: actions/setup-node@v4.0.4
+        uses: actions/setup-node@v4.1.0
         with:
           registry-url: ${{ matrix.url }}
       - name: Run | Build
