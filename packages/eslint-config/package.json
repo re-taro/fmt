@@ -105,7 +105,7 @@
   "dependencies": {
     "@antfu/install-pkg": "0.4.1",
     "@clack/prompts": "0.7.0",
-    "@eslint-react/eslint-plugin": "1.15.0",
+    "@eslint-react/eslint-plugin": "1.15.1",
     "@re-taro/eslint-plugin": "workspace:*",
     "@stylistic/eslint-plugin": "2.9.0",
     "@typescript-eslint/eslint-plugin": "8.9.0",
