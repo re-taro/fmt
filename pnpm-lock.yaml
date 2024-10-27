@@ -199,8 +199,8 @@ importers:
         specifier: 0.3.2
         version: 0.3.2(eslint@8.57.0)
       execa:
-        specifier: 9.4.1
-        version: 9.4.1
+        specifier: 9.5.0
+        version: 9.5.0
       fast-glob:
         specifier: 3.3.2
         version: 3.3.2
@@ -2392,8 +2392,8 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
-  execa@9.4.1:
-    resolution: {integrity: sha512-5eo/BRqZm3GYce+1jqX/tJ7duA2AnE39i88fuedNFUV8XxGxUpF3aWkBRfbUcjV49gCkvS/pzc0YrCPhaIewdg==}
+  execa@9.5.0:
+    resolution: {integrity: sha512-t7vvYt+oKnMbF3O+S5+HkylsPrsUatwJSe4Cv+4017R0MCySjECxnVJ2eyDXVD/Xpj5H29YzyYn6eEpugG7GJA==}
     engines: {node: ^18.19.0 || >=20.5.0}
 
   extendable-error@0.1.7:
@@ -6619,7 +6619,7 @@ snapshots:
 
   esutils@2.0.3: {}
 
-  execa@9.4.1:
+  execa@9.5.0:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       cross-spawn: 7.0.3
