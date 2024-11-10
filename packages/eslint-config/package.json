@@ -110,7 +110,7 @@
     "@stylistic/eslint-plugin": "2.9.0",
     "@typescript-eslint/eslint-plugin": "8.9.0",
     "@typescript-eslint/parser": "8.9.0",
-    "@vitest/eslint-plugin": "1.1.7",
+    "@vitest/eslint-plugin": "1.1.8",
     "eslint-config-flat-gitignore": "0.3.0",
     "eslint-flat-config-utils": "0.4.0",
     "eslint-merge-processors": "0.1.0",
