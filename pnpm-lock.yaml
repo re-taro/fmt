@@ -99,8 +99,8 @@ importers:
         specifier: '>=0.1.0'
         version: 0.1.2(eslint@8.57.0)
       eslint-plugin-import-x:
-        specifier: 4.4.0
-        version: 4.4.0(eslint@8.57.0)(typescript@5.6.3)
+        specifier: 4.4.2
+        version: 4.4.2(eslint@8.57.0)(typescript@5.6.3)
       eslint-plugin-jsdoc:
         specifier: 50.4.3
         version: 50.4.3(eslint@8.57.0)
@@ -2154,8 +2154,8 @@ packages:
     peerDependencies:
       eslint: ^8.40.0 || ^9.0.0
 
-  eslint-plugin-import-x@4.4.0:
-    resolution: {integrity: sha512-me58aWTjdkPtgmOzPe+uP0bebpN5etH4bJRnYzy85Rn9g/3QyASg6kTCqdwNzyaJRqMI2ii2o8s01P2LZpREHg==}
+  eslint-plugin-import-x@4.4.2:
+    resolution: {integrity: sha512-mDRXPSLQ0UQZQw91QdG4/qZT6hgeW2MJTczAbgPseUZuPEtIjjdPOolXroRkulnOn3fzj6gNgvk+wchMJiHElg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0
@@ -6228,7 +6228,7 @@ snapshots:
       prettier: 3.3.2
       synckit: 0.9.1
 
-  eslint-plugin-import-x@4.4.0(eslint@8.57.0)(typescript@5.6.3):
+  eslint-plugin-import-x@4.4.2(eslint@8.57.0)(typescript@5.6.3):
     dependencies:
       '@typescript-eslint/utils': 8.9.0(eslint@8.57.0)(typescript@5.6.3)
       debug: 4.3.7
