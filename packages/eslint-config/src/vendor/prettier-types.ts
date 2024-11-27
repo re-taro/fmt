@@ -132,9 +132,9 @@ export type BuiltInParserName =
 	| "glimmer"
 	| "graphql"
 	| "html"
+	| "json5"
 	| "json"
 	| "json-stringify"
-	| "json5"
 	| "less"
 	| "lwc"
 	| "markdown"
@@ -155,4 +155,4 @@ export type BuiltInParserName =
 //   https://github.com/microsoft/TypeScript/issues/29729#issuecomment-700527227
 export type LiteralUnion<T extends U, U = string> =
 	| T
-	| ({ _?: never | undefined } & Pick<U, never>);
+	| (Pick<U, never> & { _?: never | undefined });
