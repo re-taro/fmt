@@ -1,6 +1,6 @@
 import type { OptionsPerfectionist, TypedFlatConfigItem } from "../types";
 import { pluginPerfectionist } from "../plugins";
-import { GLOB_ASTRO, GLOB_JSX, GLOB_SVELTE, GLOB_TSX, GLOB_VUE } from "../globs";
+import { GLOB_JSX, GLOB_TSX } from "../globs";
 
 /**
  * Optional perfectionist plugin for props and items sorting.
@@ -100,60 +100,12 @@ export async function perfectionist(options: OptionsPerfectionist = {}): Promise
 		},
 	];
 
-	if (options.astro) {
-		configs.push({
-			files: [GLOB_ASTRO],
-			name: "re-taro/perfectionist/astro",
-			rules: {
-				"perfectionist/sort-astro-attributes": [
-					"error",
-					{
-						groups: ["multiline", "shorthand", "astro-shorthand"],
-						type: "natural",
-					},
-				],
-			},
-		});
-	}
-
 	if (options.jsx) {
 		configs.push({
 			files: [GLOB_TSX, GLOB_JSX],
 			name: "re-taro/perfectionist/jsx",
 			rules: {
 				"perfectionist/sort-jsx-props": [
-					"error",
-					{
-						groups: ["multiline", "shorthand"],
-						type: "natural",
-					},
-				],
-			},
-		});
-	}
-
-	if (options.svelte) {
-		configs.push({
-			files: [GLOB_SVELTE],
-			name: "re-taro/perfectionist/svelte",
-			rules: {
-				"perfectionist/sort-svelte-attributes": [
-					"error",
-					{
-						groups: ["multiline", "shorthand", "svelte-shorthand"],
-						type: "natural",
-					},
-				],
-			},
-		});
-	}
-
-	if (options.vue) {
-		configs.push({
-			files: [GLOB_VUE],
-			name: "re-taro/perfectionist/vue",
-			rules: {
-				"perfectionist/sort-vue-attributes": [
 					"error",
 					{
 						groups: ["multiline", "shorthand"],
