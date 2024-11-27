@@ -24,6 +24,7 @@ export const rule: RuleModule<Options> = createEslintRule<Options, MessageIds>({
 				const promisesSpecifier = node.specifiers.find(
 					s =>
 						s.type === "ImportSpecifier"
+						&& s.imported.type === "Identifier"
 						&& s.imported.name === "promises"
 						&& s.local.name !== "promises",
 				);
