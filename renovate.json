@@ -1,12 +1,16 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["github>re-taro/renovate-config"],
+	"extends": [
+		"github>re-taro/renovate-config"
+	],
 	"npm": {
 		"packageRules": [
 			{
 				"groupName": "@typescript-eslint",
-				"matchPackagePatterns": ["@typescript-eslint/*"],
-				"semanticCommitType": "fix"
+				"semanticCommitType": "fix",
+				"matchPackageNames": [
+					"/@typescript-eslint/*/"
+				]
 			}
 		]
 	}
