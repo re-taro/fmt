@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.2.0
+
+### Minor Changes
+
+- [#1680](https://github.com/re-taro/fmt/pull/1680) [`1efe9f9`](https://github.com/re-taro/fmt/commit/1efe9f936c4588fdf06367cedd4d47db6d22d644) Thanks [@re-taro](https://github.com/re-taro)! - Update dependencies
+
 ## 5.1.1
 
 ### Patch Changes
