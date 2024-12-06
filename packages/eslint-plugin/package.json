@@ -2,7 +2,7 @@
   "name": "@re-taro/eslint-plugin",
   "type": "module",
   "version": "5.2.0",
-  "packageManager": "pnpm@9.14.4",
+  "packageManager": "pnpm@9.15.0",
   "description": "ESLint plugin for re-taro",
   "author": "Rintaro Itokawa <me@re-taro.dev> (https://re-taro.dev)",
   "license": "MIT",
