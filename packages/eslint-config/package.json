@@ -120,7 +120,7 @@
     "eslint-plugin-jsdoc": "50.6.1",
     "eslint-plugin-jsonc": "2.18.2",
     "eslint-plugin-markdown": "5.1.0",
-    "eslint-plugin-n": "17.15.0",
+    "eslint-plugin-n": "17.15.1",
     "eslint-plugin-no-only-tests": "3.3.0",
     "eslint-plugin-perfectionist": "4.4.0",
     "eslint-plugin-react-hooks": "5.1.0",
