@@ -52,10 +52,10 @@
   "devDependencies": {
     "@types/eslint": "9.6.1",
     "@types/semver": "7.5.8",
-    "@typescript-eslint/parser": "8.19.0",
-    "@typescript-eslint/types": "8.19.0",
-    "@typescript-eslint/typescript-estree": "8.19.0",
-    "@typescript-eslint/utils": "8.19.0",
+    "@typescript-eslint/parser": "8.19.1",
+    "@typescript-eslint/types": "8.19.1",
+    "@typescript-eslint/typescript-estree": "8.19.1",
+    "@typescript-eslint/utils": "8.19.1",
     "eslint": "9.17.0",
     "eslint-vitest-rule-tester": "0.7.1",
     "semver": "7.6.3"
