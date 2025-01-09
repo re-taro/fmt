@@ -150,7 +150,7 @@ importers:
         specifier: 1.16.0
         version: 1.16.0(eslint@8.57.0)
       eslint-processor-vue-blocks:
-        specifier: ^0.1.2
+        specifier: ^0.1.2 || ^1.0.0
         version: 0.1.2(@vue/compiler-sfc@3.4.34)(eslint@8.57.0)
       globals:
         specifier: 15.14.0
