@@ -81,8 +81,8 @@ importers:
         specifier: 0.3.0
         version: 0.3.0(eslint@8.57.0)
       eslint-flat-config-utils:
-        specifier: 0.4.0
-        version: 0.4.0
+        specifier: 1.1.0
+        version: 1.1.0
       eslint-merge-processors:
         specifier: 0.1.0
         version: 0.1.0(eslint@8.57.0)
@@ -2267,8 +2267,8 @@ packages:
     peerDependencies:
       eslint: ^9.5.0
 
-  eslint-flat-config-utils@0.4.0:
-    resolution: {integrity: sha512-kfd5kQZC+BMO0YwTol6zxjKX1zAsk8JfSAopbKjKqmENTJcew+yBejuvccAg37cvOrN0Mh+DVbeyznuNWEjt4A==}
+  eslint-flat-config-utils@1.1.0:
+    resolution: {integrity: sha512-W49wz7yQJGRfg4QSV3nwdO/fYcWetiSKhLV5YykfQMcqnIATNpoS7EPdINhLB9P3fmdjNmFtOgZjiKnCndWAnw==}
 
   eslint-formatting-reporter@0.0.0:
     resolution: {integrity: sha512-k9RdyTqxqN/wNYVaTk/ds5B5rA8lgoAmvceYN7bcZMBwU7TuXx5ntewJv81eF3pIL/CiJE+pJZm36llG8yhyyw==}
@@ -3321,6 +3321,9 @@ packages:
 
   pathe@1.1.2:
     resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
+
+  pathe@2.0.2:
+    resolution: {integrity: sha512-15Ztpk+nov8DR524R4BF7uEuzESgzUEAV4Ah7CUMNGXdE5ELuvxElxGXndBl32vMSsWa1jpNf22Z+Er3sKwq+w==}
 
   pathval@2.0.0:
     resolution: {integrity: sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==}
@@ -6312,9 +6315,9 @@ snapshots:
       eslint: 8.57.0
       find-up-simple: 1.0.0
 
-  eslint-flat-config-utils@0.4.0:
+  eslint-flat-config-utils@1.1.0:
     dependencies:
-      pathe: 1.1.2
+      pathe: 2.0.2
 
   eslint-formatting-reporter@0.0.0(eslint@8.57.0):
     dependencies:
@@ -7558,6 +7561,8 @@ snapshots:
   path-type@4.0.0: {}
 
   pathe@1.1.2: {}
+
+  pathe@2.0.2: {}
 
   pathval@2.0.0: {}
 

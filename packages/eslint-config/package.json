@@ -112,7 +112,7 @@
     "@typescript-eslint/parser": "8.19.1",
     "@vitest/eslint-plugin": "1.1.24",
     "eslint-config-flat-gitignore": "0.3.0",
-    "eslint-flat-config-utils": "0.4.0",
+    "eslint-flat-config-utils": "1.1.0",
     "eslint-merge-processors": "0.1.0",
     "eslint-plugin-command": "0.2.7",
     "eslint-plugin-eslint-comments": "3.2.0",
