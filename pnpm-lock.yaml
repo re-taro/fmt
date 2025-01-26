@@ -78,8 +78,8 @@ importers:
         specifier: '>=8.40.0'
         version: 8.57.0
       eslint-config-flat-gitignore:
-        specifier: 0.3.0
-        version: 0.3.0(eslint@8.57.0)
+        specifier: 1.0.0
+        version: 1.0.0(eslint@8.57.0)
       eslint-flat-config-utils:
         specifier: 0.4.0
         version: 0.4.0
@@ -1059,9 +1059,14 @@ packages:
   '@eslint-stylistic/metadata@2.11.0':
     resolution: {integrity: sha512-m3GsPILoIH04fqYxKRTyWIMN8PAGeN1qYi6I8HzfrlC7QqIxn6KKws/Hya9cYyiSj30vDpFvZo3vkZCdlQabZQ==}
 
-  '@eslint/compat@1.1.1':
-    resolution: {integrity: sha512-lpHyRyplhGPL5mGEh6M9O5nnKk0Gz4bFI+Zu6tKlPpDUN7XshWvH9C/px4UVm87IAANE0W81CEsNGbS1KlzXpA==}
+  '@eslint/compat@1.2.5':
+    resolution: {integrity: sha512-5iuG/StT+7OfvhoBHPlmxkPA9om6aDUFgmD4+mWKAGsYt4vCe8rypneG03AuseyRHBmcCLXQtIH5S26tIoggLg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    peerDependencies:
+      eslint: ^9.10.0
+    peerDependenciesMeta:
+      eslint:
+        optional: true
 
   '@eslint/config-array@0.19.0':
     resolution: {integrity: sha512-zdHg2FPIFNKPdcHWtiNT+jEFCHYVplAXRDlQDyqy0zGx/q2parwh7brGJSiTxRk/TSMkbM//zt/f5CHgyTyaSQ==}
@@ -2262,8 +2267,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-config-flat-gitignore@0.3.0:
-    resolution: {integrity: sha512-0Ndxo4qGhcewjTzw52TK06Mc00aDtHNTdeeW2JfONgDcLkRO/n/BteMRzNVpLQYxdCC/dFEilfM9fjjpGIJ9Og==}
+  eslint-config-flat-gitignore@1.0.0:
+    resolution: {integrity: sha512-EWpSLrAP80IdcYK5sIhq/qAY0pmUdBnbzqzpE3QAn6H6wLBN26cMRoMNU9Di8upTzUSL6TXeYRxWhTYuz8+UQA==}
     peerDependencies:
       eslint: ^9.5.0
 
@@ -4902,7 +4907,9 @@ snapshots:
 
   '@eslint-stylistic/metadata@2.11.0': {}
 
-  '@eslint/compat@1.1.1': {}
+  '@eslint/compat@1.2.5(eslint@8.57.0)':
+    optionalDependencies:
+      eslint: 8.57.0
 
   '@eslint/config-array@0.19.0':
     dependencies:
@@ -6306,9 +6313,9 @@ snapshots:
       eslint: 8.57.0
       semver: 7.6.3
 
-  eslint-config-flat-gitignore@0.3.0(eslint@8.57.0):
+  eslint-config-flat-gitignore@1.0.0(eslint@8.57.0):
     dependencies:
-      '@eslint/compat': 1.1.1
+      '@eslint/compat': 1.2.5(eslint@8.57.0)
       eslint: 8.57.0
       find-up-simple: 1.0.0
 
