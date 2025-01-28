@@ -25,7 +25,7 @@ jobs:
         with:
           node-version-file: .tool-versions
       - name: Setup | Registry
-        uses: actions/setup-node@v4.1.0
+        uses: actions/setup-node@v4.2.0
         with:
           registry-url: https://registry.npmjs.org/
       - name: Release | Build
