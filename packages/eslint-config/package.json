@@ -145,7 +145,7 @@
     "eslint-typegen": "0.3.2",
     "execa": "9.5.2",
     "fast-glob": "3.3.3",
-    "fs-extra": "11.2.0",
+    "fs-extra": "11.3.0",
     "jiti": "2.4.2"
   }
 }
