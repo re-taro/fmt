@@ -124,7 +124,7 @@
     "eslint-plugin-no-only-tests": "3.3.0",
     "eslint-plugin-perfectionist": "4.7.0",
     "eslint-plugin-react-hooks": "5.1.0",
-    "eslint-plugin-react-refresh": "0.4.16",
+    "eslint-plugin-react-refresh": "0.4.18",
     "eslint-plugin-regexp": "2.7.0",
     "eslint-plugin-toml": "0.12.0",
     "eslint-plugin-unicorn": "56.0.1",
