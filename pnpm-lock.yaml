@@ -123,8 +123,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0(eslint@8.57.0)
       eslint-plugin-react-refresh:
-        specifier: 0.4.16
-        version: 0.4.16(eslint@8.57.0)
+        specifier: 0.4.19
+        version: 0.4.19(eslint@8.57.0)
       eslint-plugin-regexp:
         specifier: 2.7.0
         version: 2.7.0(eslint@8.57.0)
@@ -2377,8 +2377,8 @@ packages:
       typescript:
         optional: true
 
-  eslint-plugin-react-refresh@0.4.16:
-    resolution: {integrity: sha512-slterMlxAhov/DZO8NScf6mEeMBBXodFUolijDvrtTxyezyLoTQaa73FyYus/VbTdftd8wBgBxPMRk3poleXNQ==}
+  eslint-plugin-react-refresh@0.4.19:
+    resolution: {integrity: sha512-eyy8pcr/YxSYjBoqIFSrlbn9i/xvxUFa8CjzAYo9cFjgGXqq1hyjihcpZvxRLalpaWmueWR81xn7vuKmAFijDQ==}
     peerDependencies:
       eslint: '>=8.40'
 
@@ -6475,7 +6475,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-refresh@0.4.16(eslint@8.57.0):
+  eslint-plugin-react-refresh@0.4.19(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
 
